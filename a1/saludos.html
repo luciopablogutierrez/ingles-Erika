@@ -13,18 +13,85 @@
     <!-- Skip link para navegación por teclado -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     <header role="banner">
-        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 1rem;">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1>English Learning</h1>
+                </div>
+                
+                <!-- Menú hamburguesa para móviles -->
+                <button class="hamburger-menu" aria-label="Abrir menú de navegación" aria-expanded="false">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </button>
+                
+                <!-- Navegación desktop -->
+                <div class="desktop-nav">
+                    <a href="../index.html" class="nav-link">🏠 Inicio</a>
+                    <a href="../index.html#levels" class="nav-link">📚 Niveles</a>
+                    <a href="../index.html#about" class="nav-link">ℹ️ Acerca de</a>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                        🌙
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Menú móvil -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <h2>Navegación</h2>
+                <button class="mobile-menu-close" aria-label="Cerrar menú">
+                    ✕
+                </button>
+            </div>
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-section">
+                    <h3>Navegación Principal</h3>
+                    <a href="../index.html" class="mobile-menu-link">🏠 Inicio</a>
+                    <a href="../index.html#levels" class="mobile-menu-link">📚 Niveles</a>
+                    <a href="../index.html#about" class="mobile-menu-link">ℹ️ Acerca de</a>
+                </div>
+                
+                <div class="mobile-menu-section">
+                    <h3>Niveles de Inglés</h3>
+                    <a href="../index.html#level-a1" class="mobile-menu-link">📖 Nivel A1 - Principiante</a>
+                    <a href="../index.html#level-a2" class="mobile-menu-link">📘 Nivel A2 - Elemental</a>
+                </div>
+                
+                <div class="mobile-menu-section">
+                    <h3>Lecciones A1</h3>
+                    <a href="saludos.html" class="mobile-menu-link">👋 Saludos y Presentaciones</a>
+                    <a href="numeros.html" class="mobile-menu-link">🔢 Números</a>
+                    <a href="colores.html" class="mobile-menu-link">🎨 Colores</a>
+                    <a href="familia.html" class="mobile-menu-link">👨‍👩‍👧‍👦 Familia</a>
+                </div>
+                
+                <div class="mobile-menu-section">
+                    <h3>Lecciones A2</h3>
+                    <a href="../a2/tiempo.html" class="mobile-menu-link">⏰ Tiempo y Fechas</a>
+                    <a href="../a2/comida.html" class="mobile-menu-link">🍽️ Comida</a>
+                    <a href="../a2/viajes.html" class="mobile-menu-link">✈️ Viajes</a>
+                    <a href="../a2/trabajo.html" class="mobile-menu-link">💼 Trabajo</a>
+                </div>
+                
+                <div class="mobile-menu-section">
+                    <button id="mobile-theme-toggle" class="mobile-theme-toggle" aria-label="Cambiar tema">
+                        🌙 Cambiar Tema
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Overlay para cerrar menú -->
+        <div class="mobile-menu-overlay"></div>
+        
+        <div class="lesson-header" style="display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 1rem;">
             <div>
                 <h1>📝 Saludos y Presentaciones</h1>
                 <p>Aprende a saludar y presentarte en inglés</p>
             </div>
-            <button class="theme-toggle" 
-                    aria-label="Cambiar entre modo claro y oscuro" 
-                    title="Cambiar tema"
-                    type="button">
-                <i class="fas fa-moon" aria-hidden="true"></i>
-                <span class="sr-only">Cambiar tema</span>
-            </button>
         </div>
     </header>
 

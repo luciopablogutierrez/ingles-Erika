@@ -262,10 +262,121 @@ function actualizarProgreso(leccionesCompletadas, totalLecciones) {
     }
 }
 
+// Función para inicializar el menú hamburguesa
+function initializeHamburgerMenu() {
+    const hamburgerBtn = document.querySelector('.hamburger-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+    
+    if (hamburgerBtn && mobileMenu) {
+        // Toggle del menú hamburguesa
+        function toggleMobileMenu() {
+            const isOpen = mobileMenu.classList.contains('active');
+            
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        }
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            if (mobileMenuOverlay) mobileMenuOverlay.classList.add('active');
+            hamburgerBtn.classList.add('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            hamburgerBtn.setAttribute('aria-label', 'Cerrar menú de navegación');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll
+            anunciarParaLectorPantalla('Menú abierto');
+            
+            // Enfocar el primer enlace del menú
+            if (mobileMenuLinks.length > 0) {
+                setTimeout(() => mobileMenuLinks[0].focus(), 100);
+            }
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            hamburgerBtn.setAttribute('aria-label', 'Abrir menú de navegación');
+            document.body.style.overflow = ''; // Restaurar scroll
+            anunciarParaLectorPantalla('Menú cerrado');
+        }
+        
+        // Event listeners
+        hamburgerBtn.addEventListener('click', toggleMobileMenu);
+        
+        // Botón de cerrar en el menú
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+        }
+        
+        // Cerrar con overlay
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        }
+        
+        // Navegación por teclado en el menú hamburguesa
+        hamburgerBtn.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleMobileMenu();
+            }
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+                // Pequeño delay para permitir la navegación
+                setTimeout(() => hamburgerBtn.focus(), 100);
+            });
+        });
+        
+        // Cerrar menú con Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+                hamburgerBtn.focus();
+            }
+        });
+        
+        // Navegación por teclado dentro del menú
+        mobileMenu.addEventListener('keydown', function(event) {
+            if (event.key === 'Tab') {
+                const focusableElements = mobileMenu.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                if (event.shiftKey) {
+                    if (document.activeElement === firstElement) {
+                        event.preventDefault();
+                        lastElement.focus();
+                    }
+                } else {
+                    if (document.activeElement === lastElement) {
+                        event.preventDefault();
+                        firstElement.focus();
+                    }
+                }
+            }
+        });
+    }
+}
+
 // Inicialización cuando se carga la página
 document.addEventListener('DOMContentLoaded', function() {
     // Cargar tema guardado
     loadTheme();
+    
+    // Inicializar menú hamburguesa
+    initializeHamburgerMenu();
     
     // Habilitar drag & drop en elementos que lo requieran
     const contenedoresDragDrop = document.querySelectorAll('.drag-drop-container');
@@ -358,5 +469,6 @@ window.reproducirAudio = reproducirAudio;
 window.irALeccion = irALeccion;
 window.toggleTheme = toggleTheme;
 window.loadTheme = loadTheme;
+window.initializeHamburgerMenu = initializeHamburgerMenu;
 window.funcionesA1 = funcionesA1;
 window.funcionesA2 = funcionesA2;
