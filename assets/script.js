@@ -62,7 +62,7 @@ function toggleTheme() {
     const themeIcon = document.querySelector('.theme-toggle i');
     const themeButton = document.querySelector('.theme-toggle');
     if (themeIcon && themeButton) {
-        themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        themeIcon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
         themeButton.setAttribute('aria-label', 
             newTheme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
         anunciarParaLectorPantalla(
@@ -79,7 +79,7 @@ function loadTheme() {
     const themeIcon = document.querySelector('.theme-toggle i');
     const themeButton = document.querySelector('.theme-toggle');
     if (themeIcon && themeButton) {
-        themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        themeIcon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
         themeButton.setAttribute('aria-label', 
             savedTheme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
     }
