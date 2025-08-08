@@ -1101,7 +1101,7 @@ p {
 
 /* Cara frontal */
 .level-card-front {
-    background: linear-gradient(135deg, var(--cream-light) 0%, #ffffff 100%);
+    background: var(--cream-light);
     transform: rotateY(0deg);
     border: 2px solid var(--nude);
 }
@@ -1113,26 +1113,14 @@ p {
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, var(--terracotta), var(--sage-green), var(--dusty-rose));
+    background: var(--terracotta);
     border-radius: 16px 16px 0 0;
     z-index: 1;
 }
 
-.level-card-front::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, rgba(212, 117, 107, 0.03) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-}
-
 /* Cara trasera */
 .level-card-back {
-    background: linear-gradient(135deg, var(--cream-light) 0%, var(--nude-light) 100%);
+    background: var(--cream-light);
     color: var(--text-primary);
     transform: rotateY(180deg);
     border: 2px solid var(--nude);
@@ -1210,17 +1198,7 @@ p {
     opacity: 1;
 }
 
-.level-card-back::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
-}
+
 
 /* Contenido de las caras */
 .level-card-front > *,
