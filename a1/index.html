@@ -5,107 +5,317 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nivel A1 - Principiante</title>
     <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>🟢 Nivel A1 - Principiante</h1>
-        <p>Fundamentos básicos del inglés</p>
-    </header>
+    <div class="course-index-container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="course-breadcrumb">
+            <ul class="breadcrumb-list">
+                <li><a href="../index.html" class="breadcrumb-item"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><span class="breadcrumb-separator">></span></li>
+                <li><span class="breadcrumb-item active">Nivel A1</span></li>
+            </ul>
+        </nav>
 
-    <main>
-        <div class="lesson-container">
-            <div class="lesson-nav">
-                <a href="../index.html">← Volver al inicio</a>
-            </div>
-
-            <div class="lesson-content">
-                <h1>Lecciones del Nivel A1</h1>
-                <p>Bienvenido al nivel principiante. Aquí aprenderás los conceptos más básicos del inglés.</p>
-
-                <div class="levels-container">
-                    <div class="level-card a1">
-                        <h2>📝 Lección 1</h2>
-                        <p>Saludos y Presentaciones</p>
-                        <ul>
-                            <li>Hello, Hi, Good morning</li>
-                            <li>What's your name?</li>
-                            <li>Nice to meet you</li>
-                            <li>Goodbye, See you later</li>
-                        </ul>
-                        <a href="saludos.html" class="btn">Comenzar</a>
-                    </div>
-
-                    <div class="level-card a1">
-                        <h2>🔤 Lección 2</h2>
-                        <p>El Abecedario</p>
-                        <ul>
-                            <li>Las 26 letras</li>
-                            <li>Pronunciación básica</li>
-                            <li>Deletrear palabras</li>
-                            <li>Ejercicios de práctica</li>
-                        </ul>
-                        <a href="abecedario.html" class="btn">Comenzar</a>
-                    </div>
-
-                    <div class="level-card a1">
-                        <h2>🔢 Lección 3</h2>
-                        <p>Números y Colores</p>
-                        <ul>
-                            <li>Números del 1 al 100</li>
-                            <li>Colores básicos</li>
-                            <li>Días de la semana</li>
-                            <li>Meses del año</li>
-                        </ul>
-                        <a href="numeros-colores.html" class="btn">Comenzar</a>
-                    </div>
-
-                    <div class="level-card a1">
-                        <h2>👤 Lección 4</h2>
-                        <p>Verbo To Be</p>
-                        <ul>
-                            <li>I am, You are, He/She is</li>
-                            <li>Formas negativas</li>
-                            <li>Preguntas con To Be</li>
-                            <li>Ejercicios prácticos</li>
-                        </ul>
-                        <a href="verbo-to-be.html" class="btn">Comenzar</a>
-                    </div>
-
-                    <div class="level-card a1">
-                        <h2>📰 Lección 5</h2>
-                        <p>Artículos</p>
-                        <ul>
-                            <li>A / An (artículos indefinidos)</li>
-                            <li>The (artículo definido)</li>
-                            <li>Cuándo usar cada uno</li>
-                            <li>Ejercicios de aplicación</li>
-                        </ul>
-                        <a href="articulos.html" class="btn">Comenzar</a>
-                    </div>
-
-                    <div class="level-card a1">
-                        <h2>❓ Lección 6</h2>
-                        <p>Preguntas Básicas</p>
-                        <ul>
-                            <li>What, Where, When, Who</li>
-                            <li>How old are you?</li>
-                            <li>Where are you from?</li>
-                            <li>Conversaciones simples</li>
-                        </ul>
-                        <a href="preguntas-basicas.html" class="btn">Comenzar</a>
-                    </div>
-                </div>
-
-                <div class="exercise">
-                    <h2>🎯 Progreso del Nivel A1</h2>
-                    <p>Completa todas las lecciones para avanzar al siguiente nivel.</p>
-                    <div style="background: #e0e0e0; border-radius: 10px; height: 20px; margin: 1rem 0;">
-                        <div id="progreso" style="background: #4CAF50; height: 100%; border-radius: 10px; width: 0%; transition: width 0.3s ease; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">0%</div>
-                    </div>
-                </div>
-            </div>
+        <!-- Level Navigation -->
+        <div class="level-navigation">
+            <a href="../a2/index.html" class="level-nav-btn">
+                <i class="fas fa-arrow-right"></i> Nivel A2
+            </a>
+            <a href="../b1/index.html" class="level-nav-btn">
+                <i class="fas fa-arrow-right"></i> Nivel B1
+            </a>
         </div>
-    </main>
+
+        <!-- Course Header -->
+        <header class="course-header">
+            <div class="course-level-badge">A1 Principiante</div>
+            <div class="course-title-content">
+                <h1>Nivel A1 - Principiante</h1>
+                <p class="course-subtitle">Comienza tu viaje en el inglés con vocabulario básico y frases simples</p>
+                <div class="course-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">6</span>
+                        <span class="stat-label">Lecciones</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">12h</span>
+                        <span class="stat-label">Duración</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">Básico</span>
+                        <span class="stat-label">Nivel</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="completion-rate">0%</span>
+                        <span class="stat-label">Completado</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Progress Section -->
+        <section class="course-progress-section">
+            <div class="progress-header">
+                <h2><i class="fas fa-chart-line"></i> Tu Progreso</h2>
+                <span class="progress-percentage" id="progress-percentage">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+            </div>
+        </section>
+
+        <!-- Lessons Section -->
+        <section class="course-lessons-section">
+            <div class="section-header">
+                <h2><i class="fas fa-book-open"></i> Lecciones del Nivel A1</h2>
+                <p class="section-description">Domina los fundamentos del inglés con estas lecciones estructuradas</p>
+            </div>
+            
+            <div class="lessons-grid-modern">
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">1</div>
+                        <div class="lesson-status-indicator">Pendiente</div>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Saludos y Presentaciones</h3>
+                        <p>Aprende las formas básicas de saludar y presentarte en inglés</p>
+                        <div class="lesson-topics">
+                            <span class="topic-tag">Hello & Hi</span>
+                            <span class="topic-tag">Presentaciones</span>
+                            <span class="topic-tag">Despedidas</span>
+                        </div>
+                    </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 45 min</span>
+                            <span><i class="fas fa-signal"></i> Básico</span>
+                        </div>
+                        <a href="saludos.html" class="lesson-btn">
+                            Comenzar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">2</div>
+                        <div class="lesson-status-indicator">Pendiente</div>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">
+                            <i class="fas fa-font"></i>
+                        </div>
+                        <h3>El Abecedario</h3>
+                        <p>Domina las 26 letras del alfabeto inglés y su pronunciación</p>
+                        <div class="lesson-topics">
+                            <span class="topic-tag">26 Letras</span>
+                            <span class="topic-tag">Pronunciación</span>
+                            <span class="topic-tag">Deletreo</span>
+                        </div>
+                    </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 30 min</span>
+                            <span><i class="fas fa-signal"></i> Básico</span>
+                        </div>
+                        <a href="abecedario.html" class="lesson-btn">
+                            Comenzar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">3</div>
+                        <div class="lesson-status-indicator">Pendiente</div>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">
+                            <i class="fas fa-sort-numeric-up"></i>
+                        </div>
+                        <h3>Números y Colores</h3>
+                        <p>Aprende los números del 1 al 100 y los colores básicos</p>
+                        <div class="lesson-topics">
+                            <span class="topic-tag">Números 1-100</span>
+                            <span class="topic-tag">Colores</span>
+                            <span class="topic-tag">Días y Meses</span>
+                        </div>
+                    </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 50 min</span>
+                            <span><i class="fas fa-signal"></i> Básico</span>
+                        </div>
+                        <a href="numeros-colores.html" class="lesson-btn">
+                            Comenzar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">4</div>
+                        <div class="lesson-status-indicator">Pendiente</div>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3>Verbo To Be</h3>
+                        <p>Domina el verbo más importante del inglés en todas sus formas</p>
+                        <div class="lesson-topics">
+                            <span class="topic-tag">I am/You are</span>
+                            <span class="topic-tag">Negaciones</span>
+                            <span class="topic-tag">Preguntas</span>
+                        </div>
+                    </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 60 min</span>
+                            <span><i class="fas fa-signal"></i> Básico</span>
+                        </div>
+                        <a href="verbo-to-be.html" class="lesson-btn">
+                            Comenzar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">5</div>
+                        <div class="lesson-status-indicator">Pendiente</div>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Artículos</h3>
+                        <p>Aprende cuándo usar A, An y The correctamente</p>
+                        <div class="lesson-topics">
+                            <span class="topic-tag">A / An</span>
+                            <span class="topic-tag">The</span>
+                            <span class="topic-tag">Reglas de uso</span>
+                        </div>
+                    </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 40 min</span>
+                            <span><i class="fas fa-signal"></i> Básico</span>
+                        </div>
+                        <a href="articulos.html" class="lesson-btn">
+                            Comenzar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">6</div>
+                        <div class="lesson-status-indicator">Pendiente</div>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">❓</div>
+                        <h3>Preguntas Básicas</h3>
+                        <p>Forma preguntas simples y mantén conversaciones básicas</p>
+                        <div class="lesson-topics">
+                            <span class="topic-tag">What/Where/When</span>
+                            <span class="topic-tag">How old?</span>
+                            <span class="topic-tag">Conversación</span>
+                        </div>
+                    </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 55 min</span>
+                            <span><i class="fas fa-signal"></i> Básico</span>
+                        </div>
+                        <a href="preguntas-basicas.html" class="lesson-btn">
+                            Comenzar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Level Navigation Section -->
+        <section class="course-navigation-section">
+            <div class="section-header">
+                <h2><i class="fas fa-route"></i> Continúa tu Aprendizaje</h2>
+                <p class="section-description">Explora otros niveles para seguir mejorando tu inglés</p>
+            </div>
+            
+            <div class="level-navigation-modern">
+                <a href="../a2/index.html" class="level-nav-card">
+                    <div class="nav-card-header">
+                        <div class="nav-direction">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Siguiente Nivel</span>
+                        </div>
+                        <div class="nav-level-badge a2">A2</div>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Nivel A2 - Básico</h3>
+                        <p>Continúa construyendo tu base con estructuras más complejas y vocabulario ampliado</p>
+                        <div class="nav-features">
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Presente simple y continuo</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Vocabulario de la vida diaria</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Conversaciones básicas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-card-footer">
+                        <span class="nav-action">Explorar A2</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </a>
+
+                <a href="../b1/index.html" class="level-nav-card">
+                    <div class="nav-card-header">
+                        <div class="nav-direction">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Nivel Avanzado</span>
+                        </div>
+                        <div class="nav-level-badge b1">B1</div>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Nivel B1 - Intermedio</h3>
+                        <p>Desarrolla fluidez y confianza para comunicarte en situaciones más complejas</p>
+                        <div class="nav-features">
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Tiempos verbales avanzados</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Expresiones idiomáticas</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Conversaciones fluidas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-card-footer">
+                        <span class="nav-action">Explorar B1</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <p>© 2024 - Refuerzo de Inglés - Nivel A1</p>
@@ -113,10 +323,22 @@
 
     <script src="../assets/script.js"></script>
     <script>
-        // Simular progreso basado en lecciones visitadas
+        // Actualizar progreso del nivel A1
         document.addEventListener('DOMContentLoaded', function() {
             const leccionesCompletadas = localStorage.getItem('a1-completadas') || 0;
-            actualizarProgreso(leccionesCompletadas, 6);
+            const totalLecciones = 6;
+            const porcentaje = Math.round((leccionesCompletadas / totalLecciones) * 100);
+            
+            // Actualizar barra de progreso
+            const progressBar = document.getElementById('progress-bar');
+            const progressPercentage = document.getElementById('progress-percentage');
+            const completionRate = document.getElementById('completion-rate');
+            
+            if (progressBar && progressPercentage && completionRate) {
+                progressBar.style.width = porcentaje + '%';
+                progressPercentage.textContent = porcentaje + '%';
+                completionRate.textContent = porcentaje + '%';
+            }
         });
     </script>
 </body>

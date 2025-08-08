@@ -5,208 +5,507 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nivel B1 - Intermedio</title>
     <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>🔵 Nivel B1 - Intermedio</h1>
-        <p>Desarrolla habilidades más complejas en inglés</p>
-    </header>
+    <div class="course-index-container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="course-breadcrumb">
+            <ul class="breadcrumb-list">
+                <li><a href="../index.html" class="breadcrumb-item"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><span class="breadcrumb-separator">></span></li>
+                <li><span class="breadcrumb-item active">Nivel B1</span></li>
+            </ul>
+        </nav>
 
-    <main>
-        <div class="level-container">
-            <div class="level-nav">
-                <a href="../a2/index.html">← Nivel A2</a> | 
-                <a href="../index.html">🏠 Inicio</a> | 
-                <a href="../b2/index.html">Nivel B2 →</a>
+        <!-- Level Navigation -->
+        <div class="level-navigation">
+            <a href="../a1/index.html" class="level-nav-btn">
+                <i class="fas fa-arrow-left"></i> Nivel A1
+            </a>
+            <a href="../a2/index.html" class="level-nav-btn">
+                <i class="fas fa-arrow-left"></i> Nivel A2
+            </a>
+        </div>
+
+        <!-- Course Header -->
+        <header class="course-header">
+            <div class="course-level-badge">B1 Intermedio</div>
+            <div class="course-title-content">
+                <h1>Nivel B1 - Intermedio</h1>
+                <p class="course-subtitle">Desarrolla fluidez y confianza para comunicarte en situaciones más complejas</p>
+                <div class="course-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">5</span>
+                        <span class="stat-label">Lecciones</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">20h</span>
+                        <span class="stat-label">Duración</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">Intermedio</span>
+                        <span class="stat-label">Nivel</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="completion-rate">0%</span>
+                        <span class="stat-label">Completado</span>
+                    </div>
+                </div>
             </div>
+        </header>
 
-            <div class="level-intro">
-                <h2>🎯 Bienvenido al Nivel B1 - Intermedio</h2>
-                <p>En este nivel desarrollarás habilidades más avanzadas que te permitirán comunicarte con mayor fluidez y precisión. Aprenderás estructuras gramaticales más complejas y ampliarás significativamente tu vocabulario.</p>
+        <!-- Progress Section -->
+        <section class="course-progress-section">
+            <div class="progress-header">
+                <h2><i class="fas fa-chart-line"></i> Tu Progreso</h2>
+                <span class="progress-percentage" id="progress-percentage">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+            </div>
+        </section>
                 
-                <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2196F3; margin: 1.5rem 0;">
-                    <h3>🚀 ¿Qué lograrás en B1?</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
-                        <div>
-                            <h4>📚 Gramática:</h4>
-                            <ul>
-                                <li>Comparativos y superlativos</li>
-                                <li>Presente perfecto vs pasado simple</li>
-                                <li>Condicionales (first conditional)</li>
-                                <li>Pasado continuo</li>
-                                <li>Futuro con "will" y "going to"</li>
-                            </ul>
+        <!-- Objectives Section -->
+        <section class="course-objectives-section">
+            <div class="section-header">
+                <h2><i class="fas fa-target"></i> Objetivos del Nivel B1</h2>
+                <p class="section-description">Desarrolla habilidades avanzadas para comunicarte con fluidez y precisión</p>
+            </div>
+            
+            <div class="objectives-grid-modern">
+                <div class="objective-card-modern grammar">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-book"></i>
                         </div>
-                        <div>
-                            <h4>💬 Comunicación:</h4>
-                            <ul>
-                                <li>Expresar opiniones y preferencias</li>
-                                <li>Describir experiencias pasadas</li>
-                                <li>Hacer planes futuros</li>
-                                <li>Dar consejos y sugerencias</li>
-                                <li>Narrar historias simples</li>
-                            </ul>
+                        <h3>Gramática Avanzada</h3>
+                    </div>
+                    <div class="objective-content">
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Comparativos y superlativos</span>
                         </div>
-                        <div>
-                            <h4>📖 Vocabulario:</h4>
-                            <ul>
-                                <li>Trabajo y profesiones</li>
-                                <li>Viajes y turismo</li>
-                                <li>Salud y bienestar</li>
-                                <li>Tecnología básica</li>
-                                <li>Medio ambiente</li>
-                            </ul>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Presente perfecto vs pasado simple</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Condicionales (first conditional)</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Pasado continuo</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Futuro con "will" y "going to"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="objective-card-modern communication">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Comunicación Fluida</h3>
+                    </div>
+                    <div class="objective-content">
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expresar opiniones y preferencias</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Describir experiencias pasadas</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Hacer planes futuros</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Dar consejos y sugerencias</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Narrar historias simples</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="objective-card-modern vocabulary">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>Vocabulario Especializado</h3>
+                    </div>
+                    <div class="objective-content">
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Trabajo y profesiones</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Viajes y turismo</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Salud y bienestar</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tecnología básica</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Medio ambiente</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="progress-section">
-                <h3>📊 Tu Progreso en B1</h3>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="b1-progress" style="width: 0%;"></div>
-                </div>
-                <p id="progress-text">0 de 5 lecciones completadas</p>
+        <!-- Lessons Section -->
+        <section class="course-lessons-section">
+            <div class="section-header">
+                <h2><i class="fas fa-graduation-cap"></i> Lecciones del Curso</h2>
+                <p class="section-description">Progresa paso a paso hacia la fluidez en inglés intermedio</p>
             </div>
-
-            <div class="lessons-grid">
-                <div class="lesson-card">
-                    <div class="lesson-number">1</div>
-                    <h3>🏆 Comparativos y Superlativos</h3>
-                    <p>Aprende a comparar personas, lugares y cosas usando estructuras como "bigger than", "the best", "as tall as".</p>
-                    <div class="lesson-topics">
-                        <span class="topic">Comparative adjectives</span>
-                        <span class="topic">Superlative forms</span>
-                        <span class="topic">Equality comparisons</span>
+            
+            <div class="lessons-grid-modern">
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">1</div>
+                        <div class="lesson-status-indicator pending"></div>
                     </div>
-                    <a href="comparativos-superlativos.html" class="btn">Comenzar Lección</a>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-number">2</div>
-                    <h3>⏰ Presente Perfecto vs Pasado Simple</h3>
-                    <p>Domina la diferencia entre "I have done" y "I did" para hablar correctamente sobre experiencias y acciones pasadas.</p>
-                    <div class="lesson-topics">
-                        <span class="topic">Present Perfect</span>
-                        <span class="topic">Past Simple</span>
-                        <span class="topic">Time expressions</span>
-                    </div>
-                    <a href="presente-perfecto.html" class="btn">Comenzar Lección</a>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-number">3</div>
-                    <h3>🔮 Condicionales y Futuro</h3>
-                    <p>Aprende a expresar posibilidades, hacer predicciones y hablar sobre planes futuros con "if", "will" y "going to".</p>
-                    <div class="lesson-topics">
-                        <span class="topic">First Conditional</span>
-                        <span class="topic">Future with will</span>
-                        <span class="topic">Going to</span>
-                    </div>
-                    <a href="condicionales-futuro.html" class="btn">Comenzar Lección</a>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-number">4</div>
-                    <h3>🌍 Vocabulario Temático Avanzado</h3>
-                    <p>Expande tu vocabulario con temas específicos: trabajo, viajes, salud, tecnología y medio ambiente.</p>
-                    <div class="lesson-topics">
-                        <span class="topic">Work & Career</span>
-                        <span class="topic">Travel & Tourism</span>
-                        <span class="topic">Health & Environment</span>
-                    </div>
-                    <a href="vocabulario-tematico.html" class="btn">Comenzar Lección</a>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-number">5</div>
-                    <h3>📖 Comprensión de Textos</h3>
-                    <p>Desarrolla habilidades de lectura con textos reales: artículos, historias cortas y textos informativos.</p>
-                    <div class="lesson-topics">
-                        <span class="topic">Reading strategies</span>
-                        <span class="topic">Text analysis</span>
-                        <span class="topic">Vocabulary in context</span>
-                    </div>
-                    <a href="comprension-textos.html" class="btn">Comenzar Lección</a>
-                </div>
-            </div>
-
-            <div class="level-objectives">
-                <h3>🎯 Objetivos del Nivel B1</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
-                    <div style="background: #f3e5f5; padding: 1.5rem; border-radius: 10px;">
-                        <h4>🗣️ Expresión Oral</h4>
-                        <ul>
-                            <li>Participar en conversaciones sobre temas familiares</li>
-                            <li>Expresar opiniones y justificarlas brevemente</li>
-                            <li>Describir experiencias, sueños y ambiciones</li>
-                            <li>Narrar una historia o la trama de un libro/película</li>
-                        </ul>
-                    </div>
-                    <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px;">
-                        <h4>👂 Comprensión Auditiva</h4>
-                        <ul>
-                            <li>Entender conversaciones sobre temas cotidianos</li>
-                            <li>Comprender programas de TV/radio sobre temas actuales</li>
-                            <li>Seguir instrucciones detalladas</li>
-                            <li>Identificar información específica en anuncios</li>
-                        </ul>
-                    </div>
-                    <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px;">
-                        <h4>📖 Comprensión Lectora</h4>
-                        <ul>
-                            <li>Leer textos sobre temas de interés personal</li>
-                            <li>Entender descripciones de eventos y sentimientos</li>
-                            <li>Comprender cartas personales simples</li>
-                            <li>Extraer información de textos informativos</li>
-                        </ul>
-                    </div>
-                    <div style="background: #e1f5fe; padding: 1.5rem; border-radius: 10px;">
-                        <h4>✍️ Expresión Escrita</h4>
-                        <ul>
-                            <li>Escribir textos sobre temas conocidos</li>
-                            <li>Redactar cartas personales describiendo experiencias</li>
-                            <li>Escribir instrucciones simples</li>
-                            <li>Crear descripciones de lugares y personas</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="study-tips">
-                <h3>💡 Consejos para el Nivel B1</h3>
-                <div style="background: #fff8e1; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ffc107;">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-                        <div>
-                            <h4>📚 Estudio Efectivo:</h4>
-                            <ul>
-                                <li>Dedica 30-45 minutos diarios</li>
-                                <li>Practica cada estructura nueva inmediatamente</li>
-                                <li>Lleva un diario de vocabulario nuevo</li>
-                                <li>Revisa lecciones anteriores regularmente</li>
-                            </ul>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">
+                            <i class="fas fa-balance-scale"></i>
                         </div>
-                        <div>
-                            <h4>🎯 Práctica Real:</h4>
-                            <ul>
-                                <li>Lee noticias simples en inglés</li>
-                                <li>Mira series con subtítulos en inglés</li>
-                                <li>Practica conversaciones con otros estudiantes</li>
-                                <li>Escribe un diario personal en inglés</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>🔄 Repaso Inteligente:</h4>
-                            <ul>
-                                <li>Usa flashcards para vocabulario nuevo</li>
-                                <li>Crea mapas mentales de gramática</li>
-                                <li>Practica ejercicios de diferentes tipos</li>
-                                <li>Autoevalúate con los quizzes</li>
-                            </ul>
+                        <h3>Comparativos y Superlativos</h3>
+                        <p>Aprende a comparar personas, lugares y cosas usando estructuras como "bigger than", "the best", "as tall as".</p>
+                        <div class="topic-tags">
+                            <span class="topic-tag grammar">Comparative adjectives</span>
+                            <span class="topic-tag vocabulary">Superlative forms</span>
+                            <span class="topic-tag communication">Equality comparisons</span>
                         </div>
                     </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 45 min</span>
+                            <span class="difficulty intermediate"><i class="fas fa-signal"></i> Intermedio</span>
+                        </div>
+                        <a href="comparativos-superlativos.html" class="lesson-btn">Comenzar Lección</a>
+                    </div>
+                </div>
+
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">2</div>
+                        <div class="lesson-status-indicator pending"></div>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3>Presente Perfecto vs Pasado Simple</h3>
+                        <p>Domina la diferencia entre "I have done" y "I did" para hablar correctamente sobre experiencias y acciones pasadas.</p>
+                        <div class="topic-tags">
+                            <span class="topic-tag grammar">Present Perfect</span>
+                            <span class="topic-tag vocabulary">Past Simple</span>
+                            <span class="topic-tag communication">Time expressions</span>
+                        </div>
+                    </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 50 min</span>
+                            <span class="difficulty intermediate"><i class="fas fa-signal"></i> Intermedio</span>
+                        </div>
+                        <a href="presente-perfecto.html" class="lesson-btn">Comenzar Lección</a>
+                    </div>
+                </div>
+
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">3</div>
+                        <div class="lesson-status-indicator pending"></div>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>Condicionales y Futuro</h3>
+                        <p>Aprende a expresar posibilidades, hacer predicciones y hablar sobre planes futuros con "if", "will" y "going to".</p>
+                        <div class="topic-tags">
+                            <span class="topic-tag grammar">First Conditional</span>
+                            <span class="topic-tag vocabulary">Future with will</span>
+                            <span class="topic-tag communication">Going to</span>
+                        </div>
+                    </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 40 min</span>
+                            <span class="difficulty intermediate"><i class="fas fa-signal"></i> Intermedio</span>
+                        </div>
+                        <a href="condicionales-futuro.html" class="lesson-btn">Comenzar Lección</a>
+                    </div>
+                </div>
+
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">4</div>
+                        <div class="lesson-status-indicator pending"></div>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Vocabulario Temático Avanzado</h3>
+                        <p>Expande tu vocabulario con temas específicos: trabajo, viajes, salud, tecnología y medio ambiente.</p>
+                        <div class="topic-tags">
+                            <span class="topic-tag grammar">Work & Career</span>
+                            <span class="topic-tag vocabulary">Travel & Tourism</span>
+                            <span class="topic-tag communication">Health & Environment</span>
+                        </div>
+                    </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 45 min</span>
+                            <span class="difficulty intermediate"><i class="fas fa-signal"></i> Intermedio</span>
+                        </div>
+                        <a href="vocabulario-tematico.html" class="lesson-btn">Comenzar Lección</a>
+                    </div>
+                </div>
+
+                <div class="lesson-card-modern">
+                    <div class="lesson-header">
+                        <div class="lesson-number-badge">5</div>
+                        <div class="lesson-status-indicator pending"></div>
+                    </div>
+                    <div class="lesson-content">
+                        <div class="lesson-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Comprensión de Textos</h3>
+                        <p>Desarrolla habilidades de lectura con textos reales: artículos, historias cortas y textos informativos.</p>
+                        <div class="topic-tags">
+                            <span class="topic-tag grammar">Reading strategies</span>
+                            <span class="topic-tag vocabulary">Text analysis</span>
+                            <span class="topic-tag communication">Vocabulary in context</span>
+                        </div>
+                    </div>
+                    <div class="lesson-footer">
+                        <div class="lesson-meta">
+                            <span class="duration"><i class="fas fa-clock"></i> 50 min</span>
+                            <span class="difficulty intermediate"><i class="fas fa-signal"></i> Intermedio</span>
+                        </div>
+                        <a href="comprension-textos.html" class="lesson-btn">Comenzar Lección</a>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Level Objectives Section -->
+        <section class="course-objectives-section">
+            <div class="section-header">
+                <h2><i class="fas fa-bullseye"></i> Objetivos del Nivel B1</h2>
+                <p class="section-description">Desarrolla las cuatro habilidades fundamentales del idioma inglés</p>
+            </div>
+            
+            <div class="objectives-grid-modern">
+                <div class="objective-card-modern speaking">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3>Expresión Oral</h3>
+                    </div>
+                    <div class="objective-content">
+                        <p>Participa en conversaciones sobre temas familiares, expresa opiniones y narra experiencias pasadas con fluidez.</p>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Participar en conversaciones sobre temas familiares</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expresar opiniones y justificarlas brevemente</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Describir experiencias, sueños y ambiciones</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Narrar una historia o la trama de un libro/película</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="objective-card-modern listening">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <h3>Comprensión Auditiva</h3>
+                    </div>
+                    <div class="objective-content">
+                        <p>Entiende conversaciones cotidianas, programas de TV simples y presentaciones sobre temas conocidos.</p>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Entender conversaciones sobre temas cotidianos</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Comprender programas de TV/radio sobre temas actuales</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Seguir instrucciones detalladas</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Identificar información específica en anuncios</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="objective-card-modern reading">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <h3>Comprensión Lectora</h3>
+                    </div>
+                    <div class="objective-content">
+                        <p>Lee y comprende textos informativos, artículos de periódicos y correspondencia personal con facilidad.</p>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Leer textos sobre temas de interés personal</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Entender descripciones de eventos y sentimientos</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Comprender cartas personales simples</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Extraer información de textos informativos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="objective-card-modern writing">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h3>Expresión Escrita</h3>
+                    </div>
+                    <div class="objective-content">
+                        <p>Escribe textos coherentes sobre temas de interés personal, cartas informales y descripciones detalladas.</p>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Escribir textos sobre temas conocidos</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Redactar cartas personales describiendo experiencias</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Escribir instrucciones simples</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Crear descripciones de lugares y personas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Tips Section -->
+        <section class="course-tips-section">
+            <div class="section-header">
+                <h2><i class="fas fa-lightbulb"></i> Consejos para el Nivel B1</h2>
+                <p class="section-description">Estrategias efectivas para acelerar tu aprendizaje del inglés intermedio</p>
+            </div>
+            
+            <div class="tips-grid-modern">
+                <div class="tip-card-modern practice">
+                    <div class="tip-header">
+                        <div class="tip-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Estudio Efectivo</h3>
+                    </div>
+                    <div class="tip-content">
+                        <p>Dedica 30-45 minutos diarios y practica cada estructura nueva inmediatamente.</p>
+                        <div class="tip-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-star"></i>
+                                <span>Lleva un diario de vocabulario nuevo</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-star"></i>
+                                <span>Revisa lecciones anteriores regularmente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-card-modern media">
+                    <div class="tip-header">
+                        <div class="tip-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3>Práctica Real</h3>
+                    </div>
+                    <div class="tip-content">
+                        <p>Lee noticias simples en inglés y mira series con subtítulos en inglés.</p>
+                        <div class="tip-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-star"></i>
+                                <span>Practica conversaciones con otros estudiantes</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-star"></i>
+                                <span>Escribe un diario personal en inglés</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-card-modern writing">
+                    <div class="tip-header">
+                        <div class="tip-icon">
+                            <i class="fas fa-journal-whills"></i>
+                        </div>
+                        <h3>Repaso Inteligente</h3>
+                    </div>
+                    <div class="tip-content">
+                        <p>Usa flashcards para vocabulario nuevo y crea mapas mentales de gramática.</p>
+                        <div class="tip-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-star"></i>
+                                <span>Practica ejercicios de diferentes tipos</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-star"></i>
+                                <span>Autoevalúate con los quizzes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
             <div class="grammar-preview">
                 <h3>📋 Vista Previa: Gramática B1</h3>
@@ -303,6 +602,79 @@
                 </div>
             </div>
         </div>
+
+        <!-- Level Navigation Section -->
+        <section class="course-navigation-section">
+            <div class="section-header">
+                <h2><i class="fas fa-route"></i> Continúa tu Aprendizaje</h2>
+                <p class="section-description">Explora otros niveles para completar tu formación en inglés</p>
+            </div>
+            
+            <div class="level-navigation-modern">
+                <div class="level-nav-card prev-level">
+                    <div class="nav-card-header">
+                        <span class="nav-direction"><i class="fas fa-arrow-left"></i> Nivel Anterior</span>
+                        <div class="level-badge a2">A2</div>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Elemental</h3>
+                        <p>Repasa conceptos básicos si necesitas reforzar tu base antes de continuar</p>
+                        <div class="nav-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Gramática fundamental</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Vocabulario esencial</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Conversaciones básicas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-card-footer">
+                        <a href="../a2/index.html" class="nav-link">
+                            <span>Explorar A2</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="level-nav-card next-level">
+                    <div class="nav-card-header">
+                        <span class="nav-direction">Siguiente Nivel <i class="fas fa-arrow-right"></i></span>
+                        <div class="level-badge b2">B2</div>
+                    </div>
+                    <div class="nav-card-content">
+                        <h3>Intermedio Alto</h3>
+                        <p>Avanza hacia un nivel más sofisticado del inglés con estructuras complejas</p>
+                        <div class="nav-features">
+                            <div class="feature-item">
+                                <i class="fas fa-star"></i>
+                                <span>Gramática avanzada</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-star"></i>
+                                <span>Vocabulario especializado</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-star"></i>
+                                <span>Fluidez conversacional</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-card-footer">
+                        <a href="../b2/index.html" class="nav-link">
+                            <span>Explorar B2</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
     </main>
 
     <footer>
@@ -313,39 +685,48 @@
     <script>
         // Función para actualizar el progreso del nivel B1
         function actualizarProgresoB1() {
-            const lecciones = ['b1-leccion1', 'b1-leccion2', 'b1-leccion3', 'b1-leccion4', 'b1-leccion5'];
-            let completadas = 0;
+            const visitedLessons = JSON.parse(localStorage.getItem('b1-visited-lessons') || '[]');
+            const totalLessons = 5;
+            const progressPercentage = (visitedLessons.length / totalLessons) * 100;
             
-            lecciones.forEach(leccion => {
-                if (localStorage.getItem(leccion) === 'completada') {
-                    completadas++;
-                }
-            });
-            
-            const porcentaje = (completadas / lecciones.length) * 100;
-            const progressBar = document.getElementById('b1-progress');
-            const progressText = document.getElementById('progress-text');
+            // Actualizar barra de progreso
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-percentage');
+            const completionRate = document.getElementById('completion-rate');
             
             if (progressBar) {
-                progressBar.style.width = porcentaje + '%';
+                progressBar.style.width = progressPercentage + '%';
             }
             
             if (progressText) {
-                progressText.textContent = `${completadas} de ${lecciones.length} lecciones completadas`;
+                progressText.textContent = Math.round(progressPercentage) + '%';
             }
             
-            // Marcar lecciones completadas visualmente
-            const cards = document.querySelectorAll('.lesson-card');
+            if (completionRate) {
+                completionRate.textContent = Math.round(progressPercentage) + '%';
+            }
+            
+            // Actualizar indicadores de estado de las lecciones
+            const cards = document.querySelectorAll('.lesson-card-modern');
             cards.forEach((card, index) => {
-                if (localStorage.getItem(`b1-leccion${index + 1}`) === 'completada') {
-                    card.style.background = '#e8f5e8';
-                    card.style.border = '2px solid #4CAF50';
-                    const btn = card.querySelector('.btn');
-                    if (btn) {
-                        btn.textContent = '✅ Completada';
-                        btn.style.background = '#4CAF50';
-                    }
+                const lessonNumber = index + 1;
+                const statusIndicator = card.querySelector('.lesson-status-indicator');
+                
+                if (visitedLessons.includes(lessonNumber)) {
+                    statusIndicator.classList.remove('pending');
+                    statusIndicator.classList.add('completed');
                 }
+            });
+            
+            // Marcar lecciones como visitadas cuando se hace clic
+            document.querySelectorAll('.lesson-btn').forEach((btn, index) => {
+                btn.addEventListener('click', function() {
+                    const lessonNumber = index + 1;
+                    if (!visitedLessons.includes(lessonNumber)) {
+                        visitedLessons.push(lessonNumber);
+                        localStorage.setItem('b1-visited-lessons', JSON.stringify(visitedLessons));
+                    }
+                });
             });
         }
         

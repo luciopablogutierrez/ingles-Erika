@@ -3,151 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nivel A2 - Básico</title>
+    <title>Nivel A2 - Básico | Refuerzo de Inglés</title>
     <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>🟡 Nivel A2 - Básico</h1>
-        <p>Construyendo bases sólidas del inglés</p>
-    </header>
-
     <main>
-        <div class="level-container">
-            <div class="level-nav">
-                <a href="../a1/index.html">← Nivel A1</a> | 
-                <a href="../index.html">Inicio</a> | 
-                <a href="../b1/index.html">Nivel B1 →</a>
+        <div class="course-index-container">
+            <!-- Navegación superior -->
+            <nav class="course-breadcrumb">
+                <div class="breadcrumb-container">
+                    <a href="../index.html" class="breadcrumb-link">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Nivel A2 - Básico</span>
+                </div>
+                <div class="level-navigation">
+                    <a href="../a1/index.html" class="nav-btn nav-prev">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Nivel A1</span>
+                    </a>
+                    <a href="../b1/index.html" class="nav-btn nav-next">
+                        <span>Nivel B1</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Encabezado del curso -->
+            <div class="course-header">
+                <div class="course-title-section">
+                    <div class="course-level-badge a2">
+                        <span class="level-letter">A2</span>
+                        <span class="level-name">Básico</span>
+                    </div>
+                    <div class="course-title-content">
+                        <h1>Nivel A2 - Básico</h1>
+                        <p class="course-subtitle">Construye bases sólidas del inglés con gramática esencial y vocabulario cotidiano</p>
+                    </div>
+                </div>
+                
+                <div class="course-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-book-open"></i>
+                        <div class="stat-content">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Lecciones</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="stat-content">
+                            <span class="stat-number">3-4h</span>
+                            <span class="stat-label">Duración</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-signal"></i>
+                        <div class="stat-content">
+                            <span class="stat-number">Básico</span>
+                            <span class="stat-label">Nivel</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <div class="stat-content">
+                            <span class="stat-number" id="completion-rate">0%</span>
+                            <span class="stat-label">Completado</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="level-intro">
-                <h2>🎯 ¿Qué aprenderás en A2?</h2>
-                <p>En este nivel desarrollarás habilidades más complejas del inglés, incluyendo tiempos verbales básicos, preposiciones y vocabulario esencial para la vida cotidiana.</p>
-                
-                <div class="progress-container">
-                    <h3>📊 Tu Progreso</h3>
+            <!-- Progreso del curso -->
+            <div class="course-progress-section">
+                <div class="progress-header">
+                    <h2>
+                        <i class="fas fa-chart-line"></i>
+                        Tu Progreso
+                    </h2>
+                    <span class="progress-text" id="progress-text">0 de 5 lecciones completadas</span>
+                </div>
+                <div class="progress-bar-container">
                     <div class="progress-bar">
                         <div class="progress-fill" id="a2-progress">0%</div>
                     </div>
-                    <p id="progress-text">0 de 5 lecciones completadas</p>
                 </div>
             </div>
 
-            <div class="lessons-grid">
-                <div class="lesson-card" data-lesson="1">
-                    <div class="lesson-number">1</div>
-                    <h3>🔄 Presente Simple</h3>
-                    <p>Aprende a formar y usar el presente simple para rutinas y hechos generales</p>
-                    <div class="lesson-topics">
-                        <span class="topic">I eat / He eats</span>
-                        <span class="topic">Do/Does</span>
-                        <span class="topic">Rutinas diarias</span>
-                    </div>
-                    <a href="presente-simple.html" class="btn">Comenzar Lección</a>
-                    <div class="lesson-status" id="status-1">📝 Pendiente</div>
+            <!-- Lecciones del curso -->
+            <div class="course-lessons-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-graduation-cap"></i>
+                        Lecciones del Curso
+                    </h2>
+                    <p class="section-description">Domina el inglés básico paso a paso con estas lecciones estructuradas</p>
                 </div>
-
-                <div class="lesson-card" data-lesson="2">
-                    <div class="lesson-number">2</div>
-                    <h3>📍 Preposiciones de Lugar</h3>
-                    <p>Domina las preposiciones in, on, under, next to, between para describir ubicaciones</p>
-                    <div class="lesson-topics">
-                        <span class="topic">In/On/Under</span>
-                        <span class="topic">Next to/Between</span>
-                        <span class="topic">Ubicaciones</span>
+                
+                <div class="lessons-grid-modern">
+                    <div class="lesson-card-modern" data-lesson="1">
+                        <div class="lesson-header">
+                            <div class="lesson-number-badge">01</div>
+                            <div class="lesson-status-indicator" id="status-1">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="lesson-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h3>Presente Simple</h3>
+                            <p>Aprende a formar y usar el presente simple para rutinas y hechos generales</p>
+                            <div class="lesson-topics">
+                                <span class="topic-tag">I eat / He eats</span>
+                                <span class="topic-tag">Do/Does</span>
+                                <span class="topic-tag">Rutinas diarias</span>
+                            </div>
+                        </div>
+                        <div class="lesson-footer">
+                            <div class="lesson-meta">
+                                <span class="duration"><i class="fas fa-clock"></i> 45 min</span>
+                                <span class="difficulty"><i class="fas fa-signal"></i> Básico</span>
+                            </div>
+                            <a href="presente-simple.html" class="lesson-btn">
+                                <span>Comenzar</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
-                    <a href="preposiciones-lugar.html" class="btn">Comenzar Lección</a>
-                    <div class="lesson-status" id="status-2">📝 Pendiente</div>
-                </div>
 
-                <div class="lesson-card" data-lesson="3">
-                    <div class="lesson-number">3</div>
-                    <h3>⏰ Pasado Simple Regular</h3>
-                    <p>Aprende a formar el pasado de verbos regulares y hablar de eventos pasados</p>
-                    <div class="lesson-topics">
-                        <span class="topic">-ed endings</span>
-                        <span class="topic">Worked/Played</span>
-                        <span class="topic">Yesterday</span>
+                    <div class="lesson-card-modern" data-lesson="2">
+                        <div class="lesson-header">
+                            <div class="lesson-number-badge">02</div>
+                            <div class="lesson-status-indicator" id="status-2">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="lesson-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Preposiciones de Lugar</h3>
+                            <p>Domina las preposiciones in, on, under, next to, between para describir ubicaciones</p>
+                            <div class="lesson-topics">
+                                <span class="topic-tag">In/On/Under</span>
+                                <span class="topic-tag">Next to/Between</span>
+                                <span class="topic-tag">Ubicaciones</span>
+                            </div>
+                        </div>
+                        <div class="lesson-footer">
+                            <div class="lesson-meta">
+                                <span class="duration"><i class="fas fa-clock"></i> 40 min</span>
+                                <span class="difficulty"><i class="fas fa-signal"></i> Básico</span>
+                            </div>
+                            <a href="preposiciones-lugar.html" class="lesson-btn">
+                                <span>Comenzar</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
-                    <a href="pasado-simple.html" class="btn">Comenzar Lección</a>
-                    <div class="lesson-status" id="status-3">📝 Pendiente</div>
-                </div>
 
-                <div class="lesson-card" data-lesson="4">
-                    <div class="lesson-number">4</div>
-                    <h3>🍽️ Vocabulario Esencial</h3>
-                    <p>Amplía tu vocabulario con rutinas, comidas, lugares y actividades cotidianas</p>
-                    <div class="lesson-topics">
-                        <span class="topic">Rutinas</span>
-                        <span class="topic">Comidas</span>
-                        <span class="topic">Lugares</span>
+                    <div class="lesson-card-modern" data-lesson="3">
+                        <div class="lesson-header">
+                            <div class="lesson-number-badge">03</div>
+                            <div class="lesson-status-indicator" id="status-3">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="lesson-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <h3>Pasado Simple Regular</h3>
+                            <p>Aprende a formar el pasado de verbos regulares y hablar de eventos pasados</p>
+                            <div class="lesson-topics">
+                                <span class="topic-tag">-ed endings</span>
+                                <span class="topic-tag">Worked/Played</span>
+                                <span class="topic-tag">Yesterday</span>
+                            </div>
+                        </div>
+                        <div class="lesson-footer">
+                            <div class="lesson-meta">
+                                <span class="duration"><i class="fas fa-clock"></i> 50 min</span>
+                                <span class="difficulty"><i class="fas fa-signal"></i> Básico</span>
+                            </div>
+                            <a href="pasado-simple.html" class="lesson-btn">
+                                <span>Comenzar</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
-                    <a href="vocabulario-esencial.html" class="btn">Comenzar Lección</a>
-                    <div class="lesson-status" id="status-4">📝 Pendiente</div>
-                </div>
 
-                <div class="lesson-card" data-lesson="5">
-                    <div class="lesson-number">5</div>
-                    <h3>💬 Conversaciones Breves</h3>
-                    <p>Practica diálogos cotidianos y aprende frases útiles para situaciones reales</p>
-                    <div class="lesson-topics">
-                        <span class="topic">Diálogos</span>
-                        <span class="topic">Frases útiles</span>
-                        <span class="topic">Situaciones reales</span>
+                    <div class="lesson-card-modern" data-lesson="4">
+                        <div class="lesson-header">
+                            <div class="lesson-number-badge">04</div>
+                            <div class="lesson-status-indicator" id="status-4">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="lesson-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3>Vocabulario Esencial</h3>
+                            <p>Amplía tu vocabulario con rutinas, comidas, lugares y actividades cotidianas</p>
+                            <div class="lesson-topics">
+                                <span class="topic-tag">Rutinas</span>
+                                <span class="topic-tag">Comidas</span>
+                                <span class="topic-tag">Lugares</span>
+                            </div>
+                        </div>
+                        <div class="lesson-footer">
+                            <div class="lesson-meta">
+                                <span class="duration"><i class="fas fa-clock"></i> 35 min</span>
+                                <span class="difficulty"><i class="fas fa-signal"></i> Básico</span>
+                            </div>
+                            <a href="vocabulario-esencial.html" class="lesson-btn">
+                                <span>Comenzar</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
-                    <a href="conversaciones-breves.html" class="btn">Comenzar Lección</a>
-                    <div class="lesson-status" id="status-5">📝 Pendiente</div>
+
+                    <div class="lesson-card-modern" data-lesson="5">
+                        <div class="lesson-header">
+                            <div class="lesson-number-badge">05</div>
+                            <div class="lesson-status-indicator" id="status-5">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="lesson-content">
+                            <div class="lesson-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Conversaciones Breves</h3>
+                            <p>Practica diálogos cotidianos y aprende frases útiles para situaciones reales</p>
+                            <div class="lesson-topics">
+                                <span class="topic-tag">Diálogos</span>
+                                <span class="topic-tag">Frases útiles</span>
+                                <span class="topic-tag">Situaciones reales</span>
+                            </div>
+                        </div>
+                        <div class="lesson-footer">
+                            <div class="lesson-meta">
+                                <span class="duration"><i class="fas fa-clock"></i> 40 min</span>
+                                <span class="difficulty"><i class="fas fa-signal"></i> Básico</span>
+                            </div>
+                            <a href="conversaciones-breves.html" class="lesson-btn">
+                                <span>Comenzar</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="level-summary">
-                <h2>🎯 Objetivos del Nivel A2</h2>
-                <div class="objectives-grid">
-                    <div class="objective">
-                        <h3>🔄 Gramática</h3>
-                        <ul>
-                            <li>Presente simple (afirmativo, negativo, interrogativo)</li>
-                            <li>Pasado simple de verbos regulares</li>
-                            <li>Preposiciones de lugar y tiempo</li>
-                            <li>Uso correcto de Do/Does/Did</li>
-                        </ul>
+            <!-- Objetivos del nivel A2 -->
+            <div class="course-objectives-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-bullseye"></i>
+                        Objetivos del Nivel A2
+                    </h2>
+                    <p class="section-description">Desarrolla habilidades sólidas para comunicarte en situaciones cotidianas</p>
+                </div>
+                
+                <div class="objectives-grid-modern">
+                    <div class="objective-card-modern grammar">
+                        <div class="objective-header">
+                            <div class="objective-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3>Gramática</h3>
+                        </div>
+                        <div class="objective-content">
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Presente simple (afirmativo, negativo, interrogativo)</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Pasado simple de verbos regulares</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Preposiciones de lugar y tiempo</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Uso correcto de Do/Does/Did</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="objective">
-                        <h3>📚 Vocabulario</h3>
-                        <ul>
-                            <li>Rutinas diarias y actividades</li>
-                            <li>Comidas y bebidas</li>
-                            <li>Lugares en la ciudad</li>
-                            <li>Expresiones de tiempo</li>
-                        </ul>
+                    
+                    <div class="objective-card-modern vocabulary">
+                        <div class="objective-header">
+                            <div class="objective-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <h3>Vocabulario</h3>
+                        </div>
+                        <div class="objective-content">
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Rutinas diarias y actividades</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Comidas y bebidas</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Lugares en la ciudad</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Expresiones de tiempo</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="objective">
-                        <h3>💬 Comunicación</h3>
-                        <ul>
-                            <li>Describir rutinas y hábitos</li>
-                            <li>Hablar de eventos pasados</li>
-                            <li>Dar direcciones básicas</li>
-                            <li>Mantener conversaciones simples</li>
-                        </ul>
+                    
+                    <div class="objective-card-modern communication">
+                        <div class="objective-header">
+                            <div class="objective-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Comunicación</h3>
+                        </div>
+                        <div class="objective-content">
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Describir rutinas y hábitos</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Hablar de eventos pasados</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Dar direcciones básicas</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Mantener conversaciones simples</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="tips-section">
-                <h2>💡 Consejos para el Nivel A2</h2>
-                <div class="tips-grid">
-                    <div class="tip">
-                        <h3>📖 Estudio</h3>
-                        <p>Practica los verbos regulares en pasado diariamente. Haz listas de verbos y sus formas en pasado.</p>
+            <!-- Consejos para el nivel A2 -->
+            <div class="course-tips-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-lightbulb"></i>
+                        Consejos para el Éxito
+                    </h2>
+                    <p class="section-description">Estrategias probadas para maximizar tu aprendizaje</p>
+                </div>
+                
+                <div class="tips-grid-modern">
+                    <div class="tip-card-modern study">
+                        <div class="tip-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="tip-content">
+                            <h3>Estudio Efectivo</h3>
+                            <p>Practica los verbos regulares en pasado diariamente. Haz listas de verbos y sus formas en pasado.</p>
+                            <div class="tip-highlight">
+                                <i class="fas fa-clock"></i>
+                                <span>30-45 min/día</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tip">
-                        <h3>🗣️ Práctica</h3>
-                        <p>Describe tu rutina diaria en inglés. Comienza con frases simples y ve añadiendo detalles.</p>
+                    
+                    <div class="tip-card-modern practice">
+                        <div class="tip-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="tip-content">
+                            <h3>Práctica Oral</h3>
+                            <p>Describe tu rutina diaria en inglés. Comienza con frases simples y ve añadiendo detalles.</p>
+                            <div class="tip-highlight">
+                                <i class="fas fa-volume-up"></i>
+                                <span>Habla diariamente</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tip">
-                        <h3>👂 Escucha</h3>
-                        <p>Escucha conversaciones básicas en inglés. Presta atención a cómo se usan las preposiciones.</p>
+                    
+                    <div class="tip-card-modern listening">
+                        <div class="tip-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="tip-content">
+                            <h3>Escucha Activa</h3>
+                            <p>Escucha conversaciones básicas en inglés. Presta atención a cómo se usan las preposiciones.</p>
+                            <div class="tip-highlight">
+                                <i class="fas fa-play"></i>
+                                <span>Contenido variado</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Navegación entre niveles -->
+            <div class="course-navigation-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-route"></i>
+                        Continúa tu Aprendizaje
+                    </h2>
+                    <p class="section-description">Explora otros niveles para seguir mejorando tu inglés</p>
+                </div>
+                
+                <div class="level-navigation-modern">
+                    <a href="../a1/index.html" class="level-nav-card prev">
+                        <div class="nav-card-header">
+                            <div class="nav-direction">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Nivel Anterior</span>
+                            </div>
+                            <div class="nav-level-badge a1">A1</div>
+                        </div>
+                        <div class="nav-card-content">
+                            <h3>Principiante</h3>
+                            <p>Fundamentos básicos del inglés</p>
+                            <div class="nav-features">
+                                <span class="feature"><i class="fas fa-check"></i> Alfabeto y números</span>
+                                <span class="feature"><i class="fas fa-check"></i> Saludos básicos</span>
+                                <span class="feature"><i class="fas fa-check"></i> Vocabulario esencial</span>
+                            </div>
+                        </div>
+                        <div class="nav-card-footer">
+                            <span class="nav-action">Revisar A1</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                    
+                    <a href="../b1/index.html" class="level-nav-card next">
+                        <div class="nav-card-header">
+                            <div class="nav-direction">
+                                <span>Siguiente Nivel</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="nav-level-badge b1">B1</div>
+                        </div>
+                        <div class="nav-card-content">
+                            <h3>Intermedio</h3>
+                            <p>Comunicación más fluida y natural</p>
+                            <div class="nav-features">
+                                <span class="feature"><i class="fas fa-check"></i> Tiempos verbales avanzados</span>
+                                <span class="feature"><i class="fas fa-check"></i> Conversaciones complejas</span>
+                                <span class="feature"><i class="fas fa-check"></i> Expresiones idiomáticas</span>
+                            </div>
+                        </div>
+                        <div class="nav-card-footer">
+                            <span class="nav-action">Comenzar B1</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
                 </div>
             </div>
 
