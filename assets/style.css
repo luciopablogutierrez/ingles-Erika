@@ -581,30 +581,41 @@ body {
 .hero-content h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     margin-bottom: 2rem;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.6);
     animation: fadeInUp 1s ease;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.2;
     letter-spacing: -0.02em;
+    color: #ffffff;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-subtitle {
     font-size: clamp(1.125rem, 2.5vw, 1.375rem);
-    opacity: 0.95;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease 0.2s both;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.7);
     font-weight: 500;
+    color: rgba(255, 255, 255, 0.98);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-description {
     font-size: clamp(1rem, 2vw, 1.2rem);
-    opacity: 0.9;
     max-width: 700px;
     margin: 0 auto 2rem;
     animation: fadeInUp 1s ease 0.4s both;
-    line-height: 1.7;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.95);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
 }
 
 .hero-stats {
@@ -617,36 +628,49 @@ body {
 
 .stat {
     text-align: center;
-    padding: 1rem;
-    backdrop-filter: blur(10px);
+    padding: 1.25rem;
+    backdrop-filter: blur(15px);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .stat-number {
     display: block;
     font-size: 2.5rem;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.7);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .stat-label {
     font-size: 1rem;
-    opacity: 0.9;
     margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .cta-button {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
     padding: 1.25rem 3rem;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     font-size: 1.125rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid rgba(255, 255, 255, 0.3);
     animation: fadeInUp 1s ease 0.8s both;
