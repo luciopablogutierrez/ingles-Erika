@@ -1,11 +1,35 @@
 // Funciones para ejercicios interactivos
 
+// Funciones de accesibilidad
+function anunciarParaLectorPantalla(mensaje) {
+    const anuncio = document.createElement('div');
+    anuncio.setAttribute('aria-live', 'polite');
+    anuncio.setAttribute('aria-atomic', 'true');
+    anuncio.className = 'sr-only';
+    anuncio.textContent = mensaje;
+    document.body.appendChild(anuncio);
+    
+    // Remover el anuncio después de 1 segundo
+    setTimeout(() => {
+        document.body.removeChild(anuncio);
+    }, 1000);
+}
+
+function manejarNavegacionTeclado(event, callback) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        callback();
+    }
+}
+
 // Mostrar respuesta de ejercicios simples
 function mostrarRespuesta(elementId, respuesta) {
     const elemento = document.getElementById(elementId);
     if (elemento) {
         elemento.textContent = respuesta;
         elemento.classList.add('show');
+        elemento.setAttribute('aria-expanded', 'true');
+        anunciarParaLectorPantalla('Respuesta mostrada: ' + respuesta);
     }
 }
 
@@ -13,10 +37,15 @@ function mostrarRespuesta(elementId, respuesta) {
 function toggleRespuesta(elementId) {
     const elemento = document.getElementById(elementId);
     if (elemento) {
-        if (elemento.style.display === 'none' || elemento.style.display === '') {
-            elemento.style.display = 'block';
-        } else {
+        const isVisible = elemento.style.display !== 'none' && elemento.style.display !== '';
+        if (isVisible) {
             elemento.style.display = 'none';
+            elemento.setAttribute('aria-expanded', 'false');
+            anunciarParaLectorPantalla('Respuesta ocultada');
+        } else {
+            elemento.style.display = 'block';
+            elemento.setAttribute('aria-expanded', 'true');
+            anunciarParaLectorPantalla('Respuesta mostrada: ' + elemento.textContent);
         }
     }
 }
@@ -31,8 +60,13 @@ function toggleTheme() {
     
     // Actualizar icono del botón
     const themeIcon = document.querySelector('.theme-toggle i');
-    if (themeIcon) {
+    const themeButton = document.querySelector('.theme-toggle');
+    if (themeIcon && themeButton) {
         themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        themeButton.setAttribute('aria-label', 
+            newTheme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+        anunciarParaLectorPantalla(
+            'Tema cambiado a modo ' + (newTheme === 'dark' ? 'oscuro' : 'claro'));
     }
 }
 
@@ -43,8 +77,11 @@ function loadTheme() {
     
     // Actualizar icono del botón
     const themeIcon = document.querySelector('.theme-toggle i');
-    if (themeIcon) {
+    const themeButton = document.querySelector('.theme-toggle');
+    if (themeIcon && themeButton) {
         themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        themeButton.setAttribute('aria-label', 
+            savedTheme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
     }
 }
 
@@ -63,19 +100,33 @@ function verificarQuiz(quizId, respuestaCorrecta, mensajeExito, mensajeError) {
     });
     
     if (!respuestaSeleccionada) {
-        alert('Por favor selecciona una respuesta');
+        anunciarParaLectorPantalla('Por favor selecciona una respuesta antes de continuar');
+        // Enfocar la primera opción para ayudar al usuario
+        if (opciones.length > 0) {
+            opciones[0].focus();
+        }
         return;
     }
     
     resultado.style.display = 'block';
+    resultado.setAttribute('aria-live', 'polite');
+    resultado.setAttribute('role', 'status');
     
     if (respuestaSeleccionada === respuestaCorrecta) {
         resultado.className = 'quiz-result correct';
-        resultado.textContent = mensajeExito || '¡Correcto! 🎉';
+        const mensaje = mensajeExito || '¡Correcto! 🎉';
+        resultado.textContent = mensaje;
+        anunciarParaLectorPantalla('Respuesta correcta: ' + mensaje);
     } else {
         resultado.className = 'quiz-result incorrect';
-        resultado.textContent = mensajeError || `Incorrecto. La respuesta correcta es: ${respuestaCorrecta}`;
+        const mensaje = mensajeError || `Incorrecto. La respuesta correcta es: ${respuestaCorrecta}`;
+        resultado.textContent = mensaje;
+        anunciarParaLectorPantalla('Respuesta incorrecta: ' + mensaje);
     }
+    
+    // Enfocar el resultado para que sea leído por lectores de pantalla
+    resultado.setAttribute('tabindex', '-1');
+    resultado.focus();
 }
 
 // Función para reproducir audio (si se agregan archivos de audio)
@@ -231,6 +282,44 @@ document.addEventListener('DOMContentLoaded', function() {
         
         tarjeta.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
+        });
+        
+        // Agregar navegación por teclado a las tarjetas
+        tarjeta.addEventListener('keydown', function(event) {
+            manejarNavegacionTeclado(event, () => {
+                const enlace = this.querySelector('a');
+                if (enlace) {
+                    enlace.click();
+                }
+            });
+        });
+    });
+    
+    // Agregar navegación por teclado a botones de ejercicios
+    const botonesEjercicio = document.querySelectorAll('.exercise button');
+    botonesEjercicio.forEach(boton => {
+        boton.addEventListener('keydown', function(event) {
+            manejarNavegacionTeclado(event, () => {
+                this.click();
+            });
+        });
+    });
+    
+    // Agregar navegación por teclado a botones de quiz
+    const botonesQuiz = document.querySelectorAll('.quiz-submit');
+    botonesQuiz.forEach(boton => {
+        boton.addEventListener('keydown', function(event) {
+            manejarNavegacionTeclado(event, () => {
+                this.click();
+            });
+        });
+    });
+    
+    // Mejorar navegación por teclado en opciones de radio
+    const opcionesRadio = document.querySelectorAll('input[type="radio"]');
+    opcionesRadio.forEach(radio => {
+        radio.addEventListener('focus', function() {
+            anunciarParaLectorPantalla(`Opción: ${this.nextElementSibling ? this.nextElementSibling.textContent : this.value}`);
         });
     });
     

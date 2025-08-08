@@ -3,51 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Reinforcement with Erika</title>
+    <meta name="description" content="Aprende inglés paso a paso con ejercicios interactivos desde nivel principiante hasta avanzado">
+    <meta name="keywords" content="inglés, aprender inglés, ejercicios interactivos, gramática, vocabulario">
+    <title>English Reinforcement with Erika - Aprende Inglés Interactivo</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="main-nav">
+    <!-- Skip link para navegación por teclado -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <nav class="main-nav" role="navigation" aria-label="Navegación principal">
         <div class="nav-container">
             <div class="nav-brand">
                 <h1>🎓 English Reinforcement</h1>
             </div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link active">🏠 Home</a>
-                <a href="#levels" class="nav-link">📚 Levels</a>
-                <a href="#about" class="nav-link">ℹ️ About</a>
-                <button class="theme-toggle" title="Cambiar tema">
-                    <i class="fas fa-moon"></i>
+            <div class="nav-links" role="menubar">
+                <a href="#home" class="nav-link active" role="menuitem" aria-current="page">🏠 <span>Home</span></a>
+                <a href="#levels" class="nav-link" role="menuitem">📚 <span>Levels</span></a>
+                <a href="#about" class="nav-link" role="menuitem">ℹ️ <span>About</span></a>
+                <button class="theme-toggle" 
+                        aria-label="Cambiar entre modo claro y oscuro" 
+                        title="Cambiar tema"
+                        type="button">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span class="sr-only">Cambiar tema</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <header id="home" class="hero-section">
+    <header id="home" class="hero-section" role="banner">
         <div class="hero-content">
             <h1>🌟 Learning with Erika is Fun!</h1>
             <p class="hero-subtitle">Aprende inglés paso a paso con ejercicios interactivos</p>
             <p class="hero-description">Master English from beginner to advanced level with our comprehensive interactive lessons designed to make learning enjoyable and effective.</p>
-            <div class="hero-stats">
+            <div class="hero-stats" role="region" aria-label="Estadísticas del curso">
                 <div class="stat">
-                    <span class="stat-number">5</span>
+                    <span class="stat-number" aria-label="5 niveles disponibles">5</span>
                     <span class="stat-label">Levels</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">26</span>
+                    <span class="stat-number" aria-label="26 lecciones en total">26</span>
                     <span class="stat-label">Lessons</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">100+</span>
+                    <span class="stat-number" aria-label="Más de 100 ejercicios">100+</span>
                     <span class="stat-label">Exercises</span>
                 </div>
             </div>
-            <a href="#levels" class="cta-button">🚀 Start Learning Now</a>
+            <a href="#levels" class="cta-button" role="button" aria-describedby="cta-description">
+                🚀 <span>Start Learning Now</span>
+            </a>
+            <div id="cta-description" class="sr-only">Ir a la sección de niveles para comenzar a aprender</div>
         </div>
     </header>
 
-    <main>
+    <main id="main-content" role="main">
         <section id="levels" class="levels-section">
             <div class="section-header">
                 <h2>📚 Choose Your Level</h2>

@@ -1,34 +1,42 @@
-/* Variables CSS para modo claro/oscuro */
+/* Variables CSS para modo claro/oscuro con mejores contrastes para accesibilidad */
 :root {
-    /* Modo claro (por defecto) */
-    --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Modo claro (por defecto) - Contrastes mejorados WCAG AA */
+    --bg-primary: linear-gradient(135deg, #4a5fc1 0%, #5a4b8c 100%);
     --bg-secondary: #ffffff;
-    --text-primary: #333333;
-    --text-secondary: #666666;
+    --text-primary: #1a1a1a;  /* Mejorado para contraste 4.5:1 */
+    --text-secondary: #4a4a4a;  /* Mejorado para contraste 4.5:1 */
     --text-light: #ffffff;
-    --nav-bg: rgba(255, 255, 255, 0.95);
+    --nav-bg: rgba(255, 255, 255, 0.98);
     --card-bg: #ffffff;
-    --border-color: #e0e0e0;
-    --shadow: rgba(0, 0, 0, 0.1);
-    --shadow-hover: rgba(0, 0, 0, 0.2);
-    --accent-primary: #667eea;
-    --accent-secondary: #764ba2;
+    --border-color: #c0c0c0;  /* Mejorado para visibilidad */
+    --shadow: rgba(0, 0, 0, 0.15);
+    --shadow-hover: rgba(0, 0, 0, 0.25);
+    --accent-primary: #3d4ed8;  /* Mejorado para contraste */
+    --accent-secondary: #4c1d95;  /* Mejorado para contraste */
+    --focus-color: #2563eb;  /* Color de enfoque accesible */
+    --error-color: #dc2626;  /* Color de error accesible */
+    --success-color: #059669;  /* Color de éxito accesible */
+    --warning-color: #d97706;  /* Color de advertencia accesible */
 }
 
-/* Modo oscuro */
+/* Modo oscuro - Contrastes mejorados WCAG AA */
 [data-theme="dark"] {
-    --bg-primary: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    --bg-secondary: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #cccccc;
+    --bg-primary: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    --bg-secondary: #0f172a;
+    --text-primary: #f8fafc;  /* Mejorado para contraste */
+    --text-secondary: #cbd5e1;  /* Mejorado para contraste */
     --text-light: #ffffff;
-    --nav-bg: rgba(26, 26, 26, 0.95);
-    --card-bg: #2d2d2d;
-    --border-color: #404040;
-    --shadow: rgba(0, 0, 0, 0.3);
-    --shadow-hover: rgba(0, 0, 0, 0.5);
-    --accent-primary: #3498db;
-    --accent-secondary: #2980b9;
+    --nav-bg: rgba(15, 23, 42, 0.98);
+    --card-bg: #1e293b;
+    --border-color: #475569;  /* Mejorado para visibilidad */
+    --shadow: rgba(0, 0, 0, 0.4);
+    --shadow-hover: rgba(0, 0, 0, 0.6);
+    --accent-primary: #60a5fa;  /* Mejorado para contraste */
+    --accent-secondary: #3b82f6;  /* Mejorado para contraste */
+    --focus-color: #93c5fd;  /* Color de enfoque accesible */
+    --error-color: #f87171;  /* Color de error accesible */
+    --success-color: #34d399;  /* Color de éxito accesible */
+    --warning-color: #fbbf24;  /* Color de advertencia accesible */
 }
 
 /* Reset y configuración base */
@@ -44,11 +52,98 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;  /* Mejorado para legibilidad */
     color: var(--text-primary);
     background: var(--bg-primary);
     min-height: 100vh;
+    font-size: 18px;  /* Tamaño base más grande para accesibilidad */
     transition: all 0.3s ease;
+}
+
+/* Respeto por las preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Mejoras para usuarios con alto contraste */
+@media (prefers-contrast: high) {
+    :root {
+        --text-primary: #000000;
+        --text-secondary: #000000;
+        --border-color: #000000;
+        --accent-primary: #0000ff;
+    }
+    
+    [data-theme="dark"] {
+        --text-primary: #ffffff;
+        --text-secondary: #ffffff;
+        --border-color: #ffffff;
+        --accent-primary: #00ffff;
+    }
+}
+
+/* Estilos de enfoque mejorados para accesibilidad */
+*:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+/* Eliminar outline solo cuando se usa mouse */
+.js-focus-visible *:focus:not(.focus-visible) {
+    outline: none;
+}
+
+/* Skip link para navegación por teclado */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--accent-primary);
+    color: var(--text-light);
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 10000;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 2px solid var(--accent-primary);
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Clase para elementos solo para lectores de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Mejoras para elementos de enfoque */
+.nav-link span,
+.cta-button span {
+    display: inline;
+}
+
+/* Mejoras para iconos decorativos */
+[aria-hidden="true"] {
+    speak: none;
 }
 
 /* Navigation */
@@ -71,59 +166,115 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    min-height: 70px;  /* min-height para mejor accesibilidad */
 }
 
 .nav-brand h1 {
     font-size: 1.5rem;
     color: var(--accent-primary);
     margin: 0;
+    font-weight: 600;  /* Mejor legibilidad */
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;  /* Reducido para mejor espaciado en móviles */
     align-items: center;
+    flex-wrap: wrap;  /* Permite envolver en pantallas pequeñas */
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    padding: 0.75rem 1.25rem;  /* Área de toque más grande */
+    border-radius: 8px;  /* Menos redondeado para mejor accesibilidad */
     transition: all 0.3s ease;
     position: relative;
+    min-height: 44px;  /* Tamaño mínimo recomendado para accesibilidad */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;  /* Para mejor enfoque */
 }
 
 .nav-link:hover,
 .nav-link.active {
-    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    background: var(--accent-primary);
     color: var(--text-light);
-    transform: translateY(-2px);
+    border-color: var(--accent-primary);
 }
 
-/* Botón de cambio de tema */
+.nav-link:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+/* Mejora para usuarios que prefieren movimiento reducido */
+@media (prefers-reduced-motion: no-preference) {
+    .nav-link:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Botón de cambio de tema - Mejorado para accesibilidad */
 .theme-toggle {
     background: none;
     border: 2px solid var(--accent-primary);
     color: var(--accent-primary);
-    padding: 0.5rem;
-    border-radius: 50%;
+    padding: 0.75rem;  /* Área de toque más grande */
+    border-radius: 8px;  /* Menos redondeado para mejor accesibilidad */
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    min-width: 48px;  /* Tamaño mínimo recomendado */
+    min-height: 48px;
     margin-left: 1rem;
+    position: relative;
 }
 
 .theme-toggle:hover {
     background: var(--accent-primary);
     color: var(--text-light);
-    transform: scale(1.1);
+}
+
+.theme-toggle:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+/* Mejora para usuarios que prefieren movimiento reducido */
+@media (prefers-reduced-motion: no-preference) {
+    .theme-toggle:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Texto alternativo para el botón de tema */
+.theme-toggle::after {
+    content: attr(aria-label);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1001;
+    border: 1px solid var(--border-color);
+}
+
+.theme-toggle:hover::after,
+.theme-toggle:focus::after {
+    opacity: 1;
 }
 
 .theme-toggle i {
@@ -347,23 +498,75 @@ main {
     font-weight: bold;
 }
 
-/* Buttons */
+/* Buttons - Mejorados para accesibilidad */
 .btn {
     display: inline-block;
-    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    background: var(--accent-primary);
     color: var(--text-light);
-    padding: 0.8rem 2rem;
+    padding: 1rem 2.5rem;  /* Área de toque más grande */
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 8px;  /* Menos redondeado para mejor accesibilidad */
     font-weight: 600;
+    font-size: 1rem;  /* Tamaño de fuente explícito */
+    min-height: 48px;  /* Tamaño mínimo recomendado */
     transition: all 0.3s ease;
     text-align: center;
+    border: 2px solid var(--accent-primary);
+    cursor: pointer;
+    position: relative;
+    line-height: 1.2;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+    background: var(--accent-secondary);
+    border-color: var(--accent-secondary);
     box-shadow: 0 5px 15px var(--shadow-hover);
-    background: linear-gradient(45deg, var(--accent-secondary), var(--accent-primary));
+}
+
+.btn:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+.btn:active {
+    background: var(--accent-secondary);
+    transform: translateY(1px);
+}
+
+/* Mejora para usuarios que prefieren movimiento reducido */
+@media (prefers-reduced-motion: no-preference) {
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Botones secundarios */
+.btn-secondary {
+    background: transparent;
+    color: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+}
+
+.btn-secondary:hover {
+    background: var(--accent-primary);
+    color: var(--text-light);
+}
+
+/* Botones de éxito, error y advertencia */
+.btn-success {
+    background: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-error {
+    background: var(--error-color);
+    border-color: var(--error-color);
+}
+
+.btn-warning {
+    background: var(--warning-color);
+    border-color: var(--warning-color);
+    color: var(--text-primary);
 }
 
 /* Lesson pages */
@@ -384,10 +587,23 @@ main {
     color: var(--accent-primary);
     text-decoration: none;
     font-weight: 500;
+    padding: 0.5rem 1rem;  /* Área de toque más grande */
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    min-height: 44px;
+    line-height: 1.4;
 }
 
 .lesson-nav a:hover {
-    text-decoration: underline;
+    background: var(--accent-primary);
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.lesson-nav a:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
 }
 
 .lesson-content h1 {
@@ -423,26 +639,40 @@ main {
 
 .exercise {
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-left: 4px solid var(--accent-primary);
+    border: 2px solid var(--border-color);  /* Borde más visible */
+    border-radius: 8px;
+    padding: 2rem;  /* Más espaciado */
+    margin: 2rem 0;
+    border-left: 6px solid var(--accent-primary);  /* Borde más visible */
+    position: relative;
 }
 
 .exercise button {
     background: var(--accent-primary);
     color: var(--text-light);
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
+    border: 2px solid var(--accent-primary);
+    padding: 1rem 2rem;  /* Área de toque más grande */
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s ease;
+    font-weight: 600;
+    min-height: 48px;  /* Tamaño mínimo recomendado */
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .exercise button:hover {
     background: var(--accent-secondary);
+    border-color: var(--accent-secondary);
+}
+
+.exercise button:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+.exercise button:active {
+    transform: translateY(1px);
 }
 
 .answer {
@@ -536,66 +766,118 @@ footer {
     }
 }
 
-/* Quiz styles */
+/* Quiz styles - Mejorados para accesibilidad */
 .quiz-container {
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-left: 4px solid #ff9800;
+    border: 2px solid var(--border-color);  /* Borde más visible */
+    border-radius: 8px;
+    padding: 2rem;  /* Más espaciado */
+    margin: 2rem 0;
+    border-left: 6px solid var(--warning-color);  /* Borde más visible */
+    position: relative;
 }
 
 .quiz-question {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;  /* Texto más grande */
+    font-weight: 600;  /* Más peso para mejor legibilidad */
+    margin-bottom: 1.5rem;
     color: var(--text-primary);
+    line-height: 1.6;  /* Mejor espaciado de líneas */
 }
 
 .quiz-options {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .quiz-options li {
-    margin: 0.5rem 0;
+    margin: 1rem 0;  /* Más espaciado */
     color: var(--text-primary);
+    position: relative;
 }
 
 .quiz-options input[type="radio"] {
-    margin-right: 0.5rem;
+    margin-right: 1rem;
+    width: 20px;  /* Área de toque más grande */
+    height: 20px;
+    cursor: pointer;
+}
+
+.quiz-options label {
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: block;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.quiz-options label:hover {
+    background: var(--border-color);
+}
+
+.quiz-options input[type="radio"]:focus + label {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+.quiz-options input[type="radio"]:checked + label {
+    background: var(--accent-primary);
+    color: var(--text-light);
+    border-color: var(--accent-primary);
 }
 
 .quiz-submit {
-    background: #ff9800;
+    background: var(--warning-color);
     color: var(--text-light);
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
+    border: 2px solid var(--warning-color);
+    padding: 1rem 2rem;  /* Área de toque más grande */
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
-    margin-top: 1rem;
-    transition: background 0.3s ease;
+    font-weight: 600;
+    min-height: 48px;  /* Tamaño mínimo recomendado */
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .quiz-submit:hover {
-    background: #f57c00;
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.quiz-submit:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+.quiz-submit:active {
+    transform: translateY(1px);
 }
 
 .quiz-result {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-    font-weight: 500;
+    margin-top: 1.5rem;
+    padding: 1.5rem;  /* Más espaciado */
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;  /* Texto más grande */
     display: none;
+    border: 2px solid;
+    line-height: 1.5;
 }
 
 .quiz-result.correct {
-    background: #c8e6c9;
-    color: #2e7d32;
+    background: var(--success-color);
+    color: var(--text-light);
+    border-color: var(--success-color);
 }
 
 .quiz-result.incorrect {
-    background: #ffcdd2;
-    color: #c62828;
+    background: var(--error-color);
+    color: var(--text-light);
+    border-color: var(--error-color);
 }

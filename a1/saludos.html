@@ -3,51 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saludos y Presentaciones - A1</title>
+    <meta name="description" content="Aprende saludos y presentaciones básicas en inglés - Nivel A1">
+    <meta name="keywords" content="inglés A1, saludos en inglés, presentaciones, vocabulario básico">
+    <title>Saludos y Presentaciones - A1 | English Reinforcement</title>
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <!-- Skip link para navegación por teclado -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <header role="banner">
         <div style="display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 1rem;">
             <div>
                 <h1>📝 Saludos y Presentaciones</h1>
                 <p>Aprende a saludar y presentarte en inglés</p>
             </div>
-            <button class="theme-toggle" title="Cambiar tema">
-                <i class="fas fa-moon"></i>
+            <button class="theme-toggle" 
+                    aria-label="Cambiar entre modo claro y oscuro" 
+                    title="Cambiar tema"
+                    type="button">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+                <span class="sr-only">Cambiar tema</span>
             </button>
         </div>
     </header>
 
-    <main>
+    <main id="main-content" role="main">
         <div class="lesson-container">
-            <div class="lesson-nav">
-                <a href="../index.html">🏠 Home</a> | 
-                <a href="index.html">← Volver a A1</a> | 
-                <a href="abecedario.html">Siguiente: Abecedario →</a>
-            </div>
+            <nav class="lesson-nav" role="navigation" aria-label="Navegación de lección">
+                <a href="../index.html" aria-label="Ir a la página principal">🏠 <span>Home</span></a> | 
+                <a href="index.html" aria-label="Volver al índice de nivel A1">← <span>Volver a A1</span></a> | 
+                <a href="abecedario.html" aria-label="Ir a la siguiente lección: Abecedario"><span>Siguiente: Abecedario</span> →</a>
+            </nav>
 
             <div class="lesson-content">
                 <h1>Saludos Básicos en Inglés</h1>
 
-                <h2>🌅 Saludos por Momento del Día</h2>
-                <div class="vocabulary-list">
-                    <ul>
-                        <li><strong>Good morning</strong> → Buenos días (hasta las 12:00)</li>
-                        <li><strong>Good afternoon</strong> → Buenas tardes (12:00 - 18:00)</li>
-                        <li><strong>Good evening</strong> → Buenas noches (después de las 18:00)</li>
-                        <li><strong>Good night</strong> → Buenas noches (para despedirse)</li>
-                    </ul>
-                </div>
+                <section aria-labelledby="saludos-momento">
+                    <h2 id="saludos-momento">🌅 Saludos por Momento del Día</h2>
+                    <div class="vocabulary-list" role="list" aria-label="Lista de saludos por momento del día">
+                        <ul>
+                            <li role="listitem"><strong>Good morning</strong> → Buenos días (hasta las 12:00)</li>
+                            <li role="listitem"><strong>Good afternoon</strong> → Buenas tardes (12:00 - 18:00)</li>
+                            <li role="listitem"><strong>Good evening</strong> → Buenas noches (después de las 18:00)</li>
+                            <li role="listitem"><strong>Good night</strong> → Buenas noches (para despedirse)</li>
+                        </ul>
+                    </div>
+                </section>
 
-                <h2>👋 Saludos Informales</h2>
-                <div class="vocabulary-list">
-                    <ul>
-                        <li><strong>Hello</strong> → Hola (formal/informal)</li>
-                        <li><strong>Hi</strong> → Hola (informal)</li>
-                        <li><strong>Hey</strong> → Oye/Hola (muy informal)</li>
-                        <li><strong>How are you?</strong> → ¿Cómo estás?</li>
+                <section aria-labelledby="saludos-informales">
+                    <h2 id="saludos-informales">👋 Saludos Informales</h2>
+                    <div class="vocabulary-list" role="list" aria-label="Lista de saludos informales">
+                        <ul>
+                            <li role="listitem"><strong>Hello</strong> → Hola (formal/informal)</li>
+                            <li role="listitem"><strong>Hi</strong> → Hola (informal)</li>
+                            <li role="listitem"><strong>Hey</strong> → Oye/Hola (muy informal)</li>
+                            <li role="listitem"><strong>How are you?</strong> → ¿Cómo estás?</li>
                         <li><strong>How's it going?</strong> → ¿Cómo va todo?</li>
                     </ul>
                 </div>
