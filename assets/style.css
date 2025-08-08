@@ -927,6 +927,13 @@ p {
     cursor: pointer;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
+    perspective: 1000px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.level-card.flipped {
+    transform: rotateY(180deg);
 }
 
 .level-card:hover {
@@ -936,7 +943,24 @@ p {
 .level-card:focus-within {
     outline: 3px solid var(--focus-color);
     outline-offset: 2px;
-    transform: rotateY(180deg);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .level-card {
+        height: 320px;
+        margin-bottom: 1rem;
+    }
+    
+    .level-card:hover {
+        transform: none; /* Disable hover on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .level-card {
+        height: 280px;
+    }
 }
 
 /* Caras de la tarjeta */
@@ -947,7 +971,7 @@ p {
     height: 100%;
     backface-visibility: hidden;
     border-radius: 16px;
-    padding: 2.5rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -957,6 +981,21 @@ p {
     border: 1px solid var(--border-color);
     backdrop-filter: blur(15px);
     overflow: hidden;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .level-card-front,
+    .level-card-back {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .level-card-front,
+    .level-card-back {
+        padding: 1rem;
+    }
 }
 
 /* Cara frontal */
@@ -1015,7 +1054,7 @@ p {
 }
 
 .level-card h2 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 0.75rem;
     color: var(--text-primary);
     font-weight: 700;
@@ -1025,7 +1064,7 @@ p {
 
 .level-card-back h2 {
     color: var(--text-light);
-    font-size: 1.8rem;
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
     margin-bottom: 1rem;
 }
 
@@ -1036,27 +1075,29 @@ p {
     line-height: 1.6;
     position: relative;
     z-index: 2;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .level-card-back p {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
     margin-bottom: 1.25rem;
 }
 
 .level-card ul {
     list-style: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     position: relative;
     z-index: 2;
 }
 
 .level-card li {
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
     color: var(--text-secondary);
     position: relative;
-    padding-left: 2rem;
-    line-height: 1.5;
+    padding-left: 1.5rem;
+    line-height: 1.4;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
 .level-card li:before {
@@ -1065,7 +1106,18 @@ p {
     left: 0;
     color: #4CAF50;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .level-card ul {
+        margin-bottom: 1rem;
+    }
+    
+    .level-card li {
+        padding: 0.2rem 0;
+        padding-left: 1.2rem;
+    }
 }
 
 /* Iconos de nivel en la cara trasera */
@@ -1160,7 +1212,15 @@ p {
 
 /* Soporte para dispositivos táctiles */
 @media (hover: none) and (pointer: coarse) {
+    .level-card:hover {
+        transform: none;
+    }
+    
     .level-card:active {
+        transform: rotateY(180deg);
+    }
+    
+    .level-card.flipped {
         transform: rotateY(180deg);
     }
 }

@@ -384,26 +384,64 @@ document.addEventListener('DOMContentLoaded', function() {
         habilitarDragDrop(contenedor.id);
     });
     
-    // Agregar efectos de hover a las tarjetas
+    // Funcionalidad de flip para las tarjetas
     const tarjetas = document.querySelectorAll('.level-card');
     tarjetas.forEach(tarjeta => {
-        tarjeta.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
+        let isFlipped = false;
+        
+        // Función para alternar el flip
+        function toggleFlip() {
+            isFlipped = !isFlipped;
+            if (isFlipped) {
+                tarjeta.classList.add('flipped');
+            } else {
+                tarjeta.classList.remove('flipped');
+            }
+        }
+        
+        // Click en la tarjeta para flip
+        tarjeta.addEventListener('click', function(event) {
+            // Si se hace clic en un enlace, no hacer flip
+            if (event.target.tagName === 'A' || event.target.closest('a')) {
+                return;
+            }
+            event.preventDefault();
+            toggleFlip();
         });
         
-        tarjeta.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+        // Touch events para móviles
+        tarjeta.addEventListener('touchstart', function(event) {
+            if (event.target.tagName === 'A' || event.target.closest('a')) {
+                return;
+            }
+            event.preventDefault();
         });
         
-        // Agregar navegación por teclado a las tarjetas
+        tarjeta.addEventListener('touchend', function(event) {
+            if (event.target.tagName === 'A' || event.target.closest('a')) {
+                return;
+            }
+            event.preventDefault();
+            toggleFlip();
+        });
+        
+        // Navegación por teclado
         tarjeta.addEventListener('keydown', function(event) {
-            manejarNavegacionTeclado(event, () => {
-                const enlace = this.querySelector('a');
-                if (enlace) {
-                    enlace.click();
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleFlip();
+            } else if (event.key === 'Escape') {
+                if (isFlipped) {
+                    isFlipped = false;
+                    tarjeta.classList.remove('flipped');
                 }
-            });
+            }
         });
+        
+        // Hacer la tarjeta focusable
+        tarjeta.setAttribute('tabindex', '0');
+        tarjeta.setAttribute('role', 'button');
+        tarjeta.setAttribute('aria-label', 'Tarjeta de nivel - presiona Enter o espacio para voltear');
     });
     
     // Agregar navegación por teclado a botones de ejercicios
