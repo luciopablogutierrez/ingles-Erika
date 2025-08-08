@@ -3028,8 +3028,27 @@ footer {
     .lesson-breadcrumb {
         flex-direction: column;
         gap: 1rem;
-        text-align: center;
-    }
+    text-align: center;
+}
+
+.level-card-back .btn {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.level-card-back .btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
     
     .lesson-navigation {
         width: 100%;
