@@ -21,6 +21,33 @@ function toggleRespuesta(elementId) {
     }
 }
 
+// Sistema de cambio de tema
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Actualizar icono del botón
+    const themeIcon = document.querySelector('.theme-toggle i');
+    if (themeIcon) {
+        themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+}
+
+// Cargar tema guardado
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    // Actualizar icono del botón
+    const themeIcon = document.querySelector('.theme-toggle i');
+    if (themeIcon) {
+        themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+}
+
 // Sistema de quiz interactivo
 function verificarQuiz(quizId, respuestaCorrecta, mensajeExito, mensajeError) {
     const quiz = document.querySelector(`#${quizId}`);
@@ -186,6 +213,9 @@ function actualizarProgreso(leccionesCompletadas, totalLecciones) {
 
 // Inicialización cuando se carga la página
 document.addEventListener('DOMContentLoaded', function() {
+    // Cargar tema guardado
+    loadTheme();
+    
     // Habilitar drag & drop en elementos que lo requieran
     const contenedoresDragDrop = document.querySelectorAll('.drag-drop-container');
     contenedoresDragDrop.forEach(contenedor => {
@@ -203,6 +233,12 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'translateY(0)';
         });
     });
+    
+    // Event listener para el botón de cambio de tema
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
 });
 
 // Funciones específicas para cada nivel (se pueden expandir)
@@ -231,5 +267,7 @@ window.verificarOrden = verificarOrden;
 window.verificarMatching = verificarMatching;
 window.reproducirAudio = reproducirAudio;
 window.irALeccion = irALeccion;
+window.toggleTheme = toggleTheme;
+window.loadTheme = loadTheme;
 window.funcionesA1 = funcionesA1;
 window.funcionesA2 = funcionesA2;
