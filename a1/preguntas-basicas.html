@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Básicas - A1</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>❓ Preguntas Básicas en Inglés</h1>
+        <p>What, Where, When, Who, How - Las 5W + H</p>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-nav">
+                <a href="articulos.html">← Anterior: Artículos</a> | 
+                <a href="index.html">Volver a A1</a> | 
+                <a href="../a2/index.html">Siguiente Nivel: A2 →</a>
+            </div>
+
+            <div class="lesson-content">
+                <h1>Basic Questions - WH Questions</h1>
+
+                <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4CAF50; margin: 1rem 0;">
+                    <h3>🎯 ¿Por qué son importantes?</h3>
+                    <p>Las preguntas básicas te permiten obtener información específica y mantener conversaciones naturales en inglés.</p>
+                </div>
+
+                <h2>❓ Las Palabras Interrogativas</h2>
+                <div class="vocabulary-list">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                        <div>
+                            <h3>🔍 WHAT (Qué)</h3>
+                            <ul>
+                                <li><strong>What</strong> is your name? → ¿Cómo te llamas?</li>
+                                <li><strong>What</strong> do you do? → ¿A qué te dedicas?</li>
+                                <li><strong>What</strong> time is it? → ¿Qué hora es?</li>
+                                <li><strong>What</strong> color is it? → ¿De qué color es?</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>📍 WHERE (Dónde)</h3>
+                            <ul>
+                                <li><strong>Where</strong> are you from? → ¿De dónde eres?</li>
+                                <li><strong>Where</strong> do you live? → ¿Dónde vives?</li>
+                                <li><strong>Where</strong> is the bank? → ¿Dónde está el banco?</li>
+                                <li><strong>Where</strong> are you going? → ¿A dónde vas?</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>⏰ WHEN (Cuándo)</h3>
+                            <ul>
+                                <li><strong>When</strong> is your birthday? → ¿Cuándo es tu cumpleaños?</li>
+                                <li><strong>When</strong> do you work? → ¿Cuándo trabajas?</li>
+                                <li><strong>When</strong> is the meeting? → ¿Cuándo es la reunión?</li>
+                                <li><strong>When</strong> did you arrive? → ¿Cuándo llegaste?</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>👤 WHO (Quién)</h3>
+                            <ul>
+                                <li><strong>Who</strong> are you? → ¿Quién eres?</li>
+                                <li><strong>Who</strong> is that? → ¿Quién es esa persona?</li>
+                                <li><strong>Who</strong> is your teacher? → ¿Quién es tu profesor?</li>
+                                <li><strong>Who</strong> called you? → ¿Quién te llamó?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 Ejercicio 1: Elige la pregunta correcta</h2>
+                    <p>Para preguntar el nombre de alguien, ¿cuál usas?</p>
+                    <input type="text" id="pregunta1" placeholder="What, Where, When o Who" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin: 0.5rem;">
+                    <button onclick="verificarCompletar('pregunta1', 'what', 'resultado-pregunta1')">Verificar</button>
+                    <div id="resultado-pregunta1" class="answer"></div>
+                </div>
+
+                <h2>🔄 HOW (Cómo)</h2>
+                <div class="vocabulary-list">
+                    <h3>HOW tiene muchos usos:</h3>
+                    <ul>
+                        <li><strong>How</strong> are you? → ¿Cómo estás?</li>
+                        <li><strong>How old</strong> are you? → ¿Cuántos años tienes?</li>
+                        <li><strong>How much</strong> is it? → ¿Cuánto cuesta?</li>
+                        <li><strong>How many</strong> books? → ¿Cuántos libros?</li>
+                        <li><strong>How tall</strong> are you? → ¿Cuánto mides?</li>
+                        <li><strong>How long</strong> does it take? → ¿Cuánto tiempo toma?</li>
+                    </ul>
+                </div>
+
+                <div style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h3>🔍 Diferencia importante:</h3>
+                    <ul>
+                        <li><strong>How much:</strong> Para cosas que no se pueden contar (agua, dinero, tiempo)</li>
+                        <li><strong>How many:</strong> Para cosas que se pueden contar (libros, personas, carros)</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🧠 Quiz: How Much vs How Many</h2>
+                    <div id="quiz1">
+                        <div class="quiz-question">¿Cuál es correcto para preguntar sobre estudiantes?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q1" value="a"> How much students are there?</li>
+                            <li><input type="radio" name="q1" value="b"> How many students are there?</li>
+                            <li><input type="radio" name="q1" value="c"> How students are there?</li>
+                            <li><input type="radio" name="q1" value="d"> How long students are there?</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz1', 'b', '¡Correcto! Usamos How many porque los estudiantes se pueden contar', 'Incorrecto. Usamos How many para cosas contables como estudiantes')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🗣️ Estructura de las Preguntas</h2>
+                <div class="vocabulary-list">
+                    <h3>Orden de las palabras:</h3>
+                    <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff9800; margin: 1rem 0;">
+                        <p><strong>Fórmula:</strong> WH-word + Verbo + Sujeto + Complemento?</p>
+                        <ul>
+                            <li><strong>What</strong> + is + your name? (¿Cuál es tu nombre?)</li>
+                            <li><strong>Where</strong> + are + you + from? (¿De dónde eres?)</li>
+                            <li><strong>When</strong> + do + you + work? (¿Cuándo trabajas?)</li>
+                            <li><strong>Who</strong> + is + that + person? (¿Quién es esa persona?)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>💬 Conversaciones Típicas</h2>
+                <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h3>🎭 Diálogo de Ejemplo:</h3>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>A:</strong> Hi! What's your name?</p>
+                        <p><strong>B:</strong> My name is Carlos. What about you?</p>
+                        <p><strong>A:</strong> I'm Maria. Where are you from?</p>
+                        <p><strong>B:</strong> I'm from Mexico. How about you?</p>
+                        <p><strong>A:</strong> I'm from Spain. How old are you?</p>
+                        <p><strong>B:</strong> I'm 25 years old. And you?</p>
+                        <p><strong>A:</strong> I'm 23. What do you do?</p>
+                        <p><strong>B:</strong> I'm a teacher. What about you?</p>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>✍️ Ejercicio 2: Completa la conversación</h2>
+                    <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>A:</strong> _____ is your favorite color? <input type="text" id="conv1" style="width: 80px; padding: 0.3rem;"></p>
+                        <p><strong>B:</strong> My favorite color is blue.</p>
+                        <p><strong>A:</strong> _____ do you live? <input type="text" id="conv2" style="width: 80px; padding: 0.3rem;"></p>
+                        <p><strong>B:</strong> I live in New York.</p>
+                    </div>
+                    <button onclick="verificarConversacion()">Verificar</button>
+                    <div id="resultado-conversacion" class="answer"></div>
+                </div>
+
+                <h2>🎯 Respuestas Cortas</h2>
+                <div class="vocabulary-list">
+                    <h3>Cómo responder a preguntas básicas:</h3>
+                    <ul>
+                        <li><strong>What's your name?</strong> → "My name is..." / "I'm..."</li>
+                        <li><strong>Where are you from?</strong> → "I'm from..." / "I come from..."</li>
+                        <li><strong>How old are you?</strong> → "I'm ... years old" / "I'm ..."</li>
+                        <li><strong>What do you do?</strong> → "I'm a..." / "I work as..."</li>
+                        <li><strong>How are you?</strong> → "I'm fine, thanks" / "Good, and you?"</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🎯 Quiz: Respuestas Apropiadas</h2>
+                    <div id="quiz2">
+                        <div class="quiz-question">Si alguien pregunta "How are you?", ¿cuál es la mejor respuesta?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q2" value="a"> I'm 25 years old</li>
+                            <li><input type="radio" name="q2" value="b"> I'm from Mexico</li>
+                            <li><input type="radio" name="q2" value="c"> I'm fine, thanks</li>
+                            <li><input type="radio" name="q2" value="d"> I'm a teacher</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz2', 'c', '¡Perfecto! I\'m fine, thanks es la respuesta apropiada para How are you?', 'Incorrecto. How are you? pregunta sobre tu estado, respuesta: I\'m fine, thanks')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🌟 Preguntas de Cortesía</h2>
+                <div class="vocabulary-list">
+                    <h3>Para ser más educado:</h3>
+                    <ul>
+                        <li><strong>Excuse me,</strong> where is the bathroom? (Disculpe, ¿dónde está el baño?)</li>
+                        <li><strong>Could you tell me</strong> what time it is? (¿Podría decirme qué hora es?)</li>
+                        <li><strong>Do you know</strong> where the bank is? (¿Sabe dónde está el banco?)</li>
+                        <li><strong>May I ask</strong> what your name is? (¿Puedo preguntar cuál es su nombre?)</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎨 Ejercicio 3: Crea preguntas</h2>
+                    <p>Escribe una pregunta para obtener esta información: "La edad de una persona"</p>
+                    <input type="text" id="crear-pregunta" placeholder="Escribe la pregunta completa" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin: 0.5rem; width: 300px;">
+                    <button onclick="verificarCompletar('crear-pregunta', ['how old are you', 'how old are you?'], 'resultado-crear')">Verificar</button>
+                    <div id="resultado-crear" class="answer"></div>
+                </div>
+
+                <h2>🎪 Ejercicio Final: Entrevista</h2>
+                <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2196F3; margin: 1rem 0;">
+                    <h3>🎤 Practica estas preguntas:</h3>
+                    <p>Imagina que conoces a alguien nuevo. Practica haciendo estas preguntas:</p>
+                    <ol>
+                        <li>What's your name?</li>
+                        <li>Where are you from?</li>
+                        <li>How old are you?</li>
+                        <li>What do you do?</li>
+                        <li>Where do you live?</li>
+                        <li>What's your favorite color?</li>
+                        <li>When is your birthday?</li>
+                    </ol>
+                    <p><strong>💡 Tip:</strong> Después de cada pregunta, escucha la respuesta y haz una pregunta de seguimiento.</p>
+                </div>
+
+                <h2>💡 Consejos para Recordar</h2>
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff9800;">
+                    <ul>
+                        <li><strong>Memoriza las 5W + H:</strong> What, Where, When, Who, Why, How</li>
+                        <li><strong>Practica el orden:</strong> WH-word + verbo + sujeto</li>
+                        <li><strong>Escucha activamente:</strong> Las respuestas te dan información para más preguntas</li>
+                        <li><strong>Sé educado:</strong> Usa "Excuse me" y "please" cuando sea apropiado</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🏆 ¡Felicitaciones!</h2>
+                    <p>Has completado todo el Nivel A1. Ahora puedes:</p>
+                    <ul>
+                        <li>✅ Hacer preguntas básicas con What, Where, When, Who, How</li>
+                        <li>✅ Responder apropiadamente a preguntas comunes</li>
+                        <li>✅ Mantener conversaciones simples de presentación</li>
+                        <li>✅ Usar preguntas de cortesía</li>
+                        <li>✅ Entender la estructura básica de las preguntas en inglés</li>
+                    </ul>
+                    
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <h3>🎉 ¡Nivel A1 Completado!</h3>
+                        <p>Estás listo para avanzar al siguiente nivel</p>
+                        <a href="../a2/index.html" class="btn" style="margin: 0.5rem;">Comenzar Nivel A2 →</a>
+                        <a href="../index.html" class="btn" style="margin: 0.5rem;">Volver al Inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 - Refuerzo de Inglés - Lección A1.6 (Final)</p>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        function verificarConversacion() {
+            const conv1 = document.getElementById('conv1').value.trim().toLowerCase();
+            const conv2 = document.getElementById('conv2').value.trim().toLowerCase();
+            const resultado = document.getElementById('resultado-conversacion');
+            
+            let correctas = 0;
+            let mensaje = "Resultados:\n";
+            
+            if (conv1 === 'what') {
+                correctas++;
+                mensaje += "1. ✅ Correcto: What is your favorite color?\n";
+            } else {
+                mensaje += "1. ❌ Incorrecto. Respuesta: What\n";
+            }
+            
+            if (conv2 === 'where') {
+                correctas++;
+                mensaje += "2. ✅ Correcto: Where do you live?\n";
+            } else {
+                mensaje += "2. ❌ Incorrecto. Respuesta: Where\n";
+            }
+            
+            resultado.innerHTML = mensaje.replace(/\n/g, '<br>');
+            resultado.style.display = 'block';
+            
+            if (correctas === 2) {
+                resultado.style.background = '#c8e6c9';
+                resultado.style.color = '#2e7d32';
+            } else {
+                resultado.style.background = '#ffcdd2';
+                resultado.style.color = '#c62828';
+            }
+        }
+        
+        // Marcar lección como completada y nivel A1 terminado
+        document.addEventListener('DOMContentLoaded', function() {
+            localStorage.setItem('a1-leccion6', 'completada');
+            localStorage.setItem('a1-completado', 'true');
+            localStorage.setItem('a1-completadas', '6');
+        });
+    </script>
+</body>
+</html>

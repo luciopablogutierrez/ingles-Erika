@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos - A1</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>📰 Los Artículos en Inglés</h1>
+        <p>A, An y The - Cuándo usar cada uno</p>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-nav">
+                <a href="verbo-to-be.html">← Anterior: Verbo To Be</a> | 
+                <a href="index.html">Volver a A1</a> | 
+                <a href="preguntas-basicas.html">Siguiente: Preguntas Básicas →</a>
+            </div>
+
+            <div class="lesson-content">
+                <h1>Articles: A, An, The</h1>
+
+                <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4CAF50; margin: 1rem 0;">
+                    <h3>🎯 ¿Qué son los artículos?</h3>
+                    <p>Los artículos son palabras pequeñas que van antes de los sustantivos para indicar si hablamos de algo específico o general.</p>
+                </div>
+
+                <h2>🔤 Artículos Indefinidos: A / AN</h2>
+                <div class="vocabulary-list">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h3>📝 A (antes de consonantes)</h3>
+                            <ul>
+                                <li><strong>A</strong> book → Un libro</li>
+                                <li><strong>A</strong> car → Un carro</li>
+                                <li><strong>A</strong> house → Una casa</li>
+                                <li><strong>A</strong> dog → Un perro</li>
+                                <li><strong>A</strong> student → Un estudiante</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🅰️ AN (antes de vocales)</h3>
+                            <ul>
+                                <li><strong>An</strong> apple → Una manzana</li>
+                                <li><strong>An</strong> elephant → Un elefante</li>
+                                <li><strong>An</strong> orange → Una naranja</li>
+                                <li><strong>An</strong> umbrella → Un paraguas</li>
+                                <li><strong>An</strong> hour → Una hora</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h3>🔍 Regla Simple:</h3>
+                    <ul>
+                        <li><strong>A</strong> → antes de sonidos de consonante (b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z)</li>
+                        <li><strong>AN</strong> → antes de sonidos de vocal (a, e, i, o, u)</li>
+                        <li><strong>Excepción:</strong> "An hour" (la H es muda), "A university" (suena como "yu")</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 Ejercicio 1: A o AN</h2>
+                    <p>Completa con A o AN: "I need _____ pen"</p>
+                    <input type="text" id="articulo1" placeholder="a o an" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin: 0.5rem;">
+                    <button onclick="verificarCompletar('articulo1', 'a', 'resultado-articulo1')">Verificar</button>
+                    <div id="resultado-articulo1" class="answer"></div>
+                </div>
+
+                <h2>🎯 Artículo Definido: THE</h2>
+                <div class="vocabulary-list">
+                    <h3>Usamos THE cuando:</h3>
+                    <ul>
+                        <li><strong>Hablamos de algo específico:</strong> "<strong>The</strong> book on the table" (El libro que está en la mesa)</li>
+                        <li><strong>Ya mencionamos algo antes:</strong> "I have a cat. <strong>The</strong> cat is black."</li>
+                        <li><strong>Es único:</strong> "<strong>The</strong> sun, <strong>the</strong> moon, <strong>the</strong> president"</li>
+                        <li><strong>Con superlativos:</strong> "<strong>The</strong> best student, <strong>the</strong> tallest building"</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🧠 Quiz: Cuándo usar THE</h2>
+                    <div id="quiz1">
+                        <div class="quiz-question">¿Cuál es correcto?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q1" value="a"> I love a sun</li>
+                            <li><input type="radio" name="q1" value="b"> I love the sun</li>
+                            <li><input type="radio" name="q1" value="c"> I love an sun</li>
+                            <li><input type="radio" name="q1" value="d"> I love sun</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz1', 'b', '¡Correcto! Usamos THE con cosas únicas como el sol', 'Incorrecto. Usamos THE con cosas únicas: the sun')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🚫 Cuándo NO usar artículos</h2>
+                <div class="vocabulary-list">
+                    <h3>No usamos artículos con:</h3>
+                    <ul>
+                        <li><strong>Nombres propios:</strong> Maria, Mexico, English (no "the Maria")</li>
+                        <li><strong>Conceptos generales:</strong> "I like music" (no "the music")</li>
+                        <li><strong>Comidas en general:</strong> "I eat breakfast" (no "the breakfast")</li>
+                        <li><strong>Deportes:</strong> "I play soccer" (no "the soccer")</li>
+                        <li><strong>Idiomas:</strong> "I speak Spanish" (no "the Spanish")</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>✍️ Ejercicio 2: Completa las oraciones</h2>
+                    <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>1. I have _____ dog. <input type="text" id="ej1" style="width: 60px; padding: 0.3rem;"></p>
+                        <p>2. _____ dog is very friendly. <input type="text" id="ej2" style="width: 60px; padding: 0.3rem;"></p>
+                        <p>3. She is _____ excellent teacher. <input type="text" id="ej3" style="width: 60px; padding: 0.3rem;"></p>
+                        <p>4. _____ teacher works at my school. <input type="text" id="ej4" style="width: 60px; padding: 0.3rem;"></p>
+                    </div>
+                    <button onclick="verificarEjercicios()">Verificar Todo</button>
+                    <div id="resultado-ejercicios" class="answer"></div>
+                </div>
+
+                <h2>🔄 Comparación: A/AN vs THE</h2>
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff9800; margin: 1rem 0;">
+                    <h3>📋 Ejemplos Comparativos:</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h4>A/AN (Indefinido)</h4>
+                            <ul>
+                                <li>"I want <strong>a</strong> book" (cualquier libro)</li>
+                                <li>"She is <strong>a</strong> doctor" (una doctora)</li>
+                                <li>"Buy <strong>an</strong> apple" (cualquier manzana)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>THE (Definido)</h4>
+                            <ul>
+                                <li>"I want <strong>the</strong> book" (ese libro específico)</li>
+                                <li>"She is <strong>the</strong> doctor" (la doctora específica)</li>
+                                <li>"Eat <strong>the</strong> apple" (esa manzana específica)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🎯 Quiz: A/AN vs THE</h2>
+                    <div id="quiz2">
+                        <div class="quiz-question">"I bought a car yesterday. _____ car is red." ¿Qué va en el espacio?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q2" value="a"> A</li>
+                            <li><input type="radio" name="q2" value="b"> An</li>
+                            <li><input type="radio" name="q2" value="c"> The</li>
+                            <li><input type="radio" name="q2" value="d"> Nada</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz2', 'c', '¡Perfecto! Usamos THE porque ya mencionamos el carro antes', 'Incorrecto. Usamos THE porque ya mencionamos el carro: The car is red')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🎨 Casos Especiales</h2>
+                <div class="vocabulary-list">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                        <div>
+                            <h3>Con THE siempre:</h3>
+                            <ul>
+                                <li><strong>The</strong> United States</li>
+                                <li><strong>The</strong> internet</li>
+                                <li><strong>The</strong> same</li>
+                                <li><strong>The</strong> first/second/last</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Sin artículo:</h3>
+                            <ul>
+                                <li>Home ("I'm at home")</li>
+                                <li>Work ("I'm at work")</li>
+                                <li>School ("I go to school")</li>
+                                <li>Bed ("I go to bed")</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 Ejercicio 3: Casos Especiales</h2>
+                    <p>¿Cuál es correcto para "Voy a casa"?</p>
+                    <div style="margin: 1rem 0;">
+                        <label><input type="radio" name="casa" value="a" style="margin-right: 0.5rem;"> I go to a home</label><br>
+                        <label><input type="radio" name="casa" value="b" style="margin-right: 0.5rem;"> I go to the home</label><br>
+                        <label><input type="radio" name="casa" value="c" style="margin-right: 0.5rem;"> I go to home</label><br>
+                        <label><input type="radio" name="casa" value="d" style="margin-right: 0.5rem;"> I go home</label>
+                    </div>
+                    <button onclick="verificarCasa()">Verificar</button>
+                    <div id="resultado-casa" class="answer"></div>
+                </div>
+
+                <h2>💡 Consejos para Recordar</h2>
+                <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4CAF50;">
+                    <ul>
+                        <li><strong>A/AN:</strong> "uno/una" - primera vez que mencionas algo</li>
+                        <li><strong>THE:</strong> "el/la" - algo específico o ya mencionado</li>
+                        <li><strong>Sonido, no letra:</strong> "An hour" (H muda), "A university" (suena "yu")</li>
+                        <li><strong>Practica:</strong> Lee en voz alta para acostumbrarte al sonido</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🏆 ¡Fantástico!</h2>
+                    <p>Has completado la lección de Artículos. Ahora puedes:</p>
+                    <ul>
+                        <li>✅ Usar A antes de consonantes</li>
+                        <li>✅ Usar AN antes de vocales</li>
+                        <li>✅ Usar THE para cosas específicas</li>
+                        <li>✅ Saber cuándo NO usar artículos</li>
+                        <li>✅ Aplicar las reglas en conversaciones</li>
+                    </ul>
+                    <a href="preguntas-basicas.html" class="btn">Continuar con Preguntas Básicas →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 - Refuerzo de Inglés - Lección A1.5</p>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        function verificarEjercicios() {
+            const ej1 = document.getElementById('ej1').value.trim().toLowerCase();
+            const ej2 = document.getElementById('ej2').value.trim().toLowerCase();
+            const ej3 = document.getElementById('ej3').value.trim().toLowerCase();
+            const ej4 = document.getElementById('ej4').value.trim().toLowerCase();
+            const resultado = document.getElementById('resultado-ejercicios');
+            
+            let correctas = 0;
+            let mensaje = "Resultados:\n";
+            
+            if (ej1 === 'a') {
+                correctas++;
+                mensaje += "1. ✅ Correcto: a dog\n";
+            } else {
+                mensaje += "1. ❌ Incorrecto. Respuesta: a\n";
+            }
+            
+            if (ej2 === 'the') {
+                correctas++;
+                mensaje += "2. ✅ Correcto: The dog (ya mencionado)\n";
+            } else {
+                mensaje += "2. ❌ Incorrecto. Respuesta: The\n";
+            }
+            
+            if (ej3 === 'an') {
+                correctas++;
+                mensaje += "3. ✅ Correcto: an excellent (vocal)\n";
+            } else {
+                mensaje += "3. ❌ Incorrecto. Respuesta: an\n";
+            }
+            
+            if (ej4 === 'the') {
+                correctas++;
+                mensaje += "4. ✅ Correcto: The teacher (específica)\n";
+            } else {
+                mensaje += "4. ❌ Incorrecto. Respuesta: The\n";
+            }
+            
+            resultado.innerHTML = mensaje.replace(/\n/g, '<br>');
+            resultado.style.display = 'block';
+            
+            if (correctas === 4) {
+                resultado.style.background = '#c8e6c9';
+                resultado.style.color = '#2e7d32';
+            } else {
+                resultado.style.background = '#ffcdd2';
+                resultado.style.color = '#c62828';
+            }
+        }
+        
+        function verificarCasa() {
+            const seleccionada = document.querySelector('input[name="casa"]:checked');
+            const resultado = document.getElementById('resultado-casa');
+            
+            if (!seleccionada) {
+                alert('Por favor selecciona una opción');
+                return;
+            }
+            
+            resultado.style.display = 'block';
+            
+            if (seleccionada.value === 'd') {
+                resultado.textContent = '¡Correcto! "I go home" - Home no necesita artículo ni preposición TO';
+                resultado.style.background = '#c8e6c9';
+                resultado.style.color = '#2e7d32';
+            } else {
+                resultado.textContent = 'Incorrecto. La respuesta correcta es "I go home" (sin artículo ni TO)';
+                resultado.style.background = '#ffcdd2';
+                resultado.style.color = '#c62828';
+            }
+        }
+        
+        // Marcar lección como completada
+        document.addEventListener('DOMContentLoaded', function() {
+            localStorage.setItem('a1-leccion5', 'completada');
+        });
+    </script>
+</body>
+</html>

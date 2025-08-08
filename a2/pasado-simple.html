@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasado Simple Regular - A2</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>⏰ Pasado Simple Regular</h1>
+        <p>Worked, Played, Studied - Hablando del pasado</p>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-nav">
+                <a href="preposiciones-lugar.html">← Anterior: Preposiciones</a> | 
+                <a href="index.html">Volver a A2</a> | 
+                <a href="vocabulario-esencial.html">Siguiente: Vocabulario →</a>
+            </div>
+
+            <div class="lesson-content">
+                <h1>Past Simple - Regular Verbs</h1>
+
+                <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4CAF50; margin: 1rem 0;">
+                    <h3>🎯 ¿Cuándo usamos el pasado simple?</h3>
+                    <ul>
+                        <li><strong>Acciones completadas en el pasado:</strong> I worked yesterday</li>
+                        <li><strong>Eventos específicos:</strong> She visited Paris last year</li>
+                        <li><strong>Rutinas pasadas:</strong> When I was young, I played soccer</li>
+                        <li><strong>Secuencia de eventos:</strong> I woke up, had breakfast, and went to work</li>
+                    </ul>
+                </div>
+
+                <h2>📝 Formación del Pasado Simple Regular</h2>
+                
+                <h3>✅ Regla General: Verbo + ED</h3>
+                <div class="vocabulary-list">
+                    <div style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <h4>Ejemplos básicos:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div>
+                                <ul>
+                                    <li>work → work<strong>ed</strong></li>
+                                    <li>play → play<strong>ed</strong></li>
+                                    <li>watch → watch<strong>ed</strong></li>
+                                    <li>listen → listen<strong>ed</strong></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>walk → walk<strong>ed</strong></li>
+                                    <li>talk → talk<strong>ed</strong></li>
+                                    <li>cook → cook<strong>ed</strong></li>
+                                    <li>clean → clean<strong>ed</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h4>💡 Importante:</h4>
+                        <p>El pasado simple regular es igual para todas las personas (I, you, he, she, it, we, they)</p>
+                    </div>
+                </div>
+
+                <h3>🔤 Reglas Especiales de Ortografía</h3>
+                <div class="vocabulary-list">
+                    <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff9800; margin: 1rem 0;">
+                        <h4>1. Verbos terminados en -E: Solo agregar -D</h4>
+                        <ul>
+                            <li>live → liv<strong>ed</strong></li>
+                            <li>like → lik<strong>ed</strong></li>
+                            <li>dance → danc<strong>ed</strong></li>
+                            <li>arrive → arriv<strong>ed</strong></li>
+                        </ul>
+                        
+                        <h4>2. Verbos terminados en consonante + Y: Cambiar Y por -IED</h4>
+                        <ul>
+                            <li>study → stud<strong>ied</strong></li>
+                            <li>try → tr<strong>ied</strong></li>
+                            <li>cry → cr<strong>ied</strong></li>
+                            <li>carry → carr<strong>ied</strong></li>
+                        </ul>
+                        
+                        <h4>3. Verbos terminados en vocal + Y: Solo agregar -ED</h4>
+                        <ul>
+                            <li>play → play<strong>ed</strong></li>
+                            <li>stay → stay<strong>ed</strong></li>
+                            <li>enjoy → enjoy<strong>ed</strong></li>
+                        </ul>
+                        
+                        <h4>4. Verbos de una sílaba: Consonante + Vocal + Consonante</h4>
+                        <p>Duplicar la última consonante + ED</p>
+                        <ul>
+                            <li>stop → stop<strong>ped</strong></li>
+                            <li>plan → plan<strong>ned</strong></li>
+                            <li>shop → shop<strong>ped</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 Ejercicio 1: Forma el pasado</h2>
+                    <p>¿Cuál es el pasado de "study"?</p>
+                    <input type="text" id="pasado1" placeholder="Escribe la forma en pasado" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin: 0.5rem;">
+                    <button onclick="verificarCompletar('pasado1', 'studied', 'resultado-pasado1')">Verificar</button>
+                    <div id="resultado-pasado1" class="answer"></div>
+                </div>
+
+                <h2>🔊 Pronunciación de -ED</h2>
+                <div class="vocabulary-list">
+                    <div style="background: #e1f5fe; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #03a9f4; margin: 1rem 0;">
+                        <h3>Tres sonidos diferentes:</h3>
+                        
+                        <h4>1. /t/ - Sonido T</h4>
+                        <p>Después de sonidos sordos: p, k, f, s, sh, ch</p>
+                        <ul>
+                            <li>worked /wɜːrkt/</li>
+                            <li>stopped /stɑːpt/</li>
+                            <li>watched /wɑːtʃt/</li>
+                            <li>laughed /læft/</li>
+                        </ul>
+                        
+                        <h4>2. /d/ - Sonido D</h4>
+                        <p>Después de sonidos sonoros: b, g, v, z, m, n, l, r y vocales</p>
+                        <ul>
+                            <li>played /pleɪd/</li>
+                            <li>lived /lɪvd/</li>
+                            <li>cleaned /kliːnd/</li>
+                            <li>arrived /əˈraɪvd/</li>
+                        </ul>
+                        
+                        <h4>3. /ɪd/ - Sonido ID</h4>
+                        <p>Después de sonidos T y D</p>
+                        <ul>
+                            <li>wanted /ˈwɑːntɪd/</li>
+                            <li>needed /ˈniːdɪd/</li>
+                            <li>decided /dɪˈsaɪdɪd/</li>
+                            <li>visited /ˈvɪzɪtɪd/</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>❌ Forma Negativa</h2>
+                <div class="vocabulary-list">
+                    <div style="background: #ffebee; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <h4>Estructura: Sujeto + DIDN'T + Verbo base</h4>
+                        <p><strong>Importante:</strong> Con DIDN'T, el verbo principal va en forma base (sin -ED)</p>
+                        
+                        <h4>Ejemplos:</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <h5>✅ Correcto:</h5>
+                                <ul>
+                                    <li>I <strong>didn't work</strong> yesterday</li>
+                                    <li>She <strong>didn't study</strong> last night</li>
+                                    <li>We <strong>didn't play</strong> soccer</li>
+                                    <li>They <strong>didn't arrive</strong> on time</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>❌ Incorrecto:</h5>
+                                <ul>
+                                    <li>I <strong>didn't worked</strong> yesterday</li>
+                                    <li>She <strong>didn't studied</strong> last night</li>
+                                    <li>We <strong>didn't played</strong> soccer</li>
+                                    <li>They <strong>didn't arrived</strong> on time</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>❓ Forma Interrogativa</h2>
+                <div class="vocabulary-list">
+                    <div style="background: #f3e5f5; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <h4>Estructura: DID + Sujeto + Verbo base?</h4>
+                        <p><strong>Importante:</strong> Con DID, el verbo principal va en forma base (sin -ED)</p>
+                        
+                        <h4>Ejemplos:</h4>
+                        <ul>
+                            <li><strong>Did</strong> you <strong>work</strong> yesterday?</li>
+                            <li><strong>Did</strong> she <strong>study</strong> last night?</li>
+                            <li><strong>Did</strong> they <strong>play</strong> soccer?</li>
+                            <li><strong>Did</strong> he <strong>arrive</strong> on time?</li>
+                        </ul>
+                        
+                        <h4>Respuestas cortas:</h4>
+                        <ul>
+                            <li><strong>Yes, I did.</strong> / <strong>No, I didn't.</strong></li>
+                            <li><strong>Yes, she did.</strong> / <strong>No, she didn't.</strong></li>
+                            <li><strong>Yes, they did.</strong> / <strong>No, they didn't.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🧠 Quiz: Forma Interrogativa</h2>
+                    <div id="quiz1">
+                        <div class="quiz-question">¿Cuál es la pregunta correcta?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q1" value="a"> Did you worked yesterday?</li>
+                            <li><input type="radio" name="q1" value="b"> Did you work yesterday?</li>
+                            <li><input type="radio" name="q1" value="c"> Do you worked yesterday?</li>
+                            <li><input type="radio" name="q1" value="d"> You worked yesterday?</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz1', 'b', '¡Correcto! Con DID usamos el verbo en forma base', 'Incorrecto. Con DID el verbo va en forma base: Did you work?')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🕐 Expresiones de Tiempo Pasado</h2>
+                <div class="vocabulary-list">
+                    <h3>Con pasado simple usamos:</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div>
+                            <h4>📅 Tiempo específico:</h4>
+                            <ul>
+                                <li><strong>Yesterday</strong> (ayer)</li>
+                                <li><strong>Last night</strong> (anoche)</li>
+                                <li><strong>Last week</strong> (la semana pasada)</li>
+                                <li><strong>Last month</strong> (el mes pasado)</li>
+                                <li><strong>Last year</strong> (el año pasado)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>⏰ Tiempo exacto:</h4>
+                            <ul>
+                                <li><strong>At 3 o'clock</strong> (a las 3)</li>
+                                <li><strong>In 2020</strong> (en 2020)</li>
+                                <li><strong>On Monday</strong> (el lunes)</li>
+                                <li><strong>This morning</strong> (esta mañana)</li>
+                                <li><strong>Two days ago</strong> (hace dos días)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>📚 Verbos Regulares Comunes</h2>
+                <div class="vocabulary-list">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                        <div>
+                            <h3>🏠 Actividades diarias:</h3>
+                            <ul>
+                                <li><strong>cook → cooked</strong> (cocinar)</li>
+                                <li><strong>clean → cleaned</strong> (limpiar)</li>
+                                <li><strong>wash → washed</strong> (lavar)</li>
+                                <li><strong>brush → brushed</strong> (cepillar)</li>
+                                <li><strong>finish → finished</strong> (terminar)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🎓 Estudio y trabajo:</h3>
+                            <ul>
+                                <li><strong>study → studied</strong> (estudiar)</li>
+                                <li><strong>work → worked</strong> (trabajar)</li>
+                                <li><strong>learn → learned</strong> (aprender)</li>
+                                <li><strong>practice → practiced</strong> (practicar)</li>
+                                <li><strong>help → helped</strong> (ayudar)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🎮 Entretenimiento:</h3>
+                            <ul>
+                                <li><strong>play → played</strong> (jugar)</li>
+                                <li><strong>watch → watched</strong> (ver)</li>
+                                <li><strong>listen → listened</strong> (escuchar)</li>
+                                <li><strong>dance → danced</strong> (bailar)</li>
+                                <li><strong>visit → visited</strong> (visitar)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>✍️ Ejercicio 2: Completa la historia</h2>
+                    <p>Completa con el pasado simple de los verbos:</p>
+                    <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>Yesterday, I _____ (wake) up at 7 AM. <input type="text" id="historia1" style="width: 100px; padding: 0.3rem;"></p>
+                        <p>I _____ (brush) my teeth and _____ (have) breakfast. <input type="text" id="historia2" style="width: 80px; padding: 0.3rem;"> <input type="text" id="historia3" style="width: 80px; padding: 0.3rem;"></p>
+                        <p>Then I _____ (walk) to work. <input type="text" id="historia4" style="width: 100px; padding: 0.3rem;"></p>
+                    </div>
+                    <button onclick="verificarHistoria()">Verificar</button>
+                    <div id="resultado-historia" class="answer"></div>
+                </div>
+
+                <h2>🎭 Diálogo de Ejemplo</h2>
+                <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h3>🗣️ Hablando del fin de semana:</h3>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>A:</strong> What did you do last weekend?</p>
+                        <p><strong>B:</strong> I visited my grandmother on Saturday.</p>
+                        <p><strong>A:</strong> That's nice! Did you stay there all day?</p>
+                        <p><strong>B:</strong> Yes, I did. We cooked together and watched old movies.</p>
+                        <p><strong>A:</strong> Sounds fun! What about Sunday?</p>
+                        <p><strong>B:</strong> I studied for my English exam and cleaned my room.</p>
+                        <p><strong>A:</strong> Did you finish everything?</p>
+                        <p><strong>B:</strong> Yes, I finished all my homework.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🎯 Quiz: Comprensión del diálogo</h2>
+                    <div id="quiz2">
+                        <div class="quiz-question">Según el diálogo, ¿qué hizo B el sábado?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q2" value="a"> Studied for an exam</li>
+                            <li><input type="radio" name="q2" value="b"> Visited his grandmother</li>
+                            <li><input type="radio" name="q2" value="c"> Cleaned his room</li>
+                            <li><input type="radio" name="q2" value="d"> Worked all day</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz2', 'b', '¡Correcto! B visitó a su abuela el sábado', 'Incorrecto. B dijo: I visited my grandmother on Saturday')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🔄 Diferencia: Presente vs Pasado</h2>
+                <div class="vocabulary-list">
+                    <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <h3>Comparación:</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <h4>🔄 Presente Simple:</h4>
+                                <ul>
+                                    <li>I <strong>work</strong> every day</li>
+                                    <li>She <strong>studies</strong> English</li>
+                                    <li><strong>Do</strong> you <strong>play</strong> soccer?</li>
+                                    <li>We <strong>don't watch</strong> TV</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>⏰ Pasado Simple:</h4>
+                                <ul>
+                                    <li>I <strong>worked</strong> yesterday</li>
+                                    <li>She <strong>studied</strong> last night</li>
+                                    <li><strong>Did</strong> you <strong>play</strong> soccer?</li>
+                                    <li>We <strong>didn't watch</strong> TV</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>⚠️ Errores Comunes</h2>
+                <div style="background: #ffebee; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #f44336; margin: 1rem 0;">
+                    <h3>🚫 Evita estos errores:</h3>
+                    <ul>
+                        <li>❌ <strong>I didn't worked</strong> → ✅ <strong>I didn't work</strong></li>
+                        <li>❌ <strong>Did you worked?</strong> → ✅ <strong>Did you work?</strong></li>
+                        <li>❌ <strong>She studyed</strong> → ✅ <strong>She studied</strong></li>
+                        <li>❌ <strong>They stoped</strong> → ✅ <strong>They stopped</strong></li>
+                        <li>❌ <strong>I plaied</strong> → ✅ <strong>I played</strong></li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎨 Ejercicio 3: Tu día de ayer</h2>
+                    <p>Describe qué hiciste ayer usando pasado simple:</p>
+                    <div style="background: #f0f8ff; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>1. Por la mañana: I _____ at _____ o'clock. <input type="text" id="ayer1" style="width: 80px; padding: 0.3rem;"> <input type="text" id="ayer2" style="width: 50px; padding: 0.3rem;"></p>
+                        <p>2. En el trabajo/escuela: I _____ and _____. <input type="text" id="ayer3" style="width: 80px; padding: 0.3rem;"> <input type="text" id="ayer4" style="width: 80px; padding: 0.3rem;"></p>
+                        <p>3. Por la noche: I _____ TV and _____ to bed. <input type="text" id="ayer5" style="width: 80px; padding: 0.3rem;"> <input type="text" id="ayer6" style="width: 80px; padding: 0.3rem;"></p>
+                    </div>
+                    <button onclick="verificarAyer()">Verificar</button>
+                    <div id="resultado-ayer" class="answer"></div>
+                </div>
+
+                <h2>💡 Consejos para Recordar</h2>
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff9800;">
+                    <ul>
+                        <li><strong>Memoriza:</strong> Las reglas de ortografía para -ED</li>
+                        <li><strong>Practica:</strong> La pronunciación de -ED (/t/, /d/, /ɪd/)</li>
+                        <li><strong>Recuerda:</strong> Con DID/DIDN'T el verbo va en forma base</li>
+                        <li><strong>Usa:</strong> Expresiones de tiempo pasado (yesterday, last week)</li>
+                        <li><strong>Cuenta:</strong> Historias simples sobre tu día anterior</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎉 ¡Felicitaciones!</h2>
+                    <p>Has completado la lección de Pasado Simple Regular. Ahora puedes:</p>
+                    <ul>
+                        <li>✅ Formar el pasado de verbos regulares correctamente</li>
+                        <li>✅ Usar DID y DIDN'T en preguntas y negaciones</li>
+                        <li>✅ Pronunciar las terminaciones -ED</li>
+                        <li>✅ Hablar de eventos pasados</li>
+                        <li>✅ Evitar errores comunes de ortografía</li>
+                    </ul>
+                    
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <a href="vocabulario-esencial.html" class="btn" style="margin: 0.5rem;">Siguiente Lección →</a>
+                        <a href="index.html" class="btn" style="margin: 0.5rem;">Volver a A2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 - Refuerzo de Inglés - Lección A2.3</p>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        function verificarHistoria() {
+            const historia1 = document.getElementById('historia1').value.trim().toLowerCase();
+            const historia2 = document.getElementById('historia2').value.trim().toLowerCase();
+            const historia3 = document.getElementById('historia3').value.trim().toLowerCase();
+            const historia4 = document.getElementById('historia4').value.trim().toLowerCase();
+            const resultado = document.getElementById('resultado-historia');
+            
+            let correctas = 0;
+            let mensaje = "Resultados:\n";
+            
+            if (historia1 === 'woke') {
+                correctas++;
+                mensaje += "1. ✅ Correcto: woke (wake es irregular)\n";
+            } else {
+                mensaje += "1. ❌ Incorrecto. Respuesta: woke (wake es irregular)\n";
+            }
+            
+            if (historia2 === 'brushed') {
+                correctas++;
+                mensaje += "2. ✅ Correcto: brushed\n";
+            } else {
+                mensaje += "2. ❌ Incorrecto. Respuesta: brushed\n";
+            }
+            
+            if (historia3 === 'had') {
+                correctas++;
+                mensaje += "3. ✅ Correcto: had (have es irregular)\n";
+            } else {
+                mensaje += "3. ❌ Incorrecto. Respuesta: had (have es irregular)\n";
+            }
+            
+            if (historia4 === 'walked') {
+                correctas++;
+                mensaje += "4. ✅ Correcto: walked\n";
+            } else {
+                mensaje += "4. ❌ Incorrecto. Respuesta: walked\n";
+            }
+            
+            resultado.innerHTML = mensaje.replace(/\n/g, '<br>');
+            resultado.style.display = 'block';
+            
+            if (correctas >= 3) {
+                resultado.style.background = '#c8e6c9';
+                resultado.style.color = '#2e7d32';
+            } else {
+                resultado.style.background = '#ffcdd2';
+                resultado.style.color = '#c62828';
+            }
+        }
+        
+        function verificarAyer() {
+            const ayer1 = document.getElementById('ayer1').value.trim().toLowerCase();
+            const ayer2 = document.getElementById('ayer2').value.trim();
+            const ayer3 = document.getElementById('ayer3').value.trim().toLowerCase();
+            const ayer4 = document.getElementById('ayer4').value.trim().toLowerCase();
+            const ayer5 = document.getElementById('ayer5').value.trim().toLowerCase();
+            const ayer6 = document.getElementById('ayer6').value.trim().toLowerCase();
+            const resultado = document.getElementById('resultado-ayer');
+            
+            let mensaje = "Ejemplos de respuestas correctas:\n";
+            
+            // Respuestas flexibles para descripción personal
+            const verbos1 = ['woke', 'got'];
+            const verbos3 = ['worked', 'studied', 'learned', 'practiced'];
+            const verbos4 = ['talked', 'helped', 'played', 'worked'];
+            const verbos5 = ['watched'];
+            const verbos6 = ['went'];
+            
+            if (verbos1.includes(ayer1) || ayer1.includes('woke') || ayer1.includes('got')) {
+                mensaje += "1. ✅ Correcto: I " + ayer1 + " up at " + ayer2 + " o'clock\n";
+            } else {
+                mensaje += "1. 💡 Ejemplos: woke up, got up\n";
+            }
+            
+            if (verbos3.includes(ayer3) || ayer3.endsWith('ed')) {
+                mensaje += "2. ✅ Correcto: I " + ayer3 + " and " + ayer4 + "\n";
+            } else {
+                mensaje += "2. 💡 Ejemplos: worked, studied, learned, practiced\n";
+            }
+            
+            if (ayer5 === 'watched' && ayer6 === 'went') {
+                mensaje += "3. ✅ Perfecto: I watched TV and went to bed\n";
+            } else {
+                mensaje += "3. 💡 Respuesta: watched TV and went to bed\n";
+            }
+            
+            resultado.innerHTML = mensaje.replace(/\n/g, '<br>');
+            resultado.style.display = 'block';
+            resultado.style.background = '#e3f2fd';
+            resultado.style.color = '#1976d2';
+        }
+        
+        // Marcar lección como completada
+        document.addEventListener('DOMContentLoaded', function() {
+            localStorage.setItem('a2-leccion3', 'completada');
+        });
+    </script>
+</body>
+</html>

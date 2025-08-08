@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversaciones Breves - A2</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>💬 Conversaciones Breves</h1>
+        <p>Diálogos prácticos para situaciones cotidianas</p>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-nav">
+                <a href="vocabulario-esencial.html">← Anterior: Vocabulario Esencial</a> | 
+                <a href="index.html">Volver a A2</a> | 
+                <a href="../b1/index.html">Siguiente Nivel: B1 →</a>
+            </div>
+
+            <div class="lesson-content">
+                <h1>Brief Conversations for Daily Life</h1>
+
+                <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4CAF50; margin: 1rem 0;">
+                    <h3>🎯 ¿Por qué son importantes las conversaciones breves?</h3>
+                    <p>Las conversaciones cortas son la base de la comunicación diaria. Te permiten interactuar en tiendas, restaurantes, trabajo y situaciones sociales con confianza y naturalidad.</p>
+                </div>
+
+                <h2>🛒 En la Tienda / At the Store</h2>
+                
+                <h3>🏪 Comprando en el Supermercado</h3>
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h4>🗣️ Diálogo 1:</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #ff9800;">
+                        <p><strong>Customer:</strong> Excuse me, where can I find the milk?</p>
+                        <p><strong>Employee:</strong> It's in aisle 3, next to the yogurt.</p>
+                        <p><strong>Customer:</strong> Thank you. And where are the apples?</p>
+                        <p><strong>Employee:</strong> In the fruit section, over there.</p>
+                        <p><strong>Customer:</strong> Perfect, thanks!</p>
+                    </div>
+                    
+                    <h4>📝 Frases útiles para comprar:</h4>
+                    <ul>
+                        <li><strong>"Excuse me, where is...?"</strong> → "Disculpe, ¿dónde está...?"</li>
+                        <li><strong>"How much is this?"</strong> → "¿Cuánto cuesta esto?"</li>
+                        <li><strong>"Do you have...?"</strong> → "¿Tienen...?"</li>
+                        <li><strong>"I'm looking for..."</strong> → "Estoy buscando..."</li>
+                        <li><strong>"Can I pay by card?"</strong> → "¿Puedo pagar con tarjeta?"</li>
+                    </ul>
+                </div>
+
+                <h3>💳 En la Caja / At the Checkout</h3>
+                <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h4>🗣️ Diálogo 2:</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #2196f3;">
+                        <p><strong>Cashier:</strong> Good morning! Did you find everything you needed?</p>
+                        <p><strong>Customer:</strong> Yes, thank you.</p>
+                        <p><strong>Cashier:</strong> That'll be $25.50. Cash or card?</p>
+                        <p><strong>Customer:</strong> Card, please.</p>
+                        <p><strong>Cashier:</strong> Here's your receipt. Have a great day!</p>
+                        <p><strong>Customer:</strong> Thank you, you too!</p>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 Ejercicio 1: Completa la conversación</h2>
+                    <p>Completa el diálogo en la tienda:</p>
+                    <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>You:</strong> Excuse me, _____ can I find the bread?</p>
+                        <input type="text" id="tienda1" style="width: 80px; padding: 0.3rem;">
+                        <p><strong>Employee:</strong> It's in aisle 5.</p>
+                        <p><strong>You:</strong> _____ you. How _____ is this cheese?</p>
+                        <input type="text" id="tienda2" style="width: 60px; padding: 0.3rem;"> <input type="text" id="tienda3" style="width: 60px; padding: 0.3rem;">
+                    </div>
+                    <button onclick="verificarTienda()">Verificar</button>
+                    <div id="resultado-tienda" class="answer"></div>
+                </div>
+
+                <h2>🍽️ En el Restaurante / At the Restaurant</h2>
+                
+                <h3>🍕 Pidiendo Comida</h3>
+                <div style="background: #f3e5f5; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h4>🗣️ Diálogo 3:</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #9c27b0;">
+                        <p><strong>Waiter:</strong> Good evening! Are you ready to order?</p>
+                        <p><strong>Customer:</strong> Yes, I'd like the chicken salad, please.</p>
+                        <p><strong>Waiter:</strong> What would you like to drink?</p>
+                        <p><strong>Customer:</strong> A glass of water, please.</p>
+                        <p><strong>Waiter:</strong> Anything else?</p>
+                        <p><strong>Customer:</strong> No, that's all. Thank you.</p>
+                    </div>
+                    
+                    <h4>📝 Frases para restaurantes:</h4>
+                    <ul>
+                        <li><strong>"I'd like..."</strong> → "Me gustaría..."</li>
+                        <li><strong>"Can I have...?"</strong> → "¿Puedo tener...?"</li>
+                        <li><strong>"What do you recommend?"</strong> → "¿Qué recomienda?"</li>
+                        <li><strong>"Is this spicy?"</strong> → "¿Esto está picante?"</li>
+                        <li><strong>"Can I get the check?"</strong> → "¿Puede traer la cuenta?"</li>
+                    </ul>
+                </div>
+
+                <h3>💰 Pagando la Cuenta</h3>
+                <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h4>🗣️ Diálogo 4:</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #4caf50;">
+                        <p><strong>Customer:</strong> Excuse me, can I get the check, please?</p>
+                        <p><strong>Waiter:</strong> Of course! Here you go.</p>
+                        <p><strong>Customer:</strong> Can I pay by credit card?</p>
+                        <p><strong>Waiter:</strong> Yes, no problem.</p>
+                        <p><strong>Customer:</strong> Thank you. The food was delicious!</p>
+                        <p><strong>Waiter:</strong> I'm glad you enjoyed it!</p>
+                    </div>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🧠 Quiz: En el restaurante</h2>
+                    <div id="quiz1">
+                        <div class="quiz-question">¿Qué dice el cliente para pedir la cuenta?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q1" value="a"> Give me money</li>
+                            <li><input type="radio" name="q1" value="b"> Can I get the check?</li>
+                            <li><input type="radio" name="q1" value="c"> Where is my food?</li>
+                            <li><input type="radio" name="q1" value="d"> I want to leave</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz1', 'b', '¡Correcto! Can I get the check? es la forma educada de pedir la cuenta', 'Incorrecto. La forma correcta es: Can I get the check, please?')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🚌 Pidiendo Direcciones / Asking for Directions</h2>
+                
+                <h3>🗺️ En la Calle</h3>
+                <div style="background: #fff8e1; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h4>🗣️ Diálogo 5:</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #ffc107;">
+                        <p><strong>Tourist:</strong> Excuse me, how do I get to the train station?</p>
+                        <p><strong>Local:</strong> Go straight for two blocks, then turn left.</p>
+                        <p><strong>Tourist:</strong> Is it far from here?</p>
+                        <p><strong>Local:</strong> No, it's about a 5-minute walk.</p>
+                        <p><strong>Tourist:</strong> Thank you so much!</p>
+                        <p><strong>Local:</strong> You're welcome!</p>
+                    </div>
+                    
+                    <h4>📝 Frases para direcciones:</h4>
+                    <ul>
+                        <li><strong>"How do I get to...?"</strong> → "¿Cómo llego a...?"</li>
+                        <li><strong>"Where is...?"</strong> → "¿Dónde está...?"</li>
+                        <li><strong>"Is it far?"</strong> → "¿Está lejos?"</li>
+                        <li><strong>"Go straight"</strong> → "Siga derecho"</li>
+                        <li><strong>"Turn left/right"</strong> → "Gire a la izquierda/derecha"</li>
+                    </ul>
+                </div>
+
+                <h3>🚇 En el Transporte Público</h3>
+                <div style="background: #e1f5fe; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h4>🗣️ Diálogo 6:</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #03a9f4;">
+                        <p><strong>Passenger:</strong> Excuse me, does this bus go to downtown?</p>
+                        <p><strong>Driver:</strong> Yes, it does.</p>
+                        <p><strong>Passenger:</strong> How much is the fare?</p>
+                        <p><strong>Driver:</strong> Two dollars.</p>
+                        <p><strong>Passenger:</strong> Could you tell me when we reach Main Street?</p>
+                        <p><strong>Driver:</strong> Sure, I'll let you know.</p>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>✍️ Ejercicio 2: Ordena el diálogo</h2>
+                    <p>Ordena estas frases para formar una conversación coherente:</p>
+                    <div style="background: #f0f8ff; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <div id="frases-desordenadas">
+                            <div class="frase-item" onclick="seleccionarFrase(this, 1)">A) You're welcome!</div>
+                            <div class="frase-item" onclick="seleccionarFrase(this, 2)">B) Excuse me, where is the library?</div>
+                            <div class="frase-item" onclick="seleccionarFrase(this, 3)">C) It's on Oak Street, next to the park.</div>
+                            <div class="frase-item" onclick="seleccionarFrase(this, 4)">D) Thank you very much!</div>
+                        </div>
+                        <div id="orden-correcto" style="margin-top: 1rem;"></div>
+                    </div>
+                    <button onclick="verificarOrden()">Verificar Orden</button>
+                    <div id="resultado-orden" class="answer"></div>
+                </div>
+
+                <h2>💼 En el Trabajo / At Work</h2>
+                
+                <h3>☕ Conversación Informal</h3>
+                <div style="background: #fce4ec; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h4>🗣️ Diálogo 7:</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #e91e63;">
+                        <p><strong>Colleague A:</strong> Good morning! How was your weekend?</p>
+                        <p><strong>Colleague B:</strong> It was great! I went to the beach. How about you?</p>
+                        <p><strong>Colleague A:</strong> I stayed home and watched movies.</p>
+                        <p><strong>Colleague B:</strong> That sounds relaxing!</p>
+                        <p><strong>Colleague A:</strong> Yes, it was. Do you want some coffee?</p>
+                        <p><strong>Colleague B:</strong> Yes, please. Thank you!</p>
+                    </div>
+                    
+                    <h4>📝 Frases para el trabajo:</h4>
+                    <ul>
+                        <li><strong>"How was your weekend?"</strong> → "¿Cómo estuvo tu fin de semana?"</li>
+                        <li><strong>"Do you have a minute?"</strong> → "¿Tienes un minuto?"</li>
+                        <li><strong>"Can you help me with...?"</strong> → "¿Puedes ayudarme con...?"</li>
+                        <li><strong>"See you tomorrow!"</strong> → "¡Nos vemos mañana!"</li>
+                        <li><strong>"Have a good day!"</strong> → "¡Que tengas buen día!"</li>
+                    </ul>
+                </div>
+
+                <h2>📞 Por Teléfono / On the Phone</h2>
+                
+                <h3>☎️ Llamada Formal</h3>
+                <div style="background: #f3e5f5; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h4>🗣️ Diálogo 8:</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #673ab7;">
+                        <p><strong>Receptionist:</strong> Good morning, ABC Company. How can I help you?</p>
+                        <p><strong>Caller:</strong> Hello, I'd like to speak with Mr. Johnson, please.</p>
+                        <p><strong>Receptionist:</strong> May I ask who's calling?</p>
+                        <p><strong>Caller:</strong> This is Maria Garcia.</p>
+                        <p><strong>Receptionist:</strong> One moment, please. I'll transfer you.</p>
+                        <p><strong>Caller:</strong> Thank you.</p>
+                    </div>
+                    
+                    <h4>📝 Frases para llamadas:</h4>
+                    <ul>
+                        <li><strong>"May I speak with...?"</strong> → "¿Puedo hablar con...?"</li>
+                        <li><strong>"This is..."</strong> → "Habla..." / "Soy..."</li>
+                        <li><strong>"Can you repeat that?"</strong> → "¿Puede repetir eso?"</li>
+                        <li><strong>"I'll call back later"</strong> → "Llamaré más tarde"</li>
+                        <li><strong>"Thank you for calling"</strong> → "Gracias por llamar"</li>
+                    </ul>
+                </div>
+
+                <h2>🏥 Situaciones de Emergencia / Emergency Situations</h2>
+                
+                <h3>🚑 En el Doctor</h3>
+                <div style="background: #ffebee; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h4>🗣️ Diálogo 9:</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #f44336;">
+                        <p><strong>Doctor:</strong> What seems to be the problem?</p>
+                        <p><strong>Patient:</strong> I have a headache and I feel dizzy.</p>
+                        <p><strong>Doctor:</strong> How long have you felt this way?</p>
+                        <p><strong>Patient:</strong> Since yesterday morning.</p>
+                        <p><strong>Doctor:</strong> I'll give you some medicine. Rest and drink lots of water.</p>
+                        <p><strong>Patient:</strong> Thank you, doctor.</p>
+                    </div>
+                    
+                    <h4>📝 Frases para emergencias:</h4>
+                    <ul>
+                        <li><strong>"I need help"</strong> → "Necesito ayuda"</li>
+                        <li><strong>"Call an ambulance"</strong> → "Llame una ambulancia"</li>
+                        <li><strong>"I don't feel well"</strong> → "No me siento bien"</li>
+                        <li><strong>"Where is the hospital?"</strong> → "¿Dónde está el hospital?"</li>
+                        <li><strong>"It's an emergency"</strong> → "Es una emergencia"</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🎯 Quiz: Situaciones diversas</h2>
+                    <div id="quiz2">
+                        <div class="quiz-question">¿Qué dices cuando no te sientes bien?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q2" value="a"> I'm very happy</li>
+                            <li><input type="radio" name="q2" value="b"> I don't feel well</li>
+                            <li><input type="radio" name="q2" value="c"> I'm hungry</li>
+                            <li><input type="radio" name="q2" value="d"> I'm tired</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz2', 'b', '¡Correcto! I don\'t feel well es la expresión correcta', 'Incorrecto. Cuando no te sientes bien dices: I don\'t feel well')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🎉 Conversaciones Sociales / Social Conversations</h2>
+                
+                <h3>👋 Conociendo Gente Nueva</h3>
+                <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h4>🗣️ Diálogo 10:</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #4caf50;">
+                        <p><strong>Person A:</strong> Hi! I'm Sarah. Nice to meet you!</p>
+                        <p><strong>Person B:</strong> Hello! I'm Carlos. Nice to meet you too!</p>
+                        <p><strong>Person A:</strong> Where are you from?</p>
+                        <p><strong>Person B:</strong> I'm from Mexico. How about you?</p>
+                        <p><strong>Person A:</strong> I'm from Canada. What do you do?</p>
+                        <p><strong>Person B:</strong> I'm a teacher. And you?</p>
+                        <p><strong>Person A:</strong> I'm a nurse.</p>
+                    </div>
+                    
+                    <h4>📝 Frases para socializar:</h4>
+                    <ul>
+                        <li><strong>"Nice to meet you"</strong> → "Mucho gusto"</li>
+                        <li><strong>"Where are you from?"</strong> → "¿De dónde eres?"</li>
+                        <li><strong>"What do you do?"</strong> → "¿A qué te dedicas?"</li>
+                        <li><strong>"How long have you been here?"</strong> → "¿Cuánto tiempo llevas aquí?"</li>
+                        <li><strong>"It was nice talking to you"</strong> → "Fue un placer hablar contigo"</li>
+                    </ul>
+                </div>
+
+                <h2>💡 Consejos para Conversaciones Exitosas</h2>
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff9800;">
+                    <h3>🎯 Estrategias importantes:</h3>
+                    <ul>
+                        <li><strong>Escucha activamente:</strong> Presta atención a lo que dice la otra persona</li>
+                        <li><strong>Usa frases de cortesía:</strong> "Please", "Thank you", "Excuse me"</li>
+                        <li><strong>No tengas miedo de pedir repetición:</strong> "Can you repeat that?"</li>
+                        <li><strong>Mantén contacto visual:</strong> Muestra interés en la conversación</li>
+                        <li><strong>Practica expresiones comunes:</strong> Memoriza frases útiles</li>
+                        <li><strong>Sé paciente contigo mismo:</strong> Es normal cometer errores</li>
+                    </ul>
+                </div>
+
+                <h2>🗣️ Expresiones de Transición</h2>
+                <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h3>Para mantener la conversación fluida:</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div>
+                            <h4>🔄 Para cambiar de tema:</h4>
+                            <ul>
+                                <li><strong>"By the way..."</strong> → "Por cierto..."</li>
+                                <li><strong>"Speaking of..."</strong> → "Hablando de..."</li>
+                                <li><strong>"That reminds me..."</strong> → "Eso me recuerda..."</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>⏰ Para terminar:</h4>
+                            <ul>
+                                <li><strong>"I have to go"</strong> → "Tengo que irme"</li>
+                                <li><strong>"See you later"</strong> → "Nos vemos luego"</li>
+                                <li><strong>"Take care"</strong> → "Cuídate"</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>🤔 Para ganar tiempo:</h4>
+                            <ul>
+                                <li><strong>"Let me think..."</strong> → "Déjame pensar..."</li>
+                                <li><strong>"Well..."</strong> → "Bueno..."</li>
+                                <li><strong>"Actually..."</strong> → "En realidad..."</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎭 Ejercicio 3: Role Play</h2>
+                    <p>Practica estas situaciones (puedes hacerlo solo o con alguien):</p>
+                    <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <div class="role-play-scenarios">
+                            <div style="margin: 1rem 0; padding: 1rem; background: white; border-radius: 8px;">
+                                <h4>🛒 Escenario 1: En el supermercado</h4>
+                                <p><strong>Situación:</strong> Necesitas comprar leche, pan y manzanas. Pregunta dónde están y paga en la caja.</p>
+                                <button onclick="mostrarEjemplo('ejemplo1')">Ver ejemplo</button>
+                                <div id="ejemplo1" class="ejemplo-oculto" style="display: none; margin-top: 1rem; padding: 1rem; background: #e8f5e8; border-radius: 4px;">
+                                    <p><strong>You:</strong> "Excuse me, where can I find the milk?"</p>
+                                    <p><strong>Employee:</strong> "Aisle 3, next to the yogurt."</p>
+                                    <p><strong>You:</strong> "Thank you. And where are the apples?"</p>
+                                    <p><strong>Employee:</strong> "In the fruit section."</p>
+                                    <p><em>En la caja:</em></p>
+                                    <p><strong>You:</strong> "Can I pay by card?"</p>
+                                    <p><strong>Cashier:</strong> "Yes, of course."</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin: 1rem 0; padding: 1rem; background: white; border-radius: 8px;">
+                                <h4>🍕 Escenario 2: En un restaurante</h4>
+                                <p><strong>Situación:</strong> Pide una pizza, una bebida y luego la cuenta.</p>
+                                <button onclick="mostrarEjemplo('ejemplo2')">Ver ejemplo</button>
+                                <div id="ejemplo2" class="ejemplo-oculto" style="display: none; margin-top: 1rem; padding: 1rem; background: #e8f5e8; border-radius: 4px;">
+                                    <p><strong>Waiter:</strong> "Are you ready to order?"</p>
+                                    <p><strong>You:</strong> "Yes, I'd like a pizza margherita, please."</p>
+                                    <p><strong>Waiter:</strong> "What would you like to drink?"</p>
+                                    <p><strong>You:</strong> "A Coke, please."</p>
+                                    <p><em>Después de comer:</em></p>
+                                    <p><strong>You:</strong> "Can I get the check, please?"</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin: 1rem 0; padding: 1rem; background: white; border-radius: 8px;">
+                                <h4>🗺️ Escenario 3: Pidiendo direcciones</h4>
+                                <p><strong>Situación:</strong> Estás perdido y necesitas llegar al banco más cercano.</p>
+                                <button onclick="mostrarEjemplo('ejemplo3')">Ver ejemplo</button>
+                                <div id="ejemplo3" class="ejemplo-oculto" style="display: none; margin-top: 1rem; padding: 1rem; background: #e8f5e8; border-radius: 4px;">
+                                    <p><strong>You:</strong> "Excuse me, how do I get to the nearest bank?"</p>
+                                    <p><strong>Local:</strong> "Go straight for two blocks, then turn right."</p>
+                                    <p><strong>You:</strong> "Is it far from here?"</p>
+                                    <p><strong>Local:</strong> "No, about 5 minutes walking."</p>
+                                    <p><strong>You:</strong> "Thank you so much!"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>📱 Conversaciones Modernas</h2>
+                <div style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h3>💬 Mensajes de texto comunes:</h3>
+                    <ul>
+                        <li><strong>"Are you free tonight?"</strong> → "¿Estás libre esta noche?"</li>
+                        <li><strong>"See you soon!"</strong> → "¡Nos vemos pronto!"</li>
+                        <li><strong>"Running late"</strong> → "Voy tarde"</li>
+                        <li><strong>"On my way"</strong> → "En camino"</li>
+                        <li><strong>"Let me know"</strong> → "Avísame"</li>
+                        <li><strong>"Talk to you later"</strong> → "Hablamos luego"</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎉 ¡Felicitaciones! Has completado el nivel A2</h2>
+                    <p>Ahora puedes mantener conversaciones básicas en inglés sobre:</p>
+                    <ul>
+                        <li>✅ Compras en tiendas y supermercados</li>
+                        <li>✅ Pedidos en restaurantes</li>
+                        <li>✅ Direcciones y transporte</li>
+                        <li>✅ Conversaciones de trabajo</li>
+                        <li>✅ Llamadas telefónicas básicas</li>
+                        <li>✅ Situaciones de emergencia</li>
+                        <li>✅ Presentaciones y socialización</li>
+                    </ul>
+                    
+                    <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4CAF50; margin: 2rem 0;">
+                        <h3>🎯 ¿Qué sigue?</h3>
+                        <p>¡Estás listo para el <strong>Nivel B1</strong>! Allí aprenderás:</p>
+                        <ul>
+                            <li>Comparativos y superlativos</li>
+                            <li>Tiempos verbales más complejos</li>
+                            <li>Conversaciones más largas y detalladas</li>
+                            <li>Comprensión de textos más avanzados</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <a href="../b1/index.html" class="btn" style="margin: 0.5rem; background: #4CAF50; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: bold;">🚀 Continuar a Nivel B1</a>
+                        <a href="index.html" class="btn" style="margin: 0.5rem;">📚 Revisar A2</a>
+                        <a href="../index.html" class="btn" style="margin: 0.5rem;">🏠 Inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 - Refuerzo de Inglés - Lección A2.5 (Final)</p>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        let ordenSeleccionado = [];
+        
+        function verificarTienda() {
+            const tienda1 = document.getElementById('tienda1').value.trim().toLowerCase();
+            const tienda2 = document.getElementById('tienda2').value.trim().toLowerCase();
+            const tienda3 = document.getElementById('tienda3').value.trim().toLowerCase();
+            const resultado = document.getElementById('resultado-tienda');
+            
+            let correctas = 0;
+            let mensaje = "Resultados:\n";
+            
+            if (tienda1 === 'where') {
+                correctas++;
+                mensaje += "1. ✅ Correcto: where\n";
+            } else {
+                mensaje += "1. ❌ Incorrecto. Respuesta: where\n";
+            }
+            
+            if (tienda2 === 'thank') {
+                correctas++;
+                mensaje += "2. ✅ Correcto: Thank\n";
+            } else {
+                mensaje += "2. ❌ Incorrecto. Respuesta: Thank\n";
+            }
+            
+            if (tienda3 === 'much') {
+                correctas++;
+                mensaje += "3. ✅ Correcto: much\n";
+            } else {
+                mensaje += "3. ❌ Incorrecto. Respuesta: much\n";
+            }
+            
+            resultado.innerHTML = mensaje.replace(/\n/g, '<br>');
+            resultado.style.display = 'block';
+            
+            if (correctas === 3) {
+                resultado.style.background = '#c8e6c9';
+                resultado.style.color = '#2e7d32';
+            } else {
+                resultado.style.background = '#ffcdd2';
+                resultado.style.color = '#c62828';
+            }
+        }
+        
+        function seleccionarFrase(elemento, numero) {
+            if (ordenSeleccionado.includes(numero)) return;
+            
+            elemento.style.background = '#4CAF50';
+            elemento.style.color = 'white';
+            elemento.style.pointerEvents = 'none';
+            
+            ordenSeleccionado.push(numero);
+            
+            const ordenDiv = document.getElementById('orden-correcto');
+            ordenDiv.innerHTML += `<div style="margin: 0.5rem 0; padding: 0.5rem; background: #e8f5e8; border-radius: 4px;">${ordenSeleccionado.length}. ${elemento.textContent}</div>`;
+        }
+        
+        function verificarOrden() {
+            const ordenCorrecto = [2, 3, 4, 1]; // B, C, D, A
+            const resultado = document.getElementById('resultado-orden');
+            
+            if (JSON.stringify(ordenSeleccionado) === JSON.stringify(ordenCorrecto)) {
+                resultado.innerHTML = '🎉 ¡Perfecto! El orden correcto es:<br>1. Excuse me, where is the library?<br>2. It\'s on Oak Street, next to the park.<br>3. Thank you very much!<br>4. You\'re welcome!';
+                resultado.style.background = '#c8e6c9';
+                resultado.style.color = '#2e7d32';
+            } else {
+                resultado.innerHTML = '❌ Orden incorrecto. El orden correcto es: B → C → D → A<br>Intenta de nuevo refrescando la página.';
+                resultado.style.background = '#ffcdd2';
+                resultado.style.color = '#c62828';
+            }
+            
+            resultado.style.display = 'block';
+        }
+        
+        function mostrarEjemplo(id) {
+            const ejemplo = document.getElementById(id);
+            if (ejemplo.style.display === 'none') {
+                ejemplo.style.display = 'block';
+            } else {
+                ejemplo.style.display = 'none';
+            }
+        }
+        
+        // Marcar nivel A2 como completado
+        document.addEventListener('DOMContentLoaded', function() {
+            localStorage.setItem('a2-completado', 'true');
+            localStorage.setItem('a2-leccion5', 'completada');
+        });
+    </script>
+</body>
+</html>

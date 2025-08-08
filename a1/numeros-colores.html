@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números y Colores - A1</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>🔢 Números, Colores y Tiempo</h1>
+        <p>Vocabulario esencial para el día a día</p>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-nav">
+                <a href="abecedario.html">← Anterior: Abecedario</a> | 
+                <a href="index.html">Volver a A1</a> | 
+                <a href="verbo-to-be.html">Siguiente: Verbo To Be →</a>
+            </div>
+
+            <div class="lesson-content">
+                <h1>Numbers, Colors & Time</h1>
+
+                <h2>🔢 Números del 1 al 20</h2>
+                <div class="vocabulary-list">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div>
+                            <h3>1 - 10</h3>
+                            <ul>
+                                <li><strong>1</strong> → One /wʌn/</li>
+                                <li><strong>2</strong> → Two /tuː/</li>
+                                <li><strong>3</strong> → Three /θriː/</li>
+                                <li><strong>4</strong> → Four /fɔːr/</li>
+                                <li><strong>5</strong> → Five /faɪv/</li>
+                                <li><strong>6</strong> → Six /sɪks/</li>
+                                <li><strong>7</strong> → Seven /ˈsevən/</li>
+                                <li><strong>8</strong> → Eight /eɪt/</li>
+                                <li><strong>9</strong> → Nine /naɪn/</li>
+                                <li><strong>10</strong> → Ten /ten/</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>11 - 20</h3>
+                            <ul>
+                                <li><strong>11</strong> → Eleven /ɪˈlevən/</li>
+                                <li><strong>12</strong> → Twelve /twelv/</li>
+                                <li><strong>13</strong> → Thirteen /θɜːrˈtiːn/</li>
+                                <li><strong>14</strong> → Fourteen /fɔːrˈtiːn/</li>
+                                <li><strong>15</strong> → Fifteen /fɪfˈtiːn/</li>
+                                <li><strong>16</strong> → Sixteen /sɪksˈtiːn/</li>
+                                <li><strong>17</strong> → Seventeen /sevənˈtiːn/</li>
+                                <li><strong>18</strong> → Eighteen /eɪˈtiːn/</li>
+                                <li><strong>19</strong> → Nineteen /naɪnˈtiːn/</li>
+                                <li><strong>20</strong> → Twenty /ˈtwenti/</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 Ejercicio 1: ¿Qué número es?</h2>
+                    <p>Escribe el número en inglés:</p>
+                    <p><strong>7</strong> = <input type="text" id="numero7" placeholder="Escribe en inglés" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin: 0.5rem;"></p>
+                    <button onclick="verificarCompletar('numero7', 'seven', 'resultado-numero')">Verificar</button>
+                    <div id="resultado-numero" class="answer"></div>
+                </div>
+
+                <h2>🌈 Colores Básicos</h2>
+                <div class="vocabulary-list">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div>
+                            <h3>Colores Primarios</h3>
+                            <ul>
+                                <li><span style="color: red;">●</span> <strong>Red</strong> → Rojo</li>
+                                <li><span style="color: blue;">●</span> <strong>Blue</strong> → Azul</li>
+                                <li><span style="color: yellow;">●</span> <strong>Yellow</strong> → Amarillo</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Colores Comunes</h3>
+                            <ul>
+                                <li><span style="color: green;">●</span> <strong>Green</strong> → Verde</li>
+                                <li><span style="color: orange;">●</span> <strong>Orange</strong> → Naranja</li>
+                                <li><span style="color: purple;">●</span> <strong>Purple</strong> → Morado</li>
+                                <li><span style="color: pink;">●</span> <strong>Pink</strong> → Rosa</li>
+                                <li><span style="color: brown;">●</span> <strong>Brown</strong> → Marrón</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Blanco y Negro</h3>
+                            <ul>
+                                <li><span style="color: black;">●</span> <strong>Black</strong> → Negro</li>
+                                <li><span style="color: gray;">●</span> <strong>Gray/Grey</strong> → Gris</li>
+                                <li><span style="color: lightgray;">●</span> <strong>White</strong> → Blanco</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🧠 Quiz: Colores</h2>
+                    <div id="quiz1">
+                        <div class="quiz-question">¿De qué color es el sol?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q1" value="a"> Blue</li>
+                            <li><input type="radio" name="q1" value="b"> Yellow</li>
+                            <li><input type="radio" name="q1" value="c"> Red</li>
+                            <li><input type="radio" name="q1" value="d"> Green</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz1', 'b', '¡Correcto! El sol es yellow (amarillo)', 'Incorrecto. El sol es yellow (amarillo)')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>📅 Días de la Semana</h2>
+                <div class="vocabulary-list">
+                    <ul>
+                        <li><strong>Monday</strong> → Lunes /ˈmʌndeɪ/</li>
+                        <li><strong>Tuesday</strong> → Martes /ˈtuːzdeɪ/</li>
+                        <li><strong>Wednesday</strong> → Miércoles /ˈwenzdeɪ/</li>
+                        <li><strong>Thursday</strong> → Jueves /ˈθɜːrzdeɪ/</li>
+                        <li><strong>Friday</strong> → Viernes /ˈfraɪdeɪ/</li>
+                        <li><strong>Saturday</strong> → Sábado /ˈsætərdeɪ/</li>
+                        <li><strong>Sunday</strong> → Domingo /ˈsʌndeɪ/</li>
+                    </ul>
+                </div>
+
+                <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h3>💡 Tip Importante:</h3>
+                    <p>En inglés, los días de la semana <strong>siempre</strong> se escriben con mayúscula inicial: Monday, Tuesday, etc.</p>
+                </div>
+
+                <h2>📆 Meses del Año</h2>
+                <div class="vocabulary-list">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div>
+                            <h3>Enero - Junio</h3>
+                            <ul>
+                                <li><strong>January</strong> → Enero</li>
+                                <li><strong>February</strong> → Febrero</li>
+                                <li><strong>March</strong> → Marzo</li>
+                                <li><strong>April</strong> → Abril</li>
+                                <li><strong>May</strong> → Mayo</li>
+                                <li><strong>June</strong> → Junio</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Julio - Diciembre</h3>
+                            <ul>
+                                <li><strong>July</strong> → Julio</li>
+                                <li><strong>August</strong> → Agosto</li>
+                                <li><strong>September</strong> → Septiembre</li>
+                                <li><strong>October</strong> → Octubre</li>
+                                <li><strong>November</strong> → Noviembre</li>
+                                <li><strong>December</strong> → Diciembre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>✍️ Ejercicio 2: Completa la Secuencia</h2>
+                    <p>¿Qué día viene después de Wednesday?</p>
+                    <input type="text" id="dia-siguiente" placeholder="Escribe el día" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin: 0.5rem;">
+                    <button onclick="verificarCompletar('dia-siguiente', 'thursday', 'resultado-dia')">Verificar</button>
+                    <div id="resultado-dia" class="answer"></div>
+                </div>
+
+                <h2>🔢 Números Grandes</h2>
+                <div class="vocabulary-list">
+                    <h3>Decenas y Centenas</h3>
+                    <ul>
+                        <li><strong>20</strong> → Twenty</li>
+                        <li><strong>30</strong> → Thirty</li>
+                        <li><strong>40</strong> → Forty</li>
+                        <li><strong>50</strong> → Fifty</li>
+                        <li><strong>60</strong> → Sixty</li>
+                        <li><strong>70</strong> → Seventy</li>
+                        <li><strong>80</strong> → Eighty</li>
+                        <li><strong>90</strong> → Ninety</li>
+                        <li><strong>100</strong> → One hundred</li>
+                        <li><strong>1000</strong> → One thousand</li>
+                    </ul>
+                </div>
+
+                <div style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h3>🔢 Formando Números Compuestos:</h3>
+                    <ul>
+                        <li><strong>21</strong> = Twenty-one</li>
+                        <li><strong>35</strong> = Thirty-five</li>
+                        <li><strong>47</strong> = Forty-seven</li>
+                        <li><strong>99</strong> = Ninety-nine</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🎯 Quiz: Tiempo y Números</h2>
+                    <div id="quiz2">
+                        <div class="quiz-question">¿Cuántos días tiene una semana?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q2" value="a"> Six days</li>
+                            <li><input type="radio" name="q2" value="b"> Seven days</li>
+                            <li><input type="radio" name="q2" value="c"> Eight days</li>
+                            <li><input type="radio" name="q2" value="d"> Five days</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz2', 'b', '¡Correcto! Una semana tiene seven days (siete días)', 'Incorrecto. Una semana tiene seven days (siete días)')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🎨 Ejercicio Práctico: Describe Objetos</h2>
+                <div class="exercise">
+                    <p>Practica combinando números y colores:</p>
+                    <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>Ejemplos:</strong></p>
+                        <ul>
+                            <li>"I have <strong>three red</strong> apples" (Tengo tres manzanas rojas)</li>
+                            <li>"There are <strong>five blue</strong> cars" (Hay cinco carros azules)</li>
+                            <li>"She has <strong>two green</strong> books" (Ella tiene dos libros verdes)</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Completa: "I have _____ _____ pencils" (Tengo cuatro lápices amarillos)</p>
+                    <input type="text" id="descripcion" placeholder="four yellow" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin: 0.5rem;">
+                    <button onclick="verificarCompletar('descripcion', 'four yellow', 'resultado-descripcion')">Verificar</button>
+                    <div id="resultado-descripcion" class="answer"></div>
+                </div>
+
+                <h2>💡 Consejos de Pronunciación</h2>
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff9800;">
+                    <ul>
+                        <li><strong>Thirteen vs Thirty:</strong> Thirteen (acento en -teen), Thirty (acento en Thir-)</li>
+                        <li><strong>Wednesday:</strong> Se pronuncia "WENSday", no "WEDNESday"</li>
+                        <li><strong>February:</strong> Se puede pronunciar "FEBruary" o "FEBuary"</li>
+                        <li><strong>Números con guión:</strong> Twenty-one, thirty-five (siempre con guión)</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🏆 ¡Fantástico!</h2>
+                    <p>Has completado la lección de Números, Colores y Tiempo. Ahora puedes:</p>
+                    <ul>
+                        <li>✅ Contar del 1 al 100 en inglés</li>
+                        <li>✅ Nombrar los colores básicos</li>
+                        <li>✅ Decir los días de la semana</li>
+                        <li>✅ Mencionar los meses del año</li>
+                        <li>✅ Combinar números y colores para describir objetos</li>
+                    </ul>
+                    <a href="verbo-to-be.html" class="btn">Continuar con el Verbo To Be →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 - Refuerzo de Inglés - Lección A1.3</p>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        // Marcar lección como completada
+        document.addEventListener('DOMContentLoaded', function() {
+            localStorage.setItem('a1-leccion3', 'completada');
+        });
+    </script>
+</body>
+</html>

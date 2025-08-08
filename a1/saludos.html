@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludos y Presentaciones - A1</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>📝 Saludos y Presentaciones</h1>
+        <p>Aprende a saludar y presentarte en inglés</p>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-nav">
+                <a href="../index.html">🏠 Home</a> | 
+                <a href="index.html">← Volver a A1</a> | 
+                <a href="abecedario.html">Siguiente: Abecedario →</a>
+            </div>
+
+            <div class="lesson-content">
+                <h1>Saludos Básicos en Inglés</h1>
+
+                <h2>🌅 Saludos por Momento del Día</h2>
+                <div class="vocabulary-list">
+                    <ul>
+                        <li><strong>Good morning</strong> → Buenos días (hasta las 12:00)</li>
+                        <li><strong>Good afternoon</strong> → Buenas tardes (12:00 - 18:00)</li>
+                        <li><strong>Good evening</strong> → Buenas noches (después de las 18:00)</li>
+                        <li><strong>Good night</strong> → Buenas noches (para despedirse)</li>
+                    </ul>
+                </div>
+
+                <h2>👋 Saludos Informales</h2>
+                <div class="vocabulary-list">
+                    <ul>
+                        <li><strong>Hello</strong> → Hola (formal/informal)</li>
+                        <li><strong>Hi</strong> → Hola (informal)</li>
+                        <li><strong>Hey</strong> → Oye/Hola (muy informal)</li>
+                        <li><strong>How are you?</strong> → ¿Cómo estás?</li>
+                        <li><strong>How's it going?</strong> → ¿Cómo va todo?</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 Ejercicio 1: ¿Qué significa?</h2>
+                    <p>Haz clic en el botón para ver la respuesta:</p>
+                    <button onclick="mostrarRespuesta('respuesta1', 'Buenas tardes')">¿Qué significa 'Good afternoon'?</button>
+                    <p id="respuesta1" class="answer"></p>
+                </div>
+
+                <h2>🤝 Presentaciones</h2>
+                <div class="vocabulary-list">
+                    <ul>
+                        <li><strong>What's your name?</strong> → ¿Cómo te llamas?</li>
+                        <li><strong>My name is...</strong> → Mi nombre es...</li>
+                        <li><strong>I'm...</strong> → Soy... (forma corta)</li>
+                        <li><strong>Nice to meet you</strong> → Mucho gusto</li>
+                        <li><strong>Where are you from?</strong> → ¿De dónde eres?</li>
+                        <li><strong>I'm from...</strong> → Soy de...</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🧠 Quiz: Presentaciones</h2>
+                    <div id="quiz1">
+                        <div class="quiz-question">¿Cómo respondes a "What's your name?"</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q1" value="a"> Good morning</li>
+                            <li><input type="radio" name="q1" value="b"> My name is [tu nombre]</li>
+                            <li><input type="radio" name="q1" value="c"> How are you?</li>
+                            <li><input type="radio" name="q1" value="d"> Good night</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz1', 'b', '¡Correcto! Usamos My name is... para decir nuestro nombre', 'Incorrecto. La respuesta correcta es: My name is [tu nombre]')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>👋 Despedidas</h2>
+                <div class="vocabulary-list">
+                    <ul>
+                        <li><strong>Goodbye</strong> → Adiós (formal)</li>
+                        <li><strong>Bye</strong> → Adiós (informal)</li>
+                        <li><strong>See you later</strong> → Nos vemos luego</li>
+                        <li><strong>See you tomorrow</strong> → Nos vemos mañana</li>
+                        <li><strong>Take care</strong> → Cuídate</li>
+                        <li><strong>Have a good day</strong> → Que tengas buen día</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>✍️ Ejercicio 2: Completa la Conversación</h2>
+                    <p>Completa esta conversación básica:</p>
+                    <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>Person A:</strong> Hello! What's your name?</p>
+                        <p><strong>Person B:</strong> Hi! <input type="text" id="nombre" placeholder="Escribe tu respuesta" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"></p>
+                        <p><strong>Person A:</strong> Nice to meet you!</p>
+                        <p><strong>Person B:</strong> <input type="text" id="respuesta-meet" placeholder="¿Cómo respondes?" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"></p>
+                    </div>
+                    <button onclick="verificarCompletar('respuesta-meet', ['nice to meet you too', 'nice to meet you', 'you too'], 'resultado-conversacion')">Verificar Respuesta</button>
+                    <div id="resultado-conversacion" class="answer"></div>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🎯 Quiz Final: Situaciones</h2>
+                    <div id="quiz2">
+                        <div class="quiz-question">Son las 3:00 PM y quieres saludar a alguien. ¿Qué dices?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q2" value="a"> Good morning</li>
+                            <li><input type="radio" name="q2" value="b"> Good afternoon</li>
+                            <li><input type="radio" name="q2" value="c"> Good evening</li>
+                            <li><input type="radio" name="q2" value="d"> Good night</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz2', 'b', '¡Perfecto! A las 3:00 PM usamos Good afternoon', 'Incorrecto. A las 3:00 PM (15:00) usamos Good afternoon')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>💡 Consejos Importantes</h2>
+                <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4CAF50;">
+                    <ul>
+                        <li><strong>Formal vs Informal:</strong> Usa "Hello" en situaciones formales, "Hi" con amigos</li>
+                        <li><strong>Contacto visual:</strong> Siempre mira a los ojos cuando saludes</li>
+                        <li><strong>Sonríe:</strong> Una sonrisa hace que tu saludo sea más amigable</li>
+                        <li><strong>Practica:</strong> Repite estas frases en voz alta para mejorar tu pronunciación</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🏆 ¡Felicitaciones!</h2>
+                    <p>Has completado la lección de Saludos y Presentaciones. Ahora puedes:</p>
+                    <ul>
+                        <li>✅ Saludar en diferentes momentos del día</li>
+                        <li>✅ Presentarte y preguntar el nombre de otros</li>
+                        <li>✅ Despedirte apropiadamente</li>
+                    </ul>
+                    <a href="abecedario.html" class="btn">Continuar con el Abecedario →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 - Refuerzo de Inglés - Lección A1.1</p>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        // Marcar lección como completada
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simular que se completó una lección
+            localStorage.setItem('a1-leccion1', 'completada');
+        });
+    </script>
+</body>
+</html>

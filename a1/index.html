@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel A1 - Principiante</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>🟢 Nivel A1 - Principiante</h1>
+        <p>Fundamentos básicos del inglés</p>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-nav">
+                <a href="../index.html">← Volver al inicio</a>
+            </div>
+
+            <div class="lesson-content">
+                <h1>Lecciones del Nivel A1</h1>
+                <p>Bienvenido al nivel principiante. Aquí aprenderás los conceptos más básicos del inglés.</p>
+
+                <div class="levels-container">
+                    <div class="level-card a1">
+                        <h2>📝 Lección 1</h2>
+                        <p>Saludos y Presentaciones</p>
+                        <ul>
+                            <li>Hello, Hi, Good morning</li>
+                            <li>What's your name?</li>
+                            <li>Nice to meet you</li>
+                            <li>Goodbye, See you later</li>
+                        </ul>
+                        <a href="saludos.html" class="btn">Comenzar</a>
+                    </div>
+
+                    <div class="level-card a1">
+                        <h2>🔤 Lección 2</h2>
+                        <p>El Abecedario</p>
+                        <ul>
+                            <li>Las 26 letras</li>
+                            <li>Pronunciación básica</li>
+                            <li>Deletrear palabras</li>
+                            <li>Ejercicios de práctica</li>
+                        </ul>
+                        <a href="abecedario.html" class="btn">Comenzar</a>
+                    </div>
+
+                    <div class="level-card a1">
+                        <h2>🔢 Lección 3</h2>
+                        <p>Números y Colores</p>
+                        <ul>
+                            <li>Números del 1 al 100</li>
+                            <li>Colores básicos</li>
+                            <li>Días de la semana</li>
+                            <li>Meses del año</li>
+                        </ul>
+                        <a href="numeros-colores.html" class="btn">Comenzar</a>
+                    </div>
+
+                    <div class="level-card a1">
+                        <h2>👤 Lección 4</h2>
+                        <p>Verbo To Be</p>
+                        <ul>
+                            <li>I am, You are, He/She is</li>
+                            <li>Formas negativas</li>
+                            <li>Preguntas con To Be</li>
+                            <li>Ejercicios prácticos</li>
+                        </ul>
+                        <a href="verbo-to-be.html" class="btn">Comenzar</a>
+                    </div>
+
+                    <div class="level-card a1">
+                        <h2>📰 Lección 5</h2>
+                        <p>Artículos</p>
+                        <ul>
+                            <li>A / An (artículos indefinidos)</li>
+                            <li>The (artículo definido)</li>
+                            <li>Cuándo usar cada uno</li>
+                            <li>Ejercicios de aplicación</li>
+                        </ul>
+                        <a href="articulos.html" class="btn">Comenzar</a>
+                    </div>
+
+                    <div class="level-card a1">
+                        <h2>❓ Lección 6</h2>
+                        <p>Preguntas Básicas</p>
+                        <ul>
+                            <li>What, Where, When, Who</li>
+                            <li>How old are you?</li>
+                            <li>Where are you from?</li>
+                            <li>Conversaciones simples</li>
+                        </ul>
+                        <a href="preguntas-basicas.html" class="btn">Comenzar</a>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 Progreso del Nivel A1</h2>
+                    <p>Completa todas las lecciones para avanzar al siguiente nivel.</p>
+                    <div style="background: #e0e0e0; border-radius: 10px; height: 20px; margin: 1rem 0;">
+                        <div id="progreso" style="background: #4CAF50; height: 100%; border-radius: 10px; width: 0%; transition: width 0.3s ease; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">0%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 - Refuerzo de Inglés - Nivel A1</p>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        // Simular progreso basado en lecciones visitadas
+        document.addEventListener('DOMContentLoaded', function() {
+            const leccionesCompletadas = localStorage.getItem('a1-completadas') || 0;
+            actualizarProgreso(leccionesCompletadas, 6);
+        });
+    </script>
+</body>
+</html>

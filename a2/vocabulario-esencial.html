@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulario Esencial - A2</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>🍽️ Vocabulario Esencial</h1>
+        <p>Rutinas, Comidas, Lugares - Palabras para la vida diaria</p>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-nav">
+                <a href="pasado-simple.html">← Anterior: Pasado Simple</a> | 
+                <a href="index.html">Volver a A2</a> | 
+                <a href="conversaciones-breves.html">Siguiente: Conversaciones →</a>
+            </div>
+
+            <div class="lesson-content">
+                <h1>Essential Vocabulary for Daily Life</h1>
+
+                <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4CAF50; margin: 1rem 0;">
+                    <h3>🎯 ¿Por qué es importante?</h3>
+                    <p>Este vocabulario te permitirá hablar sobre tu vida diaria, describir rutinas, pedir comida y ubicarte en la ciudad. Son palabras que usarás constantemente en conversaciones reales.</p>
+                </div>
+
+                <h2>🌅 Rutinas Diarias</h2>
+                
+                <h3>🕐 Por la Mañana (Morning Routine)</h3>
+                <div class="vocabulary-list">
+                    <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <h4>⏰ Despertar:</h4>
+                                <ul>
+                                    <li><strong>Wake up</strong> → Despertarse</li>
+                                    <li><strong>Get up</strong> → Levantarse</li>
+                                    <li><strong>Get out of bed</strong> → Salir de la cama</li>
+                                    <li><strong>Turn off the alarm</strong> → Apagar la alarma</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🚿 Higiene personal:</h4>
+                                <ul>
+                                    <li><strong>Take a shower</strong> → Ducharse</li>
+                                    <li><strong>Brush teeth</strong> → Lavarse los dientes</li>
+                                    <li><strong>Wash face</strong> → Lavarse la cara</li>
+                                    <li><strong>Comb hair</strong> → Peinarse</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>👔 Vestirse:</h4>
+                                <ul>
+                                    <li><strong>Get dressed</strong> → Vestirse</li>
+                                    <li><strong>Put on clothes</strong> → Ponerse ropa</li>
+                                    <li><strong>Choose outfit</strong> → Elegir ropa</li>
+                                    <li><strong>Wear</strong> → Usar/llevar puesto</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🌆 Por la Tarde/Noche (Evening Routine)</h3>
+                <div class="vocabulary-list">
+                    <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <h4>🏠 Llegar a casa:</h4>
+                                <ul>
+                                    <li><strong>Come home</strong> → Llegar a casa</li>
+                                    <li><strong>Get home</strong> → Llegar a casa</li>
+                                    <li><strong>Take off shoes</strong> → Quitarse zapatos</li>
+                                    <li><strong>Change clothes</strong> → Cambiarse de ropa</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>😴 Antes de dormir:</h4>
+                                <ul>
+                                    <li><strong>Go to bed</strong> → Irse a la cama</li>
+                                    <li><strong>Fall asleep</strong> → Quedarse dormido</li>
+                                    <li><strong>Set the alarm</strong> → Poner la alarma</li>
+                                    <li><strong>Turn off lights</strong> → Apagar las luces</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>📱 Actividades nocturnas:</h4>
+                                <ul>
+                                    <li><strong>Watch TV</strong> → Ver televisión</li>
+                                    <li><strong>Read a book</strong> → Leer un libro</li>
+                                    <li><strong>Listen to music</strong> → Escuchar música</li>
+                                    <li><strong>Check phone</strong> → Revisar el teléfono</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 Ejercicio 1: Ordena tu rutina</h2>
+                    <p>¿Qué haces primero por la mañana?</p>
+                    <input type="text" id="rutina1" placeholder="wake up, get up, etc." style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin: 0.5rem;">
+                    <button onclick="verificarCompletar('rutina1', ['wake up', 'get up'], 'resultado-rutina1')">Verificar</button>
+                    <div id="resultado-rutina1" class="answer"></div>
+                </div>
+
+                <h2>🍽️ Comidas y Bebidas</h2>
+                
+                <h3>🥐 Desayuno (Breakfast)</h3>
+                <div class="vocabulary-list">
+                    <div style="background: #fff8e1; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div>
+                                <h4>🍞 Comida sólida:</h4>
+                                <ul>
+                                    <li><strong>Toast</strong> → Tostada</li>
+                                    <li><strong>Cereal</strong> → Cereal</li>
+                                    <li><strong>Eggs</strong> → Huevos</li>
+                                    <li><strong>Bacon</strong> → Tocino</li>
+                                    <li><strong>Pancakes</strong> → Panqueques</li>
+                                    <li><strong>Fruit</strong> → Fruta</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>☕ Bebidas:</h4>
+                                <ul>
+                                    <li><strong>Coffee</strong> → Café</li>
+                                    <li><strong>Tea</strong> → Té</li>
+                                    <li><strong>Milk</strong> → Leche</li>
+                                    <li><strong>Orange juice</strong> → Jugo de naranja</li>
+                                    <li><strong>Water</strong> → Agua</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🍕 Almuerzo y Cena (Lunch & Dinner)</h3>
+                <div class="vocabulary-list">
+                    <div style="background: #f3e5f5; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <h4>🥩 Carnes:</h4>
+                                <ul>
+                                    <li><strong>Chicken</strong> → Pollo</li>
+                                    <li><strong>Beef</strong> → Carne de res</li>
+                                    <li><strong>Pork</strong> → Cerdo</li>
+                                    <li><strong>Fish</strong> → Pescado</li>
+                                    <li><strong>Turkey</strong> → Pavo</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🥕 Vegetales:</h4>
+                                <ul>
+                                    <li><strong>Vegetables</strong> → Vegetales</li>
+                                    <li><strong>Salad</strong> → Ensalada</li>
+                                    <li><strong>Carrots</strong> → Zanahorias</li>
+                                    <li><strong>Broccoli</strong> → Brócoli</li>
+                                    <li><strong>Potatoes</strong> → Papas</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🍝 Comidas principales:</h4>
+                                <ul>
+                                    <li><strong>Pizza</strong> → Pizza</li>
+                                    <li><strong>Pasta</strong> → Pasta</li>
+                                    <li><strong>Sandwich</strong> → Sándwich</li>
+                                    <li><strong>Soup</strong> → Sopa</li>
+                                    <li><strong>Rice</strong> → Arroz</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🍰 Postres y Snacks</h3>
+                <div class="vocabulary-list">
+                    <div style="background: #fce4ec; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.5rem;">
+                            <li><strong>Cake</strong> → Pastel</li>
+                            <li><strong>Ice cream</strong> → Helado</li>
+                            <li><strong>Cookies</strong> → Galletas</li>
+                            <li><strong>Chocolate</strong> → Chocolate</li>
+                            <li><strong>Candy</strong> → Dulces</li>
+                            <li><strong>Chips</strong> → Papitas</li>
+                            <li><strong>Nuts</strong> → Nueces</li>
+                            <li><strong>Yogurt</strong> → Yogur</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🧠 Quiz: Comidas</h2>
+                    <div id="quiz1">
+                        <div class="quiz-question">¿Qué bebes típicamente en el desayuno?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q1" value="a"> Soup</li>
+                            <li><input type="radio" name="q1" value="b"> Coffee</li>
+                            <li><input type="radio" name="q1" value="c"> Ice cream</li>
+                            <li><input type="radio" name="q1" value="d"> Pizza</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz1', 'b', '¡Correcto! Coffee es una bebida típica del desayuno', 'Incorrecto. Coffee es la bebida más común en el desayuno')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🏙️ Lugares en la Ciudad</h2>
+                
+                <h3>🏪 Tiendas y Servicios</h3>
+                <div class="vocabulary-list">
+                    <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <h4>🛒 Compras:</h4>
+                                <ul>
+                                    <li><strong>Supermarket</strong> → Supermercado</li>
+                                    <li><strong>Store</strong> → Tienda</li>
+                                    <li><strong>Mall</strong> → Centro comercial</li>
+                                    <li><strong>Pharmacy</strong> → Farmacia</li>
+                                    <li><strong>Bakery</strong> → Panadería</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🏦 Servicios:</h4>
+                                <ul>
+                                    <li><strong>Bank</strong> → Banco</li>
+                                    <li><strong>Post office</strong> → Oficina de correos</li>
+                                    <li><strong>Hospital</strong> → Hospital</li>
+                                    <li><strong>Police station</strong> → Estación de policía</li>
+                                    <li><strong>Gas station</strong> → Gasolinera</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🍽️ Restaurantes:</h4>
+                                <ul>
+                                    <li><strong>Restaurant</strong> → Restaurante</li>
+                                    <li><strong>Café</strong> → Café</li>
+                                    <li><strong>Fast food</strong> → Comida rápida</li>
+                                    <li><strong>Bar</strong> → Bar</li>
+                                    <li><strong>Food court</strong> → Patio de comidas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🎯 Lugares Públicos</h3>
+                <div class="vocabulary-list">
+                    <div style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div>
+                                <h4>🏛️ Gobierno y educación:</h4>
+                                <ul>
+                                    <li><strong>School</strong> → Escuela</li>
+                                    <li><strong>University</strong> → Universidad</li>
+                                    <li><strong>Library</strong> → Biblioteca</li>
+                                    <li><strong>City hall</strong> → Ayuntamiento</li>
+                                    <li><strong>Court</strong> → Tribunal</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🎪 Entretenimiento:</h4>
+                                <ul>
+                                    <li><strong>Park</strong> → Parque</li>
+                                    <li><strong>Cinema</strong> → Cine</li>
+                                    <li><strong>Theater</strong> → Teatro</li>
+                                    <li><strong>Museum</strong> → Museo</li>
+                                    <li><strong>Gym</strong> → Gimnasio</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🚌 Transporte:</h4>
+                                <ul>
+                                    <li><strong>Bus stop</strong> → Parada de autobús</li>
+                                    <li><strong>Train station</strong> → Estación de tren</li>
+                                    <li><strong>Airport</strong> → Aeropuerto</li>
+                                    <li><strong>Subway</strong> → Metro</li>
+                                    <li><strong>Taxi stand</strong> → Parada de taxis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>✍️ Ejercicio 2: ¿Dónde vas?</h2>
+                    <p>Completa con el lugar correcto:</p>
+                    <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>1. Para comprar medicina: _____ <input type="text" id="lugar1" style="width: 120px; padding: 0.3rem;"></p>
+                        <p>2. Para sacar dinero: _____ <input type="text" id="lugar2" style="width: 120px; padding: 0.3rem;"></p>
+                        <p>3. Para ver una película: _____ <input type="text" id="lugar3" style="width: 120px; padding: 0.3rem;"></p>
+                    </div>
+                    <button onclick="verificarLugares()">Verificar</button>
+                    <div id="resultado-lugares" class="answer"></div>
+                </div>
+
+                <h2>🚗 Transporte y Viajes</h2>
+                <div class="vocabulary-list">
+                    <div style="background: #e1f5fe; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #03a9f4; margin: 1rem 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div>
+                                <h4>🚗 Vehículos:</h4>
+                                <ul>
+                                    <li><strong>Car</strong> → Carro</li>
+                                    <li><strong>Bus</strong> → Autobús</li>
+                                    <li><strong>Train</strong> → Tren</li>
+                                    <li><strong>Plane</strong> → Avión</li>
+                                    <li><strong>Bicycle</strong> → Bicicleta</li>
+                                    <li><strong>Motorcycle</strong> → Motocicleta</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🎫 Viajes:</h4>
+                                <ul>
+                                    <li><strong>Ticket</strong> → Boleto</li>
+                                    <li><strong>Trip</strong> → Viaje</li>
+                                    <li><strong>Journey</strong> → Jornada</li>
+                                    <li><strong>Destination</strong> → Destino</li>
+                                    <li><strong>Luggage</strong> → Equipaje</li>
+                                    <li><strong>Passport</strong> → Pasaporte</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>💼 Trabajo y Profesiones</h2>
+                <div class="vocabulary-list">
+                    <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div>
+                                <h4>👨‍⚕️ Profesiones comunes:</h4>
+                                <ul>
+                                    <li><strong>Teacher</strong> → Profesor/a</li>
+                                    <li><strong>Doctor</strong> → Doctor/a</li>
+                                    <li><strong>Nurse</strong> → Enfermero/a</li>
+                                    <li><strong>Engineer</strong> → Ingeniero/a</li>
+                                    <li><strong>Lawyer</strong> → Abogado/a</li>
+                                    <li><strong>Student</strong> → Estudiante</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🏢 Lugares de trabajo:</h4>
+                                <ul>
+                                    <li><strong>Office</strong> → Oficina</li>
+                                    <li><strong>Factory</strong> → Fábrica</li>
+                                    <li><strong>Store</strong> → Tienda</li>
+                                    <li><strong>Company</strong> → Empresa</li>
+                                    <li><strong>Business</strong> → Negocio</li>
+                                    <li><strong>Workplace</strong> → Lugar de trabajo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🎭 Diálogo de Ejemplo</h2>
+                <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <h3>🗣️ En un restaurante:</h3>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>Waiter:</strong> Good evening! What would you like to drink?</p>
+                        <p><strong>Customer:</strong> I'd like a coffee, please.</p>
+                        <p><strong>Waiter:</strong> And for food?</p>
+                        <p><strong>Customer:</strong> I'll have the chicken with vegetables.</p>
+                        <p><strong>Waiter:</strong> Would you like a salad with that?</p>
+                        <p><strong>Customer:</strong> Yes, please. And some bread too.</p>
+                        <p><strong>Waiter:</strong> Perfect! Anything for dessert?</p>
+                        <p><strong>Customer:</strong> Maybe some ice cream later.</p>
+                    </div>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🎯 Quiz: Comprensión del diálogo</h2>
+                    <div id="quiz2">
+                        <div class="quiz-question">¿Qué pidió el cliente para beber?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q2" value="a"> Tea</li>
+                            <li><input type="radio" name="q2" value="b"> Water</li>
+                            <li><input type="radio" name="q2" value="c"> Coffee</li>
+                            <li><input type="radio" name="q2" value="d"> Juice</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz2', 'c', '¡Correcto! El cliente pidió coffee', 'Incorrecto. El cliente dijo: I\'d like a coffee, please')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🏠 En Casa - Vocabulario del Hogar</h2>
+                <div class="vocabulary-list">
+                    <div style="background: #f3e5f5; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div>
+                                <h4>🏠 Habitaciones:</h4>
+                                <ul>
+                                    <li><strong>Living room</strong> → Sala</li>
+                                    <li><strong>Kitchen</strong> → Cocina</li>
+                                    <li><strong>Bedroom</strong> → Dormitorio</li>
+                                    <li><strong>Bathroom</strong> → Baño</li>
+                                    <li><strong>Dining room</strong> → Comedor</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>🪑 Muebles:</h4>
+                                <ul>
+                                    <li><strong>Table</strong> → Mesa</li>
+                                    <li><strong>Chair</strong> → Silla</li>
+                                    <li><strong>Bed</strong> → Cama</li>
+                                    <li><strong>Sofa</strong> → Sofá</li>
+                                    <li><strong>Desk</strong> → Escritorio</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>📱 Electrodomésticos:</h4>
+                                <ul>
+                                    <li><strong>TV</strong> → Televisión</li>
+                                    <li><strong>Computer</strong> → Computadora</li>
+                                    <li><strong>Phone</strong> → Teléfono</li>
+                                    <li><strong>Refrigerator</strong> → Refrigerador</li>
+                                    <li><strong>Microwave</strong> → Microondas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎨 Ejercicio 3: Describe tu día</h2>
+                    <p>Usa el vocabulario aprendido para completar:</p>
+                    <div style="background: #f0f8ff; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>1. Por la mañana desayuno _____ y _____. <input type="text" id="dia1" style="width: 80px; padding: 0.3rem;"> <input type="text" id="dia2" style="width: 80px; padding: 0.3rem;"></p>
+                        <p>2. Voy al trabajo en _____. <input type="text" id="dia3" style="width: 100px; padding: 0.3rem;"></p>
+                        <p>3. Para almorzar como _____ con _____. <input type="text" id="dia4" style="width: 80px; padding: 0.3rem;"> <input type="text" id="dia5" style="width: 80px; padding: 0.3rem;"></p>
+                    </div>
+                    <button onclick="verificarDia()">Verificar</button>
+                    <div id="resultado-dia" class="answer"></div>
+                </div>
+
+                <h2>💡 Consejos para Memorizar Vocabulario</h2>
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff9800;">
+                    <ul>
+                        <li><strong>Agrupa palabras:</strong> Por temas (comida, lugares, rutinas)</li>
+                        <li><strong>Usa flashcards:</strong> Escribe la palabra en inglés y español</li>
+                        <li><strong>Practica diariamente:</strong> Describe tu rutina usando estas palabras</li>
+                        <li><strong>Haz listas:</strong> De tus comidas favoritas, lugares que visitas</li>
+                        <li><strong>Conecta con tu vida:</strong> Usa palabras que realmente necesitas</li>
+                    </ul>
+                </div>
+
+                <h2>📝 Expresiones Útiles</h2>
+                <div class="vocabulary-list">
+                    <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                        <h3>Para usar en conversaciones:</h3>
+                        <ul>
+                            <li><strong>"I usually have..."</strong> → "Usualmente como/tomo..."</li>
+                            <li><strong>"I go to..."</strong> → "Voy a..."</li>
+                            <li><strong>"I work at..."</strong> → "Trabajo en..."</li>
+                            <li><strong>"I live near..."</strong> → "Vivo cerca de..."</li>
+                            <li><strong>"My favorite food is..."</strong> → "Mi comida favorita es..."</li>
+                            <li><strong>"I take the..."</strong> → "Tomo el/la..." (transporte)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎉 ¡Felicitaciones!</h2>
+                    <p>Has completado la lección de Vocabulario Esencial. Ahora puedes:</p>
+                    <ul>
+                        <li>✅ Describir tu rutina diaria completa</li>
+                        <li>✅ Hablar sobre comidas y bebidas</li>
+                        <li>✅ Ubicarte en la ciudad y dar direcciones</li>
+                        <li>✅ Hablar sobre tu trabajo y transporte</li>
+                        <li>✅ Mantener conversaciones sobre la vida cotidiana</li>
+                    </ul>
+                    
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <a href="conversaciones-breves.html" class="btn" style="margin: 0.5rem;">Siguiente Lección →</a>
+                        <a href="index.html" class="btn" style="margin: 0.5rem;">Volver a A2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 - Refuerzo de Inglés - Lección A2.4</p>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        function verificarLugares() {
+            const lugar1 = document.getElementById('lugar1').value.trim().toLowerCase();
+            const lugar2 = document.getElementById('lugar2').value.trim().toLowerCase();
+            const lugar3 = document.getElementById('lugar3').value.trim().toLowerCase();
+            const resultado = document.getElementById('resultado-lugares');
+            
+            let correctas = 0;
+            let mensaje = "Resultados:\n";
+            
+            if (lugar1 === 'pharmacy') {
+                correctas++;
+                mensaje += "1. ✅ Correcto: Pharmacy (farmacia)\n";
+            } else {
+                mensaje += "1. ❌ Incorrecto. Respuesta: pharmacy\n";
+            }
+            
+            if (lugar2 === 'bank') {
+                correctas++;
+                mensaje += "2. ✅ Correcto: Bank (banco)\n";
+            } else {
+                mensaje += "2. ❌ Incorrecto. Respuesta: bank\n";
+            }
+            
+            if (lugar3 === 'cinema' || lugar3 === 'movie theater') {
+                correctas++;
+                mensaje += "3. ✅ Correcto: Cinema/Movie theater\n";
+            } else {
+                mensaje += "3. ❌ Incorrecto. Respuesta: cinema o movie theater\n";
+            }
+            
+            resultado.innerHTML = mensaje.replace(/\n/g, '<br>');
+            resultado.style.display = 'block';
+            
+            if (correctas === 3) {
+                resultado.style.background = '#c8e6c9';
+                resultado.style.color = '#2e7d32';
+            } else {
+                resultado.style.background = '#ffcdd2';
+                resultado.style.color = '#c62828';
+            }
+        }
+        
+        function verificarDia() {
+            const dia1 = document.getElementById('dia1').value.trim().toLowerCase();
+            const dia2 = document.getElementById('dia2').value.trim().toLowerCase();
+            const dia3 = document.getElementById('dia3').value.trim().toLowerCase();
+            const dia4 = document.getElementById('dia4').value.trim().toLowerCase();
+            const dia5 = document.getElementById('dia5').value.trim().toLowerCase();
+            const resultado = document.getElementById('resultado-dia');
+            
+            let mensaje = "Ejemplos de respuestas correctas:\n";
+            
+            // Respuestas flexibles para descripción personal
+            const desayuno = ['toast', 'cereal', 'eggs', 'coffee', 'tea', 'milk', 'juice', 'fruit'];
+            const transporte = ['car', 'bus', 'train', 'bicycle', 'subway', 'taxi'];
+            const almuerzo = ['chicken', 'fish', 'pasta', 'pizza', 'sandwich', 'salad', 'soup', 'rice'];
+            
+            if (desayuno.includes(dia1) && desayuno.includes(dia2)) {
+                mensaje += "1. ✅ Perfecto: " + dia1 + " and " + dia2 + "\n";
+            } else {
+                mensaje += "1. 💡 Ejemplos: toast and coffee, cereal and milk\n";
+            }
+            
+            if (transporte.includes(dia3)) {
+                mensaje += "2. ✅ Correcto: " + dia3 + "\n";
+            } else {
+                mensaje += "2. 💡 Ejemplos: car, bus, train, bicycle\n";
+            }
+            
+            if (almuerzo.includes(dia4) && almuerzo.includes(dia5)) {
+                mensaje += "3. ✅ Excelente: " + dia4 + " with " + dia5 + "\n";
+            } else {
+                mensaje += "3. 💡 Ejemplos: chicken with vegetables, pasta with salad\n";
+            }
+            
+            resultado.innerHTML = mensaje.replace(/\n/g, '<br>');
+            resultado.style.display = 'block';
+            resultado.style.background = '#e3f2fd';
+            resultado.style.color = '#1976d2';
+        }
+        
+        // Marcar lección como completada
+        document.addEventListener('DOMContentLoaded', function() {
+            localStorage.setItem('a2-leccion4', 'completada');
+        });
+    </script>
+</body>
+</html>

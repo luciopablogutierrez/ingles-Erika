@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Abecedario - A1</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>🔤 El Abecedario en Inglés</h1>
+        <p>Aprende las 26 letras y su pronunciación</p>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-nav">
+                <a href="saludos.html">← Anterior: Saludos</a> | 
+                <a href="index.html">Volver a A1</a> | 
+                <a href="numeros-colores.html">Siguiente: Números →</a>
+            </div>
+
+            <div class="lesson-content">
+                <h1>The English Alphabet</h1>
+
+                <h2>🎵 Las 26 Letras</h2>
+                <div class="vocabulary-list">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div>
+                            <h3>A - F</h3>
+                            <ul>
+                                <li><strong>A</strong> → /eɪ/ (ei)</li>
+                                <li><strong>B</strong> → /biː/ (bi)</li>
+                                <li><strong>C</strong> → /siː/ (si)</li>
+                                <li><strong>D</strong> → /diː/ (di)</li>
+                                <li><strong>E</strong> → /iː/ (i)</li>
+                                <li><strong>F</strong> → /ɛf/ (ef)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>G - L</h3>
+                            <ul>
+                                <li><strong>G</strong> → /dʒiː/ (yi)</li>
+                                <li><strong>H</strong> → /eɪtʃ/ (eich)</li>
+                                <li><strong>I</strong> → /aɪ/ (ai)</li>
+                                <li><strong>J</strong> → /dʒeɪ/ (yei)</li>
+                                <li><strong>K</strong> → /keɪ/ (kei)</li>
+                                <li><strong>L</strong> → /ɛl/ (el)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>M - R</h3>
+                            <ul>
+                                <li><strong>M</strong> → /ɛm/ (em)</li>
+                                <li><strong>N</strong> → /ɛn/ (en)</li>
+                                <li><strong>O</strong> → /oʊ/ (ou)</li>
+                                <li><strong>P</strong> → /piː/ (pi)</li>
+                                <li><strong>Q</strong> → /kjuː/ (kiu)</li>
+                                <li><strong>R</strong> → /ɑr/ (ar)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>S - Z</h3>
+                            <ul>
+                                <li><strong>S</strong> → /ɛs/ (es)</li>
+                                <li><strong>T</strong> → /tiː/ (ti)</li>
+                                <li><strong>U</strong> → /juː/ (iu)</li>
+                                <li><strong>V</strong> → /viː/ (vi)</li>
+                                <li><strong>W</strong> → /ˈdʌbəl juː/ (dábol iu)</li>
+                                <li><strong>X</strong> → /ɛks/ (eks)</li>
+                                <li><strong>Y</strong> → /waɪ/ (uai)</li>
+                                <li><strong>Z</strong> → /ziː/ (zi)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>🎯 Ejercicio 1: Pronunciación</h2>
+                    <p>Haz clic para escuchar cómo se pronuncia cada letra:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); gap: 0.5rem; margin: 1rem 0;">
+                        <button onclick="funcionesA1.verificarAbecedario('A', 'ei')" style="padding: 0.5rem; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">A</button>
+                        <button onclick="funcionesA1.verificarAbecedario('B', 'bi')" style="padding: 0.5rem; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">B</button>
+                        <button onclick="funcionesA1.verificarAbecedario('C', 'si')" style="padding: 0.5rem; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">C</button>
+                        <button onclick="funcionesA1.verificarAbecedario('D', 'di')" style="padding: 0.5rem; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">D</button>
+                        <button onclick="funcionesA1.verificarAbecedario('E', 'i')" style="padding: 0.5rem; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">E</button>
+                        <button onclick="funcionesA1.verificarAbecedario('F', 'ef')" style="padding: 0.5rem; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">F</button>
+                    </div>
+                    <p id="respuesta-abc" class="answer"></p>
+                </div>
+
+                <h2>📝 Deletrear Palabras (Spelling)</h2>
+                <div style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+                    <p><strong>¿Cómo deletrear tu nombre?</strong></p>
+                    <p>Ejemplo: "MARIA" se deletrea: <em>M-A-R-I-A</em></p>
+                    <p>En inglés dirías: "em - ei - ar - ai - ei"</p>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🧠 Quiz: Deletreo</h2>
+                    <div id="quiz1">
+                        <div class="quiz-question">¿Cómo se deletrea "CAT" en inglés?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q1" value="a"> si - ei - ti</li>
+                            <li><input type="radio" name="q1" value="b"> kei - ei - ti</li>
+                            <li><input type="radio" name="q1" value="c"> si - a - ti</li>
+                            <li><input type="radio" name="q1" value="d"> kei - a - ti</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz1', 'a', '¡Correcto! C se pronuncia si, A se pronuncia ei, T se pronuncia ti', 'Incorrecto. C=si, A=ei, T=ti')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>🔤 Vocales y Consonantes</h2>
+                <div class="vocabulary-list">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h3>🎵 Vocales (Vowels)</h3>
+                            <ul>
+                                <li><strong>A</strong> → /eɪ/ (ei)</li>
+                                <li><strong>E</strong> → /iː/ (i)</li>
+                                <li><strong>I</strong> → /aɪ/ (ai)</li>
+                                <li><strong>O</strong> → /oʊ/ (ou)</li>
+                                <li><strong>U</strong> → /juː/ (iu)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🎼 Consonantes (Consonants)</h3>
+                            <p>Las otras 21 letras son consonantes:</p>
+                            <p><strong>B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y, Z</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h2>✍️ Ejercicio 2: Identifica Vocales</h2>
+                    <p>¿Cuántas vocales hay en la palabra "ENGLISH"?</p>
+                    <input type="number" id="vocales" min="0" max="10" placeholder="Número de vocales" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin: 0.5rem;">
+                    <button onclick="verificarCompletar('vocales', '2', 'resultado-vocales')">Verificar</button>
+                    <div id="resultado-vocales" class="answer"></div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Pista: E-N-G-L-I-S-H (busca las letras A, E, I, O, U)</em></p>
+                </div>
+
+                <h2>🎯 Palabras Comunes para Practicar</h2>
+                <div class="vocabulary-list">
+                    <h3>Practica deletreando estas palabras:</h3>
+                    <ul>
+                        <li><strong>NAME</strong> → N-A-M-E (en - ei - em - i)</li>
+                        <li><strong>BOOK</strong> → B-O-O-K (bi - ou - ou - kei)</li>
+                        <li><strong>HELLO</strong> → H-E-L-L-O (eich - i - el - el - ou)</li>
+                        <li><strong>WATER</strong> → W-A-T-E-R (dábol iu - ei - ti - i - ar)</li>
+                        <li><strong>FRIEND</strong> → F-R-I-E-N-D (ef - ar - ai - i - en - di)</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h2>🎯 Quiz Final: Aplicación</h2>
+                    <div id="quiz2">
+                        <div class="quiz-question">Si alguien te pregunta "How do you spell your name?", ¿qué te está pidiendo?</div>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q2" value="a"> Que digas tu nombre</li>
+                            <li><input type="radio" name="q2" value="b"> Que deletrees tu nombre letra por letra</li>
+                            <li><input type="radio" name="q2" value="c"> Que escribas tu nombre</li>
+                            <li><input type="radio" name="q2" value="d"> Que pronuncies tu nombre</li>
+                        </ul>
+                        <button class="quiz-submit" onclick="verificarQuiz('quiz2', 'b', '¡Perfecto! Spell significa deletrear letra por letra', 'Incorrecto. Spell significa deletrear, decir cada letra por separado')">Verificar</button>
+                        <div class="quiz-result"></div>
+                    </div>
+                </div>
+
+                <h2>💡 Consejos para Memorizar</h2>
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ff9800;">
+                    <ul>
+                        <li><strong>Canta el abecedario:</strong> Usa la melodía tradicional "A-B-C-D-E-F-G..."</li>
+                        <li><strong>Practica diariamente:</strong> Deletrea tu nombre y apellido cada día</li>
+                        <li><strong>Usa asociaciones:</strong> Conecta cada letra con una palabra que conozcas</li>
+                        <li><strong>Escribe y pronuncia:</strong> Combina escritura con pronunciación</li>
+                    </ul>
+                </div>
+
+                <div class="exercise">
+                    <h2>🏆 ¡Excelente Trabajo!</h2>
+                    <p>Has completado la lección del Abecedario. Ahora puedes:</p>
+                    <ul>
+                        <li>✅ Pronunciar las 26 letras correctamente</li>
+                        <li>✅ Deletrear palabras en inglés</li>
+                        <li>✅ Identificar vocales y consonantes</li>
+                        <li>✅ Responder cuando te pregunten "How do you spell...?"</li>
+                    </ul>
+                    <a href="numeros-colores.html" class="btn">Continuar con Números y Colores →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 - Refuerzo de Inglés - Lección A1.2</p>
+    </footer>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        // Marcar lección como completada
+        document.addEventListener('DOMContentLoaded', function() {
+            localStorage.setItem('a1-leccion2', 'completada');
+        });
+    </script>
+</body>
+</html>

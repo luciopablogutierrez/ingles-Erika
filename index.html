@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Reinforcement with Erika</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>🎓 English Reinforcement</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">🏠 Home</a>
+                <a href="#levels" class="nav-link">📚 Levels</a>
+                <a href="#about" class="nav-link">ℹ️ About</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>🌟 Learning with Erika is Fun!</h1>
+            <p class="hero-subtitle">Aprende inglés paso a paso con ejercicios interactivos</p>
+            <p class="hero-description">Master English from beginner to advanced level with our comprehensive interactive lessons designed to make learning enjoyable and effective.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Levels</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">26</span>
+                    <span class="stat-label">Lessons</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Exercises</span>
+                </div>
+            </div>
+            <a href="#levels" class="cta-button">🚀 Start Learning Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="levels" class="levels-section">
+            <div class="section-header">
+                <h2>📚 Choose Your Level</h2>
+                <p>Select the appropriate level based on your current English proficiency</p>
+            </div>
+            <div class="levels-container">
+            <div class="level-card a1">
+                <h2>🟢 Nivel A1</h2>
+                <p>Principiante</p>
+                <ul>
+                    <li>Saludos y presentaciones</li>
+                    <li>Abecedario y pronunciación</li>
+                    <li>Números, colores, días</li>
+                    <li>Verbo To Be</li>
+                </ul>
+                <a href="a1/index.html" class="btn">Comenzar A1</a>
+            </div>
+
+            <div class="level-card a2">
+                <h2>🟡 Nivel A2</h2>
+                <p>Básico</p>
+                <ul>
+                    <li>Presente simple</li>
+                    <li>Preposiciones de lugar</li>
+                    <li>Pasado simple regular</li>
+                    <li>Vocabulario rutinas</li>
+                </ul>
+                <a href="a2/index.html" class="btn">Comenzar A2</a>
+            </div>
+
+            <div class="level-card b1">
+                <h2>🔵 Nivel B1</h2>
+                <p>Intermedio</p>
+                <ul>
+                    <li>Comparativos y superlativos</li>
+                    <li>Presente perfecto</li>
+                    <li>First conditional</li>
+                    <li>Vocabulario temático</li>
+                </ul>
+                <a href="b1/index.html" class="btn">Comenzar B1</a>
+            </div>
+
+            <div class="level-card b2">
+                <h2>🟣 Nivel B2</h2>
+                <p>Intermedio Alto</p>
+                <ul>
+                    <li>Second conditional</li>
+                    <li>Modales avanzados</li>
+                    <li>Reported speech</li>
+                    <li>Expresiones idiomáticas</li>
+                </ul>
+                <a href="b2/index.html" class="btn">Comenzar B2</a>
+            </div>
+
+            <div class="level-card c1">
+                <h2>🔴 Nivel C1</h2>
+                <p>Avanzado</p>
+                <ul>
+                    <li>Inversiones gramaticales</li>
+                    <li>Phrasal verbs avanzados</li>
+                    <li>Análisis de textos</li>
+                    <li>Escritura guiada</li>
+                </ul>
+                <a href="c1/index.html" class="btn">Comenzar C1</a>
+            </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2>🎯 About This Course</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>🎓 Comprehensive Learning</h3>
+                        <p>From A1 to C1 levels following the Common European Framework of Reference (CEFR)</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>🎮 Interactive Exercises</h3>
+                        <p>Engaging activities with immediate feedback to reinforce your learning</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>📈 Progress Tracking</h3>
+                        <p>Monitor your advancement through each level and lesson completion</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>🌟 Fun Learning</h3>
+                        <p>Learning with Erika is designed to be enjoyable and effective</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 - English Reinforcement with Erika | Educational Platform</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#levels">Levels</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active navigation link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section, header');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
