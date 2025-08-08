@@ -723,24 +723,102 @@ footer {
 }
 
 /* Responsive design */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .levels-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .hero-stats {
+        gap: 2rem;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Tablets pequeñas */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    /* Navegación móvil */
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        min-height: auto;
+    }
+    
     .nav-links {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+    
+    .nav-link {
+        text-align: center;
+        padding: 0.75rem;
+        min-height: 44px;
+    }
+    
+    /* Hero section */
+    .hero-content {
+        padding: 2rem 0;
+        text-align: center;
     }
     
     .hero-content h1 {
         font-size: 2.2rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
     }
     
     .hero-stats {
         flex-direction: column;
         gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .stat-item {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    /* Secciones */
+    .section {
+        padding: 3rem 0;
     }
     
     .section-header h2 {
         font-size: 2rem;
+        text-align: center;
     }
     
+    .section-header p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    /* Niveles */
     .levels-container {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -748,21 +826,403 @@ footer {
     
     .level-card {
         padding: 1.5rem;
+        text-align: center;
     }
     
+    .level-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Lecciones */
     .lesson-container {
         margin: 1rem;
         padding: 1.5rem;
     }
     
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .lesson-nav {
+        flex-direction: column;
+        gap: 0.5rem;
     }
     
+    .lesson-nav a {
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    /* Ejercicios y quizzes */
+    .exercise, .quiz-container {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .quiz-options label {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    /* Botones */
+    .btn, .exercise button, .quiz-submit {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    /* Footer */
     .footer-nav {
         flex-direction: column;
         gap: 1rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    /* Navegación */
+    .nav-container {
+        padding: 0.75rem;
+    }
+    
+    .nav-brand h1 {
+        font-size: 1.3rem;
+    }
+    
+    .theme-toggle {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0.75rem;
+    }
+    
+    /* Hero */
+    .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+    
+    /* Secciones */
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Tarjetas de nivel */
+    .level-card {
+        padding: 1.25rem;
+    }
+    
+    .level-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .level-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Lecciones */
+    .lesson-container {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .lesson-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .lesson-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    /* Vocabulario */
+    .vocabulary-list {
+        padding: 1rem;
+    }
+    
+    .vocabulary-list li {
+        font-size: 1rem;
+        padding: 0.75rem 0;
+    }
+    
+    /* Ejercicios */
+    .exercise, .quiz-container {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .quiz-question {
+        font-size: 1.1rem;
+    }
+    
+    .quiz-options input[type="radio"] {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .quiz-options label {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Botones */
+    .btn, .exercise button, .quiz-submit {
+        padding: 0.875rem;
+        font-size: 0.95rem;
+        min-height: 44px;
+    }
+    
+    .cta-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 2rem 1rem 1.5rem;
+    }
+    
+    .footer-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .level-card, .exercise, .quiz-container {
+        padding: 0.875rem;
+    }
+    
+    .btn, .exercise button, .quiz-submit, .cta-button {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-content {
+        padding: 1rem 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: row;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .stat-item {
+        padding: 1rem;
+    }
+    
+    .section {
+        padding: 2rem 0;
+    }
+}
+
+/* Mejoras para pantallas táctiles */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link, .btn, .exercise button, .quiz-submit, .cta-button {
+        min-height: 48px;
+        min-width: 48px;
+    }
+    
+    .quiz-options input[type="radio"] {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .theme-toggle {
+        min-width: 48px;
+        min-height: 48px;
+    }
+    
+    /* Mejorar espaciado para toques */
+    .quiz-options li {
+        margin: 1.25rem 0;
+    }
+    
+    .nav-links {
+        gap: 0.75rem;
+    }
+    
+    /* Evitar zoom en inputs en iOS */
+    input, select, textarea {
+        font-size: 16px;
+    }
+}
+
+/* Optimizaciones adicionales para móviles */
+@media (max-width: 768px) {
+    /* Mejorar legibilidad en móviles */
+    body {
+        line-height: 1.6;
+    }
+    
+    /* Optimizar imágenes y contenido multimedia */
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Mejorar espaciado de texto */
+    p, li {
+        margin-bottom: 1rem;
+    }
+    
+    /* Optimizar tablas para móviles */
+    table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+    
+    /* Mejorar formularios */
+    input, textarea, select {
+        width: 100%;
+        padding: 0.875rem;
+        border: 2px solid var(--border-color);
+        border-radius: 6px;
+        font-size: 16px;
+        background: var(--card-bg);
+        color: var(--text-primary);
+    }
+    
+    input:focus, textarea:focus, select:focus {
+        outline: 3px solid var(--focus-color);
+        outline-offset: 2px;
+        border-color: var(--accent-primary);
+    }
+    
+    /* Mejorar listas de vocabulario en móviles */
+    .vocabulary-list {
+        border-radius: 8px;
+    }
+    
+    .vocabulary-list li {
+        padding: 1rem 0;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    /* Optimizar navegación de lecciones */
+    .lesson-nav {
+        background: var(--card-bg);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border-color);
+    }
+    
+    /* Mejorar contenido de lecciones */
+    .lesson-content {
+        line-height: 1.6;
+    }
+    
+    .lesson-content h1, .lesson-content h2, .lesson-content h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .lesson-content h1:first-child {
+        margin-top: 0;
+    }
+}
+
+/* Optimizaciones para pantallas muy pequeñas */
+@media (max-width: 360px) {
+    /* Reducir padding en contenedores muy pequeños */
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .exercise, .quiz-container {
+        padding: 0.75rem;
+    }
+    
+    .vocabulary-list {
+        padding: 0.75rem;
+    }
+    
+    /* Ajustar tamaños de fuente */
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Optimizar botones para pantallas muy pequeñas */
+    .btn, .exercise button, .quiz-submit {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mejoras para accesibilidad en móviles */
+@media (max-width: 768px) {
+    /* Asegurar que el foco sea visible en móviles */
+    *:focus {
+        outline: 3px solid var(--focus-color);
+        outline-offset: 2px;
+    }
+    
+    /* Mejorar contraste en elementos interactivos */
+    .nav-link:hover, .nav-link:focus {
+        background: var(--accent-primary);
+        color: var(--text-light);
+    }
+    
+    .level-card:hover, .level-card:focus-within {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Mejorar feedback visual en botones */
+    .btn:active, .exercise button:active, .quiz-submit:active {
+        transform: scale(0.98);
     }
 }
 

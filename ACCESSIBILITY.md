@@ -39,10 +39,22 @@ Este sitio web ha sido desarrollado siguiendo las mejores prácticas de accesibi
 - Retroalimentación visual y auditiva
 - Mensajes de error descriptivos
 
-### 7. Contenido Multimedia
+### 7. Diseño Responsivo y Móvil
+- **Viewport optimizado**: Meta tag viewport configurado correctamente
+- **Breakpoints múltiples**: 1024px, 768px, 480px, 360px, 320px
+- **Navegación móvil**: Menú adaptativo para pantallas pequeñas
+- **Áreas de toque ampliadas**: Mínimo 48px en dispositivos táctiles
+- **Orientación horizontal**: Optimizaciones para landscape en móviles
+- **Zoom iOS**: Prevención de zoom automático en inputs
+- **Imágenes responsivas**: Max-width 100% y height auto
+- **Tablas móviles**: Scroll horizontal automático
+- **Formularios optimizados**: Tamaño de fuente 16px para evitar zoom
+
+### 8. Contenido Multimedia
 - Alternativas textuales para contenido visual
 - Controles de audio accesibles
 - Soporte para subtítulos (cuando aplique)
+- Imágenes y videos responsivos
 
 ## Tecnologías de Asistencia Soportadas
 
