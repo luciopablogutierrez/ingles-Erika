@@ -1105,10 +1105,80 @@ p {
 
 /* Cara trasera */
 .level-card-back {
-    background: linear-gradient(135deg, var(--terracotta) 0%, var(--sage-green) 100%);
-    color: var(--text-light);
+    background: linear-gradient(135deg, var(--cream-light) 0%, var(--nude-light) 100%);
+    color: var(--text-primary);
     transform: rotateY(180deg);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--nude);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--terracotta) transparent;
+}
+
+/* Contenedor deslizable para el contenido de la cara trasera */
+.level-card-back-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    width: max-content;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+/* Indicador de deslizamiento */
+.level-card-back-content::after {
+    content: '← Desliza →';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 0.65rem;
+    color: var(--terracotta);
+    opacity: 0.7;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    pointer-events: none;
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3px 8px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(212, 117, 107, 0.2);
+    animation: slideHint 4s ease-in-out infinite;
+}
+
+@keyframes slideHint {
+    0%, 100% { opacity: 0.7; transform: translateX(0); }
+    50% { opacity: 0.4; transform: translateX(-2px); }
+}
+
+/* Ocultar indicador en móviles donde el deslizamiento es más intuitivo */
+@media (max-width: 768px) {
+    .level-card-back-content::after {
+        display: none;
+    }
+}
+
+/* Estilos para scrollbar en navegadores webkit */
+.level-card-back::-webkit-scrollbar {
+    height: 6px;
+}
+
+.level-card-back::-webkit-scrollbar-track {
+    background: rgba(212, 117, 107, 0.1);
+    border-radius: 3px;
+}
+
+.level-card-back::-webkit-scrollbar-thumb {
+    background: var(--terracotta);
+    border-radius: 3px;
+    opacity: 0.7;
+}
+
+.level-card-back::-webkit-scrollbar-thumb:hover {
+    background: var(--sage-green);
+    opacity: 1;
 }
 
 .level-card-back::before {
@@ -1140,9 +1210,10 @@ p {
 }
 
 .level-card-back h2 {
-    color: var(--text-light);
+    color: var(--terracotta);
     font-size: clamp(1.3rem, 3.5vw, 1.8rem);
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .level-card p {
@@ -1156,9 +1227,10 @@ p {
 }
 
 .level-card-back p {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
     font-size: clamp(0.8rem, 2vw, 0.95rem);
     margin-bottom: 1.25rem;
+    font-weight: 500;
 }
 
 .level-card ul {
@@ -1210,6 +1282,8 @@ p {
     justify-content: space-around;
     width: 100%;
     margin: 1.5rem 0;
+    min-width: 280px;
+    flex-shrink: 0;
 }
 
 .stat-item {
@@ -1219,56 +1293,37 @@ p {
 .stat-number {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--text-light);
+    color: var(--terracotta);
     display: block;
 }
 
 .stat-label {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    opacity: 0.8;
 }
 
-/* Variantes de colores para diferentes niveles */
+/* Variantes de colores para diferentes niveles - Solo para la barra superior */
 .level-card.a1 .level-card-front::before {
-    background: linear-gradient(90deg, #4CAF50, #81c784);
-}
-
-.level-card.a1 .level-card-back {
-    background: linear-gradient(135deg, #4CAF50 0%, #66bb6a 100%);
+    background: linear-gradient(90deg, var(--sage-green), var(--terracotta));
 }
 
 .level-card.a2 .level-card-front::before {
-    background: linear-gradient(90deg, #FFC107, #ffb74d);
-}
-
-.level-card.a2 .level-card-back {
-    background: linear-gradient(135deg, #FFC107 0%, #ffca28 100%);
+    background: linear-gradient(90deg, var(--terracotta), var(--dusty-rose));
 }
 
 .level-card.b1 .level-card-front::before {
-    background: linear-gradient(90deg, #2196F3, #64b5f6);
-}
-
-.level-card.b1 .level-card-back {
-    background: linear-gradient(135deg, #2196F3 0%, #42a5f5 100%);
+    background: linear-gradient(90deg, var(--sage-green), var(--nude));
 }
 
 .level-card.b2 .level-card-front::before {
-    background: linear-gradient(90deg, #9C27B0, #ba68c8);
-}
-
-.level-card.b2 .level-card-back {
-    background: linear-gradient(135deg, #9C27B0 0%, #ab47bc 100%);
+    background: linear-gradient(90deg, var(--dusty-rose), var(--terracotta));
 }
 
 .level-card.c1 .level-card-front::before {
-    background: linear-gradient(90deg, #F44336, #ff6b6b);
-}
-
-.level-card.c1 .level-card-back {
-    background: linear-gradient(135deg, #F44336 0%, #ef5350 100%);
+    background: linear-gradient(90deg, var(--terracotta), var(--sage-green));
 }
 
 /* Animación de entrada */
