@@ -2665,3 +2665,410 @@ footer {
     color: var(--text-light);
     border-color: var(--error-color);
 }
+
+/* ===== ESTILOS PROFESIONALES PARA SUBPÁGINAS ===== */
+
+/* Navegación breadcrumb mejorada */
+.lesson-breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--terracotta);
+}
+
+.breadcrumb-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.breadcrumb-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--terracotta);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+    background: var(--cream);
+    color: var(--sage-green);
+}
+
+.breadcrumb-separator {
+    color: var(--sage-green);
+    font-weight: bold;
+    margin: 0 0.5rem;
+}
+
+.breadcrumb-current {
+    color: var(--sage-green);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: var(--sage-green-light);
+    border-radius: 8px;
+}
+
+.lesson-navigation {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--terracotta);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn:hover {
+    background: var(--sage-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-prev {
+    background: var(--sage-green);
+}
+
+.nav-prev:hover {
+    background: var(--terracotta);
+}
+
+/* Encabezado de lección */
+.lesson-header-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--terracotta);
+}
+
+.lesson-title-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.lesson-icon {
+    font-size: 3rem;
+    background: var(--sage-green-light);
+    padding: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lesson-title-text h1 {
+    color: var(--terracotta);
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.lesson-subtitle {
+    color: var(--sage-green);
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+.lesson-meta {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--cream);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--sage-green);
+    font-weight: 500;
+}
+
+.meta-item i {
+    color: var(--terracotta);
+}
+
+/* Layout principal con sidebar */
+.lesson-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    align-items: start;
+}
+
+.lesson-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Secciones de contenido */
+.content-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--sage-green);
+}
+
+.section-header {
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--terracotta);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.section-icon {
+    font-size: 1.5rem;
+    background: var(--sage-green-light);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.section-description {
+    color: var(--sage-green);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Grid de vocabulario */
+.vocabulary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.vocab-card {
+    background: var(--cream-light);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--cream);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.vocab-card:hover {
+    border-color: var(--terracotta);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.vocab-english {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--terracotta);
+    margin-bottom: 0.5rem;
+}
+
+.vocab-spanish {
+    font-size: 1.1rem;
+    color: var(--sage-green);
+    margin-bottom: 0.5rem;
+}
+
+.vocab-time {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Lista de vocabulario moderna */
+.vocabulary-list-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.vocab-item {
+    background: var(--cream-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--terracotta);
+    transition: all 0.3s ease;
+}
+
+.vocab-item:hover {
+    background: white;
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vocab-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.vocab-item .vocab-english {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--terracotta);
+}
+
+.vocab-item .vocab-spanish {
+    font-size: 1.1rem;
+    color: var(--sage-green);
+    font-weight: 500;
+}
+
+.vocab-context {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Sección de ejercicios */
+.exercise-section {
+    border-left-color: var(--terracotta);
+    background: var(--sage-green-light);
+}
+
+.exercise-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.exercise-question p {
+    font-size: 1.2rem;
+    color: var(--sage-green);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.exercise-btn {
+    background: var(--terracotta);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.exercise-btn:hover {
+    background: var(--sage-green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.exercise-answer {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--sage-green);
+    padding: 1rem;
+    background: var(--sage-green-light);
+    border-radius: 8px;
+    display: none;
+}
+
+/* Barra lateral */
+.lesson-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 2rem;
+}
+
+.sidebar-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-top: 3px solid var(--terracotta);
+}
+
+.sidebar-card h3 {
+    color: var(--terracotta);
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.sidebar-card p {
+    color: var(--sage-green);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Responsive design para subpáginas */
+@media (max-width: 768px) {
+    .lesson-breadcrumb {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .lesson-navigation {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .lesson-title-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .lesson-meta {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .lesson-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .vocabulary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .vocab-main {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .lesson-sidebar {
+        order: -1;
+    }
+}

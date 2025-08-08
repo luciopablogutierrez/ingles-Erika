@@ -97,57 +97,228 @@
 
     <main id="main-content" role="main">
         <div class="lesson-container">
-            <nav class="lesson-nav" role="navigation" aria-label="Navegación de lección">
-                <a href="../index.html" aria-label="Ir a la página principal">🏠 <span>Home</span></a> | 
-                <a href="index.html" aria-label="Volver al índice de nivel A1">← <span>Volver a A1</span></a> | 
-                <a href="abecedario.html" aria-label="Ir a la siguiente lección: Abecedario"><span>Siguiente: Abecedario</span> →</a>
+            <!-- Navegación de lección mejorada -->
+            <nav class="lesson-breadcrumb" role="navigation" aria-label="Navegación de lección">
+                <div class="breadcrumb-container">
+                    <a href="../index.html" class="breadcrumb-link">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="index.html" class="breadcrumb-link">
+                        <span>Nivel A1</span>
+                    </a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Saludos y Presentaciones</span>
+                </div>
+                <div class="lesson-navigation">
+                    <a href="index.html" class="nav-btn nav-prev">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Volver a A1</span>
+                    </a>
+                    <a href="abecedario.html" class="nav-btn nav-next">
+                        <span>Siguiente: Abecedario</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </nav>
 
-            <div class="lesson-content">
-                <h1>Saludos Básicos en Inglés</h1>
-
-                <section aria-labelledby="saludos-momento">
-                    <h2 id="saludos-momento">🌅 Saludos por Momento del Día</h2>
-                    <div class="vocabulary-list" role="list" aria-label="Lista de saludos por momento del día">
-                        <ul>
-                            <li role="listitem"><strong>Good morning</strong> → Buenos días (hasta las 12:00)</li>
-                            <li role="listitem"><strong>Good afternoon</strong> → Buenas tardes (12:00 - 18:00)</li>
-                            <li role="listitem"><strong>Good evening</strong> → Buenas noches (después de las 18:00)</li>
-                            <li role="listitem"><strong>Good night</strong> → Buenas noches (para despedirse)</li>
-                        </ul>
+            <!-- Encabezado de la lección -->
+            <div class="lesson-header-content">
+                <div class="lesson-title-section">
+                    <div class="lesson-icon">👋</div>
+                    <div class="lesson-title-text">
+                        <h1>Saludos y Presentaciones</h1>
+                        <p class="lesson-subtitle">Aprende a saludar y presentarte en inglés de manera natural</p>
                     </div>
-                </section>
+                </div>
+                <div class="lesson-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>15-20 min</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-signal"></i>
+                        <span>Principiante</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>Conversación</span>
+                    </div>
+                </div>
+            </div>
 
-                <section aria-labelledby="saludos-informales">
-                    <h2 id="saludos-informales">👋 Saludos Informales</h2>
-                    <div class="vocabulary-list" role="list" aria-label="Lista de saludos informales">
-                        <ul>
-                            <li role="listitem"><strong>Hello</strong> → Hola (formal/informal)</li>
-                            <li role="listitem"><strong>Hi</strong> → Hola (informal)</li>
-                            <li role="listitem"><strong>Hey</strong> → Oye/Hola (muy informal)</li>
-                            <li role="listitem"><strong>How are you?</strong> → ¿Cómo estás?</li>
-                        <li><strong>How's it going?</strong> → ¿Cómo va todo?</li>
-                    </ul>
+            <!-- Contenido principal organizado -->
+            <div class="lesson-content-wrapper">
+                <div class="lesson-main-content">
+                    <!-- Sección 1: Saludos por momento del día -->
+                    <section class="content-section" aria-labelledby="saludos-momento">
+                        <div class="section-header">
+                            <h2 id="saludos-momento">
+                                <span class="section-icon">🌅</span>
+                                Saludos por Momento del Día
+                            </h2>
+                            <p class="section-description">Aprende cuándo usar cada saludo según la hora del día</p>
+                        </div>
+                        <div class="vocabulary-grid">
+                            <div class="vocab-card">
+                                <div class="vocab-english">Good morning</div>
+                                <div class="vocab-spanish">Buenos días</div>
+                                <div class="vocab-time">Hasta las 12:00</div>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-english">Good afternoon</div>
+                                <div class="vocab-spanish">Buenas tardes</div>
+                                <div class="vocab-time">12:00 - 18:00</div>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-english">Good evening</div>
+                                <div class="vocab-spanish">Buenas noches</div>
+                                <div class="vocab-time">Después de las 18:00</div>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-english">Good night</div>
+                                <div class="vocab-spanish">Buenas noches</div>
+                                <div class="vocab-time">Para despedirse</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Sección 2: Saludos informales -->
+                    <section class="content-section" aria-labelledby="saludos-informales">
+                        <div class="section-header">
+                            <h2 id="saludos-informales">
+                                <span class="section-icon">👋</span>
+                                Saludos Informales
+                            </h2>
+                            <p class="section-description">Saludos casuales para usar con amigos y conocidos</p>
+                        </div>
+                        <div class="vocabulary-list-modern">
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">Hello</span>
+                                    <span class="vocab-spanish">Hola</span>
+                                </div>
+                                <div class="vocab-context">Formal/Informal</div>
+                            </div>
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">Hi</span>
+                                    <span class="vocab-spanish">Hola</span>
+                                </div>
+                                <div class="vocab-context">Informal</div>
+                            </div>
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">Hey</span>
+                                    <span class="vocab-spanish">Oye/Hola</span>
+                                </div>
+                                <div class="vocab-context">Muy informal</div>
+                            </div>
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">How are you?</span>
+                                    <span class="vocab-spanish">¿Cómo estás?</span>
+                                </div>
+                                <div class="vocab-context">Pregunta común</div>
+                            </div>
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">How's it going?</span>
+                                    <span class="vocab-spanish">¿Cómo va todo?</span>
+                                </div>
+                                <div class="vocab-context">Casual</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Sección 3: Presentaciones -->
+                    <section class="content-section" aria-labelledby="presentaciones">
+                        <div class="section-header">
+                            <h2 id="presentaciones">
+                                <span class="section-icon">🤝</span>
+                                Presentaciones
+                            </h2>
+                            <p class="section-description">Frases esenciales para presentarte y conocer a otros</p>
+                        </div>
+                        <div class="vocabulary-list-modern">
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">What's your name?</span>
+                                    <span class="vocab-spanish">¿Cómo te llamas?</span>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">My name is...</span>
+                                    <span class="vocab-spanish">Mi nombre es...</span>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">I'm...</span>
+                                    <span class="vocab-spanish">Soy...</span>
+                                </div>
+                                <div class="vocab-context">Forma corta</div>
+                            </div>
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">Nice to meet you</span>
+                                    <span class="vocab-spanish">Mucho gusto</span>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">Where are you from?</span>
+                                    <span class="vocab-spanish">¿De dónde eres?</span>
+                                </div>
+                            </div>
+                            <div class="vocab-item">
+                                <div class="vocab-main">
+                                    <span class="vocab-english">I'm from...</span>
+                                    <span class="vocab-spanish">Soy de...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Ejercicio interactivo -->
+                    <section class="content-section exercise-section">
+                        <div class="section-header">
+                            <h2>
+                                <span class="section-icon">🎯</span>
+                                Ejercicio Práctico
+                            </h2>
+                            <p class="section-description">Pon a prueba lo que has aprendido</p>
+                        </div>
+                        <div class="exercise-container">
+                            <div class="exercise-question">
+                                <p>¿Qué significa 'Good afternoon'?</p>
+                                <button class="exercise-btn" onclick="mostrarRespuesta('respuesta1', 'Buenas tardes')">
+                                    Ver respuesta
+                                </button>
+                                <div id="respuesta1" class="exercise-answer"></div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
 
-                <div class="exercise">
-                    <h2>🎯 Ejercicio 1: ¿Qué significa?</h2>
-                    <p>Haz clic en el botón para ver la respuesta:</p>
-                    <button onclick="mostrarRespuesta('respuesta1', 'Buenas tardes')">¿Qué significa 'Good afternoon'?</button>
-                    <p id="respuesta1" class="answer"></p>
-                </div>
-
-                <h2>🤝 Presentaciones</h2>
-                <div class="vocabulary-list">
-                    <ul>
-                        <li><strong>What's your name?</strong> → ¿Cómo te llamas?</li>
-                        <li><strong>My name is...</strong> → Mi nombre es...</li>
-                        <li><strong>I'm...</strong> → Soy... (forma corta)</li>
-                        <li><strong>Nice to meet you</strong> → Mucho gusto</li>
-                        <li><strong>Where are you from?</strong> → ¿De dónde eres?</li>
-                        <li><strong>I'm from...</strong> → Soy de...</li>
-                    </ul>
-                </div>
+                <!-- Barra lateral con información adicional -->
+                <aside class="lesson-sidebar">
+                    <div class="sidebar-card">
+                        <h3>💡 Consejo</h3>
+                        <p>Practica estos saludos en voz alta para mejorar tu pronunciación.</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h3>📝 Nota Cultural</h3>
+                        <p>En países angloparlantes, es común preguntar "How are you?" como saludo, no necesariamente esperando una respuesta detallada.</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h3>🎵 Pronunciación</h3>
+                        <p>Recuerda que la 'h' en "Hello" y "Hi" es aspirada, como un suspiro suave.</p>
+                    </div>
+                </aside>
+            </div>
 
                 <div class="quiz-container">
                     <h2>🧠 Quiz: Presentaciones</h2>
