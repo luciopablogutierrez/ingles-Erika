@@ -1,36 +1,93 @@
-// Funciones para ejercicios interactivos - Mobile First
+// Funciones para ejercicios interactivos - Mobile First Design Completo
 
-// Detección de dispositivos móviles y touch
+// Detección avanzada de dispositivos móviles y touch
 const isMobile = () => {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
            ('ontouchstart' in window) ||
-           (navigator.maxTouchPoints > 0);
+           (navigator.maxTouchPoints > 0) ||
+           window.innerWidth < 768;
 };
 
 const isTouchDevice = () => {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    return 'ontouchstart' in window || 
+           navigator.maxTouchPoints > 0 || 
+           window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 };
 
-// Optimizaciones para dispositivos móviles
+// Detección de tamaño de pantalla específico
+const getScreenSize = () => {
+    const width = window.innerWidth;
+    if (width < 480) return 'mobile-small';
+    if (width < 768) return 'mobile';
+    if (width < 1024) return 'tablet';
+    if (width < 1280) return 'desktop-small';
+    return 'desktop';
+};
+
+// Verificar si el dispositivo soporta hover
+const supportsHover = () => {
+    return window.matchMedia('(hover: hover)').matches;
+};
+
+// Optimizaciones completas para dispositivos móviles
 function optimizarParaMovil() {
-    // Prevenir zoom en inputs en iOS
+    const screenSize = getScreenSize();
+    
+    // Agregar clases según el tipo de dispositivo
+    document.body.classList.add(screenSize);
+    
+    if (isMobile()) {
+        document.body.classList.add('mobile-device');
+    }
+    
+    if (isTouchDevice()) {
+        document.body.classList.add('touch-device');
+    }
+    
+    if (!supportsHover()) {
+        document.body.classList.add('no-hover');
+    }
+    
+    // Prevenir zoom en inputs en iOS (solo si es necesario)
     if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        const viewport = document.querySelector('meta[name=viewport]');
-        if (viewport) {
-            viewport.setAttribute('content', 
-                'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
-            );
+        // Verificar si ya existe viewport
+        let viewport = document.querySelector('meta[name=viewport]');
+        if (!viewport) {
+            viewport = document.createElement('meta');
+            viewport.name = 'viewport';
+            document.head.appendChild(viewport);
+        }
+        
+        // Configurar viewport para prevenir zoom en inputs
+        viewport.setAttribute('content', 
+            'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover'
+        );
+        
+        // Prevenir zoom en inputs específicamente
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            if (input.style.fontSize === '' || parseFloat(input.style.fontSize) < 16) {
+                input.style.fontSize = '16px';
+            }
+        });
+    }
+    
+    // Optimizaciones de rendimiento para móviles
+    if (isMobile()) {
+        // Optimizar scroll en iOS
+        document.body.style.webkitOverflowScrolling = 'touch';
+        
+        // Mejorar rendimiento de animaciones
+        document.documentElement.style.setProperty('--transition-duration', '200ms');
+        
+        // Reducir motion si el dispositivo es lento
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
+            document.body.classList.add('reduced-motion');
         }
     }
     
-    // Mejorar rendimiento en móviles
-    if (isMobile()) {
-        // Reducir animaciones en dispositivos lentos
-        document.body.classList.add('mobile-device');
-        
-        // Optimizar scroll en iOS
-        document.body.style.webkitOverflowScrolling = 'touch';
-    }
+    // Configurar touch-action para mejor rendimiento
+    document.body.style.touchAction = 'manipulation';
 }
 
 // Funciones de accesibilidad
@@ -295,7 +352,7 @@ function actualizarProgreso(leccionesCompletadas, totalLecciones) {
     }
 }
 
-// Función para inicializar el menú hamburguesa
+// Función para inicializar el menú hamburguesa - Mobile First optimizado
 function initializeHamburgerMenu() {
     const hamburgerBtn = document.querySelector('.hamburger-menu');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -304,7 +361,14 @@ function initializeHamburgerMenu() {
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
     
     if (hamburgerBtn && mobileMenu) {
-        // Toggle del menú hamburguesa
+        // Configurar atributos de accesibilidad iniciales
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        hamburgerBtn.setAttribute('aria-label', 'Abrir menú de navegación');
+        hamburgerBtn.setAttribute('aria-controls', 'mobile-menu');
+        mobileMenu.setAttribute('id', 'mobile-menu');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        
+        // Toggle del menú hamburguesa con mejoras táctiles
         function toggleMobileMenu() {
             const isOpen = mobileMenu.classList.contains('active');
             
@@ -321,23 +385,43 @@ function initializeHamburgerMenu() {
             hamburgerBtn.classList.add('active');
             hamburgerBtn.setAttribute('aria-expanded', 'true');
             hamburgerBtn.setAttribute('aria-label', 'Cerrar menú de navegación');
-            document.body.style.overflow = 'hidden'; // Prevenir scroll
-            anunciarParaLectorPantalla('Menú abierto');
+            mobileMenu.setAttribute('aria-hidden', 'false');
             
-            // Enfocar el primer enlace del menú
+            // Prevenir scroll del body pero mantener scroll del menú
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            
+            anunciarParaLectorPantalla('Menú de navegación abierto');
+            
+            // Enfocar el primer enlace del menú con mejor timing
             if (mobileMenuLinks.length > 0) {
-                setTimeout(() => mobileMenuLinks[0].focus(), 100);
+                setTimeout(() => {
+                    mobileMenuLinks[0].focus();
+                }, 150); // Tiempo suficiente para la animación
             }
+            
+            // Agregar clase para animaciones específicas de apertura
+            setTimeout(() => {
+                mobileMenu.classList.add('menu-opened');
+            }, 50);
         }
         
         function closeMobileMenu() {
             mobileMenu.classList.remove('active');
+            mobileMenu.classList.remove('menu-opened');
             if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
             hamburgerBtn.classList.remove('active');
             hamburgerBtn.setAttribute('aria-expanded', 'false');
             hamburgerBtn.setAttribute('aria-label', 'Abrir menú de navegación');
-            document.body.style.overflow = ''; // Restaurar scroll
-            anunciarParaLectorPantalla('Menú cerrado');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            
+            // Restaurar scroll del body
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+            
+            anunciarParaLectorPantalla('Menú de navegación cerrado');
         }
         
         // Event listeners
@@ -403,9 +487,9 @@ function initializeHamburgerMenu() {
     }
 }
 
-// Inicialización cuando se carga la página
+// Inicialización cuando se carga la página - Mobile First
 document.addEventListener('DOMContentLoaded', function() {
-    // Optimizaciones móviles
+    // Optimizaciones móviles PRIMERO
     optimizarParaMovil();
     
     // Cargar tema guardado
@@ -413,6 +497,52 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar menú hamburguesa
     initializeHamburgerMenu();
+    
+    // Configurar responsive behavior
+    function handleResize() {
+        const newScreenSize = getScreenSize();
+        
+        // Actualizar clases del body
+        document.body.className = document.body.className.replace(
+            /\b(mobile-small|mobile|tablet|desktop-small|desktop)\b/g, ''
+        );
+        document.body.classList.add(newScreenSize);
+        
+        // Cerrar menú móvil si se cambia a desktop
+        if (window.innerWidth >= 768) {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                const closeMobileMenu = () => {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.width = '';
+                };
+                closeMobileMenu();
+            }
+        }
+    }
+    
+    // Escuchar cambios de tamaño de ventana
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(handleResize, 150);
+    });
+    
+    // Configurar orientación en móviles
+    window.addEventListener('orientationchange', function() {
+        setTimeout(() => {
+            handleResize();
+            // Recalcular viewport height en móviles
+            if (isMobile()) {
+                document.documentElement.style.setProperty(
+                    '--vh', 
+                    `${window.innerHeight * 0.01}px`
+                );
+            }
+        }, 100);
+    });
     
     // Configurar botón de tema
     const themeToggle = document.querySelector('.theme-toggle');
@@ -462,74 +592,90 @@ document.addEventListener('DOMContentLoaded', function() {
     // Funcionalidad de flip para las tarjetas - SOLO EN DESKTOP
     const tarjetas = document.querySelectorAll('.level-card');
     
-    // Verificar si es dispositivo móvil o táctil
-    const esDispositivoMovil = isMobile() || isTouchDevice() || window.innerWidth < 768;
-    
-    if (!esDispositivoMovil) {
-        // Solo habilitar flip en desktop
+    function configurarFlipCards() {
+        // Verificar si es dispositivo móvil o táctil
+        const esDispositivoMovil = isMobile() || isTouchDevice() || window.innerWidth < 768;
+        
         tarjetas.forEach(tarjeta => {
-            let isFlipped = false;
-            
-            // Función para alternar el flip
-            function toggleFlip() {
-                isFlipped = !isFlipped;
-                if (isFlipped) {
-                    tarjeta.classList.add('flipped');
-                } else {
-                    tarjeta.classList.remove('flipped');
-                }
-            }
-            
-            // Click en la tarjeta para flip (solo desktop)
-            tarjeta.addEventListener('click', function(event) {
-                // Si se hace clic en un enlace, no hacer flip
-                if (event.target.tagName === 'A' || event.target.closest('a')) {
-                    return;
-                }
-                // Solo permitir flip en desktop
-                if (window.innerWidth >= 768) {
-                    event.preventDefault();
-                    toggleFlip();
-                }
-            });
-            
-            // Navegación por teclado (solo desktop)
-            tarjeta.addEventListener('keydown', function(event) {
-                if (window.innerWidth >= 768 && (event.key === 'Enter' || event.key === ' ')) {
-                    event.preventDefault();
-                    toggleFlip();
-                } else if (event.key === 'Escape') {
-                    if (isFlipped) {
-                        isFlipped = false;
-                        tarjeta.classList.remove('flipped');
-                    }
-                }
-            });
-            
-            // Hacer la tarjeta focusable solo en desktop
-            if (window.innerWidth >= 768) {
-                tarjeta.setAttribute('tabindex', '0');
-                tarjeta.setAttribute('role', 'button');
-                tarjeta.setAttribute('aria-label', 'Tarjeta de nivel - presiona Enter o espacio para voltear');
-            }
+            // Remover event listeners existentes
+            const newTarjeta = tarjeta.cloneNode(true);
+            tarjeta.parentNode.replaceChild(newTarjeta, tarjeta);
         });
-    } else {
-        // En móvil, hacer las tarjetas normales (sin flip)
-        tarjetas.forEach(tarjeta => {
-            tarjeta.classList.remove('flipped');
-            tarjeta.removeAttribute('tabindex');
-            tarjeta.removeAttribute('role');
-            tarjeta.removeAttribute('aria-label');
-            
-            // Asegurar que no haya flip en móvil
-            tarjeta.addEventListener('click', function(event) {
-                // Permitir navegación normal en móvil
-                if (event.target.tagName === 'A' || event.target.closest('a')) {
-                    return; // Permitir clicks en enlaces
+        
+        // Reconfigurar con las nuevas tarjetas
+        const nuevasTarjetas = document.querySelectorAll('.level-card');
+        
+        if (!esDispositivoMovil && supportsHover()) {
+            // Solo habilitar flip en desktop con hover
+            nuevasTarjetas.forEach(tarjeta => {
+                tarjeta.style.cursor = 'pointer';
+                
+                const flipCard = () => {
+                    tarjeta.classList.toggle('flipped');
+                    const isFlipped = tarjeta.classList.contains('flipped');
+                    anunciarParaLectorPantalla(
+                        isFlipped ? 'Tarjeta volteada' : 'Tarjeta en posición normal'
+                    );
+                };
+                
+                // Click para flip
+                tarjeta.addEventListener('click', flipCard);
+                
+                // Teclado para flip
+                tarjeta.addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        flipCard();
+                    }
+                });
+                
+                // Hacer focusable
+                if (!tarjeta.hasAttribute('tabindex')) {
+                    tarjeta.setAttribute('tabindex', '0');
                 }
             });
+        } else {
+            // En móvil, deshabilitar flip completamente
+            nuevasTarjetas.forEach(tarjeta => {
+                tarjeta.style.cursor = 'default';
+                tarjeta.classList.remove('flipped');
+                tarjeta.removeAttribute('tabindex');
+            });
+        }
+    }
+    
+    // Configurar flip cards inicialmente
+    configurarFlipCards();
+    
+    // Reconfigurar en resize
+    window.addEventListener('resize', function() {
+        clearTimeout(window.flipResizeTimeout);
+        window.flipResizeTimeout = setTimeout(configurarFlipCards, 200);
+    });
+    
+    // Configurar viewport height para móviles
+    if (isMobile()) {
+        const setVH = () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+        setVH();
+        window.addEventListener('resize', setVH);
+    }
+    
+    // Optimizar performance en dispositivos lentos
+    if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
+        // Reducir animaciones
+        document.documentElement.style.setProperty('--transition-duration', '100ms');
+        
+        // Simplificar efectos
+        const elementos = document.querySelectorAll('.level-card, .nav-link');
+        elementos.forEach(el => {
+            el.style.willChange = 'auto';
         });
     }
+    
+    // La funcionalidad de flip cards ya está manejada por configurarFlipCards()
     
     // Listener para cambios de tamaño de ventana
     window.addEventListener('resize', function() {

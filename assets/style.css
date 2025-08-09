@@ -1,4 +1,4 @@
-/* Variables CSS - Paleta profesional y cálida + Mobile-First Avanzado */
+/* Variables CSS - Mobile First Design Completo */
 :root {
     /* Paleta de colores suaves y naturales */
     --cream: #f7f3f0;
@@ -12,36 +12,37 @@
     --dusty-rose: #d4a5a5;
     --dusty-rose-light: #e8c5c5;
     
-    /* Tipografía moderna - Mobile First */
+    /* Tipografía Mobile First - Mínimo 16px base */
     --font-family-primary: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-heading: 'Playfair Display', Georgia, serif;
-    --font-size-xs: 0.75rem;   /* 12px */
-    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-xs: 0.875rem;  /* 14px - mínimo legible */
+    --font-size-sm: 1rem;      /* 16px - base móvil */
     --font-size-base: 1rem;    /* 16px - mínimo para móvil */
     --font-size-lg: 1.125rem;  /* 18px */
     --font-size-xl: 1.25rem;   /* 20px */
-    --font-size-2xl: 1.5rem;   /* 24px */
-    --font-size-3xl: 1.875rem; /* 30px */
-    --font-size-4xl: 2.25rem;  /* 36px */
-    --font-size-5xl: 3rem;     /* 48px */
+    --font-size-2xl: 1.375rem; /* 22px - móvil */
+    --font-size-3xl: 1.5rem;   /* 24px - móvil */
+    --font-size-4xl: 1.75rem;  /* 28px - móvil */
+    --font-size-5xl: 2rem;     /* 32px - móvil */
     
-    /* Breakpoints Mobile-First */
-    --breakpoint-xs: 320px;   /* Móviles pequeños */
-    --breakpoint-sm: 480px;   /* Móviles grandes */
+    /* Breakpoints Mobile-First específicos */
+    --breakpoint-xs: 320px;   /* Móviles muy pequeños */
+    --breakpoint-sm: 480px;   /* Móviles estándar */
     --breakpoint-md: 768px;   /* Tablets */
     --breakpoint-lg: 1024px;  /* Desktop pequeño */
-    --breakpoint-xl: 1280px;  /* Desktop grande */
-    --breakpoint-2xl: 1536px; /* Desktop extra grande */
+    --breakpoint-xl: 1280px;  /* Desktop estándar */
+    --breakpoint-2xl: 1536px; /* Desktop grande */
     
-    /* Touch targets mínimos (44x44px) */
+    /* Touch targets - Mínimo 44x44px según WCAG */
     --touch-target-min: 44px;
     --touch-target-comfortable: 48px;
+    --touch-target-large: 56px;
     
-    /* Espaciado responsive moderno */
+    /* Espaciado Mobile First - Escalado progresivo */
     --space-1: 0.25rem;  /* 4px */
     --space-2: 0.5rem;   /* 8px */
     --space-3: 0.75rem;  /* 12px */
-    --space-4: 1rem;     /* 16px */
+    --space-4: 1rem;     /* 16px - base móvil */
     --space-5: 1.25rem;  /* 20px */
     --space-6: 1.5rem;   /* 24px */
     --space-8: 2rem;     /* 32px */
@@ -50,9 +51,9 @@
     --space-16: 4rem;    /* 64px */
     --space-20: 5rem;    /* 80px */
     
-    --container-padding-mobile: var(--space-4);
-    --container-padding-tablet: var(--space-8);
-    --container-padding-desktop: var(--space-12);
+    /* Container padding responsive */
+    --container-padding: var(--space-4);  /* Móvil por defecto */
+    --container-max-width: 100%;          /* Móvil por defecto */
     
     /* Sombras modernas */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -139,10 +140,11 @@ html {
 /* Importación de tipografías */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Mobile First Body - Base para móvil */
 body {
     font-family: var(--font-family-primary);
-    font-size: var(--font-size-base);
-    line-height: 1.7;
+    font-size: var(--font-size-base); /* 16px mínimo */
+    line-height: 1.6; /* Mejor para móvil */
     color: var(--text-primary);
     background: var(--bg-primary);
     min-height: 100vh;
@@ -154,6 +156,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    /* Optimizaciones móvil */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    /* Prevenir zoom en inputs en iOS */
+    -webkit-text-size-adjust: 100%;
 }
 
 /* Respeto por las preferencias de movimiento reducido */
@@ -242,7 +249,7 @@ body {
     speak: none;
 }
 
-/* Navigation */
+/* Navigation - Mobile First */
 .main-nav {
     position: fixed;
     top: 0;
@@ -257,16 +264,18 @@ body {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     will-change: transform;
+    /* Altura optimizada para móvil */
+    min-height: 60px;
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 var(--container-padding-mobile);
+    padding: 0 var(--container-padding);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 70px;
+    min-height: 60px; /* Móvil primero */
     position: relative;
     backdrop-filter: blur(20px);
     box-shadow: var(--shadow-lg);
@@ -303,9 +312,9 @@ body {
     font-family: var(--font-family-heading);
 }
 
-/* Menú hamburguesa - Optimizado para touch */
+/* Menú hamburguesa - Mobile First, optimizado para pulgar */
 .hamburger-menu {
-    display: none;
+    display: flex; /* Visible por defecto en móvil */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -315,11 +324,16 @@ body {
     border: 2px solid var(--text-primary);
     border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
     z-index: 1002;
-    /* Área de touch más grande para mejor usabilidad */
+    /* Área de touch optimizada - mínimo 44x44px */
     padding: 8px;
     margin: 4px;
+    /* Optimización para touch */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    /* Posición accesible para pulgar */
+    position: relative;
 }
 
 .hamburger-menu:hover {
@@ -358,24 +372,26 @@ body {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Navegación desktop */
+/* Navegación desktop - Oculta por defecto (Mobile First) */
 .desktop-nav {
-    display: flex;
+    display: none; /* Oculta en móvil por defecto */
     gap: 1rem;
     align-items: center;
     flex-wrap: wrap;
 }
 
+/* Links de navegación - Touch targets mínimos 44x44px */
 .nav-link {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 500;
+    font-size: var(--font-size-base); /* Mínimo 16px */
     padding: 0.75rem 1.25rem;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
     position: relative;
-    min-height: var(--touch-target-min);
-    min-width: var(--touch-target-min);
+    min-height: var(--touch-target-min); /* 44px mínimo */
+    min-width: var(--touch-target-min);  /* 44px mínimo */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -383,6 +399,8 @@ body {
     /* Optimización para touch */
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+    /* Espaciado entre elementos táctiles */
+    margin: 0.25rem;
 }
 
 .nav-link:hover,
@@ -404,20 +422,23 @@ body {
     }
 }
 
-/* Menú móvil */
+/* Menú móvil - Optimizado para pulgar y navegación táctil */
 .mobile-menu {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 320px;
-    max-width: 90vw;
+    width: min(320px, 85vw); /* Responsive width */
+    max-width: 85vw; /* Más espacio para contenido */
     height: 100vh;
     background: var(--card-bg);
     border-left: 1px solid var(--border-color);
-    transition: right 0.3s ease;
+    transition: right var(--transition-normal);
     z-index: 1001;
     overflow-y: auto;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    /* Optimización para scroll táctil */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .mobile-menu.active {
@@ -440,18 +461,24 @@ body {
     font-weight: 600;
 }
 
+/* Botón cerrar - Touch target mínimo 44x44px */
 .mobile-menu-close {
     background: transparent;
     border: 2px solid var(--text-light);
     color: var(--text-light);
-    width: 40px;
-    height: 40px;
+    width: var(--touch-target-min); /* 44px mínimo */
+    height: var(--touch-target-min); /* 44px mínimo */
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
+    /* Optimización táctil */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .mobile-menu-close:hover {
@@ -481,16 +508,26 @@ body {
     border-bottom: 2px solid var(--accent-primary);
 }
 
+/* Links del menú móvil - Optimizados para pulgar */
 .mobile-menu-link {
     display: block;
     color: var(--text-secondary);
     text-decoration: none;
-    padding: 0.875rem 1rem;
-    margin: 0.25rem 0;
+    font-size: var(--font-size-base); /* Mínimo 16px */
+    padding: 1rem 1.25rem; /* Área táctil más grande */
+    margin: 0.5rem 0; /* Más espacio entre elementos */
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
     border: 1px solid transparent;
     font-weight: 500;
+    min-height: var(--touch-target-min); /* 44px mínimo */
+    display: flex;
+    align-items: center;
+    /* Optimización táctil */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    /* Área de pulgar cómoda */
+    position: relative;
 }
 
 .mobile-menu-link:hover {
@@ -4097,6 +4134,236 @@ input, textarea, select {
     /* Simplificar gradientes */
     body {
         background: var(--cream);
+    }
+}
+
+/* ==========================================================================
+   MOBILE FIRST DESIGN COMPLETO - BREAKPOINTS ESPECÍFICOS
+   ========================================================================== */
+
+/* BASE MÓVIL - Hasta 479px (Mobile First por defecto) */
+/* Ya definido en las reglas base del CSS */
+
+/* MÓVILES ESTÁNDAR - 480px+ */
+@media (min-width: 480px) {
+    :root {
+        --container-padding: var(--space-5);
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 1.75rem;
+    }
+    
+    body {
+        font-size: var(--font-size-base);
+        line-height: 1.65;
+    }
+    
+    .nav-container {
+        min-height: 65px;
+        padding: 0 var(--space-5);
+    }
+    
+    .nav-brand h1 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .mobile-menu {
+        width: min(360px, 80vw);
+        max-width: 80vw;
+    }
+    
+    .mobile-menu-link {
+        padding: 1.125rem 1.5rem;
+        font-size: var(--font-size-lg);
+        margin: 0.375rem 0;
+    }
+    
+    /* Botones más grandes en móviles grandes */
+    .btn, .cta-button {
+        min-height: var(--touch-target-comfortable);
+        padding: 0.875rem 1.5rem;
+        font-size: var(--font-size-base);
+    }
+    
+    /* Cards con mejor espaciado */
+    .level-card {
+        margin-bottom: 1.25rem;
+    }
+}
+
+/* TABLETS - 768px+ */
+@media (min-width: 768px) {
+    :root {
+        --container-padding: var(--space-8);
+        --container-max-width: 1200px;
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 1.875rem;
+        --font-size-4xl: 2.25rem;
+        --font-size-5xl: 3rem;
+    }
+    
+    body {
+        line-height: 1.7;
+    }
+    
+    /* CAMBIO A NAVEGACIÓN DESKTOP */
+    .hamburger-menu {
+        display: none !important;
+    }
+    
+    .desktop-nav {
+        display: flex !important;
+    }
+    
+    .nav-container {
+        min-height: 70px;
+        padding: 0 var(--space-8);
+    }
+    
+    .nav-brand h1 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .nav-link {
+        font-size: var(--font-size-base);
+        padding: 0.875rem 1.5rem;
+        margin: 0.125rem;
+    }
+    
+    /* Habilitar flip cards en tablets y desktop */
+    .level-card {
+        cursor: pointer;
+    }
+    
+    .level-card-back {
+        display: block;
+    }
+}
+
+/* DESKTOP PEQUEÑO - 1024px+ */
+@media (min-width: 1024px) {
+    :root {
+        --container-padding: var(--space-12);
+    }
+    
+    .nav-container {
+        padding: 0 var(--space-12);
+    }
+    
+    .nav-link {
+        padding: 1rem 1.75rem;
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Mejor espaciado para desktop */
+    .container {
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+    }
+}
+
+/* DESKTOP ESTÁNDAR - 1280px+ */
+@media (min-width: 1280px) {
+    .nav-brand h1 {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .nav-link {
+        padding: 1.125rem 2rem;
+    }
+}
+
+/* ==========================================================================
+   OPTIMIZACIONES ADICIONALES MOBILE FIRST
+   ========================================================================== */
+
+/* Imágenes y videos fluidos */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevenir zoom en inputs en iOS */
+input, textarea, select {
+    font-size: var(--font-size-base); /* Mínimo 16px */
+    -webkit-appearance: none;
+    border-radius: 8px;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    transition: border-color var(--transition-normal);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent-primary);
+    outline: none;
+}
+
+/* Botones con área táctil mínima */
+.btn, .cta-button, button {
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+    padding: 0.75rem 1.25rem;
+    font-size: var(--font-size-base);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    /* Espaciado entre botones */
+    margin: 0.25rem;
+}
+
+/* Espaciado entre elementos táctiles */
+.nav-link + .nav-link,
+.btn + .btn,
+.mobile-menu-link + .mobile-menu-link {
+    margin-top: 0.5rem;
+}
+
+/* Optimización para dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+    /* Deshabilitar hover en dispositivos táctiles */
+    .nav-link:hover,
+    .btn:hover,
+    .level-card:hover {
+        transform: none;
+    }
+    
+    /* Mejorar feedback táctil */
+    .nav-link:active,
+    .btn:active,
+    .mobile-menu-link:active {
+        transform: scale(0.98);
+        opacity: 0.8;
+    }
+}
+
+/* Accesibilidad mejorada */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+    .nav-link,
+    .btn,
+    .mobile-menu-link {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Modo oscuro automático */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg-primary: linear-gradient(135deg, #2a2520 0%, #332e28 100%);
+        --text-primary: #f7f3f0;
+        --card-bg: #2a2520;
+        --nav-bg: rgba(42, 37, 32, 0.95);
     }
 }
         gap: 1.5rem;
