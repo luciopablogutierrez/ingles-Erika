@@ -532,6 +532,43 @@ function initializeHamburgerMenu() {
     }
 }
 
+// Hacer que las tarjetas de nivel sean completamente clicables
+function initializeLevelCardClicks() {
+    const levelCards = document.querySelectorAll('.level-card');
+    
+    levelCards.forEach(card => {
+        const link = card.querySelector('a.btn');
+        if (link) {
+            const href = link.getAttribute('href');
+            
+            // Hacer toda la tarjeta clicable
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                // Evitar doble navegación si se hace clic directamente en el botón
+                if (e.target.closest('a.btn')) {
+                    return;
+                }
+                
+                // Navegar a la página del nivel
+                window.location.href = href;
+            });
+            
+            // Mejorar accesibilidad
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-label', `Ir a ${link.textContent.trim()}`);
+            
+            // Soporte para teclado
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.location.href = href;
+                }
+            });
+        }
+    });
+}
+
 // Inicialización cuando se carga la página - Mobile First
 document.addEventListener('DOMContentLoaded', function() {
     // Optimizaciones móviles PRIMERO
@@ -542,6 +579,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar menú hamburguesa
     initializeHamburgerMenu();
+    
+    // Inicializar tarjetas de nivel clicables
+    initializeLevelCardClicks();
     
     // Configurar responsive behavior
     function handleResize() {

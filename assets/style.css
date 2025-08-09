@@ -3825,7 +3825,7 @@ footer {
     .level-card {
         transform: none !important;
         transition: box-shadow var(--transition-normal) !important;
-        cursor: default !important;
+        cursor: pointer !important;
     }
     
     .level-card:hover {
