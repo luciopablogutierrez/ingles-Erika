@@ -4395,7 +4395,36 @@ input, textarea, select {
          max-width: none !important;
      }
      
-     /* Ajustar botones */
+     /* Optimizar lecciones para pantallas muy pequeñas */
+     .lessons-grid-modern {
+         gap: 0.75rem !important;
+         margin-bottom: 2rem !important;
+     }
+     
+     .lesson-card-modern {
+         border-radius: 12px !important;
+         margin-bottom: 0.75rem !important;
+     }
+     
+     .lesson-number-badge {
+         width: 35px !important;
+         height: 35px !important;
+         font-size: 0.8rem !important;
+     }
+     
+     .lesson-btn {
+         padding: 0.875rem 1rem !important;
+         font-size: 0.95rem !important;
+         font-weight: 600 !important;
+         border-radius: 8px !important;
+         min-height: 48px !important;
+         width: 100% !important;
+         display: flex !important;
+         align-items: center !important;
+         justify-content: center !important;
+     }
+     
+     /* Ajustar botones generales */
      button {
          width: 100% !important;
          font-size: 16px !important;
