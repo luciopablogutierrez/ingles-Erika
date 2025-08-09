@@ -1,4 +1,37 @@
-// Funciones para ejercicios interactivos
+// Funciones para ejercicios interactivos - Mobile First
+
+// Detección de dispositivos móviles y touch
+const isMobile = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+           ('ontouchstart' in window) ||
+           (navigator.maxTouchPoints > 0);
+};
+
+const isTouchDevice = () => {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+};
+
+// Optimizaciones para dispositivos móviles
+function optimizarParaMovil() {
+    // Prevenir zoom en inputs en iOS
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        const viewport = document.querySelector('meta[name=viewport]');
+        if (viewport) {
+            viewport.setAttribute('content', 
+                'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+            );
+        }
+    }
+    
+    // Mejorar rendimiento en móviles
+    if (isMobile()) {
+        // Reducir animaciones en dispositivos lentos
+        document.body.classList.add('mobile-device');
+        
+        // Optimizar scroll en iOS
+        document.body.style.webkitOverflowScrolling = 'touch';
+    }
+}
 
 // Funciones de accesibilidad
 function anunciarParaLectorPantalla(mensaje) {
@@ -372,16 +405,58 @@ function initializeHamburgerMenu() {
 
 // Inicialización cuando se carga la página
 document.addEventListener('DOMContentLoaded', function() {
+    // Optimizaciones móviles
+    optimizarParaMovil();
+    
     // Cargar tema guardado
     loadTheme();
     
     // Inicializar menú hamburguesa
     initializeHamburgerMenu();
     
+    // Configurar botón de tema
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+        
+        // Navegación por teclado para el botón de tema
+        themeToggle.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleTheme();
+            }
+        });
+    }
+    
+    // Configurar elementos de drag and drop si existen
+    const dragContainers = document.querySelectorAll('[data-drag-container]');
+    dragContainers.forEach(container => {
+        habilitarDragDrop(container.id);
+    });
+    
     // Habilitar drag & drop en elementos que lo requieran
     const contenedoresDragDrop = document.querySelectorAll('.drag-drop-container');
     contenedoresDragDrop.forEach(contenedor => {
         habilitarDragDrop(contenedor.id);
+    });
+    
+    // Configurar elementos de audio si existen
+    const audioElements = document.querySelectorAll('audio');
+    audioElements.forEach(audio => {
+        audio.addEventListener('error', function() {
+            console.warn('Error al cargar audio:', audio.src);
+        });
+    });
+    
+    // Configurar formularios para prevenir envío accidental
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(event) {
+            // Solo prevenir si no es un formulario de ejercicio
+            if (!form.classList.contains('exercise-form')) {
+                event.preventDefault();
+            }
+        });
     });
     
     // Funcionalidad de flip para las tarjetas
@@ -444,6 +519,32 @@ document.addEventListener('DOMContentLoaded', function() {
         tarjeta.setAttribute('aria-label', 'Tarjeta de nivel - presiona Enter o espacio para voltear');
     });
     
+    // Configurar navegación por teclado para elementos interactivos
+    const interactiveElements = document.querySelectorAll('.btn, .nav-link, .level-card');
+    interactiveElements.forEach(element => {
+        element.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                if (element.tagName !== 'A' && element.tagName !== 'BUTTON') {
+                    event.preventDefault();
+                    element.click();
+                }
+            }
+        });
+        
+        // Optimizaciones touch para dispositivos móviles
+        if (isTouchDevice()) {
+            element.addEventListener('touchstart', function() {
+                this.classList.add('touch-active');
+            });
+            
+            element.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.classList.remove('touch-active');
+                }, 150);
+            });
+        }
+    });
+    
     // Agregar navegación por teclado a botones de ejercicios
     const botonesEjercicio = document.querySelectorAll('.exercise button');
     botonesEjercicio.forEach(boton => {
@@ -472,11 +573,84 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Event listener para el botón de cambio de tema
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
+    // Configurar skip link
+    const skipLink = document.querySelector('.skip-link');
+    if (skipLink) {
+        skipLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            const target = document.querySelector(skipLink.getAttribute('href'));
+            if (target) {
+                target.focus();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     }
+    
+    // Anunciar carga de página para lectores de pantalla
+    anunciarParaLectorPantalla('Página cargada correctamente');
+    
+    // Configurar lazy loading para imágenes si el navegador no lo soporta nativamente
+    if ('IntersectionObserver' in window) {
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => imageObserver.observe(img));
+    }
+    
+    // Configurar manejo de errores de imágenes
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('error', function() {
+            this.style.display = 'none';
+            console.warn('Error al cargar imagen:', this.src);
+        });
+    });
+    
+    // Optimizaciones específicas para móviles
+    if (isMobile()) {
+        // Prevenir zoom en doble tap en iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+        
+        // Mejorar rendimiento de scroll
+        document.addEventListener('touchmove', function(event) {
+            if (event.scale !== 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+    }
+    
+    // Detectar orientación y ajustar layout
+    function handleOrientationChange() {
+        setTimeout(() => {
+            // Forzar recálculo de viewport height en móviles
+            if (isMobile()) {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+        }, 100);
+    }
+    
+    window.addEventListener('orientationchange', handleOrientationChange);
+    window.addEventListener('resize', handleOrientationChange);
+    
+    // Configuración inicial de viewport height
+    handleOrientationChange();
 });
 
 // Funciones específicas para cada nivel (se pueden expandir)

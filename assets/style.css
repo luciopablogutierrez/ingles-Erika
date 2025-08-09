@@ -1,4 +1,4 @@
-/* Variables CSS - Paleta profesional y cálida */
+/* Variables CSS - Paleta profesional y cálida + Mobile-First */
 :root {
     /* Paleta de colores suaves y naturales */
     --cream: #f7f3f0;
@@ -11,6 +11,23 @@
     --nude-light: #f0e5d8;
     --dusty-rose: #d4a5a5;
     --dusty-rose-light: #e8c5c5;
+    
+    /* Breakpoints Mobile-First */
+    --breakpoint-xs: 320px;   /* Móviles pequeños */
+    --breakpoint-sm: 480px;   /* Móviles grandes */
+    --breakpoint-md: 768px;   /* Tablets */
+    --breakpoint-lg: 1024px;  /* Desktop pequeño */
+    --breakpoint-xl: 1280px;  /* Desktop grande */
+    --breakpoint-2xl: 1536px; /* Desktop extra grande */
+    
+    /* Touch targets mínimos (44x44px) */
+    --touch-target-min: 44px;
+    --touch-target-comfortable: 48px;
+    
+    /* Espaciado responsive */
+    --container-padding-mobile: 1rem;
+    --container-padding-tablet: 2rem;
+    --container-padding-desktop: 3rem;
     
     /* Colores principales */
     --bg-primary: linear-gradient(135deg, var(--cream) 0%, var(--nude-light) 100%);
@@ -235,20 +252,23 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-/* Menú hamburguesa */
+/* Menú hamburguesa - Optimizado para touch */
 .hamburger-menu {
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 48px;
-    height: 48px;
+    width: var(--touch-target-comfortable);
+    height: var(--touch-target-comfortable);
     background: transparent;
     border: 2px solid var(--text-primary);
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 1002;
+    /* Área de touch más grande para mejor usabilidad */
+    padding: 8px;
+    margin: 4px;
 }
 
 .hamburger-menu:hover {
@@ -303,11 +323,15 @@ body {
     border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
-    min-height: 44px;
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid transparent;
+    /* Optimización para touch */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .nav-link:hover,
@@ -3655,6 +3679,264 @@ footer {
     
     .lessons-grid-modern {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   MEJORAS MOBILE-FIRST ADICIONALES
+   ========================================================================== */
+
+/* Breakpoint extra pequeño - 320px */
+@media (min-width: 320px) {
+    .container {
+        padding: var(--container-padding-mobile);
+    }
+    
+    /* Asegurar que todos los botones sean touch-friendly */
+    button, .btn, .nav-link, .hamburger-menu {
+        min-height: var(--touch-target-min);
+        min-width: var(--touch-target-min);
+    }
+    
+    /* Mejorar espaciado en móviles pequeños */
+    .level-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Breakpoint móvil grande - 480px */
+@media (min-width: 480px) {
+    .container {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+    
+    /* Mostrar hamburger menu en tablets pequeñas */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    .desktop-nav {
+        display: none;
+    }
+}
+
+/* Breakpoint tablet - 768px */
+@media (min-width: 768px) {
+    .container {
+        padding: var(--container-padding-tablet);
+    }
+    
+    /* Ocultar hamburger en tablets grandes */
+    .hamburger-menu {
+        display: none;
+    }
+    
+    .desktop-nav {
+        display: flex;
+    }
+    
+    /* Grid de 2 columnas en tablets */
+    .levels-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Breakpoint desktop - 1024px */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--container-padding-desktop);
+    }
+    
+    /* Grid de 3 columnas en desktop */
+    .levels-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+/* Breakpoint desktop grande - 1280px */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    /* Más espacio en pantallas grandes */
+    .levels-grid {
+        gap: 3rem;
+    }
+}
+
+/* Optimizaciones para pantallas táctiles */
+@media (hover: none) and (pointer: coarse) {
+    /* Eliminar efectos hover en dispositivos táctiles */
+    .level-card:hover {
+        transform: none !important;
+    }
+    
+    .nav-link:hover {
+        transform: none !important;
+    }
+    
+    /* Aumentar área de touch para mejor usabilidad */
+    .nav-link {
+        padding: 1rem 1.5rem;
+    }
+    
+    .hamburger-menu {
+        padding: 12px;
+    }
+}
+
+/* Optimizaciones para conexiones lentas */
+@media (prefers-reduced-data: reduce) {
+    /* Reducir animaciones y efectos */
+    * {
+        animation-duration: 0s !important;
+        transition-duration: 0s !important;
+    }
+    
+    /* Ocultar elementos decorativos */
+    .nav-container::before {
+        display: none;
+    }
+}
+
+/* Mejoras para orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .mobile-menu {
+        width: 280px;
+    }
+    
+    .nav-container {
+        min-height: 60px;
+    }
+    
+    .level-card {
+        min-height: 200px;
+    }
+}
+
+/* Estilos para estados touch */
+.touch-active {
+    background-color: var(--accent-primary) !important;
+    color: var(--text-light) !important;
+    transform: scale(0.98);
+    transition: all 0.1s ease;
+}
+
+/* Optimizaciones para dispositivos móviles */
+.mobile-device {
+    /* Reducir animaciones en dispositivos móviles */
+    * {
+        animation-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+    }
+}
+
+/* Viewport height dinámico para móviles */
+:root {
+    --vh: 1vh;
+}
+
+.full-height {
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Mejoras para inputs en móviles */
+input, textarea, select {
+    /* Prevenir zoom en iOS */
+    font-size: 16px;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 360px) {
+    .container {
+        padding: 0.75rem;
+    }
+    
+    .nav-brand h1 {
+        font-size: 1.25rem;
+    }
+    
+    .level-card {
+        padding: 1rem;
+        min-height: 250px;
+    }
+    
+    .btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mejoras para accesibilidad en móviles */
+@media (max-width: 768px) {
+    /* Aumentar contraste en móviles */
+    .nav-link:focus,
+    .btn:focus,
+    .hamburger-menu:focus {
+        outline: 3px solid var(--focus-color);
+        outline-offset: 3px;
+    }
+    
+    /* Mejorar legibilidad en pantallas pequeñas */
+    body {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    
+    h1, h2, h3 {
+        line-height: 1.3;
+    }
+}
+
+/* Optimizaciones para scroll suave en móviles */
+@supports (-webkit-overflow-scrolling: touch) {
+    .mobile-menu,
+    .container {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Prevenir selección de texto en elementos interactivos */
+.btn,
+.nav-link,
+.hamburger-menu,
+.level-card {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+/* Mejorar rendimiento en móviles */
+.level-card,
+.nav-container,
+.mobile-menu {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Estilos para conexiones lentas */
+@media (prefers-reduced-data: reduce) {
+    /* Ocultar elementos decorativos */
+    .nav-container::before,
+    .level-card::before {
+        display: none;
+    }
+    
+    /* Simplificar gradientes */
+    body {
+        background: var(--cream);
+    }
+}
         gap: 1.5rem;
     }
     
