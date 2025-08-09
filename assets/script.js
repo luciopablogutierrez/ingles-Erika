@@ -756,6 +756,104 @@ document.addEventListener('DOMContentLoaded', function() {
                 section.style.scrollSnapAlign = 'start';
             });
         }
+        
+        // Implementar gestos de swipe para navegación
+        let touchStartY = 0;
+        let touchStartX = 0;
+        let touchEndY = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.changedTouches[0].screenY;
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        document.addEventListener('touchend', (e) => {
+            touchEndY = e.changedTouches[0].screenY;
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipeGesture();
+        }, { passive: true });
+        
+        function handleSwipeGesture() {
+            const deltaY = touchStartY - touchEndY;
+            const deltaX = touchStartX - touchEndX;
+            const minSwipeDistance = 50;
+            
+            // Swipe vertical (scroll suave)
+            if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > minSwipeDistance) {
+                if (deltaY > 0) {
+                    // Swipe hacia arriba - scroll hacia abajo
+                    window.scrollBy({ top: window.innerHeight * 0.3, behavior: 'smooth' });
+                } else {
+                    // Swipe hacia abajo - scroll hacia arriba
+                    window.scrollBy({ top: -window.innerHeight * 0.3, behavior: 'smooth' });
+                }
+            }
+        }
+        
+        // Optimizar rendimiento de touch
+        document.addEventListener('touchmove', (e) => {
+            // Permitir scroll vertical pero prevenir zoom accidental
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Mejorar feedback táctil en elementos interactivos
+        const interactiveElements = document.querySelectorAll('a, button, .nav-link, .level-card');
+        interactiveElements.forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+                this.style.transition = 'transform 0.1s ease';
+            }, { passive: true });
+            
+            element.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            }, { passive: true });
+            
+            element.addEventListener('touchcancel', function() {
+                this.style.transform = 'scale(1)';
+            }, { passive: true });
+        });
+        
+        // Prevenir zoom en inputs
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                const viewport = document.querySelector('meta[name=viewport]');
+                if (viewport) {
+                    viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+                }
+            });
+            
+            input.addEventListener('blur', () => {
+                const viewport = document.querySelector('meta[name=viewport]');
+                if (viewport) {
+                    viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes');
+                }
+            });
+        });
+        
+        // Implementar navegación por teclado mejorada
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+        
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-navigation');
+        });
+        
+        document.addEventListener('touchstart', () => {
+            document.body.classList.remove('keyboard-navigation');
+        }, { passive: true });
+        
+        // Optimizar scroll momentum en iOS
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            document.body.style.webkitOverflowScrolling = 'touch';
+            document.body.style.overflowScrolling = 'touch';
+        }
     }
     
     // Optimizar performance en dispositivos lentos

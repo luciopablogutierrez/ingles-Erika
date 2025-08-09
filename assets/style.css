@@ -4179,6 +4179,71 @@ input, textarea, select {
     .is-scrolling .scroll-indicator {
         opacity: 1;
     }
+    
+    /* Mejorar navegación por teclado */
+    .keyboard-navigation *:focus {
+        outline: 2px solid var(--primary-color) !important;
+        outline-offset: 2px !important;
+        box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.2) !important;
+    }
+    
+    /* Ocultar outline cuando no se usa teclado */
+    :not(.keyboard-navigation) *:focus {
+        outline: none;
+    }
+    
+    /* Mejorar feedback táctil */
+    @media (hover: none) and (pointer: coarse) {
+        a, button, .nav-link, .level-card {
+            transition: transform 0.1s ease, background-color 0.2s ease;
+        }
+        
+        a:active, button:active, .nav-link:active, .level-card:active {
+            transform: scale(0.98);
+            background-color: rgba(var(--primary-color-rgb), 0.1);
+        }
+    }
+    
+    /* Optimizar rendimiento en dispositivos táctiles */
+    @media (hover: none) {
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .main-nav {
+            will-change: transform;
+        }
+        
+        .level-card {
+            will-change: transform, background-color;
+        }
+    }
+    
+    /* Mejorar accesibilidad de focus */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    
+    /* Indicadores de estado para lectores de pantalla */
+    .loading::after {
+        content: "Cargando...";
+        position: absolute;
+        left: -9999px;
+    }
+    
+    .error::after {
+        content: "Error";
+        position: absolute;
+        left: -9999px;
+    }
 }
 
 /* Estilos específicos para pantallas pequeñas */
