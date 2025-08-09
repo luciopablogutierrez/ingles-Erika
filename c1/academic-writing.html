@@ -481,10 +481,10 @@
             const userAnswer = input.value.toLowerCase().trim();
             
             if (userAnswer === correctAnswer) {
-                feedback.innerHTML = '<span class="correct">✅ ¡Correcto!</span>';
+                feedback.innerHTML = '<span class="correct">✅ Correct!</span>';
                 feedback.className = 'feedback correct';
             } else {
-                feedback.innerHTML = `<span class="incorrect">❌ Incorrecto. La respuesta correcta es: "${question.dataset.answer}"</span>`;
+                feedback.innerHTML = `<span class="incorrect">❌ Incorrect. The correct answer is: "${question.dataset.answer}"</span>`;
                 feedback.className = 'feedback incorrect';
             }
         }
@@ -496,10 +496,10 @@
             const selectedOption = question.querySelector('input[type="radio"]:checked');
             
             if (selectedOption && selectedOption.value === correctAnswer) {
-                feedback.innerHTML = '<span class="correct">✅ ¡Correcto!</span>';
+                feedback.innerHTML = '<span class="correct">✅ Correct!</span>';
                 feedback.className = 'feedback correct';
             } else {
-                feedback.innerHTML = `<span class="incorrect">❌ Incorrecto. La respuesta correcta es: "${correctAnswer}"</span>`;
+                feedback.innerHTML = `<span class="incorrect">❌ Incorrect. The correct answer is: "${correctAnswer}"</span>`;
                 feedback.className = 'feedback incorrect';
             }
         }

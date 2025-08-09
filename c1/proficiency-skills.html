@@ -550,22 +550,22 @@
             const selectedOption = question.querySelector('input[type="radio"]:checked');
             
             if (selectedOption && selectedOption.value === correctAnswer) {
-                feedback.innerHTML = '<span class="correct">✅ ¡Correcto!</span>';
+                feedback.innerHTML = '<span class="correct">✅ Correct!</span>';
                 feedback.className = 'feedback correct';
             } else {
-                feedback.innerHTML = `<span class="incorrect">❌ Incorrecto. La respuesta correcta es: "${correctAnswer}"</span>`;
+                feedback.innerHTML = `<span class="incorrect">❌ Incorrect. The correct answer is: "${correctAnswer}"</span>`;
                 feedback.className = 'feedback incorrect';
             }
         }
         
-        // Marcar lección como completada al llegar al final
+        // Mark lesson as completed when reaching the end
         window.addEventListener('scroll', function() {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
                 markLessonComplete('c1', 'proficiency-skills');
                 
                 // Mostrar mensaje de felicitación por completar C1
                 setTimeout(() => {
-                    alert('🎉 ¡Felicitaciones! Has completado el Nivel C1 - Advanced. Ahora tienes un dominio avanzado del inglés.');
+                    alert('🎉 Congratulations! You have completed Level C1 - Advanced. You now have advanced English proficiency.');
                 }, 1000);
             }
         });

@@ -489,7 +489,7 @@
             ];
             
             let correct = 0;
-            let feedback = '<h4>Resultados:</h4>';
+            let feedback = '<h4>Results:</h4>';
             
             for (let i = 0; i < 5; i++) {
                 // Verificación más flexible para aceptar variaciones válidas
@@ -497,13 +497,13 @@
                 
                 if (isCorrect) {
                     correct++;
-                    feedback += `<p class="correct">✅ Transformación ${i + 1}: Correcto</p>`;
+                    feedback += `<p class="correct">✅ Transformation ${i + 1}: Correct</p>`;
                 } else {
-                    feedback += `<p class="incorrect">❌ Transformación ${i + 1}: Incorrecto.<br>Respuesta sugerida: "${answers[i]}"</p>`;
+                    feedback += `<p class="incorrect">❌ Transformation ${i + 1}: Incorrect.<br>Suggested answer: "${answers[i]}"</p>`;
                 }
             }
             
-            feedback += `<p><strong>Puntuación: ${correct}/5</strong></p>`;
+            feedback += `<p><strong>Score: ${correct}/5</strong></p>`;
             document.getElementById('transformResults').innerHTML = feedback;
         }
         
@@ -529,13 +529,13 @@
             for (let i = 0; i < 4; i++) {
                 if (userAnswers[i] === answers[i]) {
                     correct++;
-                    feedback += `<p class="correct">✅ Pregunta ${i + 1}: Correcto (${explanations[i]})</p>`;
+                    feedback += `<p class="correct">✅ Question ${i + 1}: Correct (${explanations[i]})</p>`;
                 } else {
-                    feedback += `<p class="incorrect">❌ Pregunta ${i + 1}: Incorrecto. ${explanations[i]}</p>`;
+                    feedback += `<p class="incorrect">❌ Question ${i + 1}: Incorrect. ${explanations[i]}</p>`;
                 }
             }
             
-            feedback += `<p><strong>Puntuación: ${correct}/4</strong></p>`;
+            feedback += `<p><strong>Score: ${correct}/4</strong></p>`;
             document.getElementById('verbResults').innerHTML = feedback;
         }
         
