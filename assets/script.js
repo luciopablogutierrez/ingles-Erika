@@ -87,7 +87,41 @@ function optimizarParaMovil() {
     }
     
     // Configurar touch-action para mejor rendimiento
-    document.body.style.touchAction = 'manipulation';
+    document.body.style.touchAction = 'pan-y pinch-zoom';
+    
+    // Optimizar gestos táctiles
+    if (isTouchDevice()) {
+        // Mejorar scroll momentum en iOS
+        document.documentElement.style.webkitOverflowScrolling = 'touch';
+        
+        // Prevenir comportamientos no deseados
+        document.addEventListener('touchstart', function(e) {
+            // Permitir scroll normal pero prevenir otros gestos
+            if (e.touches.length > 1) {
+                // Permitir pinch-to-zoom
+                return;
+            }
+        }, { passive: true });
+        
+        // Optimizar scroll suave
+        document.addEventListener('touchmove', function(e) {
+            // Permitir scroll vertical natural
+        }, { passive: true });
+        
+        // Mejorar feedback táctil en elementos interactivos
+        const interactiveElements = document.querySelectorAll('a, button, .level-card, .nav-link');
+        interactiveElements.forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.opacity = '0.8';
+            }, { passive: true });
+            
+            element.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.opacity = '';
+                }, 150);
+            }, { passive: true });
+        });
+    }
 }
 
 // Funciones de accesibilidad
@@ -672,6 +706,56 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         setVH();
         window.addEventListener('resize', setVH);
+        
+        // Optimizar scroll en móviles
+        let isScrolling = false;
+        let scrollTimeout;
+        
+        // Crear indicador de progreso de scroll
+        const scrollIndicator = document.createElement('div');
+        scrollIndicator.className = 'scroll-indicator';
+        document.body.appendChild(scrollIndicator);
+        
+        window.addEventListener('scroll', () => {
+            if (!isScrolling) {
+                isScrolling = true;
+                document.body.classList.add('is-scrolling');
+            }
+            
+            // Actualizar progreso de scroll
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollIndicator.style.setProperty('--scroll-progress', `${scrollPercent}%`);
+            
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                isScrolling = false;
+                document.body.classList.remove('is-scrolling');
+            }, 150);
+        }, { passive: true });
+        
+        // Agregar skip link para accesibilidad
+        const skipLink = document.createElement('a');
+        skipLink.href = '#main-content';
+        skipLink.className = 'skip-link';
+        skipLink.textContent = 'Saltar al contenido principal';
+        document.body.insertBefore(skipLink, document.body.firstChild);
+        
+        // Marcar contenido principal si no existe
+        const mainContent = document.querySelector('main, #main-content, .main-content');
+        if (mainContent && !mainContent.id) {
+            mainContent.id = 'main-content';
+        }
+        
+        // Mejorar navegación táctil entre secciones
+        const sections = document.querySelectorAll('section, .level-card');
+        if (sections.length > 0) {
+            // Agregar scroll snap para mejor navegación
+            sections.forEach(section => {
+                section.style.scrollSnapAlign = 'start';
+            });
+        }
     }
     
     // Optimizar performance en dispositivos lentos
