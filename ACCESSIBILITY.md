@@ -1,24 +1,24 @@
 # Características de Accesibilidad
 
-Este sitio web ha sido desarrollado siguiendo las mejores prácticas de accesibilidad web para garantizar que sea usable por personas con discapacidades.
+This website has been developed following web accessibility best practices to ensure it is usable by people with disabilities.
 
 ## Características Implementadas
 
 ### 1. Contraste de Color
 - **Modo Claro**: Cumple con WCAG AA (4.5:1 mínimo)
-- **Modo Oscuro**: Optimizado para reducir fatiga visual
-- Soporte para `prefers-contrast: high` del sistema
+- **Dark Mode**: Optimized to reduce visual fatigue
+- Support for system `prefers-contrast: high`
 
 ### 2. Tipografía y Legibilidad
 - Tamaño de fuente base: 18px (más grande que el estándar)
-- Altura de línea: 1.7 para mejor legibilidad
-- Fuentes sans-serif para mayor claridad
-- Soporte para `prefers-reduced-motion`
+- Line height: 1.7 for better readability
+- Sans-serif fonts for greater clarity
+- Support for `prefers-reduced-motion`
 
-### 3. Navegación por Teclado
-- Todos los elementos interactivos son accesibles por teclado
-- Indicadores de foco visibles y mejorados
-- Soporte para teclas Enter y Espacio
+### 3. Keyboard Navigation
+- All interactive elements are keyboard accessible
+- Visible focus indicators
+- Support for Enter and Space keys
 - Orden de tabulación lógico
 
 ### 4. Lectores de Pantalla
@@ -30,7 +30,7 @@ Este sitio web ha sido desarrollado siguiendo las mejores prácticas de accesibi
 ### 5. Estructura Semántica
 - HTML5 semántico apropiado
 - Encabezados jerárquicos (h1, h2, h3)
-- Landmarks de navegación
+- Navigation landmarks
 - Listas estructuradas correctamente
 
 ### 6. Elementos Interactivos
@@ -42,24 +42,24 @@ Este sitio web ha sido desarrollado siguiendo las mejores prácticas de accesibi
 ### 7. Diseño Responsivo y Móvil
 - **Viewport optimizado**: Meta tag viewport configurado correctamente
 - **Breakpoints múltiples**: 1024px, 768px, 480px, 360px, 320px
-- **Navegación móvil**: Menú adaptativo para pantallas pequeñas
+- **Mobile navigation**: Adaptive menu for small screens
 - **Áreas de toque ampliadas**: Mínimo 48px en dispositivos táctiles
-- **Orientación horizontal**: Optimizaciones para landscape en móviles
+- **Horizontal orientation**: Optimizations for landscape on mobile
 - **Zoom iOS**: Prevención de zoom automático en inputs
 - **Imágenes responsivas**: Max-width 100% y height auto
-- **Tablas móviles**: Scroll horizontal automático
-- **Formularios optimizados**: Tamaño de fuente 16px para evitar zoom
+- **Mobile tables**: Automatic horizontal scroll
+- **Optimized forms**: 16px font size to avoid zoom
 
-### 8. Contenido Multimedia
-- Alternativas textuales para contenido visual
-- Controles de audio accesibles
-- Soporte para subtítulos (cuando aplique)
+### 8. Multimedia Content
+- Text alternatives for visual content
+- Accessible audio controls
+- Support for subtitles (when applicable)
 - Imágenes y videos responsivos
 
 ## Tecnologías de Asistencia Soportadas
 
 - **Lectores de Pantalla**: NVDA, JAWS, VoiceOver, TalkBack
-- **Navegación por Teclado**: Soporte completo
+- **Keyboard Navigation**: Complete support
 - **Magnificadores de Pantalla**: Diseño responsive y escalable
 - **Software de Reconocimiento de Voz**: Elementos etiquetados apropiadamente
 
@@ -71,20 +71,20 @@ Este sitio web ha sido desarrollado siguiendo las mejores prácticas de accesibi
 
 ## Características Específicas por Sección
 
-### Página Principal
-- Skip link para navegación rápida
+### Main Page
+- Skip link for quick navigation
 - Estadísticas con etiquetas descriptivas
 - Botones de acción con indicadores claros
 
 ### Lecciones
-- Navegación de lecciones accesible
+- Accessible lesson navigation
 - Ejercicios interactivos con retroalimentación
 - Progreso anunciado a lectores de pantalla
 
 ### Quizzes
 - Opciones de radio con etiquetas claras
 - Resultados anunciados dinámicamente
-- Navegación por teclado entre opciones
+- Keyboard navigation between options
 
 ### Tema Oscuro/Claro
 - Cambio de tema preserva el contraste
@@ -94,7 +94,7 @@ Este sitio web ha sido desarrollado siguiendo las mejores prácticas de accesibi
 ## Pruebas de Accesibilidad
 
 Se recomienda probar el sitio con:
-- Navegación solo por teclado (Tab, Enter, Espacio)
+- Keyboard-only navigation (Tab, Enter, Space)
 - Lectores de pantalla (NVDA gratuito recomendado)
 - Zoom del navegador hasta 200%
 - Modo de alto contraste del sistema
@@ -105,7 +105,7 @@ Si encuentras algún problema de accesibilidad, por favor reporta:
 1. Descripción del problema
 2. Tecnología de asistencia utilizada
 3. Navegador y versión
-4. Pasos para reproducir el problema
+4. Steps to reproduce the problem
 
 ## Recursos Adicionales
 
