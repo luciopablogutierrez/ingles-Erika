@@ -387,10 +387,15 @@ function initializeHamburgerMenu() {
             hamburgerBtn.setAttribute('aria-label', 'Cerrar menú de navegación');
             mobileMenu.setAttribute('aria-hidden', 'false');
             
-            // Prevenir scroll del body pero mantener scroll del menú
-            document.body.style.overflow = 'hidden';
+            // Guardar posición de scroll y prevenir scroll del body
+            const scrollY = window.pageYOffset;
             document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollY}px`;
             document.body.style.width = '100%';
+            document.body.style.overflow = 'hidden';
+            
+            // Guardar posición para restaurar después
+            document.body.setAttribute('data-scroll-position', scrollY.toString());
             
             anunciarParaLectorPantalla('Menú de navegación abierto');
             
@@ -416,10 +421,16 @@ function initializeHamburgerMenu() {
             hamburgerBtn.setAttribute('aria-label', 'Abrir menú de navegación');
             mobileMenu.setAttribute('aria-hidden', 'true');
             
-            // Restaurar scroll del body
-            document.body.style.overflow = '';
+            // Restaurar scroll del body y posición
+            const scrollY = document.body.getAttribute('data-scroll-position') || '0';
             document.body.style.position = '';
+            document.body.style.top = '';
             document.body.style.width = '';
+            document.body.style.overflow = '';
+            
+            // Restaurar posición de scroll
+            window.scrollTo(0, parseInt(scrollY, 10));
+            document.body.removeAttribute('data-scroll-position');
             
             anunciarParaLectorPantalla('Menú de navegación cerrado');
         }

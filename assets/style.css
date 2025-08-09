@@ -147,11 +147,12 @@ body {
     line-height: 1.6; /* Mejor para móvil */
     color: var(--text-primary);
     background: var(--bg-primary);
-    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100); /* Viewport height dinámico */
     transition: all var(--transition-normal);
     letter-spacing: 0.01em;
     font-weight: 400;
     overflow-x: hidden; /* Prevenir scroll horizontal */
+    overflow-y: auto; /* Asegurar scroll vertical */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
@@ -429,7 +430,7 @@ body {
     right: -100%;
     width: min(320px, 85vw); /* Responsive width */
     max-width: 85vw; /* Más espacio para contenido */
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100); /* Viewport height dinámico */
     background: var(--card-bg);
     border-left: 1px solid var(--border-color);
     transition: right var(--transition-normal);
@@ -574,7 +575,7 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100); /* Viewport height dinámico */
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
@@ -4051,6 +4052,30 @@ input, textarea, select {
     font-size: 16px;
     border-radius: 0;
     -webkit-appearance: none;
+}
+
+/* Asegurar scroll vertical en móviles */
+@media (max-width: 767px) {
+    html, body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+        /* Prevenir problemas de viewport en iOS */
+        min-height: -webkit-fill-available;
+    }
+    
+    /* Asegurar que el contenido principal sea scrolleable */
+    .container, main, .content {
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+    
+    /* Prevenir problemas con elementos fixed en iOS */
+    .main-nav {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
 }
 
 /* Estilos específicos para pantallas pequeñas */
