@@ -459,64 +459,95 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Funcionalidad de flip para las tarjetas
+    // Funcionalidad de flip para las tarjetas - SOLO EN DESKTOP
     const tarjetas = document.querySelectorAll('.level-card');
-    tarjetas.forEach(tarjeta => {
-        let isFlipped = false;
-        
-        // Función para alternar el flip
-        function toggleFlip() {
-            isFlipped = !isFlipped;
-            if (isFlipped) {
-                tarjeta.classList.add('flipped');
-            } else {
-                tarjeta.classList.remove('flipped');
-            }
-        }
-        
-        // Click en la tarjeta para flip
-        tarjeta.addEventListener('click', function(event) {
-            // Si se hace clic en un enlace, no hacer flip
-            if (event.target.tagName === 'A' || event.target.closest('a')) {
-                return;
-            }
-            event.preventDefault();
-            toggleFlip();
-        });
-        
-        // Touch events para móviles
-        tarjeta.addEventListener('touchstart', function(event) {
-            if (event.target.tagName === 'A' || event.target.closest('a')) {
-                return;
-            }
-            event.preventDefault();
-        });
-        
-        tarjeta.addEventListener('touchend', function(event) {
-            if (event.target.tagName === 'A' || event.target.closest('a')) {
-                return;
-            }
-            event.preventDefault();
-            toggleFlip();
-        });
-        
-        // Navegación por teclado
-        tarjeta.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                toggleFlip();
-            } else if (event.key === 'Escape') {
+    
+    // Verificar si es dispositivo móvil o táctil
+    const esDispositivoMovil = isMobile() || isTouchDevice() || window.innerWidth < 768;
+    
+    if (!esDispositivoMovil) {
+        // Solo habilitar flip en desktop
+        tarjetas.forEach(tarjeta => {
+            let isFlipped = false;
+            
+            // Función para alternar el flip
+            function toggleFlip() {
+                isFlipped = !isFlipped;
                 if (isFlipped) {
-                    isFlipped = false;
+                    tarjeta.classList.add('flipped');
+                } else {
                     tarjeta.classList.remove('flipped');
                 }
             }
+            
+            // Click en la tarjeta para flip (solo desktop)
+            tarjeta.addEventListener('click', function(event) {
+                // Si se hace clic en un enlace, no hacer flip
+                if (event.target.tagName === 'A' || event.target.closest('a')) {
+                    return;
+                }
+                // Solo permitir flip en desktop
+                if (window.innerWidth >= 768) {
+                    event.preventDefault();
+                    toggleFlip();
+                }
+            });
+            
+            // Navegación por teclado (solo desktop)
+            tarjeta.addEventListener('keydown', function(event) {
+                if (window.innerWidth >= 768 && (event.key === 'Enter' || event.key === ' ')) {
+                    event.preventDefault();
+                    toggleFlip();
+                } else if (event.key === 'Escape') {
+                    if (isFlipped) {
+                        isFlipped = false;
+                        tarjeta.classList.remove('flipped');
+                    }
+                }
+            });
+            
+            // Hacer la tarjeta focusable solo en desktop
+            if (window.innerWidth >= 768) {
+                tarjeta.setAttribute('tabindex', '0');
+                tarjeta.setAttribute('role', 'button');
+                tarjeta.setAttribute('aria-label', 'Tarjeta de nivel - presiona Enter o espacio para voltear');
+            }
         });
-        
-        // Hacer la tarjeta focusable
-        tarjeta.setAttribute('tabindex', '0');
-        tarjeta.setAttribute('role', 'button');
-        tarjeta.setAttribute('aria-label', 'Tarjeta de nivel - presiona Enter o espacio para voltear');
+    } else {
+        // En móvil, hacer las tarjetas normales (sin flip)
+        tarjetas.forEach(tarjeta => {
+            tarjeta.classList.remove('flipped');
+            tarjeta.removeAttribute('tabindex');
+            tarjeta.removeAttribute('role');
+            tarjeta.removeAttribute('aria-label');
+            
+            // Asegurar que no haya flip en móvil
+            tarjeta.addEventListener('click', function(event) {
+                // Permitir navegación normal en móvil
+                if (event.target.tagName === 'A' || event.target.closest('a')) {
+                    return; // Permitir clicks en enlaces
+                }
+            });
+        });
+    }
+    
+    // Listener para cambios de tamaño de ventana
+    window.addEventListener('resize', function() {
+        const esMovilAhora = window.innerWidth < 768;
+        tarjetas.forEach(tarjeta => {
+            if (esMovilAhora) {
+                // Deshabilitar flip en móvil
+                tarjeta.classList.remove('flipped');
+                tarjeta.removeAttribute('tabindex');
+                tarjeta.removeAttribute('role');
+                tarjeta.removeAttribute('aria-label');
+            } else {
+                // Habilitar flip en desktop
+                tarjeta.setAttribute('tabindex', '0');
+                tarjeta.setAttribute('role', 'button');
+                tarjeta.setAttribute('aria-label', 'Tarjeta de nivel - presiona Enter o espacio para voltear');
+            }
+        });
     });
     
     // Configurar navegación por teclado para elementos interactivos

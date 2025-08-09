@@ -3743,9 +3743,44 @@ footer {
    ========================================================================== */
 
 /* Breakpoint extra pequeño - 320px */
-@media (min-width: 320px) {
+@media (max-width: 767px) {
     .container {
         padding: var(--container-padding-mobile);
+    }
+    
+    /* NAVEGACIÓN MÓVIL EXCLUSIVA */
+    .hamburger-menu {
+        display: flex !important;
+    }
+    
+    .desktop-nav {
+        display: none !important;
+    }
+    
+    /* DESHABILITAR FLIP COMPLETAMENTE EN MÓVIL */
+    .level-card {
+        transform: none !important;
+        transition: box-shadow var(--transition-normal) !important;
+        cursor: default !important;
+    }
+    
+    .level-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: var(--shadow-md) !important;
+    }
+    
+    .level-card.flipped {
+        transform: translateY(-2px) !important;
+    }
+    
+    .level-card-back {
+        display: none !important;
+    }
+    
+    .level-card-front {
+        display: block !important;
+        position: relative !important;
+        transform: none !important;
     }
     
     /* Asegurar que todos los botones sean touch-friendly */
@@ -3760,6 +3795,17 @@ footer {
     }
 }
 
+/* Navegación móvil mejorada - Mobile First */
+
+/* Por defecto: Solo menú hamburguesa visible en móvil */
+.hamburger-menu {
+    display: flex;
+}
+
+.desktop-nav {
+    display: none;
+}
+
 /* Breakpoint móvil grande - 480px */
 @media (min-width: 480px) {
     .container {
@@ -3767,7 +3813,7 @@ footer {
         padding: 1.5rem;
     }
     
-    /* Mostrar hamburger menu en tablets pequeñas */
+    /* Mantener hamburger menu en móviles grandes */
     .hamburger-menu {
         display: flex;
     }
@@ -3783,19 +3829,38 @@ footer {
         padding: var(--container-padding-tablet);
     }
     
-    /* Ocultar hamburger en tablets grandes */
+    /* Cambiar a navegación desktop en tablets */
     .hamburger-menu {
-        display: none;
+        display: none !important;
     }
     
     .desktop-nav {
-        display: flex;
+        display: flex !important;
     }
     
     /* Grid de 2 columnas en tablets */
     .levels-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+    }
+    
+    /* Deshabilitar flip en tablets y móviles */
+    .level-card {
+        transform: none !important;
+        transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+    }
+    
+    .level-card:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .level-card.flipped {
+        transform: translateY(-5px) !important;
+    }
+    
+    .level-card-back {
+        display: none !important;
     }
 }
 
@@ -3846,6 +3911,27 @@ footer {
     }
     
     .btn:hover {
+        transform: none !important;
+    }
+    
+    /* DESHABILITAR COMPLETAMENTE FLIP EN DISPOSITIVOS TÁCTILES */
+    .level-card {
+        transform: none !important;
+        transition: box-shadow var(--transition-normal) !important;
+    }
+    
+    .level-card.flipped {
+        transform: none !important;
+    }
+    
+    .level-card-back {
+        display: none !important;
+    }
+    
+    /* Mostrar solo el contenido frontal */
+    .level-card-front {
+        display: block !important;
+        position: relative !important;
         transform: none !important;
     }
     
