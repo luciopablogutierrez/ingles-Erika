@@ -6,305 +6,451 @@
     <meta name="description" content="English reinforcement platform with interactive lessons from A1 to C1 level. Learn grammar, vocabulary and communication skills.">
     <meta name="keywords" content="english, learn english, interactive exercises, grammar, vocabulary">
     <title>English Reinforcement with Erika - Learn Interactive English</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-white': '#ffffff',
+                        'custom-white-light': '#fafafa',
+                        'custom-yellow': '#ffd700',
+                        'custom-yellow-light': '#ffed4e',
+                        'custom-yellow-dark': '#e6c200',
+                        'custom-black': '#000000',
+                        'custom-black-light': '#333333',
+                        'custom-gray': '#666666',
+                        'custom-gray-light': '#f5f5f5',
+                        'custom-gray-dark': '#222222',
+                        'terracotta': '#d2691e',
+                        'sage-green': '#9caf88'
+                    },
+                    fontFamily: {
+                        'primary': ['Inter', 'Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        'heading': ['Playfair Display', 'Georgia', 'serif']
+                    }
+                }
+            },
+            darkMode: 'class'
+        }
+    </script>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-gradient-to-br from-custom-white to-custom-gray-light font-primary text-custom-black-light min-h-screen">
     <!-- Skip link for keyboard navigation -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <nav class="main-nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h1>🎓 English Reinforcement</h1>
-            </div>
-            
-            <!-- Hamburger menu for mobile -->
-            <button class="hamburger-menu" 
-                    aria-label="Open navigation menu" 
-                    aria-expanded="false"
-                    aria-controls="mobile-menu"
-                    type="button">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            
-            <!-- Desktop navigation -->
-            <div class="nav-links desktop-nav" role="menubar">
-                <a href="#home" class="nav-link active" role="menuitem" aria-current="page">🏠 <span>Home</span></a>
-                <a href="#levels" class="nav-link" role="menuitem">📚 <span>Levels</span></a>
-                <a href="#about" class="nav-link" role="menuitem">ℹ️ <span>About</span></a>
-                <button class="theme-toggle" 
-                        aria-label="Cambiar entre modo claro y oscuro" 
-                        title="Cambiar tema"
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-custom-yellow text-custom-black px-4 py-2 rounded-lg z-50 transition-all duration-300">Skip to main content</a>
+    <nav class="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-40 border-b border-custom-gray-light" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-custom-black-light font-heading">🎓 English Reinforcement</h1>
+                </div>
+                
+                <!-- Hamburger menu for mobile -->
+                <button class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none focus:ring-2 focus:ring-custom-yellow rounded-lg p-1" 
+                        aria-label="Open navigation menu" 
+                        aria-expanded="false"
+                        aria-controls="mobile-menu"
                         type="button">
-                    <i class="fas fa-sun" aria-hidden="true"></i>
-                    <span class="sr-only">Cambiar tema</span>
+                    <span class="block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
                 </button>
+                
+                <!-- Desktop navigation -->
+                <div class="hidden md:flex items-center space-x-6" role="menubar">
+                    <a href="#home" class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-custom-yellow text-custom-black font-medium hover:bg-custom-yellow-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow-dark" role="menuitem" aria-current="page">
+                        <span>🏠</span><span>Home</span>
+                    </a>
+                    <a href="#levels" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
+                        <span>📚</span><span>Levels</span>
+                    </a>
+                    <a href="#about" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
+                        <span>ℹ️</span><span>About</span>
+                    </a>
+                    <button class="p-2 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" 
+                            aria-label="Cambiar entre modo claro y oscuro" 
+                            title="Cambiar tema"
+                            type="button">
+                        <i class="fas fa-sun text-lg" aria-hidden="true"></i>
+                        <span class="sr-only">Cambiar tema</span>
+                    </button>
+                </div>
             </div>
+        </div>
             
-            <!-- Mobile dropdown menu -->
-            <div class="mobile-menu" id="mobile-menu" role="menu" aria-hidden="true" aria-label="Mobile navigation menu">
-                <div class="mobile-menu-header">
-                    <h2>🎓 Navigation</h2>
-                    <button class="mobile-menu-close" 
+        <!-- Mobile dropdown menu -->
+        <div class="md:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden" id="mobile-menu" role="menu" aria-hidden="true" aria-label="Mobile navigation menu">
+            <div class="fixed inset-y-0 right-0 w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
+                <div class="flex items-center justify-between p-6 border-b border-custom-gray-light bg-gradient-to-r from-custom-yellow to-custom-yellow-dark">
+                    <h2 class="text-lg font-bold text-custom-black font-heading">🎓 Navigation</h2>
+                    <button class="p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white" 
                             aria-label="Close navigation menu"
                             type="button">
-                        <i class="fas fa-xmark" aria-hidden="true"></i>
+                        <i class="fas fa-xmark text-custom-black text-lg" aria-hidden="true"></i>
                     </button>
                 </div>
                 
-                <div class="mobile-menu-content">
+                <div class="overflow-y-auto h-full pb-20">
                     <!-- Main navigation -->
-                    <div class="mobile-menu-section">
-                        <h3>📍 Main Sections</h3>
-                        <a href="#home" class="mobile-menu-link" role="menuitem">🏠 Home</a>
-                        <a href="#levels" class="mobile-menu-link" role="menuitem">📚 Levels</a>
-                        <a href="#about" class="mobile-menu-link" role="menuitem">ℹ️ About</a>
+                    <div class="p-6 border-b border-custom-gray-light">
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📍 Main Sections</h3>
+                        <div class="space-y-2">
+                            <a href="#home" class="flex items-center space-x-3 p-3 rounded-lg bg-custom-yellow/10 text-custom-black-light hover:bg-custom-yellow/20 transition-colors duration-200" role="menuitem">
+                                <span>🏠</span><span class="font-medium">Home</span>
+                            </a>
+                            <a href="#levels" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>📚</span><span class="font-medium">Levels</span>
+                            </a>
+                            <a href="#about" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>ℹ️</span><span class="font-medium">About</span>
+                            </a>
+                        </div>
                     </div>
                     
                     <!-- English Levels -->
-                    <div class="mobile-menu-section">
-                        <h3>🎯 English Levels</h3>
-                        <a href="a1/index.html" class="mobile-menu-link" role="menuitem">🌱 A1 - Beginner</a>
-                        <a href="a2/index.html" class="mobile-menu-link" role="menuitem">🌿 A2 - Elementary</a>
-                        <a href="b1/index.html" class="mobile-menu-link" role="menuitem">🌳 B1 - Intermediate</a>
-                        <a href="b2/index.html" class="mobile-menu-link" role="menuitem">🌲 B2 - Upper Intermediate</a>
-                        <a href="c1/index.html" class="mobile-menu-link" role="menuitem">🏔️ C1 - Advanced</a>
+                    <div class="p-6 border-b border-custom-gray-light">
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">🎯 English Levels</h3>
+                        <div class="space-y-2">
+                            <a href="a1/index.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>🌱</span><span class="font-medium">A1 - Beginner</span>
+                            </a>
+                            <a href="a2/index.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>🌿</span><span class="font-medium">A2 - Elementary</span>
+                            </a>
+                            <a href="b1/index.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>🌳</span><span class="font-medium">B1 - Intermediate</span>
+                            </a>
+                            <a href="b2/index.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>🌲</span><span class="font-medium">B2 - Upper Intermediate</span>
+                            </a>
+                            <a href="c1/index.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>🏔️</span><span class="font-medium">C1 - Advanced</span>
+                            </a>
+                        </div>
                     </div>
                     
                     <!-- A1 Lessons -->
-                    <div class="mobile-menu-section">
-                        <h3>📖 A1 Lessons</h3>
-                        <a href="a1/saludos.html" class="mobile-menu-link" role="menuitem">👋 Greetings</a>
-                        <a href="a1/abecedario.html" class="mobile-menu-link" role="menuitem">🔤 Alphabet</a>
-                        <a href="a1/numeros-colores.html" class="mobile-menu-link" role="menuitem">🔢 Numbers & Colors</a>
-                         <a href="a1/articulos.html" class="mobile-menu-link" role="menuitem">📝 Articles</a>
-                         <a href="a1/verbo-to-be.html" class="mobile-menu-link" role="menuitem">✨ Verb To Be</a>
-                         <a href="a1/preguntas-basicas.html" class="mobile-menu-link" role="menuitem">❓ Basic Questions</a>
+                    <div class="p-6 border-b border-custom-gray-light">
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📖 A1 Lessons</h3>
+                        <div class="space-y-2">
+                            <a href="a1/saludos.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>👋</span><span class="font-medium">Greetings</span>
+                            </a>
+                            <a href="a1/abecedario.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>🔤</span><span class="font-medium">Alphabet</span>
+                            </a>
+                            <a href="a1/numeros-colores.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>🔢</span><span class="font-medium">Numbers & Colors</span>
+                            </a>
+                            <a href="a1/articulos.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>📝</span><span class="font-medium">Articles</span>
+                            </a>
+                            <a href="a1/verbo-to-be.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>✨</span><span class="font-medium">Verb To Be</span>
+                            </a>
+                            <a href="a1/preguntas-basicas.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>❓</span><span class="font-medium">Basic Questions</span>
+                            </a>
+                        </div>
                     </div>
                     
                     <!-- A2 Lessons -->
-                    <div class="mobile-menu-section">
-                        <h3>📚 A2 Lessons</h3>
-                        <a href="a2/presente-simple.html" class="mobile-menu-link" role="menuitem">⏰ Simple Present</a>
-                        <a href="a2/vocabulario-esencial.html" class="mobile-menu-link" role="menuitem">📝 Essential Vocabulary</a>
-                        <a href="a2/preposiciones-lugar.html" class="mobile-menu-link" role="menuitem">📍 Prepositions</a>
-                        <a href="a2/pasado-simple.html" class="mobile-menu-link" role="menuitem">⏪ Simple Past</a>
-                        <a href="a2/conversaciones-breves.html" class="mobile-menu-link" role="menuitem">💬 Conversations</a>
+                    <div class="p-6 border-b border-custom-gray-light">
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📚 A2 Lessons</h3>
+                        <div class="space-y-2">
+                            <a href="a2/presente-simple.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>⏰</span><span class="font-medium">Simple Present</span>
+                            </a>
+                            <a href="a2/vocabulario-esencial.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>📝</span><span class="font-medium">Essential Vocabulary</span>
+                            </a>
+                            <a href="a2/preposiciones-lugar.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>📍</span><span class="font-medium">Prepositions</span>
+                            </a>
+                            <a href="a2/pasado-simple.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>⏪</span><span class="font-medium">Simple Past</span>
+                            </a>
+                            <a href="a2/conversaciones-breves.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                                <span>💬</span><span class="font-medium">Conversations</span>
+                            </a>
+                        </div>
                     </div>
                     
                     <!-- Configuración -->
-                    <div class="mobile-menu-section">
-                        <h3>⚙️ Configuración</h3>
-                        <button class="mobile-theme-toggle" 
+                    <div class="p-6">
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">⚙️ Configuración</h3>
+                        <button class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200 w-full" 
                                 aria-label="Cambiar entre modo claro y oscuro"
                                 type="button">
-                            <i class="fas fa-sun" aria-hidden="true"></i>
-                            <span>Cambiar Tema</span>
+                            <i class="fas fa-sun text-custom-yellow" aria-hidden="true"></i>
+                            <span class="font-medium">Cambiar Tema</span>
                         </button>
                     </div>
                 </div>
             </div>
-            
-            <!-- Overlay to close menu -->
-            <div class="mobile-menu-overlay" aria-hidden="true"></div>
         </div>
     </nav>
 
-    <header id="home" class="hero-section" role="banner">
-        <div class="hero-content">
-            <h1>🌟 Learning with Erika is Fun!</h1>
-            <p class="hero-subtitle">Learn English step by step with interactive exercises</p>
-            <p class="hero-description">Master English with our progressive learning system. From basic concepts to advanced communication skills.</p>
-            <div class="hero-stats" role="region" aria-label="Course statistics">
-                <div class="stat">
-                    <span class="stat-number" aria-label="5 levels available">5</span>
-                    <span class="stat-label">Levels</span>
+    <header id="home" class="relative bg-gradient-to-br from-custom-yellow via-custom-yellow-light to-custom-yellow-dark text-custom-black overflow-hidden" role="banner">
+        <!-- Decorative background elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-xl"></div>
+            <div class="absolute bottom-20 right-20 w-48 h-48 bg-white rounded-full blur-2xl"></div>
+            <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-custom-yellow-dark rounded-full blur-lg"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+            <div class="text-center space-y-8">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading leading-tight">
+                    🌟 Learning with Erika is Fun!
+                </h1>
+                <p class="text-xl sm:text-2xl font-medium text-custom-black-light max-w-3xl mx-auto">
+                    Learn English step by step with interactive exercises
+                </p>
+                <p class="text-lg text-custom-black/80 max-w-2xl mx-auto leading-relaxed">
+                    Master English with our progressive learning system. From basic concepts to advanced communication skills.
+                </p>
+                
+                <!-- Statistics -->
+                <div class="grid grid-cols-3 gap-6 max-w-md mx-auto mt-12" role="region" aria-label="Course statistics">
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-custom-black" aria-label="5 levels available">5</div>
+                        <div class="text-sm sm:text-base font-medium text-custom-black-light">Levels</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-custom-black" aria-label="26 lessons total">26</div>
+                        <div class="text-sm sm:text-base font-medium text-custom-black-light">Lessons</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-custom-black" aria-label="More than 100 exercises">100+</div>
+                        <div class="text-sm sm:text-base font-medium text-custom-black-light">Exercises</div>
+                    </div>
                 </div>
-                <div class="stat">
-                    <span class="stat-number" aria-label="26 lessons total">26</span>
-                    <span class="stat-label">Lessons</span>
+                
+                <!-- Call to action buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+                    <a href="#levels" class="inline-flex items-center space-x-2 bg-custom-black text-custom-yellow px-8 py-4 rounded-xl font-bold text-lg hover:bg-custom-black-light transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-custom-black/50" role="button" aria-describedby="cta-description">
+                        <span>🚀</span><span>Start Learning Now</span>
+                    </a>
+                    <a href="a1/index.html" class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-custom-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/30 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/50" role="button">
+                        <span>⚡</span><span>Quick Start - A1 Level</span>
+                    </a>
                 </div>
-                <div class="stat">
-                    <span class="stat-number" aria-label="More than 100 exercises">100+</span>
-                    <span class="stat-label">Exercises</span>
-                </div>
+                <div id="cta-description" class="sr-only">Go to the levels section to start learning</div>
             </div>
-            <div class="hero-buttons">
-                <a href="#levels" class="cta-button" role="button" aria-describedby="cta-description">
-                    🚀 <span>Start Learning Now</span>
-                </a>
-                <a href="a1/index.html" class="btn btn-primary quick-start" role="button">
-                    ⚡ <span>Quick Start - A1 Level</span>
-                </a>
-            </div>
-            <div id="cta-description" class="sr-only">Go to the levels section to start learning</div>
         </div>
     </header>
 
     <main id="main-content" role="main">
-        <section id="levels" class="levels-section">
-            <div class="section-header">
-                <h2>🎯 Choose Your Level</h2>
-                <p>Select the level that best fits your current English knowledge</p>
-            </div>
-            <div class="levels-container">
-            <div class="level-card a1">
-                <div class="level-icon">🌱</div>
-                <h2>🌱 A1 - Beginner</h2>
-                <p>Perfect for starting from scratch. Learn the basics of English.</p>
-                <div class="level-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">6</span>
-                        <span class="stat-label">Lessons</span>
+        <section id="levels" class="py-20 bg-gradient-to-b from-custom-white to-custom-gray-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-custom-black mb-4">🎯 Choose Your Level</h2>
+                    <p class="text-lg text-custom-black-light max-w-2xl mx-auto">Select the level that best fits your current English knowledge</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- A1 Level -->
+                    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-custom-gray-light overflow-hidden">
+                        <div class="p-8">
+                            <div class="text-6xl mb-4 text-center">🌱</div>
+                            <h3 class="text-2xl font-bold font-heading text-custom-black mb-3 text-center">A1 - Beginner</h3>
+                            <p class="text-custom-black-light mb-6 text-center">Perfect for starting from scratch. Learn the basics of English.</p>
+                            
+                            <div class="flex justify-center space-x-8 mb-6">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-custom-black">6</div>
+                                    <div class="text-sm text-custom-black-light">Lessons</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-custom-black">~20h</div>
+                                    <div class="text-sm text-custom-black-light">Duration</div>
+                                </div>
+                            </div>
+                            
+                            <ul class="space-y-2 mb-8 text-sm text-custom-black-light">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-yellow rounded-full mr-3"></span>Greetings and introductions</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-yellow rounded-full mr-3"></span>Alphabet and pronunciation</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-yellow rounded-full mr-3"></span>Numbers and colors</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-yellow rounded-full mr-3"></span>Family and relationships</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-yellow rounded-full mr-3"></span>Verb "to be"</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-yellow rounded-full mr-3"></span>Basic questions</li>
+                            </ul>
+                            
+                            <a href="a1/index.html" class="block w-full bg-custom-yellow text-custom-black text-center py-3 px-6 rounded-xl font-bold hover:bg-custom-yellow-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">🚀 Start A1 Level</a>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">~20h</span>
-                        <span class="stat-label">Duration</span>
+                    
+                    <!-- A2 Level -->
+                    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-custom-gray-light overflow-hidden">
+                        <div class="p-8">
+                            <div class="text-6xl mb-4 text-center">🌿</div>
+                            <h3 class="text-2xl font-bold font-heading text-custom-black mb-3 text-center">A2 - Elementary</h3>
+                            <p class="text-custom-black-light mb-6 text-center">Build on the basics with more complex structures.</p>
+                            
+                            <div class="flex justify-center space-x-8 mb-6">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-custom-black">5</div>
+                                    <div class="text-sm text-custom-black-light">Lessons</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-custom-black">25h</div>
+                                    <div class="text-sm text-custom-black-light">Duration</div>
+                                </div>
+                            </div>
+                            
+                            <ul class="space-y-2 mb-8 text-sm text-custom-black-light">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-sage-green rounded-full mr-3"></span>Simple present</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-sage-green rounded-full mr-3"></span>Essential vocabulary</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-sage-green rounded-full mr-3"></span>Prepositions of place</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-sage-green rounded-full mr-3"></span>Simple past</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-sage-green rounded-full mr-3"></span>Brief conversations</li>
+                            </ul>
+                            
+                            <a href="a2/index.html" class="block w-full bg-sage-green text-white text-center py-3 px-6 rounded-xl font-bold hover:bg-sage-green-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">🚀 Start A2 Level</a>
+                        </div>
+                    </div>
+                    
+                    <!-- B1 Level -->
+                    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-custom-gray-light overflow-hidden">
+                        <div class="p-8">
+                            <div class="text-6xl mb-4 text-center">🌳</div>
+                            <h3 class="text-2xl font-bold font-heading text-custom-black mb-3 text-center">B1 - Intermediate</h3>
+                            <p class="text-custom-black-light mb-6 text-center">Develop fluency and confidence in everyday situations.</p>
+                            
+                            <div class="flex justify-center space-x-8 mb-6">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-custom-black">5</div>
+                                    <div class="text-sm text-custom-black-light">Lessons</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-custom-black">30h</div>
+                                    <div class="text-sm text-custom-black-light">Duration</div>
+                                </div>
+                            </div>
+                            
+                            <ul class="space-y-2 mb-8 text-sm text-custom-black-light">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Present perfect</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Future with "will" and "going to"</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Conditionals</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Intermediate vocabulary</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Extended conversations</li>
+                            </ul>
+                            
+                            <a href="b1/index.html" class="block w-full bg-terracotta text-white text-center py-3 px-6 rounded-xl font-bold hover:bg-terracotta-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">🚀 Start B1 Level</a>
+                        </div>
+                    </div>
+                    
+                    <!-- B2 Level -->
+                    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-custom-gray-light overflow-hidden">
+                        <div class="p-8">
+                            <div class="text-6xl mb-4 text-center">🏔️</div>
+                            <h3 class="text-2xl font-bold font-heading text-custom-black mb-3 text-center">B2 - Upper Intermediate</h3>
+                            <p class="text-custom-black-light mb-6 text-center">Master advanced structures and improve your natural fluency.</p>
+                            
+                            <div class="flex justify-center space-x-8 mb-6">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-custom-black">5</div>
+                                    <div class="text-sm text-custom-black-light">Lessons</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-custom-black">35h</div>
+                                    <div class="text-sm text-custom-black-light">Duration</div>
+                                </div>
+                            </div>
+                            
+                            <ul class="space-y-2 mb-8 text-sm text-custom-black-light">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-black rounded-full mr-3"></span>Perfect tenses</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-black rounded-full mr-3"></span>Passive voice</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-black rounded-full mr-3"></span>Reported speech</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-black rounded-full mr-3"></span>Advanced vocabulary</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-custom-black rounded-full mr-3"></span>Debates and opinions</li>
+                            </ul>
+                            
+                            <a href="b2/index.html" class="block w-full bg-custom-black text-custom-yellow text-center py-3 px-6 rounded-xl font-bold hover:bg-custom-black-light transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">🚀 Start B2 Level</a>
+                        </div>
+                    </div>
+                    
+                    <!-- C1 Level -->
+                    <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-custom-gray-light overflow-hidden">
+                        <div class="p-8">
+                            <div class="text-6xl mb-4 text-center">🎓</div>
+                            <h3 class="text-2xl font-bold font-heading text-custom-black mb-3 text-center">C1 - Advanced</h3>
+                            <p class="text-custom-black-light mb-6 text-center">Reach near-native level with idiomatic expressions.</p>
+                            
+                            <div class="flex justify-center space-x-8 mb-6">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-custom-black">5</div>
+                                    <div class="text-sm text-custom-black-light">Lessons</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-custom-black">40h</div>
+                                    <div class="text-sm text-custom-black-light">Duration</div>
+                                </div>
+                            </div>
+                            
+                            <ul class="space-y-2 mb-8 text-sm text-custom-black-light">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-gradient-to-r from-custom-yellow to-sage-green rounded-full mr-3"></span>Complex structures</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-gradient-to-r from-custom-yellow to-sage-green rounded-full mr-3"></span>Idiomatic expressions</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-gradient-to-r from-custom-yellow to-sage-green rounded-full mr-3"></span>Formal and informal register</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-gradient-to-r from-custom-yellow to-sage-green rounded-full mr-3"></span>Text analysis</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-gradient-to-r from-custom-yellow to-sage-green rounded-full mr-3"></span>Advanced presentations</li>
+                            </ul>
+                            
+                            <a href="c1/index.html" class="block w-full bg-gradient-to-r from-custom-yellow to-sage-green text-custom-black text-center py-3 px-6 rounded-xl font-bold hover:from-custom-yellow-dark hover:to-sage-green-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">🚀 Start C1 Level</a>
+                        </div>
                     </div>
                 </div>
-                <ul class="level-topics">
-                    <li>Greetings and introductions</li>
-                    <li>Alphabet and pronunciation</li>
-                    <li>Numbers and colors</li>
-                    <li>Family and relationships</li>
-                    <li>Verb "to be"</li>
-                    <li>Basic questions</li>
-                </ul>
-                <a href="a1/index.html" class="btn btn-primary">🚀 Start A1 Level</a>
-            </div>
-
-            <div class="level-card a2">
-                <div class="level-icon">🌿</div>
-                <h2>🌿 A2 - Elementary</h2>
-                <p>Build on the basics with more complex structures.</p>
-                <div class="level-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">Lessons</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">25h</span>
-                        <span class="stat-label">Duration</span>
-                    </div>
-                </div>
-                <ul class="level-topics">
-                    <li>Simple present</li>
-                    <li>Essential vocabulary</li>
-                    <li>Prepositions of place</li>
-                    <li>Simple past</li>
-                    <li>Brief conversations</li>
-                </ul>
-                <a href="a2/index.html" class="btn btn-primary">🚀 Start A2 Level</a>
-            </div>
-
-            <div class="level-card b1">
-                <div class="level-icon">🌳</div>
-                <h2>🌳 B1 - Intermediate</h2>
-                <p>Develop fluency and confidence in everyday situations.</p>
-                <div class="level-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">Lessons</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">30h</span>
-                        <span class="stat-label">Duration</span>
-                    </div>
-                </div>
-                <ul class="level-topics">
-                    <li>Present perfect</li>
-                    <li>Future with "will" and "going to"</li>
-                    <li>Conditionals</li>
-                    <li>Intermediate vocabulary</li>
-                    <li>Extended conversations</li>
-                </ul>
-                <a href="b1/index.html" class="btn btn-primary">🚀 Start B1 Level</a>
-            </div>
-
-            <div class="level-card b2">
-                <div class="level-icon">🏔️</div>
-                <h2>🌲 B2 - Upper Intermediate</h2>
-                <p>Master advanced structures and improve your natural fluency.</p>
-                <div class="level-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">Lessons</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">35h</span>
-                        <span class="stat-label">Duration</span>
-                    </div>
-                </div>
-                <ul class="level-topics">
-                    <li>Perfect tenses</li>
-                    <li>Passive voice</li>
-                    <li>Reported speech</li>
-                    <li>Advanced vocabulary</li>
-                    <li>Debates and opinions</li>
-                </ul>
-                <a href="b2/index.html" class="btn btn-primary">🚀 Start B2 Level</a>
-            </div>
-
-            <div class="level-card c1">
-                <div class="level-icon">🎓</div>
-                <h2>🏔️ C1 - Advanced</h2>
-                <p>Reach near-native level with idiomatic expressions.</p>
-                <div class="level-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">Lessons</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">40h</span>
-                        <span class="stat-label">Duration</span>
-                    </div>
-                </div>
-                <ul class="level-topics">
-                    <li>Complex structures</li>
-                    <li>Idiomatic expressions</li>
-                    <li>Formal and informal register</li>
-                    <li>Text analysis</li>
-                    <li>Advanced presentations</li>
-                </ul>
-                <a href="c1/index.html" class="btn btn-primary">🚀 Start C1 Level</a>
-            </div>
             </div>
         </section>
 
-        <section id="about" class="about-section">
-            <div class="about-content">
-                <h2>🎯 About This Course</h2>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h3>🎓 Comprehensive Learning</h3>
-                        <p>From A1 to C1 levels following the Common European Framework of Reference (CEFR)</p>
+        <section id="about" class="py-20 bg-custom-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-custom-black mb-4">🎯 About This Course</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gradient-to-br from-custom-yellow/10 to-custom-yellow/5 rounded-2xl p-8 text-center border border-custom-yellow/20 hover:border-custom-yellow/40 transition-all duration-300 hover:shadow-lg">
+                        <div class="text-4xl mb-4">🎓</div>
+                        <h3 class="text-xl font-bold font-heading text-custom-black mb-4">Comprehensive Learning</h3>
+                        <p class="text-custom-black-light leading-relaxed">From A1 to C1 levels following the Common European Framework of Reference (CEFR)</p>
                     </div>
-                    <div class="about-card">
-                        <h3>🎮 Interactive Exercises</h3>
-                        <p>Engaging activities with immediate feedback to reinforce your learning</p>
+                    
+                    <div class="bg-gradient-to-br from-sage-green/10 to-sage-green/5 rounded-2xl p-8 text-center border border-sage-green/20 hover:border-sage-green/40 transition-all duration-300 hover:shadow-lg">
+                        <div class="text-4xl mb-4">🎮</div>
+                        <h3 class="text-xl font-bold font-heading text-custom-black mb-4">Interactive Exercises</h3>
+                        <p class="text-custom-black-light leading-relaxed">Engaging activities with immediate feedback to reinforce your learning</p>
                     </div>
-                    <div class="about-card">
-                        <h3>📈 Progress Tracking</h3>
-                        <p>Monitor your advancement through each level and lesson completion</p>
+                    
+                    <div class="bg-gradient-to-br from-terracotta/10 to-terracotta/5 rounded-2xl p-8 text-center border border-terracotta/20 hover:border-terracotta/40 transition-all duration-300 hover:shadow-lg">
+                        <div class="text-4xl mb-4">📈</div>
+                        <h3 class="text-xl font-bold font-heading text-custom-black mb-4">Progress Tracking</h3>
+                        <p class="text-custom-black-light leading-relaxed">Monitor your advancement through each level and lesson completion</p>
                     </div>
-                    <div class="about-card">
-                        <h3>🌟 Fun Learning</h3>
-                        <p>Learning with Erika is designed to be enjoyable and effective</p>
+                    
+                    <div class="bg-gradient-to-br from-custom-black/10 to-custom-black/5 rounded-2xl p-8 text-center border border-custom-black/20 hover:border-custom-black/40 transition-all duration-300 hover:shadow-lg">
+                        <div class="text-4xl mb-4">🌟</div>
+                        <h3 class="text-xl font-bold font-heading text-custom-black mb-4">Fun Learning</h3>
+                        <p class="text-custom-black-light leading-relaxed">Learning with Erika is designed to be enjoyable and effective</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 English Reinforcement with Erika. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#levels">Levels</a>
-                <a href="#about">About</a>
+    <footer class="bg-custom-black text-custom-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-custom-gray-light text-center md:text-left">&copy; 2024 English Reinforcement with Erika. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-custom-gray-light hover:text-custom-yellow transition-colors duration-300 font-medium">Home</a>
+                    <a href="#levels" class="text-custom-gray-light hover:text-custom-yellow transition-colors duration-300 font-medium">Levels</a>
+                    <a href="#about" class="text-custom-gray-light hover:text-custom-yellow transition-colors duration-300 font-medium">About</a>
+                </div>
             </div>
         </div>
     </footer>

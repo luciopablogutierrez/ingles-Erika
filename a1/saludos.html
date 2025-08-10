@@ -6,91 +6,136 @@
     <meta name="description" content="Learn basic greetings and introductions in English - Level A1">
     <meta name="keywords" content="english A1, greetings in english, introductions, basic vocabulary">
     <title>Greetings and Introductions - A1 | English Reinforcement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-white': '#FEFEFE',
+                        'custom-yellow': '#F4D03F',
+                        'custom-yellow-light': '#F7DC6F',
+                        'custom-yellow-dark': '#F1C40F',
+                        'custom-black': '#2C3E50',
+                        'custom-black-light': '#34495E',
+                        'custom-gray': '#BDC3C7',
+                        'custom-gray-light': '#ECF0F1',
+                        'terracotta': '#E67E22',
+                        'terracotta-dark': '#D35400',
+                        'sage-green': '#27AE60',
+                        'sage-green-dark': '#229954'
+                    },
+                    fontFamily: {
+                        'primary': ['Inter', 'system-ui', 'sans-serif'],
+                        'heading': ['Poppins', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-custom-white text-custom-black font-primary">
     <!-- Skip link para navegación por teclado -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-custom-yellow text-custom-black px-4 py-2 rounded-lg font-medium z-50">Skip to main content</a>
+    
     <header role="banner">
-        <nav class="main-nav">
-            <div class="nav-container">
-                <div class="nav-brand">
-                    <h1>English Learning</h1>
-                </div>
-                
-                <!-- Menú hamburguesa para móviles -->
-                <button class="hamburger-menu" aria-label="Open navigation menu" aria-expanded="false">
-                    <div class="hamburger-line"></div>
-                    <div class="hamburger-line"></div>
-                    <div class="hamburger-line"></div>
-                </button>
-                
-                <!-- Navegación desktop -->
-                <div class="desktop-nav">
-                    <a href="../index.html" class="nav-link">🏠 Home</a>
-                    <a href="../index.html#levels" class="nav-link">📚 Levels</a>
-                    <a href="../index.html#about" class="nav-link">ℹ️ About</a>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Change theme">
-                        🌙
+        <nav class="bg-white/95 backdrop-blur-sm border-b border-custom-gray-light sticky top-0 z-40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-xl font-bold font-heading text-custom-black">English Learning</h1>
+                    </div>
+                    
+                    <!-- Menú hamburguesa para móviles -->
+                    <button class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none focus:ring-2 focus:ring-custom-yellow rounded" aria-label="Open navigation menu" aria-expanded="false">
+                        <div class="w-6 h-0.5 bg-custom-black transition-all duration-300"></div>
+                        <div class="w-6 h-0.5 bg-custom-black transition-all duration-300"></div>
+                        <div class="w-6 h-0.5 bg-custom-black transition-all duration-300"></div>
                     </button>
+                    
+                    <!-- Navegación desktop -->
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="../index.html" class="flex items-center space-x-2 text-custom-black hover:text-custom-yellow transition-colors duration-300 font-medium">🏠 <span>Home</span></a>
+                        <a href="../index.html#levels" class="flex items-center space-x-2 text-custom-black hover:text-custom-yellow transition-colors duration-300 font-medium">📚 <span>Levels</span></a>
+                        <a href="../index.html#about" class="flex items-center space-x-2 text-custom-black hover:text-custom-yellow transition-colors duration-300 font-medium">ℹ️ <span>About</span></a>
+                        <button id="theme-toggle" class="p-2 rounded-lg bg-custom-gray-light hover:bg-custom-yellow transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" aria-label="Change theme">
+                            🌙
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
         
         <!-- Menú móvil -->
-        <div class="mobile-menu">
-            <div class="mobile-menu-header">
-                <h2>Navigation</h2>
-                <button class="mobile-menu-close" aria-label="Close menu">
+        <div class="fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="flex items-center justify-between p-6 border-b border-custom-gray-light">
+                <h2 class="text-xl font-bold font-heading text-custom-black">Navigation</h2>
+                <button class="p-2 rounded-lg hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" aria-label="Close menu">
                     ✕
                 </button>
             </div>
-            <div class="mobile-menu-content">
-                <div class="mobile-menu-section">
-                    <h3>Navegación Principal</h3>
-                    <a href="../index.html" class="mobile-menu-link">🏠 Inicio</a>
-                    <a href="../index.html#levels" class="mobile-menu-link">📚 Niveles</a>
-                    <a href="../index.html#about" class="mobile-menu-link">ℹ️ Acerca de</a>
-                </div>
-                
-                <div class="mobile-menu-section">
-                    <h3>Niveles de Inglés</h3>
-                    <a href="../index.html#level-a1" class="mobile-menu-link">📖 Nivel A1 - Principiante</a>
-                    <a href="../index.html#level-a2" class="mobile-menu-link">📘 Nivel A2 - Elemental</a>
-                </div>
-                
-                <div class="mobile-menu-section">
-                    <h3>Lecciones A1</h3>
-                    <a href="saludos.html" class="mobile-menu-link">👋 Saludos y Presentaciones</a>
-                    <a href="numeros.html" class="mobile-menu-link">🔢 Números</a>
-                    <a href="colores.html" class="mobile-menu-link">🎨 Colores</a>
-                    <a href="familia.html" class="mobile-menu-link">👨‍👩‍👧‍👦 Familia</a>
-                </div>
-                
-                <div class="mobile-menu-section">
-                    <h3>Lecciones A2</h3>
-                    <a href="../a2/tiempo.html" class="mobile-menu-link">⏰ Tiempo y Fechas</a>
-                    <a href="../a2/comida.html" class="mobile-menu-link">🍽️ Comida</a>
-                    <a href="../a2/viajes.html" class="mobile-menu-link">✈️ Viajes</a>
-                    <a href="../a2/trabajo.html" class="mobile-menu-link">💼 Trabajo</a>
-                </div>
-                
-                <div class="mobile-menu-section">
-                    <button id="mobile-theme-toggle" class="mobile-theme-toggle" aria-label="Cambiar tema">
-                        🌙 Cambiar Tema
-                    </button>
+            
+            <div class="overflow-y-auto h-full pb-20">
+                <div class="p-6 space-y-6">
+                    <div>
+                        <h3 class="text-sm font-semibold text-custom-black-light uppercase tracking-wider mb-3">Navegación Principal</h3>
+                        <div class="space-y-2">
+                            <a href="../index.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black">🏠 <span>Inicio</span></a>
+                            <a href="../index.html#levels" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black">📚 <span>Niveles</span></a>
+                            <a href="../index.html#about" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black">ℹ️ <span>Acerca de</span></a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-sm font-semibold text-custom-black-light uppercase tracking-wider mb-3">Niveles de Inglés</h3>
+                        <div class="space-y-2">
+                            <a href="../index.html#level-a1" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-sage-green/10 transition-colors duration-300 text-custom-black">📖 <span>Nivel A1 - Principiante</span></a>
+                            <a href="../index.html#level-a2" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-sage-green/10 transition-colors duration-300 text-custom-black">📘 <span>Nivel A2 - Elemental</span></a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-sm font-semibold text-custom-black-light uppercase tracking-wider mb-3">Lecciones A1</h3>
+                        <div class="space-y-2">
+                            <a href="saludos.html" class="flex items-center space-x-3 p-3 rounded-lg bg-custom-yellow/20 border border-custom-yellow/30 text-custom-black font-medium">👋 <span>Saludos y Presentaciones</span></a>
+                            <a href="numeros.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black">🔢 <span>Números</span></a>
+                            <a href="colores.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black">🎨 <span>Colores</span></a>
+                            <a href="familia.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black">👨‍👩‍👧‍👦 <span>Familia</span></a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-sm font-semibold text-custom-black-light uppercase tracking-wider mb-3">Lecciones A2</h3>
+                        <div class="space-y-2">
+                            <a href="../a2/tiempo.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-terracotta/10 transition-colors duration-300 text-custom-black">⏰ <span>Tiempo y Fechas</span></a>
+                            <a href="../a2/comida.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-terracotta/10 transition-colors duration-300 text-custom-black">🍽️ <span>Comida</span></a>
+                            <a href="../a2/viajes.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-terracotta/10 transition-colors duration-300 text-custom-black">✈️ <span>Viajes</span></a>
+                            <a href="../a2/trabajo.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-terracotta/10 transition-colors duration-300 text-custom-black">💼 <span>Trabajo</span></a>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-6 border-t border-custom-gray-light">
+                        <button id="mobile-theme-toggle" class="flex items-center space-x-3 w-full p-3 rounded-lg bg-custom-gray-light hover:bg-custom-yellow transition-colors duration-300 text-custom-black font-medium" aria-label="Cambiar tema">
+                            🌙 <span>Cambiar Tema</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Overlay para cerrar menú -->
-        <div class="mobile-menu-overlay"></div>
+        <div class="fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-all duration-300 md:hidden"></div>
         
-        <div class="lesson-header" style="display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 1rem;">
-            <div>
-                <h1>📝 Saludos y Presentaciones</h1>
-                <p>Aprende a saludar y presentarte en inglés</p>
+        <!-- Lesson Header -->
+        <div class="bg-gradient-to-r from-custom-yellow via-custom-yellow-light to-custom-yellow-dark py-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-custom-black mb-4">📝 Saludos y Presentaciones</h1>
+                    <p class="text-lg text-custom-black-light max-w-2xl mx-auto">Aprende a saludar y presentarte en inglés</p>
+                </div>
             </div>
         </div>
     </header>
