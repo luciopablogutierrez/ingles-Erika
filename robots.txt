@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Disallow crawling of test and debug files
+Disallow: /mobile-test.html
+Disallow: /mobile-debug.html
+Disallow: /mobile-hamburger-test.html
+Disallow: /mobile-verification.html
+Disallow: /*.ps1$
+
+# Allow crawling of all educational content
+Allow: /a1/
+Allow: /a2/
+Allow: /b1/
+Allow: /b2/
+Allow: /c1/
+Allow: /assets/
