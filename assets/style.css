@@ -3300,6 +3300,7 @@ footer {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
+    color: var(--text-primary);
 }
 
 .stat-label {
