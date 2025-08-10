@@ -443,6 +443,8 @@ function initializeHamburgerMenu() {
             // Agregar clase para animaciones específicas de apertura
             setTimeout(() => {
                 mobileMenu.classList.add('menu-opened');
+                // Inicializar detección de scroll
+                initMobileMenuScroll();
             }, 50);
         }
         
@@ -507,15 +509,49 @@ function initializeHamburgerMenu() {
             }
         });
         
-        // Navegación por teclado dentro del menú
-        mobileMenu.addEventListener('keydown', function(event) {
-            if (event.key === 'Tab') {
-                const focusableElements = mobileMenu.querySelectorAll(
-                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                );
-                const firstElement = focusableElements[0];
-                const lastElement = focusableElements[focusableElements.length - 1];
+        // Función para detectar scroll en el menú móvil
+        function initMobileMenuScroll() {
+            if (!mobileMenu) return;
+            
+            function updateScrollIndicators() {
+                const scrollTop = mobileMenu.scrollTop;
+                const scrollHeight = mobileMenu.scrollHeight;
+                const clientHeight = mobileMenu.clientHeight;
+                const scrollBottom = scrollHeight - clientHeight - scrollTop;
                 
+                // Mostrar indicador superior si hay scroll hacia arriba
+                if (scrollTop > 20) {
+                    mobileMenu.classList.add('scrolled');
+                } else {
+                    mobileMenu.classList.remove('scrolled');
+                }
+                
+                // Mostrar indicador inferior si hay más contenido abajo
+                if (scrollBottom > 20) {
+                    mobileMenu.classList.add('has-more');
+                } else {
+                    mobileMenu.classList.remove('has-more');
+                }
+            }
+            
+            // Verificar scroll inicial
+            updateScrollIndicators();
+            
+            // Escuchar eventos de scroll
+            mobileMenu.addEventListener('scroll', updateScrollIndicators, { passive: true });
+        }
+        
+        // Navegación por teclado mejorada dentro del menú
+        mobileMenu.addEventListener('keydown', function(event) {
+            const focusableElements = mobileMenu.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+            const currentIndex = Array.from(focusableElements).indexOf(document.activeElement);
+            
+            if (event.key === 'Tab') {
+                // Navegación con Tab normal
                 if (event.shiftKey) {
                     if (document.activeElement === firstElement) {
                         event.preventDefault();
@@ -527,6 +563,30 @@ function initializeHamburgerMenu() {
                         firstElement.focus();
                     }
                 }
+            } else if (event.key === 'ArrowDown') {
+                // Navegación hacia abajo con flecha
+                event.preventDefault();
+                const nextIndex = currentIndex < focusableElements.length - 1 ? currentIndex + 1 : 0;
+                focusableElements[nextIndex].focus();
+                // Scroll suave hacia el elemento
+                focusableElements[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else if (event.key === 'ArrowUp') {
+                // Navegación hacia arriba con flecha
+                event.preventDefault();
+                const prevIndex = currentIndex > 0 ? currentIndex - 1 : focusableElements.length - 1;
+                focusableElements[prevIndex].focus();
+                // Scroll suave hacia el elemento
+                focusableElements[prevIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else if (event.key === 'Home') {
+                // Ir al primer elemento
+                event.preventDefault();
+                firstElement.focus();
+                firstElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (event.key === 'End') {
+                // Ir al último elemento
+                event.preventDefault();
+                lastElement.focus();
+                lastElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
             }
         });
     }

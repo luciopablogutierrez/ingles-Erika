@@ -428,18 +428,23 @@ body {
     position: fixed;
     top: 0;
     right: -100%;
-    width: min(320px, 85vw); /* Responsive width */
-    max-width: 85vw; /* Más espacio para contenido */
+    width: min(340px, 90vw); /* Más ancho para mejor navegación */
+    max-width: 90vw; /* Más espacio para contenido */
     height: calc(var(--vh, 1vh) * 100); /* Viewport height dinámico */
     background: var(--card-bg);
     border-left: 1px solid var(--border-color);
-    transition: right var(--transition-normal);
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transición más suave */
     z-index: 1001;
     overflow-y: auto;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    /* Optimización para scroll táctil */
+    overflow-x: hidden;
+    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.15);
+    /* Optimización para scroll táctil mejorada */
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    /* Indicador de scroll */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary) transparent;
 }
 
 .mobile-menu.active {
@@ -493,11 +498,12 @@ body {
 }
 
 .mobile-menu-content {
-    padding: 1rem;
+    padding: 1.5rem 1rem 2rem 1rem; /* Más padding inferior para scroll cómodo */
 }
 
 .mobile-menu-section {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem; /* Más espacio entre secciones */
+    position: relative;
 }
 
 .mobile-menu-section h3 {
@@ -514,14 +520,14 @@ body {
     display: block;
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: var(--font-size-base); /* Mínimo 16px */
-    padding: 1rem 1.25rem; /* Área táctil más grande */
-    margin: 0.5rem 0; /* Más espacio entre elementos */
-    border-radius: 8px;
-    transition: all var(--transition-normal);
-    border: 1px solid transparent;
+    font-size: var(--font-size-lg); /* Texto más grande para mejor legibilidad */
+    padding: 1.25rem 1.5rem; /* Área táctil más generosa */
+    margin: 0.75rem 0; /* Más espacio entre elementos para evitar toques accidentales */
+    border-radius: 12px; /* Bordes más redondeados */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid transparent;
     font-weight: 500;
-    min-height: var(--touch-target-min); /* 44px mínimo */
+    min-height: 56px; /* Área táctil más grande que el mínimo */
     display: flex;
     align-items: center;
     /* Optimización táctil */
@@ -529,18 +535,24 @@ body {
     touch-action: manipulation;
     /* Área de pulgar cómoda */
     position: relative;
+    /* Indicador visual de navegación */
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
 .mobile-menu-link:hover {
-    background: var(--accent-primary);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-tertiary) 100%);
     color: var(--text-light);
     border-color: var(--accent-primary);
-    transform: translateX(5px);
+    transform: translateX(8px) scale(1.02); /* Efecto más pronunciado */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .mobile-menu-link:focus {
     outline: 3px solid var(--focus-color);
-    outline-offset: 2px;
+    outline-offset: 3px;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-tertiary) 100%);
+    color: var(--text-light);
+    transform: translateX(4px);
 }
 
 .mobile-theme-toggle {
@@ -569,6 +581,41 @@ body {
     outline-offset: 2px;
 }
 
+/* Indicadores de scroll para el menú móvil */
+.mobile-menu::before {
+    content: '';
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-primary) 0%, transparent 100%);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu.scrolled::before {
+    opacity: 1;
+}
+
+.mobile-menu::after {
+    content: '';
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent-primary) 100%);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu.has-more::after {
+    opacity: 1;
+}
+
 /* Overlay para cerrar menú */
 .mobile-menu-overlay {
     position: fixed;
@@ -576,11 +623,12 @@ body {
     left: 0;
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100); /* Viewport height dinámico */
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6); /* Overlay más oscuro */
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 1000;
+    backdrop-filter: blur(2px); /* Efecto de desenfoque */
 }
 
 .mobile-menu-overlay.active {
@@ -4552,14 +4600,24 @@ input, textarea, select {
     }
     
     .mobile-menu {
-        width: min(360px, 80vw);
-        max-width: 80vw;
+        width: min(380px, 85vw); /* Más ancho en móviles grandes */
+        max-width: 85vw;
     }
     
     .mobile-menu-link {
-        padding: 1.125rem 1.5rem;
+        padding: 1.375rem 1.75rem; /* Área táctil aún más grande */
         font-size: var(--font-size-lg);
-        margin: 0.375rem 0;
+        margin: 0.5rem 0; /* Más espacio entre enlaces */
+        min-height: 60px; /* Área táctil más generosa */
+    }
+    
+    /* Mejorar scroll en móviles grandes */
+    .mobile-menu-content {
+        padding: 2rem 1.5rem 3rem 1.5rem;
+    }
+    
+    .mobile-menu-section {
+        margin-bottom: 3rem;
     }
     
     /* Botones más grandes en móviles grandes */
