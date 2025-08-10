@@ -471,17 +471,57 @@ function initializeHamburgerMenu() {
             anunciarParaLectorPantalla('Menú de navegación cerrado');
         }
         
-        // Event listeners
+        // Event listeners - Mejorados para móviles
         hamburgerBtn.addEventListener('click', toggleMobileMenu);
+        
+        // Agregar soporte táctil específico para el botón hamburguesa
+        if (isTouchDevice()) {
+            hamburgerBtn.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                this.style.transform = 'scale(0.95)';
+            }, { passive: false });
+            
+            hamburgerBtn.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                this.style.transform = '';
+                // Pequeño delay para evitar doble activación
+                setTimeout(() => {
+                    toggleMobileMenu();
+                }, 50);
+            }, { passive: false });
+        }
         
         // Botón de cerrar en el menú
         if (mobileMenuClose) {
             mobileMenuClose.addEventListener('click', closeMobileMenu);
+            
+            // Soporte táctil para botón cerrar
+            if (isTouchDevice()) {
+                mobileMenuClose.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    this.style.transform = 'scale(0.9)';
+                }, { passive: false });
+                
+                mobileMenuClose.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    this.style.transform = '';
+                    setTimeout(() => {
+                        closeMobileMenu();
+                    }, 50);
+                }, { passive: false });
+            }
         }
         
-        // Cerrar con overlay
+        // Cerrar con overlay - Mejorado para touch
         if (mobileMenuOverlay) {
             mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+            
+            if (isTouchDevice()) {
+                mobileMenuOverlay.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    closeMobileMenu();
+                }, { passive: false });
+            }
         }
         
         // Navegación por teclado en el menú hamburguesa
@@ -492,13 +532,52 @@ function initializeHamburgerMenu() {
             }
         });
         
-        // Cerrar menú al hacer clic en un enlace
+        // Cerrar menú al hacer clic en un enlace - Mejorado para móviles
         mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                closeMobileMenu();
-                // Pequeño delay para permitir la navegación
-                setTimeout(() => hamburgerBtn.focus(), 100);
+            link.addEventListener('click', function(e) {
+                // En dispositivos táctiles, prevenir el comportamiento por defecto
+                // y manejar la navegación manualmente
+                if (isTouchDevice()) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    closeMobileMenu();
+                    // Navegar después de cerrar el menú
+                    setTimeout(() => {
+                        if (href && href !== '#') {
+                            window.location.href = href;
+                        }
+                    }, 300); // Tiempo para que se complete la animación de cierre
+                } else {
+                    closeMobileMenu();
+                    // Pequeño delay para permitir la navegación
+                    setTimeout(() => hamburgerBtn.focus(), 100);
+                }
             });
+            
+            // Agregar feedback táctil específico para enlaces del menú
+            if (isTouchDevice()) {
+                link.addEventListener('touchstart', function(e) {
+                    this.style.backgroundColor = 'var(--accent-primary)';
+                    this.style.color = 'var(--text-light)';
+                    this.style.transform = 'translateX(8px) scale(1.02)';
+                }, { passive: true });
+                
+                link.addEventListener('touchend', function(e) {
+                    // Restaurar estilos después de un breve delay
+                    setTimeout(() => {
+                        this.style.backgroundColor = '';
+                        this.style.color = '';
+                        this.style.transform = '';
+                    }, 150);
+                }, { passive: true });
+                
+                link.addEventListener('touchcancel', function(e) {
+                    // Restaurar estilos si el touch es cancelado
+                    this.style.backgroundColor = '';
+                    this.style.color = '';
+                    this.style.transform = '';
+                }, { passive: true });
+            }
         });
         
         // Cerrar menú con Escape
@@ -509,7 +588,7 @@ function initializeHamburgerMenu() {
             }
         });
         
-        // Función para detectar scroll en el menú móvil
+        // Función para detectar scroll en el menú móvil - Mejorada para touch
         function initMobileMenuScroll() {
             if (!mobileMenu) return;
             
@@ -539,6 +618,51 @@ function initializeHamburgerMenu() {
             
             // Escuchar eventos de scroll
             mobileMenu.addEventListener('scroll', updateScrollIndicators, { passive: true });
+            
+            // Mejorar scroll en dispositivos táctiles
+            if (isTouchDevice()) {
+                // Habilitar momentum scrolling en iOS
+                mobileMenu.style.webkitOverflowScrolling = 'touch';
+                mobileMenu.style.overflowScrolling = 'touch';
+                
+                // Prevenir bounce en iOS cuando se llega al final
+                let isScrolling = false;
+                let scrollTimeout;
+                
+                mobileMenu.addEventListener('touchstart', function(e) {
+                    isScrolling = true;
+                    clearTimeout(scrollTimeout);
+                }, { passive: true });
+                
+                mobileMenu.addEventListener('touchmove', function(e) {
+                    const scrollTop = mobileMenu.scrollTop;
+                    const scrollHeight = mobileMenu.scrollHeight;
+                    const clientHeight = mobileMenu.clientHeight;
+                    
+                    // Prevenir overscroll en la parte superior
+                    if (scrollTop <= 0 && e.touches[0].clientY > e.touches[0].clientY) {
+                        e.preventDefault();
+                    }
+                    
+                    // Prevenir overscroll en la parte inferior
+                    if (scrollTop >= scrollHeight - clientHeight && e.touches[0].clientY < e.touches[0].clientY) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+                
+                mobileMenu.addEventListener('touchend', function(e) {
+                    scrollTimeout = setTimeout(() => {
+                        isScrolling = false;
+                    }, 100);
+                }, { passive: true });
+                
+                // Mejorar la respuesta del scroll
+                mobileMenu.addEventListener('scroll', function() {
+                    if (isScrolling) {
+                        updateScrollIndicators();
+                    }
+                }, { passive: true });
+            }
         }
         
         // Navegación por teclado mejorada dentro del menú

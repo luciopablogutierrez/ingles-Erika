@@ -4403,6 +4403,39 @@ input, textarea, select {
  
  /* Reglas específicas para pantallas muy pequeñas */
  @media (max-width: 480px) {
+     /* Mejoras específicas para el menú hamburguesa en pantallas pequeñas */
+     .mobile-menu {
+         width: 95vw !important; /* Más ancho en pantallas muy pequeñas */
+         max-width: 95vw !important;
+     }
+     
+     .mobile-menu-link {
+         padding: 1.5rem 1.25rem !important; /* Área táctil aún más grande */
+         font-size: 1.1rem !important; /* Texto más grande para mejor legibilidad */
+         margin: 1rem 0 !important; /* Más espacio entre enlaces */
+         min-height: 64px !important; /* Área táctil muy generosa */
+     }
+     
+     .mobile-menu-content {
+         padding: 1.5rem 1rem 4rem 1rem !important; /* Más padding para scroll cómodo */
+     }
+     
+     .mobile-menu-section {
+         margin-bottom: 3rem !important; /* Más espacio entre secciones */
+     }
+     
+     .hamburger-menu {
+         width: 48px !important; /* Botón más grande */
+         height: 48px !important;
+         padding: 0.75rem !important;
+     }
+     
+     .mobile-menu-close {
+         width: 48px !important; /* Botón cerrar más grande */
+         height: 48px !important;
+         font-size: 1.4rem !important;
+     }
+     
      /* Forzar grids problemáticos a una sola columna */
      [style*="grid-template-columns"] {
          grid-template-columns: 1fr !important;
@@ -4534,6 +4567,57 @@ input, textarea, select {
     .container {
         -webkit-overflow-scrolling: touch;
     }
+}
+
+/* Mejoras específicas para dispositivos táctiles */
+.touch-device .mobile-menu {
+    /* Mejorar el área de scroll táctil */
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    /* Optimizar rendimiento en dispositivos táctiles */
+    transform: translateZ(0);
+    will-change: scroll-position;
+}
+
+.touch-device .mobile-menu-link {
+    /* Mejorar feedback táctil */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    tap-highlight-color: rgba(0, 0, 0, 0.1);
+    /* Prevenir selección de texto durante el touch */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Optimizar para touch */
+    touch-action: manipulation;
+}
+
+.touch-device .hamburger-menu {
+    /* Mejorar área táctil del botón hamburguesa */
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    touch-action: manipulation;
+    /* Feedback visual mejorado */
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.touch-device .hamburger-menu:active {
+    transform: scale(0.95);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.touch-device .mobile-menu-close {
+    /* Mejorar botón de cerrar para touch */
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.touch-device .mobile-menu-close:active {
+    transform: scale(0.9);
+    background-color: var(--text-light);
+    color: var(--accent-primary);
 }
 
 /* Prevenir selección de texto en elementos interactivos */
