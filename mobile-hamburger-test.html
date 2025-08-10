@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Menú Hamburguesa Móvil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-white': '#ffffff',
+                        'custom-yellow': '#ffd700',
+                        'custom-yellow-dark': '#e6c200',
+                        'custom-black': '#000000',
+                        'custom-black-light': '#333333',
+                        'custom-gray': '#666666',
+                        'custom-gray-light': '#f5f5f5'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        /* Forzar visibilidad en móvil para prueba */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: flex !important;
+                background-color: #ffd700;
+                border: 2px solid #333;
+                padding: 8px;
+                border-radius: 8px;
+            }
+            .hamburger-line {
+                background-color: #333 !important;
+                height: 3px !important;
+                width: 24px !important;
+            }
+        }
+        
+        /* Debug info */
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="bg-custom-white">
+    <div class="debug-info">
+        <div>Ancho: <span id="width"></span>px</div>
+        <div>Dispositivo: <span id="device"></span></div>
+        <div>Touch: <span id="touch"></span></div>
+    </div>
+
+    <header class="bg-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-custom-yellow to-custom-yellow-dark rounded-full flex items-center justify-center shadow-lg">
+                        <span class="text-custom-black font-bold text-lg">E</span>
+                    </div>
+                    <h1 class="text-xl font-bold text-custom-black font-heading hidden sm:block">English Learning</h1>
+                </div>
+                
+                <!-- Hamburger menu for mobile -->
+                <button class="hamburger-menu md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none focus:ring-2 focus:ring-custom-yellow rounded-lg p-1" 
+                        aria-label="Open navigation menu" 
+                        aria-expanded="false"
+                        aria-controls="mobile-menu"
+                        type="button">
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                </button>
+                
+                <!-- Desktop navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="px-4 py-2 rounded-lg bg-custom-yellow text-custom-black font-medium">Home</a>
+                    <a href="#levels" class="px-4 py-2 rounded-lg text-custom-black-light hover:bg-custom-gray-light">Levels</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile dropdown menu -->
+        <div class="mobile-menu-overlay md:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden" id="mobile-menu">
+            <div class="mobile-menu fixed inset-y-0 right-0 w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
+                <div class="mobile-menu-header flex items-center justify-between p-6 border-b border-custom-gray-light bg-gradient-to-r from-custom-yellow to-custom-yellow-dark">
+                    <h2 class="text-lg font-bold text-custom-black">🎓 Navigation</h2>
+                    <button class="mobile-menu-close p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white" 
+                            aria-label="Close navigation menu"
+                            type="button">
+                        ✕
+                    </button>
+                </div>
+                
+                <div class="overflow-y-auto h-full pb-20">
+                    <div class="p-6">
+                        <div class="space-y-2">
+                            <a href="#home" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg bg-custom-yellow/10 text-custom-black-light hover:bg-custom-yellow/20 transition-colors duration-200">
+                                <span>🏠</span><span class="font-medium">Home</span>
+                            </a>
+                            <a href="#levels" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200">
+                                <span>📚</span><span class="font-medium">Levels</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Test del Menú Hamburguesa</h1>
+        <div class="text-center">
+            <p class="mb-4">Si estás en móvil, deberías ver el menú hamburguesa en la esquina superior derecha.</p>
+            <p class="mb-4">El menú hamburguesa tiene un fondo amarillo y líneas negras para mayor visibilidad.</p>
+            <button onclick="testMenu()" class="bg-custom-yellow text-custom-black px-6 py-3 rounded-lg font-medium hover:bg-custom-yellow-dark transition-colors">
+                Probar Menú Programáticamente
+            </button>
+        </div>
+    </main>
+
+    <script src="assets/script.js"></script>
+    <script>
+        // Debug info
+        function updateDebugInfo() {
+            document.getElementById('width').textContent = window.innerWidth;
+            document.getElementById('device').textContent = window.innerWidth < 768 ? 'Móvil' : 'Desktop';
+            document.getElementById('touch').textContent = 'ontouchstart' in window ? 'Sí' : 'No';
+        }
+        
+        function testMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const menu = document.querySelector('#mobile-menu');
+            
+            if (hamburger) {
+                console.log('Botón hamburguesa encontrado:', hamburger);
+                console.log('Clases del botón:', hamburger.className);
+                console.log('Estilo computado display:', getComputedStyle(hamburger).display);
+                
+                // Simular click
+                hamburger.click();
+                
+                setTimeout(() => {
+                    if (menu && !menu.classList.contains('hidden')) {
+                        alert('¡Menú abierto correctamente!');
+                    } else {
+                        alert('El menú no se abrió. Revisa la consola para más detalles.');
+                    }
+                }, 500);
+            } else {
+                alert('Botón hamburguesa no encontrado');
+            }
+        }
+        
+        updateDebugInfo();
+        window.addEventListener('resize', updateDebugInfo);
+        
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initializeHamburgerMenu === 'function') {
+                initializeHamburgerMenu();
+                console.log('Menú hamburguesa inicializado');
+            } else {
+                console.error('Función initializeHamburgerMenu no encontrada');
+            }
+        });
+    </script>
+</body>
+</html>

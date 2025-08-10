@@ -49,14 +49,14 @@
                 </div>
                 
                 <!-- Hamburger menu for mobile -->
-                <button class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none focus:ring-2 focus:ring-custom-yellow rounded-lg p-1" 
+                <button class="hamburger-menu md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none focus:ring-2 focus:ring-custom-yellow rounded-lg p-1" 
                         aria-label="Open navigation menu" 
                         aria-expanded="false"
                         aria-controls="mobile-menu"
                         type="button">
-                    <span class="block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
-                    <span class="block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
-                    <span class="block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
                 </button>
                 
                 <!-- Desktop navigation -->
@@ -82,11 +82,11 @@
         </div>
             
         <!-- Mobile dropdown menu -->
-        <div class="md:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden" id="mobile-menu" role="menu" aria-hidden="true" aria-label="Mobile navigation menu">
-            <div class="fixed inset-y-0 right-0 w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
-                <div class="flex items-center justify-between p-6 border-b border-custom-gray-light bg-gradient-to-r from-custom-yellow to-custom-yellow-dark">
+        <div class="mobile-menu-overlay md:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden" id="mobile-menu" role="menu" aria-hidden="true" aria-label="Mobile navigation menu">
+            <div class="mobile-menu fixed inset-y-0 right-0 w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
+                <div class="mobile-menu-header flex items-center justify-between p-6 border-b border-custom-gray-light bg-gradient-to-r from-custom-yellow to-custom-yellow-dark">
                     <h2 class="text-lg font-bold text-custom-black font-heading">🎓 Navigation</h2>
-                    <button class="p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white" 
+                    <button class="mobile-menu-close p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white" 
                             aria-label="Close navigation menu"
                             type="button">
                         <i class="fas fa-xmark text-custom-black text-lg" aria-hidden="true"></i>
@@ -98,13 +98,13 @@
                     <div class="p-6 border-b border-custom-gray-light">
                         <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📍 Main Sections</h3>
                         <div class="space-y-2">
-                            <a href="#home" class="flex items-center space-x-3 p-3 rounded-lg bg-custom-yellow/10 text-custom-black-light hover:bg-custom-yellow/20 transition-colors duration-200" role="menuitem">
+                            <a href="#home" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg bg-custom-yellow/10 text-custom-black-light hover:bg-custom-yellow/20 transition-colors duration-200" role="menuitem">
                                 <span>🏠</span><span class="font-medium">Home</span>
                             </a>
-                            <a href="#levels" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="#levels" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>📚</span><span class="font-medium">Levels</span>
                             </a>
-                            <a href="#about" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="#about" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>ℹ️</span><span class="font-medium">About</span>
                             </a>
                         </div>
@@ -114,19 +114,19 @@
                     <div class="p-6 border-b border-custom-gray-light">
                         <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">🎯 English Levels</h3>
                         <div class="space-y-2">
-                            <a href="a1/index.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="a1/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>🌱</span><span class="font-medium">A1 - Beginner</span>
                             </a>
-                            <a href="a2/index.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="a2/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>🌿</span><span class="font-medium">A2 - Elementary</span>
                             </a>
-                            <a href="b1/index.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="b1/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>🌳</span><span class="font-medium">B1 - Intermediate</span>
                             </a>
-                            <a href="b2/index.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="b2/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>🌲</span><span class="font-medium">B2 - Upper Intermediate</span>
                             </a>
-                            <a href="c1/index.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="c1/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>🏔️</span><span class="font-medium">C1 - Advanced</span>
                             </a>
                         </div>
@@ -136,22 +136,22 @@
                     <div class="p-6 border-b border-custom-gray-light">
                         <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📖 A1 Lessons</h3>
                         <div class="space-y-2">
-                            <a href="a1/saludos.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="a1/saludos.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>👋</span><span class="font-medium">Greetings</span>
                             </a>
-                            <a href="a1/abecedario.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="a1/abecedario.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>🔤</span><span class="font-medium">Alphabet</span>
                             </a>
-                            <a href="a1/numeros-colores.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="a1/numeros-colores.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>🔢</span><span class="font-medium">Numbers & Colors</span>
                             </a>
-                            <a href="a1/articulos.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="a1/articulos.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>📝</span><span class="font-medium">Articles</span>
                             </a>
-                            <a href="a1/verbo-to-be.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="a1/verbo-to-be.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>✨</span><span class="font-medium">Verb To Be</span>
                             </a>
-                            <a href="a1/preguntas-basicas.html" class="flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
+                            <a href="a1/preguntas-basicas.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
                                 <span>❓</span><span class="font-medium">Basic Questions</span>
                             </a>
                         </div>
