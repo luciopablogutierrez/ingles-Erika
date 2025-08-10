@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -16,7 +17,8 @@
                         'custom-black': '#000000',
                         'custom-black-light': '#333333',
                         'custom-gray': '#666666',
-                        'custom-gray-light': '#f5f5f5'
+                        'custom-gray-light': '#f5f5f5',
+                        'custom-gray-dark': '#222222'
                     }
                 }
             }
@@ -25,9 +27,9 @@
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-custom-white dark:bg-custom-black text-custom-black dark:text-custom-white transition-colors duration-300">
     <!-- Header with hamburger menu -->
-    <header class="bg-white shadow-lg sticky top-0 z-40">
+    <header class="bg-white dark:bg-custom-black shadow-lg sticky top-0 z-40 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -35,7 +37,7 @@
                     <div class="w-10 h-10 bg-gradient-to-br from-custom-yellow to-custom-yellow-dark rounded-full flex items-center justify-center shadow-lg">
                         <span class="text-custom-black font-bold text-lg">E</span>
                     </div>
-                    <h1 class="text-lg sm:text-xl font-bold text-custom-black font-heading hidden xs:block">English Learning</h1>
+                    <h1 class="text-lg sm:text-xl font-bold text-custom-black dark:text-custom-white font-heading hidden xs:block transition-colors duration-300">English Learning</h1>
                 </div>
                 
                 <!-- Hamburger menu for mobile -->
@@ -44,9 +46,9 @@
                         aria-expanded="false"
                         aria-controls="mobile-menu"
                         type="button">
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
                 </button>
                 
                 <!-- Desktop navigation -->

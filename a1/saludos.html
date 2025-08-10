@@ -37,16 +37,16 @@
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-custom-white text-custom-black font-primary">
+<body class="bg-custom-white dark:bg-custom-black text-custom-black dark:text-custom-white font-primary transition-colors duration-300">
     <!-- Skip link para navegación por teclado -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-custom-yellow text-custom-black px-4 py-2 rounded-lg font-medium z-50">Skip to main content</a>
     
     <header role="banner">
-        <nav class="bg-white/95 backdrop-blur-sm border-b border-custom-gray-light sticky top-0 z-40">
+        <nav class="bg-white/95 dark:bg-custom-black/95 backdrop-blur-sm border-b border-custom-gray-light dark:border-custom-gray sticky top-0 z-40 transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-16">
                     <div class="flex-shrink-0">
-                        <h1 class="text-xl font-bold font-heading text-custom-black">English Learning</h1>
+                        <h1 class="text-xl font-bold font-heading text-custom-black dark:text-custom-white transition-colors duration-300">English Learning</h1>
                     </div>
                     
                     <!-- Menú hamburguesa para móviles -->
@@ -58,11 +58,11 @@
                     
                     <!-- Navegación desktop -->
                     <div class="hidden md:flex items-center space-x-6">
-                        <a href="../index.html" class="flex items-center space-x-2 text-custom-black hover:text-custom-yellow transition-colors duration-300 font-medium">🏠 <span>Home</span></a>
-                        <a href="../index.html#levels" class="flex items-center space-x-2 text-custom-black hover:text-custom-yellow transition-colors duration-300 font-medium">📚 <span>Levels</span></a>
-                        <a href="../index.html#about" class="flex items-center space-x-2 text-custom-black hover:text-custom-yellow transition-colors duration-300 font-medium">ℹ️ <span>About</span></a>
-                        <button id="theme-toggle" class="p-2 rounded-lg bg-custom-gray-light hover:bg-custom-yellow transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" aria-label="Change theme">
-                            🌙
+                        <a href="../index.html" class="flex items-center space-x-2 text-custom-black dark:text-custom-white hover:text-custom-yellow transition-colors duration-300 font-medium">🏠 <span>Home</span></a>
+                        <a href="../index.html#levels" class="flex items-center space-x-2 text-custom-black dark:text-custom-white hover:text-custom-yellow transition-colors duration-300 font-medium">📚 <span>Levels</span></a>
+                        <a href="../index.html#about" class="flex items-center space-x-2 text-custom-black dark:text-custom-white hover:text-custom-yellow transition-colors duration-300 font-medium">ℹ️ <span>About</span></a>
+                        <button class="theme-toggle p-2 rounded-lg bg-custom-gray-light dark:bg-custom-gray hover:bg-custom-yellow transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" aria-label="Change theme">
+                            <i class="fas fa-sun" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
@@ -70,10 +70,10 @@
         </nav>
         
         <!-- Menú móvil -->
-        <div class="mobile-menu fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-            <div class="mobile-menu-header flex items-center justify-between p-6 border-b border-custom-gray-light">
-                <h2 class="text-xl font-bold font-heading text-custom-black">Navigation</h2>
-                <button class="mobile-menu-close p-2 rounded-lg hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" aria-label="Close menu">
+        <div class="mobile-menu fixed inset-y-0 left-0 z-50 w-80 bg-white dark:bg-custom-black shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="mobile-menu-header flex items-center justify-between p-6 border-b border-custom-gray-light dark:border-custom-gray">
+                <h2 class="text-xl font-bold font-heading text-custom-black dark:text-custom-white">Navigation</h2>
+                <button class="mobile-menu-close p-2 rounded-lg hover:bg-custom-gray-light dark:hover:bg-custom-gray transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" aria-label="Close menu">
                     ✕
                 </button>
             </div>
@@ -81,11 +81,11 @@
             <div class="overflow-y-auto h-full pb-20">
                 <div class="p-6 space-y-6">
                     <div>
-                        <h3 class="text-sm font-semibold text-custom-black-light uppercase tracking-wider mb-3">Navegación Principal</h3>
+                        <h3 class="text-sm font-semibold text-custom-black-light dark:text-custom-gray-light uppercase tracking-wider mb-3">Navegación Principal</h3>
                         <div class="space-y-2">
-                            <a href="../index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black">🏠 <span>Inicio</span></a>
-                            <a href="../index.html#levels" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black">📚 <span>Niveles</span></a>
-                            <a href="../index.html#about" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black">ℹ️ <span>Acerca de</span></a>
+                            <a href="../index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black dark:text-custom-white">🏠 <span>Inicio</span></a>
+                            <a href="../index.html#levels" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black dark:text-custom-white">📚 <span>Niveles</span></a>
+                            <a href="../index.html#about" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg hover:bg-custom-yellow/10 transition-colors duration-300 text-custom-black dark:text-custom-white">ℹ️ <span>Acerca de</span></a>
                         </div>
                     </div>
                     
@@ -118,8 +118,8 @@
                     </div>
                     
                     <div class="pt-6 border-t border-custom-gray-light">
-                        <button id="mobile-theme-toggle" class="flex items-center space-x-3 w-full p-3 rounded-lg bg-custom-gray-light hover:bg-custom-yellow transition-colors duration-300 text-custom-black font-medium" aria-label="Cambiar tema">
-                            🌙 <span>Cambiar Tema</span>
+                        <button class="mobile-theme-toggle flex items-center space-x-3 w-full p-3 rounded-lg bg-custom-gray-light dark:bg-custom-gray hover:bg-custom-yellow transition-colors duration-300 text-custom-black dark:text-custom-white font-medium" aria-label="Cambiar tema">
+                            <i class="fas fa-sun" aria-hidden="true"></i> <span>Cambiar Tema</span>
                         </button>
                     </div>
                 </div>
@@ -140,12 +140,12 @@
         </div>
     </header>
 
-    <main id="main-content" role="main" class="min-h-screen bg-custom-white">
+    <main id="main-content" role="main" class="min-h-screen bg-custom-white dark:bg-custom-black transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <!-- Navegación de lección mejorada -->
             <nav class="mb-8" role="navigation" aria-label="Navegación de lección">
                 <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div class="flex items-center space-x-2 text-sm text-custom-black-light">
+                    <div class="flex items-center space-x-2 text-sm text-custom-black-light dark:text-custom-gray-light">
                         <a href="../index.html" class="flex items-center space-x-1 hover:text-custom-yellow transition-colors duration-300">
                             <i class="fas fa-home"></i>
                             <span>Inicio</span>
@@ -155,10 +155,10 @@
                             <span>Nivel A1</span>
                         </a>
                         <span class="text-custom-gray">›</span>
-                        <span class="text-custom-black font-medium">Saludos y Presentaciones</span>
+                        <span class="text-custom-black dark:text-custom-white font-medium">Saludos y Presentaciones</span>
                     </div>
                     <div class="flex items-center space-x-4">
-                        <a href="index.html" class="flex items-center space-x-2 px-4 py-2 bg-custom-gray-light hover:bg-custom-yellow rounded-lg transition-colors duration-300 text-custom-black">
+                        <a href="index.html" class="flex items-center space-x-2 px-4 py-2 bg-custom-gray-light dark:bg-custom-gray hover:bg-custom-yellow rounded-lg transition-colors duration-300 text-custom-black dark:text-custom-white">
                             <i class="fas fa-arrow-left"></i>
                             <span>Volver a A1</span>
                         </a>
@@ -171,13 +171,13 @@
             </nav>
 
             <!-- Encabezado de la lección -->
-            <div class="bg-gradient-to-br from-custom-yellow/10 to-sage-green/10 rounded-2xl p-8 mb-8 border border-custom-yellow/20">
+            <div class="bg-gradient-to-br from-custom-yellow/10 to-sage-green/10 dark:from-custom-yellow/20 dark:to-sage-green/20 rounded-2xl p-8 mb-8 border border-custom-yellow/20 dark:border-custom-yellow/30">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                     <div class="flex items-start space-x-4">
                         <div class="text-4xl bg-custom-yellow rounded-full w-16 h-16 flex items-center justify-center">👋</div>
                         <div>
-                            <h1 class="text-2xl md:text-3xl font-bold font-heading text-custom-black mb-2">Saludos y Presentaciones</h1>
-                            <p class="text-lg text-custom-black-light">Aprende a saludar y presentarte en inglés de manera natural</p>
+                            <h1 class="text-2xl md:text-3xl font-bold font-heading text-custom-black dark:text-custom-white mb-2">Saludos y Presentaciones</h1>
+                            <p class="text-lg text-custom-black-light dark:text-custom-gray-light">Aprende a saludar y presentarte en inglés de manera natural</p>
                         </div>
                     </div>
                     <div class="flex flex-wrap gap-4">
