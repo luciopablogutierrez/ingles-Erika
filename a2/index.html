@@ -507,12 +507,15 @@
             
             // Actualizar barra de progreso
             const porcentaje = (leccionesCompletadas / totalLecciones) * 100;
-            const progressFill = document.getElementById('a2-progress');
-            const progressText = document.getElementById('progress-text');
+            const progressBar = document.getElementById('progress-bar');
+            const progressPercentage = document.getElementById('progress-percentage');
             
-            progressFill.style.width = porcentaje + '%';
-            progressFill.textContent = Math.round(porcentaje) + '%';
-            progressText.textContent = `${leccionesCompletadas} de ${totalLecciones} lecciones completadas`;
+            if (progressBar) {
+                progressBar.style.width = porcentaje + '%';
+            }
+            if (progressPercentage) {
+                progressPercentage.textContent = Math.round(porcentaje) + '%';
+            }
             
             // Guardar progreso general
             localStorage.setItem('a2-completadas', leccionesCompletadas.toString());

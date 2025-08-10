@@ -222,18 +222,30 @@
             }
             
             // Update progress
-            updateProgressDisplay('c1');
+            actualizarProgresoC1();
         });
         
-        function updateProgressDisplay(level) {
-            const progress = getLessonProgress(level);
-            const progressBar = document.getElementById(`${level}-progress`);
-            const progressText = document.querySelector('.progress-text');
+        function actualizarProgresoC1() {
+            // Obtener todas las lecciones de C1
+            const lecciones = document.querySelectorAll('.lesson-card');
+            let completadas = 0;
             
-            if (progressBar && progressText) {
-                const percentage = (progress.completed / progress.total) * 100;
-                progressBar.style.width = percentage + '%';
-                progressText.textContent = `${progress.completed} of ${progress.total} lessons completed`;
+            lecciones.forEach(leccion => {
+                const lessonId = leccion.getAttribute('data-lesson');
+                if (lessonId && localStorage.getItem(`lesson_${lessonId}_completed`)) {
+                    completadas++;
+                    leccion.classList.add('completed');
+                }
+            });
+            
+            const total = lecciones.length;
+            const progressBar = document.getElementById('progress-bar');
+            const progressPercentage = document.getElementById('progress-percentage');
+            
+            if (progressBar && progressPercentage) {
+                const porcentaje = total > 0 ? (completadas / total) * 100 : 0;
+                progressBar.style.width = porcentaje + '%';
+                progressPercentage.textContent = Math.round(porcentaje) + '%';
             }
         }
     </script>
