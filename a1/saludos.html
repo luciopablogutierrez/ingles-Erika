@@ -140,55 +140,59 @@
         </div>
     </header>
 
-    <main id="main-content" role="main">
-        <div class="lesson-container">
+    <main id="main-content" role="main" class="min-h-screen bg-custom-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <!-- Navegación de lección mejorada -->
-            <nav class="lesson-breadcrumb" role="navigation" aria-label="Navegación de lección">
-                <div class="breadcrumb-container">
-                    <a href="../index.html" class="breadcrumb-link">
-                        <i class="fas fa-home"></i>
-                        <span>Inicio</span>
-                    </a>
-                    <span class="breadcrumb-separator">›</span>
-                    <a href="index.html" class="breadcrumb-link">
-                        <span>Nivel A1</span>
-                    </a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Saludos y Presentaciones</span>
-                </div>
-                <div class="lesson-navigation">
-                    <a href="index.html" class="nav-btn nav-prev">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>Volver a A1</span>
-                    </a>
-                    <a href="abecedario.html" class="nav-btn nav-next">
-                        <span>Siguiente: Abecedario</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+            <nav class="mb-8" role="navigation" aria-label="Navegación de lección">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div class="flex items-center space-x-2 text-sm text-custom-black-light">
+                        <a href="../index.html" class="flex items-center space-x-1 hover:text-custom-yellow transition-colors duration-300">
+                            <i class="fas fa-home"></i>
+                            <span>Inicio</span>
+                        </a>
+                        <span class="text-custom-gray">›</span>
+                        <a href="index.html" class="hover:text-custom-yellow transition-colors duration-300">
+                            <span>Nivel A1</span>
+                        </a>
+                        <span class="text-custom-gray">›</span>
+                        <span class="text-custom-black font-medium">Saludos y Presentaciones</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="index.html" class="flex items-center space-x-2 px-4 py-2 bg-custom-gray-light hover:bg-custom-yellow rounded-lg transition-colors duration-300 text-custom-black">
+                            <i class="fas fa-arrow-left"></i>
+                            <span>Volver a A1</span>
+                        </a>
+                        <a href="abecedario.html" class="flex items-center space-x-2 px-4 py-2 bg-custom-yellow hover:bg-custom-yellow-dark rounded-lg transition-colors duration-300 text-custom-black font-medium">
+                            <span>Siguiente: Abecedario</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </nav>
 
             <!-- Encabezado de la lección -->
-            <div class="lesson-header-content">
-                <div class="lesson-title-section">
-                    <div class="lesson-icon">👋</div>
-                    <div class="lesson-title-text">
-                        <h1>Saludos y Presentaciones</h1>
-                        <p class="lesson-subtitle">Aprende a saludar y presentarte en inglés de manera natural</p>
+            <div class="bg-gradient-to-br from-custom-yellow/10 to-sage-green/10 rounded-2xl p-8 mb-8 border border-custom-yellow/20">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-4xl bg-custom-yellow rounded-full w-16 h-16 flex items-center justify-center">👋</div>
+                        <div>
+                            <h1 class="text-2xl md:text-3xl font-bold font-heading text-custom-black mb-2">Saludos y Presentaciones</h1>
+                            <p class="text-lg text-custom-black-light">Aprende a saludar y presentarte en inglés de manera natural</p>
+                        </div>
                     </div>
-                </div>
-                <div class="lesson-meta">
-                    <div class="meta-item">
-                        <i class="fas fa-clock"></i>
-                        <span>15-20 min</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-signal"></i>
-                        <span>Principiante</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-users"></i>
-                        <span>Conversación</span>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center space-x-2 bg-white rounded-lg px-3 py-2 shadow-sm">
+                            <i class="fas fa-clock text-custom-yellow"></i>
+                            <span class="text-sm font-medium text-custom-black">15-20 min</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-white rounded-lg px-3 py-2 shadow-sm">
+                            <i class="fas fa-signal text-sage-green"></i>
+                            <span class="text-sm font-medium text-custom-black">Principiante</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-white rounded-lg px-3 py-2 shadow-sm">
+                            <i class="fas fa-users text-terracotta"></i>
+                            <span class="text-sm font-medium text-custom-black">Conversación</span>
+                        </div>
                     </div>
                 </div>
             </div>
