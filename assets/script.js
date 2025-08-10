@@ -176,10 +176,14 @@ function toggleRespuesta(elementId) {
 
 // Sistema de cambio de tema
 function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const isDark = document.documentElement.classList.contains('dark');
+    const newTheme = isDark ? 'light' : 'dark';
     
-    document.documentElement.setAttribute('data-theme', newTheme);
+    if (newTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
     localStorage.setItem('theme', newTheme);
     
     // Actualizar icono del botón desktop
@@ -207,7 +211,11 @@ function toggleTheme() {
 // Cargar tema guardado
 function loadTheme() {
     const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
     
     // Actualizar icono del botón desktop
     const themeIcon = document.querySelector('.theme-toggle i');
