@@ -394,6 +394,19 @@ function initializeHamburgerMenu() {
     const mobileMenuClose = document.querySelector('.mobile-menu-close');
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
     
+    // Función para actualizar viewport height en móviles
+    function updateViewportHeight() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    
+    // Actualizar viewport height al cargar y redimensionar
+    updateViewportHeight();
+    window.addEventListener('resize', updateViewportHeight);
+    window.addEventListener('orientationchange', () => {
+        setTimeout(updateViewportHeight, 100);
+    });
+    
     if (hamburgerBtn && mobileMenu) {
         // Configurar atributos de accesibilidad iniciales
         hamburgerBtn.setAttribute('aria-expanded', 'false');
@@ -476,19 +489,29 @@ function initializeHamburgerMenu() {
         
         // Agregar soporte táctil específico para el botón hamburguesa
         if (isTouchDevice()) {
+            let touchStarted = false;
+            
             hamburgerBtn.addEventListener('touchstart', function(e) {
-                e.preventDefault();
+                touchStarted = true;
                 this.style.transform = 'scale(0.95)';
-            }, { passive: false });
+            }, { passive: true });
             
             hamburgerBtn.addEventListener('touchend', function(e) {
-                e.preventDefault();
-                this.style.transform = '';
-                // Pequeño delay para evitar doble activación
-                setTimeout(() => {
-                    toggleMobileMenu();
-                }, 50);
+                if (touchStarted) {
+                    e.preventDefault();
+                    this.style.transform = '';
+                    touchStarted = false;
+                    // Pequeño delay para evitar doble activación
+                    setTimeout(() => {
+                        toggleMobileMenu();
+                    }, 100);
+                }
             }, { passive: false });
+            
+            hamburgerBtn.addEventListener('touchcancel', function() {
+                this.style.transform = '';
+                touchStarted = false;
+            });
         }
         
         // Botón de cerrar en el menú
@@ -497,18 +520,28 @@ function initializeHamburgerMenu() {
             
             // Soporte táctil para botón cerrar
             if (isTouchDevice()) {
+                let closeButtonTouchStarted = false;
+                
                 mobileMenuClose.addEventListener('touchstart', function(e) {
-                    e.preventDefault();
+                    closeButtonTouchStarted = true;
                     this.style.transform = 'scale(0.9)';
-                }, { passive: false });
+                }, { passive: true });
                 
                 mobileMenuClose.addEventListener('touchend', function(e) {
-                    e.preventDefault();
-                    this.style.transform = '';
-                    setTimeout(() => {
-                        closeMobileMenu();
-                    }, 50);
+                    if (closeButtonTouchStarted) {
+                        e.preventDefault();
+                        this.style.transform = '';
+                        closeButtonTouchStarted = false;
+                        setTimeout(() => {
+                            closeMobileMenu();
+                        }, 100);
+                    }
                 }, { passive: false });
+                
+                mobileMenuClose.addEventListener('touchcancel', function() {
+                    this.style.transform = '';
+                    closeButtonTouchStarted = false;
+                });
             }
         }
         

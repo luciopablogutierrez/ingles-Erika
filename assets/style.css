@@ -329,27 +329,30 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: var(--touch-target-comfortable);
-    height: var(--touch-target-comfortable);
-    background: transparent;
-    border: 2px solid var(--text-primary);
-    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    background: var(--yellow);
+    border: 2px solid var(--yellow-dark);
+    border-radius: 8px;
     cursor: pointer;
-    transition: all var(--transition-normal);
+    transition: all 0.3s ease;
     z-index: 1002;
     /* Área de touch optimizada - mínimo 44x44px */
-    padding: 8px;
-    margin: 4px;
+    padding: 4px;
+    margin: 0;
     /* Optimización para touch */
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     /* Posición accesible para pulgar */
     position: relative;
+    /* Mejor contraste visual */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .hamburger-menu:hover {
-    background: var(--terracotta);
-    border-color: var(--terracotta);
+    background: var(--yellow-dark);
+    border-color: var(--yellow-dark);
+    transform: scale(1.05);
 }
 
 .hamburger-menu:focus {
@@ -358,16 +361,17 @@ body {
 }
 
 .hamburger-line {
-    width: 24px;
-    height: 3px;
-    background: var(--text-primary);
-    margin: 2px 0;
+    width: 20px;
+    height: 2px;
+    background: var(--black);
+    margin: 3px 0;
     transition: all 0.3s ease;
-    border-radius: 2px;
+    border-radius: 1px;
+    display: block;
 }
 
 .hamburger-menu:hover .hamburger-line {
-    background: var(--text-light);
+    background: var(--black);
 }
 
 /* Animación del menú hamburguesa cuando está abierto */
@@ -438,16 +442,20 @@ body {
     position: fixed;
     top: 0;
     right: -100%;
-    width: min(340px, 90vw); /* Más ancho para mejor navegación */
-    max-width: 90vw; /* Más espacio para contenido */
-    height: calc(var(--vh, 1vh) * 100); /* Viewport height dinámico */
-    background: var(--card-bg);
-    border-left: 1px solid var(--border-color);
-    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transición más suave */
+    width: min(320px, 85vw); /* Ancho optimizado para móvil */
+    max-width: 85vw;
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height para móviles modernos */
+    background: var(--white);
+    border-left: 2px solid var(--yellow);
+    transition: right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 1001;
     overflow-y: auto;
     overflow-x: hidden;
-    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.15);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+    /* Mejoras para scroll en móvil */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     /* Optimización para scroll táctil mejorada */
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
@@ -479,32 +487,42 @@ body {
 
 /* Botón cerrar - Touch target mínimo 44x44px */
 .mobile-menu-close {
-    background: transparent;
-    border: 2px solid var(--text-light);
-    color: var(--text-light);
-    width: var(--touch-target-min); /* 44px mínimo */
-    height: var(--touch-target-min); /* 44px mínimo */
-    border-radius: 50%;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--white);
+    border: 2px solid var(--yellow);
+    color: var(--black);
+    width: 44px; /* Área táctil mínima */
+    height: 44px; /* Área táctil mínima */
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all var(--transition-normal);
+    transition: all 0.2s ease;
     /* Optimización táctil */
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
-    font-size: 1.2rem;
+    font-size: 20px;
     font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.mobile-menu-close:hover {
-    background: var(--text-light);
-    color: var(--accent-primary);
+.mobile-menu-close:hover,
+.mobile-menu-close:active {
+    background: var(--yellow);
+    color: var(--black);
+    transform: scale(1.05);
+    border-color: var(--yellow-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .mobile-menu-close:focus {
-    outline: 3px solid var(--focus-color);
+    outline: 2px solid var(--yellow);
     outline-offset: 2px;
+    background: var(--yellow-light);
+    color: var(--black);
 }
 
 .mobile-menu-content {
@@ -527,42 +545,40 @@ body {
 
 /* Links del menú móvil - Optimizados para pulgar */
 .mobile-menu-link {
-    display: block;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: var(--font-size-lg); /* Texto más grande para mejor legibilidad */
-    padding: 1.25rem 1.5rem; /* Área táctil más generosa */
-    margin: 0.75rem 0; /* Más espacio entre elementos para evitar toques accidentales */
-    border-radius: 12px; /* Bordes más redondeados */
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 2px solid transparent;
-    font-weight: 500;
-    min-height: 56px; /* Área táctil más grande que el mínimo */
     display: flex;
     align-items: center;
+    color: var(--black-light);
+    text-decoration: none;
+    font-size: 16px; /* Tamaño mínimo legible en móvil */
+    padding: 16px 20px; /* Área táctil generosa */
+    margin: 4px 12px; /* Espacio entre elementos */
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    font-weight: 500;
+    min-height: 48px; /* Área táctil mínima recomendada */
     /* Optimización táctil */
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
-    /* Área de pulgar cómoda */
     position: relative;
-    /* Indicador visual de navegación */
-    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.02) 100%);
+    background: transparent;
 }
 
-.mobile-menu-link:hover {
-    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-tertiary) 100%);
-    color: var(--text-light);
-    border-color: var(--accent-primary);
-    transform: translateX(8px) scale(1.02); /* Efecto más pronunciado */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.mobile-menu-link:hover,
+.mobile-menu-link:active {
+    background: var(--yellow);
+    color: var(--black);
+    border-color: var(--yellow-dark);
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-menu-link:focus {
-    outline: 3px solid var(--focus-color);
-    outline-offset: 3px;
-    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-tertiary) 100%);
-    color: var(--text-light);
-    transform: translateX(4px);
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
+    background: var(--yellow-light);
+    color: var(--black);
+    transform: translateX(2px);
 }
 
 .mobile-theme-toggle {
@@ -632,13 +648,16 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: calc(var(--vh, 1vh) * 100); /* Viewport height dinámico */
-    background: rgba(0, 0, 0, 0.6); /* Overlay más oscuro */
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height para móviles modernos */
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s ease;
     z-index: 1000;
-    backdrop-filter: blur(2px); /* Efecto de desenfoque */
+    backdrop-filter: blur(4px);
+    /* Prevenir scroll del body cuando está activo */
+    overscroll-behavior: contain;
 }
 
 .mobile-menu-overlay.active {
@@ -2013,21 +2032,34 @@ footer {
 }
 
 /* Menú hamburguesa para móviles */
-@media (max-width: 768px) {
+/* Media queries para móvil - Asegurar visibilidad del menú hamburguesa */
+@media (max-width: 767px) {
     .hamburger-menu {
-        display: flex;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .desktop-nav {
-        display: none;
+        display: none !important;
     }
     
     .nav-container {
         padding: 1rem;
+        position: relative;
     }
     
     .nav-brand h1 {
         font-size: 1.3rem;
+    }
+    
+    /* Asegurar que el menú móvil funcione correctamente */
+    .mobile-menu-overlay {
+        display: block;
+    }
+    
+    .mobile-menu {
+        display: block;
     }
 }
 
@@ -4003,10 +4035,20 @@ footer {
     /* Cambiar a navegación desktop en tablets */
     .hamburger-menu {
         display: none !important;
+        visibility: hidden !important;
     }
     
     .desktop-nav {
         display: flex !important;
+    }
+    
+    /* Ocultar menú móvil en desktop */
+    .mobile-menu-overlay {
+        display: none !important;
+    }
+    
+    .mobile-menu {
+        display: none !important;
     }
     
     /* Grid de 2 columnas en tablets */
