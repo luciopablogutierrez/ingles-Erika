@@ -4467,6 +4467,21 @@ input, textarea, select {
     h5 { font-size: max(16px, 1.2rem) !important; }
     h6 { font-size: max(16px, 1.1rem) !important; }
     
+    /* Mejoras específicas para stat-value en móviles */
+    .stat-value {
+        font-size: max(18px, 1.4rem) !important;
+        font-weight: 800 !important;
+        color: var(--text-primary) !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .stat-label {
+        font-size: max(14px, 1rem) !important;
+        opacity: 0.9 !important;
+        color: var(--text-secondary) !important;
+    }
+    
     /* Mejoras específicas para el menú hamburguesa en pantallas pequeñas */
     .mobile-menu {
         width: 95vw !important; /* Más ancho en pantallas muy pequeñas */
