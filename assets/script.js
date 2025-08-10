@@ -182,16 +182,26 @@ function toggleTheme() {
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     
-    // Actualizar icono del botón
+    // Actualizar icono del botón desktop
     const themeIcon = document.querySelector('.theme-toggle i');
     const themeButton = document.querySelector('.theme-toggle');
     if (themeIcon && themeButton) {
         themeIcon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
         themeButton.setAttribute('aria-label', 
             newTheme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-        anunciarParaLectorPantalla(
-            'Tema cambiado a modo ' + (newTheme === 'dark' ? 'oscuro' : 'claro'));
     }
+    
+    // Actualizar icono del botón móvil
+    const mobileThemeIcon = document.querySelector('.mobile-theme-toggle i');
+    const mobileThemeButton = document.querySelector('.mobile-theme-toggle');
+    if (mobileThemeIcon && mobileThemeButton) {
+        mobileThemeIcon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        mobileThemeButton.setAttribute('aria-label', 
+            newTheme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+    }
+    
+    anunciarParaLectorPantalla(
+        'Tema cambiado a modo ' + (newTheme === 'dark' ? 'oscuro' : 'claro'));
 }
 
 // Cargar tema guardado
@@ -199,12 +209,21 @@ function loadTheme() {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     
-    // Actualizar icono del botón
+    // Actualizar icono del botón desktop
     const themeIcon = document.querySelector('.theme-toggle i');
     const themeButton = document.querySelector('.theme-toggle');
     if (themeIcon && themeButton) {
         themeIcon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
         themeButton.setAttribute('aria-label', 
+            savedTheme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+    }
+    
+    // Actualizar icono del botón móvil
+    const mobileThemeIcon = document.querySelector('.mobile-theme-toggle i');
+    const mobileThemeButton = document.querySelector('.mobile-theme-toggle');
+    if (mobileThemeIcon && mobileThemeButton) {
+        mobileThemeIcon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        mobileThemeButton.setAttribute('aria-label', 
             savedTheme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
     }
 }
@@ -848,11 +867,25 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Configurar botón de tema
     const themeToggle = document.querySelector('.theme-toggle');
+    const mobileThemeToggle = document.querySelector('.mobile-theme-toggle');
+    
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
         
         // Navegación por teclado para el botón de tema
         themeToggle.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleTheme();
+            }
+        });
+    }
+    
+    if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+        
+        // Navegación por teclado para el botón móvil de tema
+        mobileThemeToggle.addEventListener('keydown', function(event) {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
                 toggleTheme();
