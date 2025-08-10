@@ -1,16 +1,16 @@
 /* Variables CSS - Mobile First Design Completo */
 :root {
-    /* Paleta de colores suaves y naturales */
-    --cream: #f7f3f0;
-    --cream-light: #faf8f5;
-    --terracotta: #d4756b;
-    --terracotta-light: #e8a298;
-    --sage-green: #9caf88;
-    --sage-green-light: #b8c9a8;
-    --nude: #e6d2c1;
-    --nude-light: #f0e5d8;
-    --dusty-rose: #d4a5a5;
-    --dusty-rose-light: #e8c5c5;
+    /* Paleta de colores del cliente: Blanco, Amarillo, Negro */
+    --white: #ffffff;
+    --white-light: #fafafa;
+    --yellow: #ffd700;
+    --yellow-light: #ffed4e;
+    --yellow-dark: #e6c200;
+    --black: #000000;
+    --black-light: #333333;
+    --gray: #666666;
+    --gray-light: #f5f5f5;
+    --gray-dark: #222222;
     
     /* Tipografía Mobile First - Mínimo 16px base */
     --font-family-primary: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -75,55 +75,55 @@
     --z-tooltip: 1060;
     
     /* Colores principales */
-    --bg-primary: linear-gradient(135deg, var(--cream) 0%, var(--nude-light) 100%);
-    --bg-secondary: var(--cream-light);
-    --text-primary: #3a3a3a;
-    --text-secondary: #6b6b6b;
-    --text-light: #ffffff;
-    --nav-bg: rgba(247, 243, 240, 0.95);
-    --card-bg: #ffffff;
-    --border-color: var(--nude);
-    --shadow: rgba(212, 117, 107, 0.1);
-    --shadow-hover: rgba(212, 117, 107, 0.2);
-    --accent-primary: var(--terracotta);
-    --accent-secondary: var(--sage-green);
-    --accent-tertiary: var(--dusty-rose);
-    --focus-color: var(--terracotta);
+    --bg-primary: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
+    --bg-secondary: var(--white-light);
+    --text-primary: #2d2d2d;
+    --text-secondary: var(--gray);
+    --text-light: #f8f8f8;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --card-bg: var(--white);
+    --border-color: var(--gray-light);
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.2);
+    --accent-primary: var(--yellow);
+    --accent-secondary: #2d2d2d;
+    --accent-tertiary: var(--yellow-dark);
+    --focus-color: var(--yellow);
     --error-color: #e57373;
-    --success-color: var(--sage-green);
-    --warning-color: #ffb74d;
+    --success-color: var(--yellow-dark);
+    --warning-color: var(--yellow-light);
 }
 
-/* Modo oscuro cálido y acogedor */
+/* Modo oscuro con paleta del cliente */
 [data-theme="dark"] {
-    --cream: #2a2520;
-    --cream-light: #332e28;
-    --terracotta: #e8a298;
-    --terracotta-light: #f0b8ae;
-    --sage-green: #b8c9a8;
-    --sage-green-light: #c8d4b8;
-    --nude: #4a3f36;
-    --nude-light: #5a4d42;
-    --dusty-rose: #e8c5c5;
-    --dusty-rose-light: #f0d5d5;
+    --white: #1a1a1a;
+    --white-light: #2a2a2a;
+    --yellow: #ffd700;
+    --yellow-light: #ffed4e;
+    --yellow-dark: #e6c200;
+    --black: #ffffff;
+    --black-light: #f0f0f0;
+    --gray: #cccccc;
+    --gray-light: #333333;
+    --gray-dark: #f5f5f5;
     
-    --bg-primary: linear-gradient(135deg, #2a2520 0%, #332e28 100%);
-    --bg-secondary: #1f1c18;
-    --text-primary: var(--cream-light);
-    --text-secondary: #b8b0a8;
-    --text-light: #ffffff;
-    --nav-bg: rgba(42, 37, 32, 0.95);
-    --card-bg: #2a2520;
-    --border-color: var(--nude);
+    --bg-primary: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    --bg-secondary: #0f0f0f;
+    --text-primary: #e8e8e8;
+    --text-secondary: #cccccc;
+    --text-light: #2d2d2d;
+    --nav-bg: rgba(26, 26, 26, 0.95);
+    --card-bg: #1a1a1a;
+    --border-color: var(--gray-light);
     --shadow: rgba(0, 0, 0, 0.3);
     --shadow-hover: rgba(0, 0, 0, 0.5);
-    --accent-primary: var(--terracotta);
-    --accent-secondary: var(--sage-green);
-    --accent-tertiary: var(--dusty-rose);
-    --focus-color: var(--terracotta-light);
+    --accent-primary: var(--yellow);
+    --accent-secondary: #e8e8e8;
+    --accent-tertiary: var(--yellow-dark);
+    --focus-color: var(--yellow-light);
     --error-color: #ff8a80;
-    --success-color: var(--sage-green-light);
-    --warning-color: #ffcc02;
+    --success-color: var(--yellow-dark);
+    --warning-color: var(--yellow-light);
 }
 
 /* Reset y configuración base */
@@ -1397,8 +1397,8 @@ p {
     align-items: center;
     justify-content: center;
     padding: var(--space-4) var(--space-6);
-    background: linear-gradient(135deg, var(--terracotta) 0%, var(--sage-green) 100%);
-    color: var(--text-light);
+    background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
+    color: #2d2d2d;
     text-decoration: none;
     border-radius: 25px;
     font-weight: 600;
@@ -1434,7 +1434,7 @@ p {
 }
 
 .btn:hover {
-    background: linear-gradient(135deg, var(--sage-green) 0%, var(--terracotta) 100%);
+    background: linear-gradient(135deg, var(--yellow-dark) 0%, var(--yellow) 100%);
     transform: translateY(-3px);
     box-shadow: 0 8px 24px var(--shadow-hover);
     filter: brightness(1.05);
@@ -1474,13 +1474,13 @@ p {
 
 /* Botón primario para las tarjetas de nivel */
 .btn-primary {
-    background: linear-gradient(135deg, #4CAF50, #45a049);
-    color: white;
+    background: linear-gradient(135deg, var(--yellow), var(--yellow-dark));
+    color: #2d2d2d;
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: 700;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
     margin-top: 1rem;
     width: 100%;
     text-align: center;
@@ -1489,14 +1489,14 @@ p {
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #45a049, #3d8b40);
+    background: linear-gradient(135deg, var(--yellow-dark), var(--yellow));
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
 }
 
 .btn-primary:active {
     transform: translateY(0);
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 .btn-primary:focus {
@@ -1536,28 +1536,28 @@ p {
 /* Variantes de botones */
 .btn-secondary {
     background: transparent;
-    color: var(--terracotta);
-    border: 2px solid var(--terracotta);
+    color: #2d2d2d;
+    border: 2px solid #2d2d2d;
     box-shadow: none;
 }
 
 .btn-secondary:hover {
-    background: var(--terracotta);
-    color: var(--text-light);
+    background: #2d2d2d;
+    color: #f8f8f8;
     box-shadow: 0 4px 16px var(--shadow);
 }
 
 .btn-outline {
     background: transparent;
     color: var(--text-primary);
-    border: 2px solid var(--nude);
+    border: 2px solid var(--gray-light);
     box-shadow: none;
 }
 
 .btn-outline:hover {
-    background: var(--nude-light);
-    border-color: var(--terracotta);
-    color: var(--terracotta);
+    background: var(--gray-light);
+    border-color: var(--yellow);
+    color: #2d2d2d;
 }
 
 .btn-large {
@@ -1575,19 +1575,20 @@ p {
 }
 
 .btn-cta {
-    background: linear-gradient(135deg, var(--terracotta) 0%, var(--dusty-rose) 100%);
+    background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
     font-size: 1.125rem;
     font-weight: 700;
     padding: 1.25rem 3rem;
     box-shadow: 0 8px 24px var(--shadow-hover);
     letter-spacing: 0.02em;
     border-radius: 30px;
+    color: #2d2d2d;
 }
 
 .btn-cta:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 32px var(--shadow-hover);
-    background: linear-gradient(135deg, var(--dusty-rose) 0%, var(--terracotta) 100%);
+    background: linear-gradient(135deg, var(--yellow-dark) 0%, var(--yellow) 100%);
 }
 
 /* Botones de estado */
