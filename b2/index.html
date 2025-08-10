@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -16,7 +17,8 @@
                         'custom-black': '#000000',
                         'custom-black-light': '#333333',
                         'custom-gray': '#666666',
-                        'custom-gray-light': '#f5f5f5'
+                        'custom-gray-light': '#f5f5f5',
+                        'custom-gray-dark': '#222222'
                     }
                 }
             }
@@ -24,9 +26,9 @@
     </script>
     <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body class="bg-custom-white dark:bg-custom-black text-custom-black dark:text-custom-white transition-colors duration-300">
     <!-- Header with hamburger menu -->
-    <header class="bg-white shadow-lg sticky top-0 z-40">
+    <header class="bg-white dark:bg-custom-black shadow-lg sticky top-0 z-40 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -34,7 +36,7 @@
                     <div class="w-10 h-10 bg-gradient-to-br from-custom-yellow to-custom-yellow-dark rounded-full flex items-center justify-center shadow-lg">
                         <span class="text-custom-black font-bold text-lg">E</span>
                     </div>
-                    <h1 class="text-lg sm:text-xl font-bold text-custom-black font-heading hidden xs:block">English Learning</h1>
+                    <h1 class="text-lg sm:text-xl font-bold text-custom-black dark:text-custom-white font-heading hidden xs:block transition-colors duration-300">English Learning</h1>
                 </div>
                 
                 <!-- Hamburger menu for mobile -->
@@ -43,18 +45,18 @@
                         aria-expanded="false"
                         aria-controls="mobile-menu"
                         type="button">
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
                 </button>
                 
                 <!-- Desktop navigation -->
                 <div class="hidden md:flex items-center space-x-6" role="menubar">
                     <a href="../index.html" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
-                        <span>🏠</span><span>Home</span>
+                        <span>ðŸ </span><span>Home</span>
                     </a>
                     <a href="../index.html#levels" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
-                        <span>📚</span><span>Levels</span>
+                        <span>ðŸ“š</span><span>Levels</span>
                     </a>
                 </div>
             </div>
@@ -64,7 +66,7 @@
         <div class="mobile-menu-overlay md:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden" id="mobile-menu" role="menu" aria-hidden="true" aria-label="Mobile navigation menu">
             <div class="mobile-menu fixed inset-y-0 right-0 w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
                 <div class="mobile-menu-header flex items-center justify-between p-6 border-b border-custom-gray-light bg-gradient-to-r from-custom-yellow to-custom-yellow-dark">
-                    <h2 class="text-lg font-bold text-custom-black font-heading">🎓 Navigation</h2>
+                    <h2 class="text-lg font-bold text-custom-black font-heading">ðŸŽ“ Navigation</h2>
                     <button class="mobile-menu-close p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white" 
                             aria-label="Close navigation menu"
                             type="button">
@@ -75,57 +77,57 @@
                 <div class="overflow-y-auto h-full pb-20">
                     <!-- Main navigation -->
                     <div class="p-6 border-b border-custom-gray-light">
-                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📍 Main Sections</h3>
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">ðŸ“ Main Sections</h3>
                         <div class="space-y-2">
                             <a href="../index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🏠</span><span class="font-medium">Home</span>
+                                <span>ðŸ </span><span class="font-medium">Home</span>
                             </a>
                             <a href="../index.html#levels" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>📚</span><span class="font-medium">Levels</span>
+                                <span>ðŸ“š</span><span class="font-medium">Levels</span>
                             </a>
                         </div>
                     </div>
                     
                     <!-- English Levels -->
                     <div class="p-6 border-b border-custom-gray-light">
-                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">🎯 English Levels</h3>
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">ðŸŽ¯ English Levels</h3>
                         <div class="space-y-2">
                             <a href="../a1/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🌱</span><span class="font-medium">A1 - Beginner</span>
+                                <span>ðŸŒ±</span><span class="font-medium">A1 - Beginner</span>
                             </a>
                             <a href="../a2/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🌿</span><span class="font-medium">A2 - Elementary</span>
+                                <span>ðŸŒ¿</span><span class="font-medium">A2 - Elementary</span>
                             </a>
                             <a href="../b1/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🌳</span><span class="font-medium">B1 - Intermediate</span>
+                                <span>ðŸŒ³</span><span class="font-medium">B1 - Intermediate</span>
                             </a>
                             <a href="index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg bg-custom-yellow/10 text-custom-black-light hover:bg-custom-yellow/20 transition-colors duration-200" role="menuitem">
-                                <span>🌲</span><span class="font-medium">B2 - Upper Intermediate</span>
+                                <span>ðŸŒ²</span><span class="font-medium">B2 - Upper Intermediate</span>
                             </a>
                             <a href="../c1/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🏔️</span><span class="font-medium">C1 - Advanced</span>
+                                <span>ðŸ”ï¸</span><span class="font-medium">C1 - Advanced</span>
                             </a>
                         </div>
                     </div>
                     
                     <!-- B2 Lessons -->
                     <div class="p-6">
-                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📖 B2 Lessons</h3>
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">ðŸ“– B2 Lessons</h3>
                         <div class="space-y-2">
                             <a href="tiempos-perfectos.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>⏳</span><span class="font-medium">Perfect Tenses</span>
+                                <span>â³</span><span class="font-medium">Perfect Tenses</span>
                             </a>
                             <a href="subjuntivo.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🎭</span><span class="font-medium">Subjunctive</span>
+                                <span>ðŸŽ­</span><span class="font-medium">Subjunctive</span>
                             </a>
                             <a href="discurso-reportado.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>💬</span><span class="font-medium">Reported Speech</span>
+                                <span>ðŸ’¬</span><span class="font-medium">Reported Speech</span>
                             </a>
                             <a href="modales-avanzados.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🎯</span><span class="font-medium">Advanced Modals</span>
+                                <span>ðŸŽ¯</span><span class="font-medium">Advanced Modals</span>
                             </a>
                             <a href="escritura-formal.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>✍️</span><span class="font-medium">Formal Writing</span>
+                                <span>âœï¸</span><span class="font-medium">Formal Writing</span>
                             </a>
                         </div>
                     </div>
@@ -135,29 +137,29 @@
     </header>
 
     <div style="padding-top: 1rem;">
-        <h1 style="text-align: center; color: #2196F3; margin-bottom: 0.5rem;">🔵 Nivel B2 - Intermedio Alto</h1>
-        <p style="text-align: center; color: #666; margin-bottom: 2rem;">Desarrolla fluidez y precisión en inglés</p>
+        <h1 style="text-align: center; color: #2196F3; margin-bottom: 0.5rem;">ðŸ”µ Nivel B2 - Intermedio Alto</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 2rem;">Desarrolla fluidez y precisiÃ³n en inglÃ©s</p>
     </div>
 
     <main>
         <div class="container">
             <div class="level-nav">
-                <a href="../b1/index.html">← B1</a> | 
-                <a href="../index.html">🏠 Inicio</a> | 
-                <a href="../c1/index.html">C1 →</a>
+                <a href="../b1/index.html">â† B1</a> | 
+                <a href="../index.html">ðŸ  Inicio</a> | 
+                <a href="../c1/index.html">C1 â†’</a>
             </div>
 
             <div class="level-intro">
-                <h2>🎯 Bienvenido al Nivel B2</h2>
-                <p>En este nivel intermedio alto, desarrollarás mayor fluidez y precisión en inglés. Podrás expresar ideas complejas, participar en debates y comprender textos especializados.</p>
+                <h2>ðŸŽ¯ Bienvenido al Nivel B2</h2>
+                <p>En este nivel intermedio alto, desarrollarÃ¡s mayor fluidez y precisiÃ³n en inglÃ©s. PodrÃ¡s expresar ideas complejas, participar en debates y comprender textos especializados.</p>
                 
                 <div class="objectives">
-                    <h3>📋 Objetivos del Nivel B2:</h3>
+                    <h3>ðŸ“‹ Objetivos del Nivel B2:</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
                         <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2196F3;">
-                            <h4>🗣️ Comunicación</h4>
+                            <h4>ðŸ—£ï¸ ComunicaciÃ³n</h4>
                             <ul>
-                                <li>Expresar opiniones con argumentos sólidos</li>
+                                <li>Expresar opiniones con argumentos sÃ³lidos</li>
                                 <li>Participar en debates y discusiones</li>
                                 <li>Hacer presentaciones estructuradas</li>
                                 <li>Comunicarse con hablantes nativos con fluidez</li>
@@ -165,20 +167,20 @@
                         </div>
                         
                         <div style="background: #f3e5f5; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #9C27B0;">
-                            <h4>📚 Gramática</h4>
+                            <h4>ðŸ“š GramÃ¡tica</h4>
                             <ul>
                                 <li>Dominar condicionales complejos</li>
-                                <li>Usar verbos modales con precisión</li>
+                                <li>Usar verbos modales con precisiÃ³n</li>
                                 <li>Aplicar el discurso indirecto</li>
                                 <li>Manejar estructuras gramaticales avanzadas</li>
                             </ul>
                         </div>
                         
                         <div style="background: #fff8e1; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #FFC107;">
-                            <h4>📖 Vocabulario</h4>
+                            <h4>ðŸ“– Vocabulario</h4>
                             <ul>
                                 <li>Ampliar vocabulario especializado</li>
-                                <li>Comprender expresiones idiomáticas</li>
+                                <li>Comprender expresiones idiomÃ¡ticas</li>
                                 <li>Usar registro formal e informal apropiadamente</li>
                                 <li>Dominar phrasal verbs comunes</li>
                             </ul>
@@ -199,111 +201,111 @@
         </section>
 
             <div class="lessons-grid">
-                <h2>📚 Lecciones del Nivel B2</h2>
+                <h2>ðŸ“š Lecciones del Nivel B2</h2>
                 
                 <div class="lesson-card" data-lesson="1">
                     <div class="lesson-number">1</div>
                     <div class="lesson-content">
-                        <h3>🔄 Second Conditional</h3>
-                        <p>Aprende a expresar situaciones hipotéticas e irreales en el presente</p>
+                        <h3>ðŸ”„ Second Conditional</h3>
+                        <p>Aprende a expresar situaciones hipotÃ©ticas e irreales en el presente</p>
                         <div class="lesson-topics">
                             <span class="topic">If I were...</span>
-                            <span class="topic">Situaciones hipotéticas</span>
+                            <span class="topic">Situaciones hipotÃ©ticas</span>
                             <span class="topic">Consejos y sugerencias</span>
                         </div>
-                        <a href="second-conditional.html" class="lesson-link">Start Lesson →</a>
+                        <a href="second-conditional.html" class="lesson-link">Start Lesson â†’</a>
                     </div>
-                    <div class="lesson-status" id="status-1">📝</div>
+                    <div class="lesson-status" id="status-1">ðŸ“</div>
                 </div>
 
                 <div class="lesson-card" data-lesson="2">
                     <div class="lesson-number">2</div>
                     <div class="lesson-content">
-                        <h3>🎯 Modal Verbs</h3>
-                        <p>Domina los verbos modales para expresar obligación, posibilidad y deducción</p>
+                        <h3>ðŸŽ¯ Modal Verbs</h3>
+                        <p>Domina los verbos modales para expresar obligaciÃ³n, posibilidad y deducciÃ³n</p>
                         <div class="lesson-topics">
                             <span class="topic">Must, Should, Might</span>
                             <span class="topic">Could, Would, May</span>
                             <span class="topic">Deducciones</span>
                         </div>
-                        <a href="modal-verbs.html" class="lesson-link">Start Lesson →</a>
+                        <a href="modal-verbs.html" class="lesson-link">Start Lesson â†’</a>
                     </div>
-                    <div class="lesson-status" id="status-2">📝</div>
+                    <div class="lesson-status" id="status-2">ðŸ“</div>
                 </div>
 
                 <div class="lesson-card" data-lesson="3">
                     <div class="lesson-number">3</div>
                     <div class="lesson-content">
-                        <h3>💬 Reported Speech</h3>
+                        <h3>ðŸ’¬ Reported Speech</h3>
                         <p>Aprende a reportar lo que otros han dicho de manera precisa</p>
                         <div class="lesson-topics">
                             <span class="topic">Direct vs Indirect</span>
                             <span class="topic">Cambios de tiempo</span>
                             <span class="topic">Reporting verbs</span>
                         </div>
-                        <a href="reported-speech.html" class="lesson-link">Start Lesson →</a>
+                        <a href="reported-speech.html" class="lesson-link">Start Lesson â†’</a>
                     </div>
-                    <div class="lesson-status" id="status-3">📝</div>
+                    <div class="lesson-status" id="status-3">ðŸ“</div>
                 </div>
 
                 <div class="lesson-card" data-lesson="4">
                     <div class="lesson-number">4</div>
                     <div class="lesson-content">
-                        <h3>🎭 Expresiones Idiomáticas</h3>
-                        <p>Domina expresiones comunes y phrasal verbs para sonar más natural</p>
+                        <h3>ðŸŽ­ Expresiones IdiomÃ¡ticas</h3>
+                        <p>Domina expresiones comunes y phrasal verbs para sonar mÃ¡s natural</p>
                         <div class="lesson-topics">
                             <span class="topic">Idioms comunes</span>
                             <span class="topic">Phrasal verbs</span>
                             <span class="topic">Expresiones coloquiales</span>
                         </div>
-                        <a href="expresiones-idiomaticas.html" class="lesson-link">Start Lesson →</a>
+                        <a href="expresiones-idiomaticas.html" class="lesson-link">Start Lesson â†’</a>
                     </div>
-                    <div class="lesson-status" id="status-4">📝</div>
+                    <div class="lesson-status" id="status-4">ðŸ“</div>
                 </div>
 
                 <div class="lesson-card" data-lesson="5">
                     <div class="lesson-number">5</div>
                     <div class="lesson-content">
-                        <h3>📰 Análisis de Textos</h3>
-                        <p>Desarrolla habilidades críticas para analizar artículos y textos complejos</p>
+                        <h3>ðŸ“° AnÃ¡lisis de Textos</h3>
+                        <p>Desarrolla habilidades crÃ­ticas para analizar artÃ­culos y textos complejos</p>
                         <div class="lesson-topics">
-                            <span class="topic">Lectura crítica</span>
-                            <span class="topic">Análisis de argumentos</span>
+                            <span class="topic">Lectura crÃ­tica</span>
+                            <span class="topic">AnÃ¡lisis de argumentos</span>
                             <span class="topic">Textos especializados</span>
                         </div>
-                        <a href="analisis-textos.html" class="lesson-link">Start Lesson →</a>
+                        <a href="analisis-textos.html" class="lesson-link">Start Lesson â†’</a>
                     </div>
-                    <div class="lesson-status" id="status-5">📝</div>
+                    <div class="lesson-status" id="status-5">ðŸ“</div>
                 </div>
             </div>
 
             <div class="study-tips">
-                <h3>💡 Tips for B2 Level</h3>
+                <h3>ðŸ’¡ Tips for B2 Level</h3>
                 <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4CAF50; margin: 1rem 0;">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
                         <div>
-                            <h4>🎯 Enfoque en Fluidez</h4>
+                            <h4>ðŸŽ¯ Enfoque en Fluidez</h4>
                             <ul>
                                 <li>Practica conversaciones largas</li>
                                 <li>Participa en debates</li>
                                 <li>Haz presentaciones</li>
-                                <li>Consume media en inglés</li>
+                                <li>Consume media en inglÃ©s</li>
                             </ul>
                         </div>
                         <div>
-                            <h4>📚 Lectura Avanzada</h4>
+                            <h4>ðŸ“š Lectura Avanzada</h4>
                             <ul>
-                                <li>Lee artículos de opinión</li>
-                                <li>Analiza textos académicos</li>
+                                <li>Lee artÃ­culos de opiniÃ³n</li>
+                                <li>Analiza textos acadÃ©micos</li>
                                 <li>Estudia diferentes registros</li>
-                                <li>Practica lectura crítica</li>
+                                <li>Practica lectura crÃ­tica</li>
                             </ul>
                         </div>
                         <div>
-                            <h4>✍️ Escritura Sofisticada</h4>
+                            <h4>âœï¸ Escritura Sofisticada</h4>
                             <ul>
                                 <li>Escribe ensayos argumentativos</li>
-                                <li>Practica diferentes géneros</li>
+                                <li>Practica diferentes gÃ©neros</li>
                                 <li>Usa conectores complejos</li>
                                 <li>Desarrolla tu estilo personal</li>
                             </ul>
@@ -314,34 +316,34 @@
 
             <div class="level-completion" id="b2-completion" style="display: none;">
                 <div style="background: #e8f5e8; padding: 2rem; border-radius: 15px; text-align: center; margin: 2rem 0;">
-                    <h2>🎉 ¡Felicitaciones!</h2>
-                    <p>Has completado el nivel B2. Ahora tienes un dominio intermedio alto del inglés.</p>
+                    <h2>ðŸŽ‰ Â¡Felicitaciones!</h2>
+                    <p>Has completado el nivel B2. Ahora tienes un dominio intermedio alto del inglÃ©s.</p>
                     <div style="margin: 1.5rem 0;">
-                        <a href="../c1/index.html" class="btn" style="background: #4CAF50; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; margin: 0.5rem; font-weight: bold;">🚀 Continuar a C1</a>
-                        <a href="../index.html" class="btn" style="margin: 0.5rem;">🏠 Volver al Inicio</a>
+                        <a href="../c1/index.html" class="btn" style="background: #4CAF50; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; margin: 0.5rem; font-weight: bold;">ðŸš€ Continuar a C1</a>
+                        <a href="../index.html" class="btn" style="margin: 0.5rem;">ðŸ  Volver al Inicio</a>
                     </div>
                 </div>
             </div>
 
             <!-- Navigation Section -->
             <div class="navigation-section">
-                <h2>🧭 Navegación</h2>
+                <h2>ðŸ§­ NavegaciÃ³n</h2>
                 <div class="nav-buttons">
-                    <a href="../b1/index.html" class="btn secondary">← Revisar B1</a>
+                    <a href="../b1/index.html" class="btn secondary">â† Revisar B1</a>
                     <a href="modal-verbs.html" class="btn primary">Comenzar B2</a>
-                    <a href="../c1/index.html" class="btn secondary">Avanzar a C1 →</a>
+                    <a href="../c1/index.html" class="btn secondary">Avanzar a C1 â†’</a>
                 </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>© 2024 - Refuerzo de Inglés - Nivel B2</p>
+        <p>Â© 2024 - Refuerzo de InglÃ©s - Nivel B2</p>
     </footer>
 
     <script src="../assets/script.js"></script>
     <script>
-        // Verificar si B1 está completado
+        // Verificar si B1 estÃ¡ completado
         document.addEventListener('DOMContentLoaded', function() {
             const b1Completado = localStorage.getItem('b1-completado');
             
@@ -349,7 +351,7 @@
                 const aviso = document.createElement('div');
                 aviso.style.cssText = 'background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 1rem; border-radius: 8px; margin: 1rem 0; text-align: center;';
                 aviso.innerHTML = `
-                    <h3>⚠️ Recomendación</h3>
+                    <h3>âš ï¸ RecomendaciÃ³n</h3>
                     <p>Te recomendamos completar el <a href="../b1/index.html" style="color: #856404; font-weight: bold;">Nivel B1</a> antes de continuar con B2.</p>
                 `;
                 document.querySelector('.level-intro').appendChild(aviso);
@@ -368,7 +370,7 @@
                 
                 if (estado === 'completada') {
                     completadas++;
-                    statusElement.textContent = '✅';
+                    statusElement.textContent = 'âœ…';
                     statusElement.style.color = '#4CAF50';
                 }
             });
@@ -384,7 +386,7 @@
                 progressPercentage.textContent = Math.round(porcentaje) + '%';
             }
             
-            // Mostrar mensaje de completación si todas las lecciones están terminadas
+            // Mostrar mensaje de completaciÃ³n si todas las lecciones estÃ¡n terminadas
             if (completadas === 5) {
                 document.getElementById('b2-completion').style.display = 'block';
                 localStorage.setItem('b2-completado', 'true');

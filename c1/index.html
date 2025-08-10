@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -16,7 +17,8 @@
                         'custom-black': '#000000',
                         'custom-black-light': '#333333',
                         'custom-gray': '#666666',
-                        'custom-gray-light': '#f5f5f5'
+                        'custom-gray-light': '#f5f5f5',
+                        'custom-gray-dark': '#222222'
                     }
                 }
             }
@@ -24,9 +26,9 @@
     </script>
     <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body class="bg-custom-white dark:bg-custom-black text-custom-black dark:text-custom-white transition-colors duration-300">
     <!-- Header with hamburger menu -->
-    <header class="bg-white shadow-lg sticky top-0 z-40">
+    <header class="bg-white dark:bg-custom-black shadow-lg sticky top-0 z-40 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -34,7 +36,7 @@
                     <div class="w-10 h-10 bg-gradient-to-br from-custom-yellow to-custom-yellow-dark rounded-full flex items-center justify-center shadow-lg">
                         <span class="text-custom-black font-bold text-lg">E</span>
                     </div>
-                    <h1 class="text-lg sm:text-xl font-bold text-custom-black font-heading hidden xs:block">English Learning</h1>
+                    <h1 class="text-lg sm:text-xl font-bold text-custom-black dark:text-custom-white font-heading hidden xs:block transition-colors duration-300">English Learning</h1>
                 </div>
                 
                 <!-- Hamburger menu for mobile -->
@@ -43,18 +45,18 @@
                         aria-expanded="false"
                         aria-controls="mobile-menu"
                         type="button">
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
                 </button>
                 
                 <!-- Desktop navigation -->
                 <div class="hidden md:flex items-center space-x-6" role="menubar">
                     <a href="../index.html" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
-                        <span>🏠</span><span>Home</span>
+                        <span>ðŸ </span><span>Home</span>
                     </a>
                     <a href="../index.html#levels" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
-                        <span>📚</span><span>Levels</span>
+                        <span>ðŸ“š</span><span>Levels</span>
                     </a>
                 </div>
             </div>
@@ -64,7 +66,7 @@
         <div class="mobile-menu-overlay md:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden" id="mobile-menu" role="menu" aria-hidden="true" aria-label="Mobile navigation menu">
             <div class="mobile-menu fixed inset-y-0 right-0 w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
                 <div class="mobile-menu-header flex items-center justify-between p-6 border-b border-custom-gray-light bg-gradient-to-r from-custom-yellow to-custom-yellow-dark">
-                    <h2 class="text-lg font-bold text-custom-black font-heading">🎓 Navigation</h2>
+                    <h2 class="text-lg font-bold text-custom-black font-heading">ðŸŽ“ Navigation</h2>
                     <button class="mobile-menu-close p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white" 
                             aria-label="Close navigation menu"
                             type="button">
@@ -75,57 +77,57 @@
                 <div class="overflow-y-auto h-full pb-20">
                     <!-- Main navigation -->
                     <div class="p-6 border-b border-custom-gray-light">
-                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📍 Main Sections</h3>
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">ðŸ“ Main Sections</h3>
                         <div class="space-y-2">
                             <a href="../index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🏠</span><span class="font-medium">Home</span>
+                                <span>ðŸ </span><span class="font-medium">Home</span>
                             </a>
                             <a href="../index.html#levels" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>📚</span><span class="font-medium">Levels</span>
+                                <span>ðŸ“š</span><span class="font-medium">Levels</span>
                             </a>
                         </div>
                     </div>
                     
                     <!-- English Levels -->
                     <div class="p-6 border-b border-custom-gray-light">
-                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">🎯 English Levels</h3>
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">ðŸŽ¯ English Levels</h3>
                         <div class="space-y-2">
                             <a href="../a1/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🌱</span><span class="font-medium">A1 - Beginner</span>
+                                <span>ðŸŒ±</span><span class="font-medium">A1 - Beginner</span>
                             </a>
                             <a href="../a2/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🌿</span><span class="font-medium">A2 - Elementary</span>
+                                <span>ðŸŒ¿</span><span class="font-medium">A2 - Elementary</span>
                             </a>
                             <a href="../b1/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🌳</span><span class="font-medium">B1 - Intermediate</span>
+                                <span>ðŸŒ³</span><span class="font-medium">B1 - Intermediate</span>
                             </a>
                             <a href="../b2/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🌲</span><span class="font-medium">B2 - Upper Intermediate</span>
+                                <span>ðŸŒ²</span><span class="font-medium">B2 - Upper Intermediate</span>
                             </a>
                             <a href="index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg bg-custom-yellow/10 text-custom-black-light hover:bg-custom-yellow/20 transition-colors duration-200" role="menuitem">
-                                <span>🏔️</span><span class="font-medium">C1 - Advanced</span>
+                                <span>ðŸ”ï¸</span><span class="font-medium">C1 - Advanced</span>
                             </a>
                         </div>
                     </div>
                     
                     <!-- C1 Lessons -->
                     <div class="p-6">
-                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📖 C1 Lessons</h3>
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">ðŸ“– C1 Lessons</h3>
                         <div class="space-y-2">
                             <a href="advanced-grammar.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>📚</span><span class="font-medium">Advanced Grammar</span>
+                                <span>ðŸ“š</span><span class="font-medium">Advanced Grammar</span>
                             </a>
                             <a href="complex-structures.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🏗️</span><span class="font-medium">Complex Structures</span>
+                                <span>ðŸ—ï¸</span><span class="font-medium">Complex Structures</span>
                             </a>
                             <a href="academic-writing.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🎓</span><span class="font-medium">Academic Writing</span>
+                                <span>ðŸŽ“</span><span class="font-medium">Academic Writing</span>
                             </a>
                             <a href="professional-english.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>💼</span><span class="font-medium">Professional English</span>
+                                <span>ðŸ’¼</span><span class="font-medium">Professional English</span>
                             </a>
                             <a href="critical-thinking.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🧠</span><span class="font-medium">Critical Thinking</span>
+                                <span>ðŸ§ </span><span class="font-medium">Critical Thinking</span>
                             </a>
                         </div>
                     </div>
@@ -136,7 +138,7 @@
 
     <main class="level-container">
         <div class="level-header">
-            <h1>🏆 Level C1 - Advanced</h1>
+            <h1>ðŸ† Level C1 - Advanced</h1>
             <p class="level-description">
                 Welcome to the advanced level. Here you will develop sophisticated communication skills, 
                 critical analysis and fluent expression in academic and professional contexts.
@@ -144,10 +146,10 @@
         </div>
 
         <div class="level-objectives">
-            <h2>🎯 Level C1 Objectives</h2>
+            <h2>ðŸŽ¯ Level C1 Objectives</h2>
             <div class="objectives-grid">
                 <div class="objective-card">
-                    <h3>💬 Communication</h3>
+                    <h3>ðŸ’¬ Communication</h3>
                     <ul>
                         <li>Express yourself with fluency and spontaneity</li>
                         <li>Use the language flexibly and effectively</li>
@@ -157,7 +159,7 @@
                 </div>
                 
                 <div class="objective-card">
-                    <h3>📚 Advanced Grammar</h3>
+                    <h3>ðŸ“š Advanced Grammar</h3>
                     <ul>
                         <li>Complex and sophisticated structures</li>
                         <li>Advanced use of verb tenses</li>
@@ -167,7 +169,7 @@
                 </div>
                 
                 <div class="objective-card">
-                    <h3>📖 Specialized Vocabulary</h3>
+                    <h3>ðŸ“– Specialized Vocabulary</h3>
                     <ul>
                         <li>Academic and professional terminology</li>
                         <li>Advanced idiomatic expressions</li>
@@ -193,7 +195,7 @@
             <div class="lesson-card">
                 <div class="lesson-number">1</div>
                 <div class="lesson-content">
-                    <h3>🔄 Advanced Conditionals</h3>
+                    <h3>ðŸ”„ Advanced Conditionals</h3>
                     <p>Master the use of mixed conditionals, inversion in conditionals and complex structures to express sophisticated hypotheses.</p>
                     <div class="lesson-topics">
                         <span class="topic">Mixed Conditionals</span>
@@ -207,7 +209,7 @@
             <div class="lesson-card">
                 <div class="lesson-number">2</div>
                 <div class="lesson-content">
-                    <h3>🎭 Passive Voice Mastery</h3>
+                    <h3>ðŸŽ­ Passive Voice Mastery</h3>
                     <p>Explore advanced uses of passive voice, complex constructions and their application in formal and academic contexts.</p>
                     <div class="lesson-topics">
                         <span class="topic">Complex Passives</span>
@@ -221,7 +223,7 @@
             <div class="lesson-card">
                 <div class="lesson-number">3</div>
                 <div class="lesson-content">
-                    <h3>🗣️ Advanced Discourse</h3>
+                    <h3>ðŸ—£ï¸ Advanced Discourse</h3>
                     <p>Develop sophisticated communication skills, including argumentation, persuasion and critical analysis.</p>
                     <div class="lesson-topics">
                         <span class="topic">Argumentation</span>
@@ -235,7 +237,7 @@
             <div class="lesson-card">
                 <div class="lesson-number">4</div>
                 <div class="lesson-content">
-                    <h3>📝 Academic Writing</h3>
+                    <h3>ðŸ“ Academic Writing</h3>
                     <p>Perfect your academic writing with complex structures, advanced cohesion and appropriate formal style.</p>
                     <div class="lesson-topics">
                         <span class="topic">Essay Structure</span>
@@ -249,7 +251,7 @@
             <div class="lesson-card">
                 <div class="lesson-number">5</div>
                 <div class="lesson-content">
-                    <h3>🎯 Proficiency Skills</h3>
+                    <h3>ðŸŽ¯ Proficiency Skills</h3>
                     <p>Integrate all advanced skills in complex tasks that require analysis, synthesis and critical evaluation.</p>
                     <div class="lesson-topics">
                         <span class="topic">Integration</span>
@@ -262,10 +264,10 @@
         </div>
 
         <div class="study-tips">
-            <h2>💡 Tips for Level C1</h2>
+            <h2>ðŸ’¡ Tips for Level C1</h2>
             <div class="tips-grid">
                 <div class="tip-card">
-                    <h3>📚 Advanced Reading</h3>
+                    <h3>ðŸ“š Advanced Reading</h3>
                     <ul>
                         <li>Read complex academic and literary texts</li>
                         <li>Analyze style and structure</li>
@@ -275,7 +277,7 @@
                 </div>
                 
                 <div class="tip-card">
-                    <h3>🎤 Oral Expression</h3>
+                    <h3>ðŸŽ¤ Oral Expression</h3>
                     <ul>
                         <li>Participate in debates and discussions</li>
                         <li>Practice formal presentations</li>
@@ -285,7 +287,7 @@
                 </div>
                 
                 <div class="tip-card">
-                    <h3>✍️ Sophisticated Writing</h3>
+                    <h3>âœï¸ Sophisticated Writing</h3>
                     <ul>
                         <li>Write argumentative essays</li>
                         <li>Practice different text genres</li>
@@ -295,7 +297,7 @@
                 </div>
                 
                 <div class="tip-card">
-                    <h3>🧠 Critical Thinking</h3>
+                    <h3>ðŸ§  Critical Thinking</h3>
                     <ul>
                         <li>Question and evaluate information</li>
                         <li>Develop solid arguments</li>
@@ -308,9 +310,9 @@
 
         <!-- Navigation Section -->
         <div class="navigation-section">
-            <h2>🧭 Navegación</h2>
+            <h2>ðŸ§­ NavegaciÃ³n</h2>
             <div class="nav-buttons">
-                <a href="../b2/index.html" class="btn secondary">← Revisar B2</a>
+                <a href="../b2/index.html" class="btn secondary">â† Revisar B2</a>
                 <a href="academic-writing.html" class="btn primary">Comenzar C1</a>
                 <a href="../index.html" class="btn secondary">Volver al Inicio</a>
             </div>
@@ -326,7 +328,7 @@
                 const warning = document.createElement('div');
                 warning.className = 'level-warning';
                 warning.innerHTML = `
-                    <h3>⚠️ Recommendation</h3>
+                    <h3>âš ï¸ Recommendation</h3>
                     <p>We recommend completing <a href="../b2/index.html">Level B2</a> before continuing with C1.</p>
                 `;
                 document.querySelector('.level-header').appendChild(warning);

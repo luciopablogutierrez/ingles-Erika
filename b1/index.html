@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -16,7 +17,8 @@
                         'custom-black': '#000000',
                         'custom-black-light': '#333333',
                         'custom-gray': '#666666',
-                        'custom-gray-light': '#f5f5f5'
+                        'custom-gray-light': '#f5f5f5',
+                        'custom-gray-dark': '#222222'
                     }
                 }
             }
@@ -25,9 +27,9 @@
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-custom-white dark:bg-custom-black text-custom-black dark:text-custom-white transition-colors duration-300">
     <!-- Header with hamburger menu -->
-    <header class="bg-white shadow-lg sticky top-0 z-40">
+    <header class="bg-white dark:bg-custom-black shadow-lg sticky top-0 z-40 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -35,7 +37,7 @@
                     <div class="w-10 h-10 bg-gradient-to-br from-custom-yellow to-custom-yellow-dark rounded-full flex items-center justify-center shadow-lg">
                         <span class="text-custom-black font-bold text-lg">E</span>
                     </div>
-                    <h1 class="text-lg sm:text-xl font-bold text-custom-black font-heading hidden xs:block">English Learning</h1>
+                    <h1 class="text-lg sm:text-xl font-bold text-custom-black dark:text-custom-white font-heading hidden xs:block transition-colors duration-300">English Learning</h1>
                 </div>
                 
                 <!-- Hamburger menu for mobile -->
@@ -44,18 +46,18 @@
                         aria-expanded="false"
                         aria-controls="mobile-menu"
                         type="button">
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
-                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light dark:bg-custom-white transition-all duration-300"></span>
                 </button>
                 
                 <!-- Desktop navigation -->
                 <div class="hidden md:flex items-center space-x-6" role="menubar">
                     <a href="../index.html" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
-                        <span>🏠</span><span>Home</span>
+                        <span>ðŸ </span><span>Home</span>
                     </a>
                     <a href="../index.html#levels" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
-                        <span>📚</span><span>Levels</span>
+                        <span>ðŸ“š</span><span>Levels</span>
                     </a>
                 </div>
             </div>
@@ -65,7 +67,7 @@
         <div class="mobile-menu-overlay md:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden" id="mobile-menu" role="menu" aria-hidden="true" aria-label="Mobile navigation menu">
             <div class="mobile-menu fixed inset-y-0 right-0 w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
                 <div class="mobile-menu-header flex items-center justify-between p-6 border-b border-custom-gray-light bg-gradient-to-r from-custom-yellow to-custom-yellow-dark">
-                    <h2 class="text-lg font-bold text-custom-black font-heading">🎓 Navigation</h2>
+                    <h2 class="text-lg font-bold text-custom-black font-heading">ðŸŽ“ Navigation</h2>
                     <button class="mobile-menu-close p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white" 
                             aria-label="Close navigation menu"
                             type="button">
@@ -76,57 +78,57 @@
                 <div class="overflow-y-auto h-full pb-20">
                     <!-- Main navigation -->
                     <div class="p-6 border-b border-custom-gray-light">
-                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📍 Main Sections</h3>
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">ðŸ“ Main Sections</h3>
                         <div class="space-y-2">
                             <a href="../index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🏠</span><span class="font-medium">Home</span>
+                                <span>ðŸ </span><span class="font-medium">Home</span>
                             </a>
                             <a href="../index.html#levels" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>📚</span><span class="font-medium">Levels</span>
+                                <span>ðŸ“š</span><span class="font-medium">Levels</span>
                             </a>
                         </div>
                     </div>
                     
                     <!-- English Levels -->
                     <div class="p-6 border-b border-custom-gray-light">
-                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">🎯 English Levels</h3>
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">ðŸŽ¯ English Levels</h3>
                         <div class="space-y-2">
                             <a href="../a1/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🌱</span><span class="font-medium">A1 - Beginner</span>
+                                <span>ðŸŒ±</span><span class="font-medium">A1 - Beginner</span>
                             </a>
                             <a href="../a2/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🌿</span><span class="font-medium">A2 - Elementary</span>
+                                <span>ðŸŒ¿</span><span class="font-medium">A2 - Elementary</span>
                             </a>
                             <a href="index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg bg-custom-yellow/10 text-custom-black-light hover:bg-custom-yellow/20 transition-colors duration-200" role="menuitem">
-                                <span>🌳</span><span class="font-medium">B1 - Intermediate</span>
+                                <span>ðŸŒ³</span><span class="font-medium">B1 - Intermediate</span>
                             </a>
                             <a href="../b2/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🌲</span><span class="font-medium">B2 - Upper Intermediate</span>
+                                <span>ðŸŒ²</span><span class="font-medium">B2 - Upper Intermediate</span>
                             </a>
                             <a href="../c1/index.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🏔️</span><span class="font-medium">C1 - Advanced</span>
+                                <span>ðŸ”ï¸</span><span class="font-medium">C1 - Advanced</span>
                             </a>
                         </div>
                     </div>
                     
                     <!-- B1 Lessons -->
                     <div class="p-6">
-                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📖 B1 Lessons</h3>
+                        <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">ðŸ“– B1 Lessons</h3>
                         <div class="space-y-2">
                             <a href="presente-perfecto.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>✅</span><span class="font-medium">Present Perfect</span>
+                                <span>âœ…</span><span class="font-medium">Present Perfect</span>
                             </a>
                             <a href="futuro-will-going.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🔮</span><span class="font-medium">Future: Will vs Going to</span>
+                                <span>ðŸ”®</span><span class="font-medium">Future: Will vs Going to</span>
                             </a>
                             <a href="condicionales.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🤔</span><span class="font-medium">Conditionals</span>
+                                <span>ðŸ¤”</span><span class="font-medium">Conditionals</span>
                             </a>
                             <a href="voz-pasiva.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🔄</span><span class="font-medium">Passive Voice</span>
+                                <span>ðŸ”„</span><span class="font-medium">Passive Voice</span>
                             </a>
                             <a href="phrasal-verbs.html" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200" role="menuitem">
-                                <span>🚀</span><span class="font-medium">Phrasal Verbs</span>
+                                <span>ðŸš€</span><span class="font-medium">Phrasal Verbs</span>
                             </a>
                         </div>
                     </div>
@@ -160,7 +162,7 @@
             <div class="course-level-badge">B1 Intermedio</div>
             <div class="course-title-content">
                 <h1>Nivel B1 - Intermedio</h1>
-                <p class="course-subtitle">Desarrolla fluidez y confianza para comunicarte en situaciones más complejas</p>
+                <p class="course-subtitle">Desarrolla fluidez y confianza para comunicarte en situaciones mÃ¡s complejas</p>
                 <div class="course-stats">
                     <div class="stat-item">
                         <span class="stat-value">5</span>
@@ -168,7 +170,7 @@
                     </div>
                     <div class="stat-item">
                         <span class="stat-value">20h</span>
-                        <span class="stat-label">Duración</span>
+                        <span class="stat-label">DuraciÃ³n</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-value">Intermedio</span>
@@ -197,7 +199,7 @@
         <section class="course-objectives-section">
             <div class="section-header">
                 <h2><i class="fas fa-target"></i> Objetivos del Nivel B1</h2>
-                <p class="section-description">Desarrolla habilidades avanzadas para comunicarte con fluidez y precisión</p>
+                <p class="section-description">Desarrolla habilidades avanzadas para comunicarte con fluidez y precisiÃ³n</p>
             </div>
             
             <div class="objectives-grid-modern">
@@ -206,7 +208,7 @@
                         <div class="objective-icon">
                             <i class="fas fa-book"></i>
                         </div>
-                        <h3>Gramática Avanzada</h3>
+                        <h3>GramÃ¡tica Avanzada</h3>
                     </div>
                     <div class="objective-content">
                         <div class="skill-item">
@@ -237,7 +239,7 @@
                         <div class="objective-icon">
                             <i class="fas fa-comments"></i>
                         </div>
-                        <h3>Comunicación Fluida</h3>
+                        <h3>ComunicaciÃ³n Fluida</h3>
                     </div>
                     <div class="objective-content">
                         <div class="skill-item">
@@ -285,7 +287,7 @@
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Tecnología básica</span>
+                            <span>TecnologÃ­a bÃ¡sica</span>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-check-circle"></i>
@@ -300,7 +302,7 @@
         <section class="course-lessons-section">
             <div class="section-header">
                 <h2><i class="fas fa-graduation-cap"></i> Lecciones del Curso</h2>
-                <p class="section-description">Progresa paso a paso hacia la fluidez en inglés intermedio</p>
+                <p class="section-description">Progresa paso a paso hacia la fluidez en inglÃ©s intermedio</p>
             </div>
             
             <div class="lessons-grid-modern">
@@ -326,7 +328,7 @@
                             <span class="duration"><i class="fas fa-clock"></i> 45 min</span>
                             <span class="difficulty intermediate"><i class="fas fa-signal"></i> Intermedio</span>
                         </div>
-                        <a href="comparativos-superlativos.html" class="lesson-btn">Comenzar Lección</a>
+                        <a href="comparativos-superlativos.html" class="lesson-btn">Comenzar LecciÃ³n</a>
                     </div>
                 </div>
 
@@ -352,7 +354,7 @@
                             <span class="duration"><i class="fas fa-clock"></i> 50 min</span>
                             <span class="difficulty intermediate"><i class="fas fa-signal"></i> Intermedio</span>
                         </div>
-                        <a href="presente-perfecto.html" class="lesson-btn">Comenzar Lección</a>
+                        <a href="presente-perfecto.html" class="lesson-btn">Comenzar LecciÃ³n</a>
                     </div>
                 </div>
 
@@ -378,7 +380,7 @@
                             <span class="duration"><i class="fas fa-clock"></i> 40 min</span>
                             <span class="difficulty intermediate"><i class="fas fa-signal"></i> Intermedio</span>
                         </div>
-                        <a href="condicionales-futuro.html" class="lesson-btn">Comenzar Lección</a>
+                        <a href="condicionales-futuro.html" class="lesson-btn">Comenzar LecciÃ³n</a>
                     </div>
                 </div>
 
@@ -391,8 +393,8 @@
                         <div class="lesson-icon">
                             <i class="fas fa-globe"></i>
                         </div>
-                        <h3>Vocabulario Temático Avanzado</h3>
-                        <p>Expande tu vocabulario con temas específicos: trabajo, viajes, salud, tecnología y medio ambiente.</p>
+                        <h3>Vocabulario TemÃ¡tico Avanzado</h3>
+                        <p>Expande tu vocabulario con temas especÃ­ficos: trabajo, viajes, salud, tecnologÃ­a y medio ambiente.</p>
                         <div class="topic-tags">
                             <span class="topic-tag grammar">Work & Career</span>
                             <span class="topic-tag vocabulary">Travel & Tourism</span>
@@ -404,7 +406,7 @@
                             <span class="duration"><i class="fas fa-clock"></i> 45 min</span>
                             <span class="difficulty intermediate"><i class="fas fa-signal"></i> Intermedio</span>
                         </div>
-                        <a href="vocabulario-tematico.html" class="lesson-btn">Comenzar Lección</a>
+                        <a href="vocabulario-tematico.html" class="lesson-btn">Comenzar LecciÃ³n</a>
                     </div>
                 </div>
 
@@ -417,8 +419,8 @@
                         <div class="lesson-icon">
                             <i class="fas fa-book-reader"></i>
                         </div>
-                        <h3>Comprensión de Textos</h3>
-                        <p>Desarrolla habilidades de lectura con textos reales: artículos, historias cortas y textos informativos.</p>
+                        <h3>ComprensiÃ³n de Textos</h3>
+                        <p>Desarrolla habilidades de lectura con textos reales: artÃ­culos, historias cortas y textos informativos.</p>
                         <div class="topic-tags">
                             <span class="topic-tag grammar">Reading strategies</span>
                             <span class="topic-tag vocabulary">Text analysis</span>
@@ -430,7 +432,7 @@
                             <span class="duration"><i class="fas fa-clock"></i> 50 min</span>
                             <span class="difficulty intermediate"><i class="fas fa-signal"></i> Intermedio</span>
                         </div>
-                        <a href="comprension-textos.html" class="lesson-btn">Comenzar Lección</a>
+                        <a href="comprension-textos.html" class="lesson-btn">Comenzar LecciÃ³n</a>
                     </div>
                 </div>
             </div>
@@ -440,7 +442,7 @@
         <section class="course-objectives-section">
             <div class="section-header">
                 <h2><i class="fas fa-bullseye"></i> Objetivos del Nivel B1</h2>
-                <p class="section-description">Desarrolla las cuatro habilidades fundamentales del idioma inglés</p>
+                <p class="section-description">Desarrolla las cuatro habilidades fundamentales del idioma inglÃ©s</p>
             </div>
             
             <div class="objectives-grid-modern">
@@ -449,7 +451,7 @@
                         <div class="objective-icon">
                             <i class="fas fa-microphone"></i>
                         </div>
-                        <h3>Expresión Oral</h3>
+                        <h3>ExpresiÃ³n Oral</h3>
                     </div>
                     <div class="objective-content">
                         <p>Participa en conversaciones sobre temas familiares, expresa opiniones y narra experiencias pasadas con fluidez.</p>
@@ -463,11 +465,11 @@
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Describir experiencias, sueños y ambiciones</span>
+                            <span>Describir experiencias, sueÃ±os y ambiciones</span>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Narrar una historia o la trama de un libro/película</span>
+                            <span>Narrar una historia o la trama de un libro/pelÃ­cula</span>
                         </div>
                     </div>
                 </div>
@@ -477,7 +479,7 @@
                         <div class="objective-icon">
                             <i class="fas fa-headphones"></i>
                         </div>
-                        <h3>Comprensión Auditiva</h3>
+                        <h3>ComprensiÃ³n Auditiva</h3>
                     </div>
                     <div class="objective-content">
                         <p>Entiende conversaciones cotidianas, programas de TV simples y presentaciones sobre temas conocidos.</p>
@@ -495,7 +497,7 @@
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Identificar información específica en anuncios</span>
+                            <span>Identificar informaciÃ³n especÃ­fica en anuncios</span>
                         </div>
                     </div>
                 </div>
@@ -505,13 +507,13 @@
                         <div class="objective-icon">
                             <i class="fas fa-book-reader"></i>
                         </div>
-                        <h3>Comprensión Lectora</h3>
+                        <h3>ComprensiÃ³n Lectora</h3>
                     </div>
                     <div class="objective-content">
-                        <p>Lee y comprende textos informativos, artículos de periódicos y correspondencia personal con facilidad.</p>
+                        <p>Lee y comprende textos informativos, artÃ­culos de periÃ³dicos y correspondencia personal con facilidad.</p>
                         <div class="skill-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Leer textos sobre temas de interés personal</span>
+                            <span>Leer textos sobre temas de interÃ©s personal</span>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-check-circle"></i>
@@ -523,7 +525,7 @@
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Extraer información de textos informativos</span>
+                            <span>Extraer informaciÃ³n de textos informativos</span>
                         </div>
                     </div>
                 </div>
@@ -533,10 +535,10 @@
                         <div class="objective-icon">
                             <i class="fas fa-pen-fancy"></i>
                         </div>
-                        <h3>Expresión Escrita</h3>
+                        <h3>ExpresiÃ³n Escrita</h3>
                     </div>
                     <div class="objective-content">
-                        <p>Escribe textos coherentes sobre temas de interés personal, cartas informales y descripciones detalladas.</p>
+                        <p>Escribe textos coherentes sobre temas de interÃ©s personal, cartas informales y descripciones detalladas.</p>
                         <div class="skill-item">
                             <i class="fas fa-check-circle"></i>
                             <span>Escribir textos sobre temas conocidos</span>
@@ -562,7 +564,7 @@
         <section class="course-tips-section">
             <div class="section-header">
                 <h2><i class="fas fa-lightbulb"></i> Consejos para el Nivel B1</h2>
-                <p class="section-description">Estrategias efectivas para acelerar tu aprendizaje del inglés intermedio</p>
+                <p class="section-description">Estrategias efectivas para acelerar tu aprendizaje del inglÃ©s intermedio</p>
             </div>
             
             <div class="tips-grid-modern">
@@ -593,10 +595,10 @@
                         <div class="tip-icon">
                             <i class="fas fa-play-circle"></i>
                         </div>
-                        <h3>Práctica Real</h3>
+                        <h3>PrÃ¡ctica Real</h3>
                     </div>
                     <div class="tip-content">
-                        <p>Lee noticias simples en inglés y mira series con subtítulos en inglés.</p>
+                        <p>Lee noticias simples en inglÃ©s y mira series con subtÃ­tulos en inglÃ©s.</p>
                         <div class="tip-benefits">
                             <div class="benefit-item">
                                 <i class="fas fa-star"></i>
@@ -604,7 +606,7 @@
                             </div>
                             <div class="benefit-item">
                                 <i class="fas fa-star"></i>
-                                <span>Escribe un diario personal en inglés</span>
+                                <span>Escribe un diario personal en inglÃ©s</span>
                             </div>
                         </div>
                     </div>
@@ -618,7 +620,7 @@
                         <h3>Repaso Inteligente</h3>
                     </div>
                     <div class="tip-content">
-                        <p>Usa flashcards para vocabulario nuevo y crea mapas mentales de gramática.</p>
+                        <p>Usa flashcards para vocabulario nuevo y crea mapas mentales de gramÃ¡tica.</p>
                         <div class="tip-benefits">
                             <div class="benefit-item">
                                 <i class="fas fa-star"></i>
@@ -626,7 +628,7 @@
                             </div>
                             <div class="benefit-item">
                                 <i class="fas fa-star"></i>
-                                <span>Autoevalúate con los quizzes</span>
+                                <span>AutoevalÃºate con los quizzes</span>
                             </div>
                         </div>
                     </div>
@@ -635,7 +637,7 @@
         </section>
 
             <div class="grammar-preview">
-                <h3>📋 Vista Previa: Gramática B1</h3>
+                <h3>ðŸ“‹ Vista Previa: GramÃ¡tica B1</h3>
                 <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                         <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 3px solid #4CAF50;">
@@ -667,27 +669,27 @@
             </div>
 
             <div class="vocabulary-preview">
-                <h3>📚 Vista Previa: Vocabulario B1</h3>
+                <h3>ðŸ“š Vista Previa: Vocabulario B1</h3>
                 <div style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.5rem;">
                         <div style="background: white; padding: 0.8rem; border-radius: 6px; text-align: center;">
-                            <strong>💼 Trabajo</strong><br>
+                            <strong>ðŸ’¼ Trabajo</strong><br>
                             <small>Career, salary, interview, promotion</small>
                         </div>
                         <div style="background: white; padding: 0.8rem; border-radius: 6px; text-align: center;">
-                            <strong>✈️ Viajes</strong><br>
+                            <strong>âœˆï¸ Viajes</strong><br>
                             <small>Destination, journey, accommodation</small>
                         </div>
                         <div style="background: white; padding: 0.8rem; border-radius: 6px; text-align: center;">
-                            <strong>🏥 Salud</strong><br>
+                            <strong>ðŸ¥ Salud</strong><br>
                             <small>Symptoms, treatment, medicine</small>
                         </div>
                         <div style="background: white; padding: 0.8rem; border-radius: 6px; text-align: center;">
-                            <strong>💻 Tecnología</strong><br>
+                            <strong>ðŸ’» TecnologÃ­a</strong><br>
                             <small>Software, download, website</small>
                         </div>
                         <div style="background: white; padding: 0.8rem; border-radius: 6px; text-align: center;">
-                            <strong>🌱 Ambiente</strong><br>
+                            <strong>ðŸŒ± Ambiente</strong><br>
                             <small>Pollution, recycling, climate</small>
                         </div>
                     </div>
@@ -695,24 +697,24 @@
             </div>
 
             <div class="assessment-info">
-                <h3>📊 Evaluación y Progreso</h3>
+                <h3>ðŸ“Š EvaluaciÃ³n y Progreso</h3>
                 <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4CAF50;">
-                    <p>Al completar el nivel B1, serás capaz de:</p>
+                    <p>Al completar el nivel B1, serÃ¡s capaz de:</p>
                     <ul>
-                        <li>✅ <strong>Comunicarte en situaciones cotidianas</strong> con confianza</li>
-                        <li>✅ <strong>Entender textos de dificultad media</strong> sobre temas familiares</li>
-                        <li>✅ <strong>Expresar opiniones y experiencias</strong> de manera clara</li>
-                        <li>✅ <strong>Escribir textos coherentes</strong> sobre temas de interés personal</li>
-                        <li>✅ <strong>Usar estructuras gramaticales complejas</strong> correctamente</li>
+                        <li>âœ… <strong>Comunicarte en situaciones cotidianas</strong> con confianza</li>
+                        <li>âœ… <strong>Entender textos de dificultad media</strong> sobre temas familiares</li>
+                        <li>âœ… <strong>Expresar opiniones y experiencias</strong> de manera clara</li>
+                        <li>âœ… <strong>Escribir textos coherentes</strong> sobre temas de interÃ©s personal</li>
+                        <li>âœ… <strong>Usar estructuras gramaticales complejas</strong> correctamente</li>
                     </ul>
                     
                     <div style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: 8px;">
-                        <h4>🎯 Criterios de Evaluación:</h4>
+                        <h4>ðŸŽ¯ Criterios de EvaluaciÃ³n:</h4>
                         <ul>
-                            <li><strong>Gramática:</strong> Uso correcto de comparativos, presente perfecto y condicionales</li>
+                            <li><strong>GramÃ¡tica:</strong> Uso correcto de comparativos, presente perfecto y condicionales</li>
                             <li><strong>Vocabulario:</strong> Conocimiento de 2000-3000 palabras activas</li>
                             <li><strong>Fluidez:</strong> Capacidad de mantener conversaciones de 5-10 minutos</li>
-                            <li><strong>Comprensión:</strong> Entender textos de 300-500 palabras</li>
+                            <li><strong>ComprensiÃ³n:</strong> Entender textos de 300-500 palabras</li>
                         </ul>
                     </div>
                 </div>
@@ -721,11 +723,11 @@
             <div class="next-steps">
                 <!-- Navigation Section -->
                 <div class="navigation-section">
-                    <h2>🧭 Navegación</h2>
+                    <h2>ðŸ§­ NavegaciÃ³n</h2>
                     <div class="nav-buttons">
-                        <a href="../a2/index.html" class="btn secondary">← Revisar A2</a>
+                        <a href="../a2/index.html" class="btn secondary">â† Revisar A2</a>
                         <a href="comparativos-superlativos.html" class="btn primary">Comenzar B1</a>
-                        <a href="../b2/index.html" class="btn secondary">Avanzar a B2 →</a>
+                        <a href="../b2/index.html" class="btn secondary">Avanzar a B2 â†’</a>
                     </div>
                 </div>
             </div>
@@ -734,8 +736,8 @@
         <!-- Level Navigation Section -->
         <section class="course-navigation-section">
             <div class="section-header">
-                <h2><i class="fas fa-route"></i> Continúa tu Aprendizaje</h2>
-                <p class="section-description">Explora otros niveles para completar tu formación en inglés</p>
+                <h2><i class="fas fa-route"></i> ContinÃºa tu Aprendizaje</h2>
+                <p class="section-description">Explora otros niveles para completar tu formaciÃ³n en inglÃ©s</p>
             </div>
             
             <div class="level-navigation-modern">
@@ -746,11 +748,11 @@
                     </div>
                     <div class="nav-card-content">
                         <h3>Elemental</h3>
-                        <p>Repasa conceptos básicos si necesitas reforzar tu base antes de continuar</p>
+                        <p>Repasa conceptos bÃ¡sicos si necesitas reforzar tu base antes de continuar</p>
                         <div class="nav-features">
                             <div class="feature-item">
                                 <i class="fas fa-check"></i>
-                                <span>Gramática fundamental</span>
+                                <span>GramÃ¡tica fundamental</span>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-check"></i>
@@ -758,7 +760,7 @@
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-check"></i>
-                                <span>Conversaciones básicas</span>
+                                <span>Conversaciones bÃ¡sicas</span>
                             </div>
                         </div>
                     </div>
@@ -777,11 +779,11 @@
                     </div>
                     <div class="nav-card-content">
                         <h3>Intermedio Alto</h3>
-                        <p>Avanza hacia un nivel más sofisticado del inglés con estructuras complejas</p>
+                        <p>Avanza hacia un nivel mÃ¡s sofisticado del inglÃ©s con estructuras complejas</p>
                         <div class="nav-features">
                             <div class="feature-item">
                                 <i class="fas fa-star"></i>
-                                <span>Gramática avanzada</span>
+                                <span>GramÃ¡tica avanzada</span>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-star"></i>
@@ -806,12 +808,12 @@
     </main>
 
     <footer>
-        <p>© 2024 - Refuerzo de Inglés - Nivel B1 Intermedio</p>
+        <p>Â© 2024 - Refuerzo de InglÃ©s - Nivel B1 Intermedio</p>
     </footer>
 
     <script src="../assets/script.js"></script>
     <script>
-        // Función para actualizar el progreso del nivel B1
+        // FunciÃ³n para actualizar el progreso del nivel B1
         function actualizarProgresoB1() {
             const visitedLessons = JSON.parse(localStorage.getItem('b1-visited-lessons') || '[]');
             const totalLessons = 5;
@@ -858,14 +860,14 @@
             });
         }
         
-        // Verificar si el usuario completó A2
+        // Verificar si el usuario completÃ³ A2
         function verificarPrerequisitos() {
             const a2Completado = localStorage.getItem('a2-completado');
             if (!a2Completado) {
                 const mensaje = document.createElement('div');
                 mensaje.style.cssText = 'background: #fff3e0; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff9800; margin: 1rem 0;';
                 mensaje.innerHTML = `
-                    <h4>⚠️ Recomendación</h4>
+                    <h4>âš ï¸ RecomendaciÃ³n</h4>
                     <p>Para aprovechar mejor este nivel, te recomendamos completar primero el <a href="../a2/index.html" style="color: #ff9800; font-weight: bold;">Nivel A2</a>.</p>
                 `;
                 
@@ -876,7 +878,7 @@
             }
         }
         
-        // Ejecutar al cargar la página
+        // Ejecutar al cargar la pÃ¡gina
         document.addEventListener('DOMContentLoaded', function() {
             actualizarProgresoB1();
             verificarPrerequisitos();
