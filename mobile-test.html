@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Test Móvil - Menú Hamburguesa Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sage-green': {
+                            DEFAULT: '#87A96B',
+                            'dark': '#6B8E4A',
+                            'light': '#A3C585'
+                        },
+                        'terracotta': {
+                            DEFAULT: '#D2691E',
+                            'dark': '#B8541A',
+                            'light': '#E8944A'
+                        },
+                        'custom-yellow': {
+                            DEFAULT: '#F4D03F',
+                            'dark': '#F1C40F',
+                            'light': '#F7DC6F'
+                        },
+                        'custom-black': {
+                            DEFAULT: '#2C3E50',
+                            'light': '#34495E'
+                        },
+                        'custom-gray': {
+                            DEFAULT: '#95A5A6',
+                            'light': '#BDC3C7',
+                            'dark': '#7F8C8D'
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .touch-feedback {
+            transition: all 0.1s ease;
+        }
+        .touch-feedback:active {
+            transform: scale(0.95);
+            opacity: 0.8;
+        }
+        .menu-slide {
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .menu-slide.active {
+            transform: translateX(0);
+        }
+        .debug-info {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            z-index: 9999;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-body">
+    <!-- Debug Info -->
+    <div class="debug-info" id="debugInfo">
+        <div><strong>Debug Info:</strong></div>
+        <div id="deviceType"></div>
+        <div id="screenSize"></div>
+        <div id="touchSupport"></div>
+        <div id="lastEvent"></div>
+    </div>
+
+    <!-- Header con menú hamburguesa -->
+    <header class="bg-white shadow-lg relative z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-sage-green rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">E</span>
+                    </div>
+                    <span class="text-xl font-heading font-bold text-custom-black">English Test</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-custom-black hover:text-sage-green transition-colors duration-300">Inicio</a>
+                    <a href="#" class="text-custom-black hover:text-sage-green transition-colors duration-300">Niveles</a>
+                    <a href="#" class="text-custom-black hover:text-sage-green transition-colors duration-300">Sobre Nosotros</a>
+                    <a href="#" class="text-custom-black hover:text-sage-green transition-colors duration-300">Contacto</a>
+                </nav>
+
+                <!-- Hamburger Menu Button -->
+                <button 
+                    id="hamburgerBtn" 
+                    class="md:hidden flex flex-col items-center justify-center w-12 h-12 bg-sage-green rounded-lg touch-feedback focus:outline-none focus:ring-2 focus:ring-sage-green focus:ring-offset-2"
+                    aria-label="Abrir menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                >
+                    <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-white mt-1.5 transition-all duration-300 ease-in-out"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-white mt-1.5 transition-all duration-300 ease-in-out"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div 
+        id="mobileMenuOverlay" 
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 opacity-0 invisible transition-all duration-300 ease-in-out"
+        aria-hidden="true"
+    ></div>
+
+    <!-- Mobile Menu -->
+    <div 
+        id="mobileMenu" 
+        class="fixed top-0 right-0 w-80 h-full bg-white shadow-2xl z-50 menu-slide overflow-y-auto"
+        role="menu"
+        aria-hidden="true"
+        aria-label="Mobile navigation menu"
+    >
+        <!-- Menu Header -->
+        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+            <h2 class="text-xl font-heading font-bold text-custom-black">Navegación</h2>
+            <button 
+                id="closeMenuBtn" 
+                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center touch-feedback focus:outline-none focus:ring-2 focus:ring-sage-green"
+                aria-label="Cerrar menú"
+            >
+                <svg class="w-6 h-6 text-custom-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu Content -->
+        <div class="p-6">
+            <!-- Main Navigation -->
+            <div class="mb-8">
+                <h3 class="text-sm font-medium text-custom-gray uppercase tracking-wider mb-4">Navegación Principal</h3>
+                <nav class="space-y-2">
+                    <a href="#" class="mobile-menu-link block px-4 py-3 text-custom-black hover:bg-sage-green/10 hover:text-sage-green rounded-lg transition-all duration-200 touch-feedback">
+                        🏠 Inicio
+                    </a>
+                    <a href="#" class="mobile-menu-link block px-4 py-3 text-custom-black hover:bg-sage-green/10 hover:text-sage-green rounded-lg transition-all duration-200 touch-feedback">
+                        📚 Niveles
+                    </a>
+                    <a href="#" class="mobile-menu-link block px-4 py-3 text-custom-black hover:bg-sage-green/10 hover:text-sage-green rounded-lg transition-all duration-200 touch-feedback">
+                        ℹ️ Sobre Nosotros
+                    </a>
+                    <a href="#" class="mobile-menu-link block px-4 py-3 text-custom-black hover:bg-sage-green/10 hover:text-sage-green rounded-lg transition-all duration-200 touch-feedback">
+                        📞 Contacto
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Levels Section -->
+            <div class="mb-8">
+                <h3 class="text-sm font-medium text-custom-gray uppercase tracking-wider mb-4">Niveles</h3>
+                <nav class="space-y-2">
+                    <a href="#" class="mobile-menu-link block px-4 py-3 text-custom-black hover:bg-sage-green/10 hover:text-sage-green rounded-lg transition-all duration-200 touch-feedback">
+                        🟢 A1 - Principiante
+                    </a>
+                    <a href="#" class="mobile-menu-link block px-4 py-3 text-custom-black hover:bg-sage-green/10 hover:text-sage-green rounded-lg transition-all duration-200 touch-feedback">
+                        🔵 A2 - Elemental
+                    </a>
+                    <a href="#" class="mobile-menu-link block px-4 py-3 text-custom-black hover:bg-sage-green/10 hover:text-sage-green rounded-lg transition-all duration-200 touch-feedback">
+                        🟡 B1 - Intermedio
+                    </a>
+                    <a href="#" class="mobile-menu-link block px-4 py-3 text-custom-black hover:bg-sage-green/10 hover:text-sage-green rounded-lg transition-all duration-200 touch-feedback">
+                        🟠 B2 - Intermedio Alto
+                    </a>
+                    <a href="#" class="mobile-menu-link block px-4 py-3 text-custom-black hover:bg-sage-green/10 hover:text-sage-green rounded-lg transition-all duration-200 touch-feedback">
+                        🔴 C1 - Avanzado
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl font-heading font-bold text-custom-black mb-6">Test de Funcionalidad Móvil</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Test Cards -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-semibold text-custom-black mb-4">Prueba de Touch</h2>
+                    <button class="w-full bg-sage-green text-white py-3 px-6 rounded-lg touch-feedback" onclick="logEvent('Card button touched')">Botón de Prueba</button>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-semibold text-custom-black mb-4">Información</h2>
+                    <p class="text-custom-black-light">Este es un test para verificar la funcionalidad del menú hamburguesa en dispositivos móviles con Tailwind CSS.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-semibold text-custom-black mb-4">Scroll Test</h2>
+                    <div class="h-40 overflow-y-auto bg-gray-50 p-4 rounded-lg">
+                        <p class="mb-4">Contenido para probar scroll...</p>
+                        <p class="mb-4">Línea 2 de contenido</p>
+                        <p class="mb-4">Línea 3 de contenido</p>
+                        <p class="mb-4">Línea 4 de contenido</p>
+                        <p class="mb-4">Línea 5 de contenido</p>
+                        <p class="mb-4">Línea 6 de contenido</p>
+                        <p class="mb-4">Final del contenido</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-xl font-semibold text-custom-black mb-4">Input Test</h2>
+                    <input type="text" placeholder="Prueba de input" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-green">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Variables globales
+        let isMenuOpen = false;
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+        const debugInfo = document.getElementById('debugInfo');
+
+        // Funciones de detección
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                   ('ontouchstart' in window) ||
+                   (navigator.maxTouchPoints > 0) ||
+                   window.innerWidth < 768;
+        }
+
+        function isTouchDevice() {
+            return 'ontouchstart' in window || 
+                   navigator.maxTouchPoints > 0 || 
+                   window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+        }
+
+        function getScreenSize() {
+            const width = window.innerWidth;
+            if (width < 480) return 'mobile-small';
+            if (width < 768) return 'mobile';
+            if (width < 1024) return 'tablet';
+            return 'desktop';
+        }
+
+        // Función de logging
+        function logEvent(message) {
+            console.log(message);
+            document.getElementById('lastEvent').textContent = `Last: ${message} (${new Date().toLocaleTimeString()})`;
+        }
+
+        // Funciones del menú
+        function openMenu() {
+            isMenuOpen = true;
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
+            mobileMenuOverlay.classList.add('opacity-100', 'visible');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+            
+            // Animación del botón hamburguesa
+            const lines = hamburgerBtn.querySelectorAll('.hamburger-line');
+            lines[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+            lines[1].style.opacity = '0';
+            lines[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+            
+            // Prevenir scroll del body
+            document.body.style.overflow = 'hidden';
+            
+            logEvent('Menu opened');
+        }
+
+        function closeMenu() {
+            isMenuOpen = false;
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('opacity-100', 'visible');
+            mobileMenuOverlay.classList.add('opacity-0', 'invisible');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            
+            // Restaurar botón hamburguesa
+            const lines = hamburgerBtn.querySelectorAll('.hamburger-line');
+            lines[0].style.transform = '';
+            lines[1].style.opacity = '';
+            lines[2].style.transform = '';
+            
+            // Restaurar scroll del body
+            document.body.style.overflow = '';
+            
+            logEvent('Menu closed');
+        }
+
+        function toggleMenu() {
+            if (isMenuOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }
+
+        // Event listeners
+        hamburgerBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            logEvent('Hamburger clicked');
+            toggleMenu();
+        });
+
+        // Touch events para mejor responsividad móvil
+        if (isTouchDevice()) {
+            hamburgerBtn.addEventListener('touchstart', function(e) {
+                logEvent('Hamburger touchstart');
+            }, { passive: true });
+
+            hamburgerBtn.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                logEvent('Hamburger touchend');
+                toggleMenu();
+            }, { passive: false });
+        }
+
+        closeMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            logEvent('Close button clicked');
+            closeMenu();
+        });
+
+        mobileMenuOverlay.addEventListener('click', function(e) {
+            e.preventDefault();
+            logEvent('Overlay clicked');
+            closeMenu();
+        });
+
+        // Touch events para overlay
+        if (isTouchDevice()) {
+            mobileMenuOverlay.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                logEvent('Overlay touched');
+                closeMenu();
+            }, { passive: false });
+        }
+
+        // Enlaces del menú
+        mobileMenuLinks.forEach((link, index) => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                logEvent(`Menu link ${index + 1} clicked`);
+                closeMenu();
+            });
+
+            if (isTouchDevice()) {
+                link.addEventListener('touchstart', function(e) {
+                    logEvent(`Menu link ${index + 1} touched`);
+                }, { passive: true });
+            }
+        });
+
+        // Cerrar con Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && isMenuOpen) {
+                closeMenu();
+                hamburgerBtn.focus();
+            }
+        });
+
+        // Actualizar debug info
+        function updateDebugInfo() {
+            document.getElementById('deviceType').textContent = `Device: ${isMobileDevice() ? 'Mobile' : 'Desktop'}`;
+            document.getElementById('screenSize').textContent = `Screen: ${getScreenSize()} (${window.innerWidth}x${window.innerHeight})`;
+            document.getElementById('touchSupport').textContent = `Touch: ${isTouchDevice() ? 'Yes' : 'No'}`;
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDebugInfo();
+            logEvent('Page loaded');
+        });
+
+        // Actualizar info en resize
+        window.addEventListener('resize', updateDebugInfo);
+
+        // Prevenir zoom en iOS
+        document.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
+        });
+
+        // Logging adicional para debugging
+        document.addEventListener('touchstart', function(e) {
+            logEvent(`Touch detected: ${e.touches.length} finger(s)`);
+        }, { passive: true });
+    </script>
+</body>
+</html>

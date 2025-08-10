@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación Móvil - Menú Hamburguesa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        /* Debug styles for mobile testing */
+        .debug-info {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            font-size: 12px;
+            z-index: 9999;
+            max-width: 200px;
+        }
+        
+        .touch-indicator {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+        
+        .touch-indicator.active {
+            opacity: 0.7;
+        }
+        
+        /* Tailwind custom config */
+        :root {
+            --custom-yellow: #F4D03F;
+            --custom-yellow-dark: #F1C40F;
+            --custom-black: #2C3E50;
+            --custom-black-light: #34495E;
+            --custom-gray: #7F8C8D;
+            --custom-gray-light: #ECF0F1;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-yellow': '#F4D03F',
+                        'custom-yellow-dark': '#F1C40F',
+                        'custom-black': '#2C3E50',
+                        'custom-black-light': '#34495E',
+                        'custom-gray': '#7F8C8D',
+                        'custom-gray-light': '#ECF0F1',
+                        'sage-green': '#87A96B',
+                        'terracotta': '#D2691E'
+                    },
+                    fontFamily: {
+                        'heading': ['Georgia', 'serif'],
+                        'body': ['Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-body">
+    <!-- Debug Info -->
+    <div class="debug-info">
+        <div>Screen: <span id="screen-size"></span></div>
+        <div>Touch: <span id="touch-support"></span></div>
+        <div>Menu: <span id="menu-status">Cerrado</span></div>
+        <div>Events: <span id="event-count">0</span></div>
+    </div>
+    
+    <!-- Touch Indicator -->
+    <div class="touch-indicator" id="touchIndicator"></div>
+    
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b border-custom-gray-light sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold font-heading text-custom-black">🎓 Mobile Test</h1>
+                </div>
+                
+                <!-- Hamburger menu for mobile -->
+                <button class="hamburger-menu md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none focus:ring-2 focus:ring-custom-yellow rounded-lg p-1" 
+                        aria-label="Open navigation menu" 
+                        aria-expanded="false"
+                        aria-controls="mobile-menu"
+                        type="button">
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-custom-black-light transition-all duration-300"></span>
+                </button>
+                
+                <!-- Desktop navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-custom-black hover:text-custom-yellow transition-colors duration-300">Home</a>
+                    <a href="#" class="text-custom-black hover:text-custom-yellow transition-colors duration-300">Levels</a>
+                    <a href="#" class="text-custom-black hover:text-custom-yellow transition-colors duration-300">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="mobile-menu-header flex items-center justify-between p-6 border-b border-custom-gray-light bg-gradient-to-r from-custom-yellow to-custom-yellow-dark">
+            <h2 class="text-lg font-bold text-custom-black font-heading">🎓 Navigation</h2>
+            <button class="mobile-menu-close p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white" 
+                    aria-label="Close navigation menu"
+                    type="button">
+                <span class="text-custom-black text-lg">✕</span>
+            </button>
+        </div>
+        
+        <div class="mobile-menu-content overflow-y-auto h-full pb-20">
+            <div class="p-6 space-y-6">
+                <div>
+                    <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">📍 Main Sections</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg bg-custom-yellow/10 text-custom-black-light hover:bg-custom-yellow/20 transition-colors duration-200">🏠 <span>Home</span></a>
+                        <a href="#" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200">📚 <span>Levels</span></a>
+                        <a href="#" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-custom-gray-light transition-colors duration-200">ℹ️ <span>About</span></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-custom-gray uppercase tracking-wider mb-4">🎯 Test Links</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-sage-green/10 transition-colors duration-200">🌱 <span>Test Link 1</span></a>
+                        <a href="#" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-sage-green/10 transition-colors duration-200">📘 <span>Test Link 2</span></a>
+                        <a href="#" class="mobile-menu-link flex items-center space-x-3 p-3 rounded-lg text-custom-black-light hover:bg-terracotta/10 transition-colors duration-200">⏰ <span>Test Link 3</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-all duration-300 md:hidden"></div>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold text-custom-black mb-6">Verificación de Funcionalidad Móvil</h1>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                <h2 class="text-xl font-semibold text-custom-black mb-4">✅ Lista de Verificación</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-center space-x-3">
+                        <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                        <span>Menú hamburguesa visible en móvil</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                        <span>Respuesta táctil al tocar el botón</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                        <span>Animación suave de apertura/cierre</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                        <span>Overlay funcional para cerrar</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                        <span>Enlaces del menú funcionan correctamente</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                        <span>Botón de cerrar (X) funciona</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                        <span>Scroll del menú funciona en dispositivos largos</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                        <span>Accesibilidad (aria-labels, focus)</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold text-custom-black mb-4">📱 Instrucciones de Prueba</h2>
+                <ol class="list-decimal list-inside space-y-2 text-custom-black-light">
+                    <li>Abra esta página en un dispositivo móvil o use las herramientas de desarrollador</li>
+                    <li>Toque el botón del menú hamburguesa (☰) en la esquina superior derecha</li>
+                    <li>Verifique que el menú se deslice suavemente desde la izquierda</li>
+                    <li>Toque diferentes enlaces para verificar la respuesta táctil</li>
+                    <li>Toque el overlay (área oscura) para cerrar el menú</li>
+                    <li>Abra el menú nuevamente y use el botón X para cerrarlo</li>
+                    <li>Verifique que todas las animaciones sean suaves</li>
+                    <li>Pruebe en orientación vertical y horizontal</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+    
+    <script src="assets/script.js"></script>
+    <script>
+        // Debug functionality
+        let eventCount = 0;
+        
+        function updateDebugInfo() {
+            document.getElementById('screen-size').textContent = `${window.innerWidth}x${window.innerHeight}`;
+            document.getElementById('touch-support').textContent = 'ontouchstart' in window ? 'Sí' : 'No';
+        }
+        
+        function logEvent(event) {
+            eventCount++;
+            document.getElementById('event-count').textContent = eventCount;
+            console.log(`[${eventCount}] ${event}`);
+        }
+        
+        // Touch indicator
+        function showTouchIndicator(x, y) {
+            const indicator = document.getElementById('touchIndicator');
+            indicator.style.left = x + 'px';
+            indicator.style.top = y + 'px';
+            indicator.classList.add('active');
+            setTimeout(() => indicator.classList.remove('active'), 200);
+        }
+        
+        // Event listeners for debugging
+        document.addEventListener('touchstart', function(e) {
+            const touch = e.touches[0];
+            showTouchIndicator(touch.clientX, touch.clientY);
+            logEvent('Touch start');
+        });
+        
+        document.addEventListener('click', function(e) {
+            logEvent('Click event');
+        });
+        
+        // Monitor menu state
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.target.classList.contains('mobile-menu')) {
+                    const isOpen = mutation.target.classList.contains('active');
+                    document.getElementById('menu-status').textContent = isOpen ? 'Abierto' : 'Cerrado';
+                    logEvent(`Menu ${isOpen ? 'opened' : 'closed'}`);
+                }
+            });
+        });
+        
+        // Start observing
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (mobileMenu) {
+            observer.observe(mobileMenu, { attributes: true, attributeFilter: ['class'] });
+        }
+        
+        // Update debug info on resize
+        window.addEventListener('resize', updateDebugInfo);
+        updateDebugInfo();
+        
+        // Log initial state
+        logEvent('Page loaded');
+    </script>
+</body>
+</html>
