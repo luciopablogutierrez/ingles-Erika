@@ -260,9 +260,9 @@ body {
     speak: none;
 }
 
-/* Navigation - Mobile First */
+/* Navigation - Mobile First - Responsivo mejorado */
 .main-nav {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -275,21 +275,23 @@ body {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     will-change: transform;
-    /* Altura optimizada para móvil */
-    min-height: 60px;
+    /* Altura responsiva */
+    min-height: 64px;
+    width: 100%;
 }
 
 .nav-container {
     max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 var(--container-padding);
+    padding: 0 clamp(16px, 4vw, 32px); /* Padding responsivo */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 60px; /* Móvil primero */
+    min-height: 64px; /* Altura consistente */
     position: relative;
-    backdrop-filter: blur(20px);
-    box-shadow: var(--shadow-lg);
+    width: 100%;
+    /* Asegurar que el contenedor sea completamente responsivo */
+    box-sizing: border-box;
 }
 
 .nav-container::before {
@@ -310,14 +312,16 @@ body {
 }
 
 .nav-brand h1 {
-    font-size: clamp(var(--font-size-xl), 4vw, var(--font-size-3xl));
-    color: var(--terracotta);
+    font-size: clamp(18px, 4vw, 24px); /* Tamaño responsivo optimizado */
+    color: var(--black);
     margin: 0;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--terracotta) 0%, var(--sage-green) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    line-height: 1.2;
+    /* Asegurar legibilidad en todos los dispositivos */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100vw - 120px); /* Espacio para hamburguesa */
     letter-spacing: -0.02em;
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     font-family: var(--font-family-heading);
