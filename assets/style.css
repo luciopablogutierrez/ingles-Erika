@@ -12,18 +12,18 @@
     --gray-light: #f5f5f5;
     --gray-dark: #222222;
     
-    /* Tipografía Mobile First - Mínimo 16px base */
+    /* Tipografía Mobile First - Mínimo 16px base para legibilidad */
     --font-family-primary: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-heading: 'Playfair Display', Georgia, serif;
-    --font-size-xs: 0.875rem;  /* 14px - mínimo legible */
-    --font-size-sm: 1rem;      /* 16px - base móvil */
-    --font-size-base: 1rem;    /* 16px - mínimo para móvil */
-    --font-size-lg: 1.125rem;  /* 18px */
-    --font-size-xl: 1.25rem;   /* 20px */
-    --font-size-2xl: 1.375rem; /* 22px - móvil */
-    --font-size-3xl: 1.5rem;   /* 24px - móvil */
-    --font-size-4xl: 1.75rem;  /* 28px - móvil */
-    --font-size-5xl: 2rem;     /* 32px - móvil */
+    --font-size-xs: 1rem;      /* 16px - mínimo legible en móvil */
+    --font-size-sm: 1.125rem;  /* 18px - base móvil mejorado */
+    --font-size-base: 1.125rem; /* 18px - mínimo para móvil legible */
+    --font-size-lg: 1.25rem;   /* 20px */
+    --font-size-xl: 1.375rem;  /* 22px */
+    --font-size-2xl: 1.5rem;   /* 24px - móvil */
+    --font-size-3xl: 1.75rem;  /* 28px - móvil */
+    --font-size-4xl: 2rem;     /* 32px - móvil */
+    --font-size-5xl: 2.25rem;  /* 36px - móvil */
     
     /* Breakpoints Mobile-First específicos */
     --breakpoint-xs: 320px;   /* Móviles muy pequeños */
@@ -140,16 +140,16 @@ html {
 /* Importación de tipografías */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Mobile First Body - Base para móvil */
+/* Mobile First Body - Base para móvil con mejor legibilidad */
 body {
     font-family: var(--font-family-primary);
-    font-size: var(--font-size-base); /* 16px mínimo */
-    line-height: 1.6; /* Mejor para móvil */
+    font-size: var(--font-size-base); /* 18px mínimo para legibilidad */
+    line-height: 1.7; /* Mejor espaciado para móvil */
     color: var(--text-primary);
     background: var(--bg-primary);
     min-height: calc(var(--vh, 1vh) * 100); /* Viewport height dinámico */
     transition: all var(--transition-normal);
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em; /* Mejor espaciado de letras */
     font-weight: 400;
     overflow-x: hidden; /* Prevenir scroll horizontal */
     overflow-y: auto; /* Asegurar scroll vertical */
@@ -3919,6 +3919,41 @@ footer {
     display: none;
 }
 
+/* Reglas adicionales para mejorar legibilidad en móviles */
+@media (max-width: 767px) {
+    /* Forzar tamaños mínimos legibles para cualquier texto pequeño */
+    .small, small, .text-sm, .caption {
+        font-size: max(16px, 1rem) !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Mejorar contraste para mejor legibilidad */
+    body {
+        color: #1a1a1a !important;
+    }
+    
+    /* Asegurar que los enlaces sean legibles */
+    a {
+        color: #0066cc !important;
+        text-decoration: underline !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Mejorar botones para touch */
+    button, .btn {
+        font-size: max(16px, 1.1rem) !important;
+        padding: 12px 16px !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Inputs más legibles */
+    input, textarea, select {
+        font-size: max(16px, 1rem) !important;
+        line-height: 1.5 !important;
+        padding: 12px !important;
+    }
+}
+
 /* Breakpoint móvil grande - 480px */
 @media (min-width: 480px) {
     .container {
@@ -4339,21 +4374,22 @@ input, textarea, select {
     }
     
     /* Mejorar legibilidad en elementos pequeños */
-    [style*="grid-template-columns"][style*="minmax"] h4 {
-        font-size: 0.9rem !important;
-        margin-bottom: 0.5rem !important;
-    }
-    
-    [style*="grid-template-columns"][style*="minmax"] ul {
-        margin: 0.5rem 0 !important;
-        padding-left: 1rem !important;
-    }
-    
-    [style*="grid-template-columns"][style*="minmax"] li {
-         margin-bottom: 0.25rem !important;
-         font-size: 0.85rem !important;
-         line-height: 1.3 !important;
+     [style*="grid-template-columns"][style*="minmax"] h4 {
+         font-size: 1.1rem !important;
+         margin-bottom: 0.5rem !important;
+         line-height: 1.4 !important;
      }
+     
+     [style*="grid-template-columns"][style*="minmax"] ul {
+         margin: 0.5rem 0 !important;
+         padding-left: 1rem !important;
+     }
+     
+     [style*="grid-template-columns"][style*="minmax"] li {
+          margin-bottom: 0.25rem !important;
+          font-size: 1rem !important;
+          line-height: 1.5 !important;
+      }
      
      /* Mejorar inputs y ejercicios en móviles */
      .exercise input[type="text"] {
@@ -4401,13 +4437,40 @@ input, textarea, select {
      }
  }
  
- /* Reglas específicas para pantallas muy pequeñas */
- @media (max-width: 480px) {
-     /* Mejoras específicas para el menú hamburguesa en pantallas pequeñas */
-     .mobile-menu {
-         width: 95vw !important; /* Más ancho en pantallas muy pequeñas */
-         max-width: 95vw !important;
-     }
+ /* Reglas específicas para pantallas muy pequeñas - Mejora de legibilidad */
+@media (max-width: 480px) {
+    /* Mejoras generales de legibilidad para móviles */
+    * {
+        font-size: max(16px, 1rem) !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Asegurar que todos los textos sean legibles */
+    p, span, div, a, li, td, th {
+        font-size: max(16px, 1.1rem) !important;
+        line-height: 1.7 !important;
+        letter-spacing: 0.02em !important;
+    }
+    
+    /* Títulos más legibles */
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.4 !important;
+        margin-bottom: 1rem !important;
+        letter-spacing: 0.01em !important;
+    }
+    
+    h1 { font-size: max(24px, 1.8rem) !important; }
+    h2 { font-size: max(22px, 1.6rem) !important; }
+    h3 { font-size: max(20px, 1.4rem) !important; }
+    h4 { font-size: max(18px, 1.3rem) !important; }
+    h5 { font-size: max(16px, 1.2rem) !important; }
+    h6 { font-size: max(16px, 1.1rem) !important; }
+    
+    /* Mejoras específicas para el menú hamburguesa en pantallas pequeñas */
+    .mobile-menu {
+        width: 95vw !important; /* Más ancho en pantallas muy pequeñas */
+        max-width: 95vw !important;
+    }
      
      .mobile-menu-link {
          padding: 1.5rem 1.25rem !important; /* Área táctil aún más grande */
@@ -4455,8 +4518,9 @@ input, textarea, select {
      
      /* Mejorar legibilidad de títulos */
      h4 {
-         font-size: 1rem !important;
-         line-height: 1.2 !important;
+         font-size: 1.2rem !important;
+         line-height: 1.4 !important;
+         margin-bottom: 0.75rem !important;
      }
      
      /* Ajustar listas */
@@ -4465,9 +4529,9 @@ input, textarea, select {
      }
      
      li {
-         font-size: 0.9rem !important;
-         line-height: 1.4 !important;
-         margin-bottom: 0.25rem !important;
+         font-size: 1.1rem !important;
+         line-height: 1.6 !important;
+         margin-bottom: 0.5rem !important;
      }
      
      /* Mejorar inputs */
@@ -4489,15 +4553,17 @@ input, textarea, select {
      }
      
      .lesson-number-badge {
-         width: 35px !important;
-         height: 35px !important;
-         font-size: 0.8rem !important;
+         width: 40px !important;
+         height: 40px !important;
+         font-size: 1rem !important;
+         line-height: 1.2 !important;
      }
      
      .lesson-btn {
-         padding: 0.875rem 1rem !important;
-         font-size: 0.95rem !important;
+         padding: 1rem 1.25rem !important;
+         font-size: 1.1rem !important;
          font-weight: 600 !important;
+         line-height: 1.4 !important;
          border-radius: 8px !important;
          min-height: 48px !important;
          width: 100% !important;
