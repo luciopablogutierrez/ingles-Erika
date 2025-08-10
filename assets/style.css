@@ -92,6 +92,11 @@
     --error-color: #e57373;
     --success-color: var(--yellow-dark);
     --warning-color: var(--yellow-light);
+    
+    /* Colores primarios para botones */
+    --primary-color: var(--yellow);
+    --primary-dark: var(--yellow-dark);
+    --primary-color-rgb: 255, 215, 0;
 }
 
 /* Modo oscuro con paleta del cliente */
@@ -124,6 +129,11 @@
     --error-color: #ff8a80;
     --success-color: var(--yellow-dark);
     --warning-color: var(--yellow-light);
+    
+    /* Colores primarios para botones */
+    --primary-color: var(--yellow);
+    --primary-dark: var(--yellow-dark);
+    --primary-color-rgb: 255, 215, 0;
 }
 
 /* Reset y configuración base */
@@ -3507,20 +3517,32 @@ footer {
 
 .lesson-btn {
     background: var(--primary-color);
-    color: white;
+    color: #000000;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-shadow: none;
+    min-height: 44px;
+    justify-content: center;
 }
 
 .lesson-btn:hover {
     background: var(--primary-dark);
+    border-color: var(--primary-dark);
     transform: translateX(3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-btn:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
 }
 
 /* Objectives Grid Modern */
