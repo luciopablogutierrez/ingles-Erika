@@ -50,6 +50,23 @@
                     fontFamily: {
                         'primary': ['Inter', 'Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
                         'heading': ['Playfair Display', 'Georgia', 'serif']
+                    },
+                    screens: {
+                        'xs': '320px',
+                        'sm': '640px',
+                        'md': '768px',
+                        'lg': '1024px',
+                        'xl': '1280px',
+                        '2xl': '1536px'
+                    },
+                    spacing: {
+                        'safe': 'env(safe-area-inset-bottom)'
+                    },
+                    minHeight: {
+                        'touch': '44px'
+                    },
+                    minWidth: {
+                        'touch': '44px'
                     }
                 }
             },
@@ -62,15 +79,15 @@
 <body class="bg-gradient-to-br from-custom-white to-custom-gray-light dark:from-custom-black dark:to-custom-gray-dark font-primary text-custom-black-light dark:text-custom-white min-h-screen transition-colors duration-300">
     <!-- Skip link for keyboard navigation -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-custom-yellow text-custom-black px-4 py-2 rounded-lg z-50 transition-all duration-300">Skip to main content</a>
-    <nav class="bg-white/95 dark:bg-custom-black/95 backdrop-blur-sm shadow-lg sticky top-0 z-40 border-b border-custom-gray-light dark:border-custom-gray transition-colors duration-300" role="navigation" aria-label="Main navigation">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+    <nav class="bg-white/95 dark:bg-custom-black/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b border-custom-gray-light dark:border-custom-gray transition-colors duration-300" role="navigation" aria-label="Main navigation">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
                 <div class="flex-shrink-0">
                     <h1 class="text-xl font-bold text-custom-black-light dark:text-custom-white font-heading">🎓 English Reinforcement</h1>
                 </div>
                 
                 <!-- Hamburger menu for mobile -->
-                <button class="hamburger-menu md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none focus:ring-2 focus:ring-custom-yellow rounded-lg p-1" 
+                <button class="hamburger-menu md:hidden flex flex-col justify-center items-center min-w-touch min-h-touch w-12 h-12 space-y-1.5 focus:outline-none focus:ring-2 focus:ring-custom-yellow rounded-lg p-2 hover:bg-custom-gray-light/50 dark:hover:bg-custom-gray/50 transition-all duration-300" 
                         aria-label="Open navigation menu" 
                         aria-expanded="false"
                         aria-controls="mobile-menu"
@@ -81,17 +98,17 @@
                 </button>
                 
                 <!-- Desktop navigation -->
-                <div class="hidden md:flex items-center space-x-6" role="menubar">
-                    <a href="#home" class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-custom-yellow text-custom-black font-medium hover:bg-custom-yellow-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow-dark" role="menuitem" aria-current="page">
-                        <span>🏠</span><span>Home</span>
+                <div class="hidden md:flex items-center space-x-2 lg:space-x-6" role="menubar">
+                    <a href="#home" class="flex items-center space-x-2 px-4 py-3 min-h-touch rounded-lg bg-custom-yellow text-custom-black font-medium hover:bg-custom-yellow-dark active:bg-custom-yellow-dark transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow-dark" role="menuitem" aria-current="page">
+                        <span>🏠</span><span class="hidden lg:inline">Home</span>
                     </a>
-                    <a href="#levels" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-custom-black-light dark:text-custom-white hover:bg-custom-gray-light dark:hover:bg-custom-gray transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
-                        <span>📚</span><span>Levels</span>
+                    <a href="#levels" class="flex items-center space-x-2 px-4 py-3 min-h-touch rounded-lg text-custom-black-light dark:text-custom-white hover:bg-custom-gray-light dark:hover:bg-custom-gray active:bg-custom-gray-light dark:active:bg-custom-gray transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
+                        <span>📚</span><span class="hidden lg:inline">Levels</span>
                     </a>
-                    <a href="#about" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-custom-black-light dark:text-custom-white hover:bg-custom-gray-light dark:hover:bg-custom-gray transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
-                        <span>ℹ️</span><span>About</span>
+                    <a href="#about" class="flex items-center space-x-2 px-4 py-3 min-h-touch rounded-lg text-custom-black-light dark:text-custom-white hover:bg-custom-gray-light dark:hover:bg-custom-gray active:bg-custom-gray-light dark:active:bg-custom-gray transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" role="menuitem">
+                        <span>ℹ️</span><span class="hidden lg:inline">About</span>
                     </a>
-                    <button class="theme-toggle p-2 rounded-lg text-custom-black-light dark:text-custom-white hover:bg-custom-gray-light dark:hover:bg-custom-gray transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" 
+                    <button class="theme-toggle min-w-touch min-h-touch p-3 rounded-lg text-custom-black-light dark:text-custom-white hover:bg-custom-gray-light dark:hover:bg-custom-gray active:bg-custom-gray-light dark:active:bg-custom-gray transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-custom-yellow" 
                             aria-label="Cambiar entre modo claro y oscuro" 
                             title="Cambiar tema"
                             type="button">
@@ -215,7 +232,7 @@
         </div>
     </nav>
 
-    <header id="home" class="relative bg-gradient-to-br from-custom-yellow via-custom-yellow-light to-custom-yellow-dark text-custom-black overflow-hidden" role="banner">
+    <header id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-custom-yellow via-custom-yellow-light to-custom-yellow-dark text-custom-black overflow-hidden" role="banner">
         <!-- Decorative background elements -->
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-xl"></div>
@@ -223,41 +240,41 @@
             <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-custom-yellow-dark rounded-full blur-lg"></div>
         </div>
         
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-            <div class="text-center space-y-8">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading leading-tight">
+        <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+            <div class="text-center space-y-6 md:space-y-8">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading leading-tight">
                     🌟 Learning with Erika is Fun!
                 </h1>
-                <p class="text-xl sm:text-2xl font-medium text-custom-black-light max-w-3xl mx-auto">
+                <p class="text-lg sm:text-xl md:text-2xl font-medium text-custom-black-light max-w-4xl mx-auto">
                     Learn English step by step with interactive exercises
                 </p>
-                <p class="text-lg text-custom-black/80 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-base md:text-lg text-custom-black/80 max-w-3xl mx-auto leading-relaxed">
                     Master English with our progressive learning system. From basic concepts to advanced communication skills.
                 </p>
                 
                 <!-- Statistics -->
-                <div class="grid grid-cols-3 gap-6 max-w-md mx-auto mt-12" role="region" aria-label="Course statistics">
-                    <div class="text-center">
-                        <div class="text-3xl sm:text-4xl font-bold text-custom-black" aria-label="5 levels available">5</div>
-                        <div class="text-sm sm:text-base font-medium text-custom-black-light">Levels</div>
+                <div class="grid grid-cols-3 gap-4 sm:gap-6 max-w-sm sm:max-w-md lg:max-w-lg mx-auto mt-8 md:mt-12" role="region" aria-label="Course statistics">
+                    <div class="text-center p-4 bg-white/20 backdrop-blur-sm rounded-xl">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-custom-black" aria-label="5 levels available">5</div>
+                        <div class="text-xs sm:text-sm md:text-base font-medium text-custom-black-light">Levels</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-3xl sm:text-4xl font-bold text-custom-black" aria-label="26 lessons total">26</div>
-                        <div class="text-sm sm:text-base font-medium text-custom-black-light">Lessons</div>
+                    <div class="text-center p-4 bg-white/20 backdrop-blur-sm rounded-xl">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-custom-black" aria-label="26 lessons total">26</div>
+                        <div class="text-xs sm:text-sm md:text-base font-medium text-custom-black-light">Lessons</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-3xl sm:text-4xl font-bold text-custom-black" aria-label="More than 100 exercises">100+</div>
-                        <div class="text-sm sm:text-base font-medium text-custom-black-light">Exercises</div>
+                    <div class="text-center p-4 bg-white/20 backdrop-blur-sm rounded-xl">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-custom-black" aria-label="More than 100 exercises">100+</div>
+                        <div class="text-xs sm:text-sm md:text-base font-medium text-custom-black-light">Exercises</div>
                     </div>
                 </div>
                 
                 <!-- Call to action buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
-                    <a href="#levels" class="inline-flex items-center space-x-2 bg-custom-black text-custom-yellow px-8 py-4 rounded-xl font-bold text-lg hover:bg-custom-black-light transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-custom-black/50" role="button" aria-describedby="cta-description">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 md:mt-12">
+                    <a href="#levels" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-custom-black text-custom-yellow px-6 md:px-8 py-4 min-h-touch rounded-xl font-bold text-base md:text-lg hover:bg-custom-black-light active:bg-custom-black-light transform hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-custom-black/50" role="button" aria-describedby="cta-description">
                         <span>🚀</span><span>Start Learning Now</span>
                     </a>
-                    <a href="a1/index.html" class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-custom-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/30 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/50" role="button">
-                        <span>⚡</span><span>Quick Start - A1 Level</span>
+                    <a href="a1/index.html" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/20 backdrop-blur-sm text-custom-black px-6 md:px-8 py-4 min-h-touch rounded-xl font-bold text-base md:text-lg hover:bg-white/30 active:bg-white/40 transform hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/50" role="button">
+                        <span>⚡</span><span class="hidden sm:inline">Quick Start - </span><span>A1 Level</span>
                     </a>
                 </div>
                 <div id="cta-description" class="sr-only">Go to the levels section to start learning</div>
@@ -266,29 +283,29 @@
     </header>
 
     <main id="main-content" role="main">
-        <section id="levels" class="py-20 bg-gradient-to-b from-custom-white to-custom-gray-light dark:from-custom-gray-dark dark:to-custom-black transition-colors duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-custom-black dark:text-custom-white mb-4 transition-colors duration-300">🎯 Choose Your Level</h2>
-                    <p class="text-lg text-custom-black-light dark:text-custom-gray-light max-w-2xl mx-auto transition-colors duration-300">Select the level that best fits your current English knowledge</p>
+        <section id="levels" class="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-custom-white to-custom-gray-light dark:from-custom-gray-dark dark:to-custom-black transition-colors duration-300">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-custom-black dark:text-custom-white mb-4 transition-colors duration-300">🎯 Choose Your Level</h2>
+                    <p class="text-base md:text-lg text-custom-black-light dark:text-custom-gray-light max-w-3xl mx-auto transition-colors duration-300">Select the level that best fits your current English knowledge</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
                     <!-- A1 Level -->
-                    <div class="bg-white dark:bg-custom-gray-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-custom-gray-light dark:border-custom-gray overflow-hidden">
-                        <div class="p-8">
-                            <div class="text-6xl mb-4 text-center">🌱</div>
-                            <h3 class="text-2xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 text-center transition-colors duration-300">A1 - Beginner</h3>
-                            <p class="text-custom-black-light dark:text-custom-gray-light mb-6 text-center transition-colors duration-300">Perfect for starting from scratch. Learn the basics of English.</p>
+                    <div class="bg-white dark:bg-custom-gray-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border border-custom-gray-light dark:border-custom-gray overflow-hidden">
+                        <div class="p-6 md:p-8">
+                            <div class="text-4xl md:text-6xl mb-4 text-center">🌱</div>
+                            <h3 class="text-xl md:text-2xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 text-center transition-colors duration-300">A1 - Beginner</h3>
+                            <p class="text-sm md:text-base text-custom-black-light dark:text-custom-gray-light mb-6 text-center transition-colors duration-300 leading-relaxed">Perfect for starting from scratch. Learn the basics of English.</p>
                             
-                            <div class="flex justify-center space-x-8 mb-6">
+                            <div class="flex justify-center space-x-6 md:space-x-8 mb-6">
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">6</div>
-                                    <div class="text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Lessons</div>
+                                    <div class="text-xl md:text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">6</div>
+                                    <div class="text-xs md:text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Lessons</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">~20h</div>
-                                    <div class="text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Duration</div>
+                                    <div class="text-xl md:text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">~20h</div>
+                                    <div class="text-xs md:text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Duration</div>
                                 </div>
                             </div>
                             
@@ -301,25 +318,25 @@
                                 <li class="flex items-center"><span class="w-2 h-2 bg-custom-yellow rounded-full mr-3"></span>Basic questions</li>
                             </ul>
                             
-                            <a href="a1/index.html" class="block w-full bg-custom-yellow text-custom-black text-center py-4 px-6 rounded-xl font-bold hover:bg-custom-yellow-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg min-h-[56px] flex items-center justify-center">🚀 Start A1 Level</a>
+                            <a href="a1/index.html" class="block w-full bg-custom-yellow text-custom-black text-center py-4 px-6 rounded-xl font-bold hover:bg-custom-yellow-dark active:bg-custom-yellow-dark transform hover:scale-105 active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg min-h-touch flex items-center justify-center text-sm md:text-base">🚀 Start A1 Level</a>
                         </div>
                     </div>
                     
                     <!-- A2 Level -->
-                    <div class="bg-white dark:bg-custom-gray-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-custom-gray-light dark:border-custom-gray overflow-hidden">
-                        <div class="p-8">
-                            <div class="text-6xl mb-4 text-center">🌿</div>
-                            <h3 class="text-2xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 text-center transition-colors duration-300">A2 - Elementary</h3>
-                            <p class="text-custom-black-light dark:text-custom-gray-light mb-6 text-center transition-colors duration-300">Build on the basics with more complex structures.</p>
+                    <div class="bg-white dark:bg-custom-gray-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border border-custom-gray-light dark:border-custom-gray overflow-hidden">
+                        <div class="p-6 md:p-8">
+                            <div class="text-4xl md:text-6xl mb-4 text-center">🌿</div>
+                            <h3 class="text-xl md:text-2xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 text-center transition-colors duration-300">A2 - Elementary</h3>
+                            <p class="text-sm md:text-base text-custom-black-light dark:text-custom-gray-light mb-6 text-center transition-colors duration-300 leading-relaxed">Build on the basics with more complex structures.</p>
                             
-                            <div class="flex justify-center space-x-8 mb-6">
+                            <div class="flex justify-center space-x-6 md:space-x-8 mb-6">
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">5</div>
-                                    <div class="text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Lessons</div>
+                                    <div class="text-xl md:text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">5</div>
+                                    <div class="text-xs md:text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Lessons</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">25h</div>
-                                    <div class="text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Duration</div>
+                                    <div class="text-xl md:text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">25h</div>
+                                    <div class="text-xs md:text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Duration</div>
                                 </div>
                             </div>
                             
@@ -331,25 +348,25 @@
                                 <li class="flex items-center"><span class="w-2 h-2 bg-sage-green rounded-full mr-3"></span>Brief conversations</li>
                             </ul>
                             
-                            <a href="a2/index.html" class="block w-full bg-sage-green text-custom-white text-center py-4 px-6 rounded-xl font-bold hover:bg-sage-green-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg min-h-[56px] flex items-center justify-center">🚀 Start A2 Level</a>
+                            <a href="a2/index.html" class="block w-full bg-sage-green text-custom-white text-center py-4 px-6 rounded-xl font-bold hover:bg-sage-green-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg min-h-touch flex items-center justify-center text-sm md:text-base">🚀 Start A2 Level</a>
                         </div>
                     </div>
                     
                     <!-- B1 Level -->
-                    <div class="bg-white dark:bg-custom-gray-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-custom-gray-light dark:border-custom-gray overflow-hidden">
-                        <div class="p-8">
-                            <div class="text-6xl mb-4 text-center">🌳</div>
-                            <h3 class="text-2xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 text-center transition-colors duration-300">B1 - Intermediate</h3>
-                            <p class="text-custom-black-light dark:text-custom-gray-light mb-6 text-center transition-colors duration-300">Develop fluency and confidence in everyday situations.</p>
+                    <div class="bg-white dark:bg-custom-gray-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border border-custom-gray-light dark:border-custom-gray overflow-hidden">
+                        <div class="p-6 md:p-8">
+                            <div class="text-4xl md:text-6xl mb-4 text-center">🌳</div>
+                            <h3 class="text-xl md:text-2xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 text-center transition-colors duration-300">B1 - Intermediate</h3>
+                            <p class="text-sm md:text-base text-custom-black-light dark:text-custom-gray-light mb-6 text-center transition-colors duration-300 leading-relaxed">Develop fluency and confidence in everyday situations.</p>
                             
-                            <div class="flex justify-center space-x-8 mb-6">
+                            <div class="flex justify-center space-x-6 md:space-x-8 mb-6">
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">5</div>
-                                    <div class="text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Lessons</div>
+                                    <div class="text-xl md:text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">5</div>
+                                    <div class="text-xs md:text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Lessons</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">30h</div>
-                                    <div class="text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Duration</div>
+                                    <div class="text-xl md:text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">30h</div>
+                                    <div class="text-xs md:text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Duration</div>
                                 </div>
                             </div>
                             
@@ -361,25 +378,25 @@
                                 <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Extended conversations</li>
                             </ul>
                             
-                            <a href="b1/index.html" class="block w-full bg-terracotta text-custom-white text-center py-4 px-6 rounded-xl font-bold hover:bg-terracotta-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg min-h-[56px] flex items-center justify-center">🚀 Start B1 Level</a>
+                            <a href="b1/index.html" class="block w-full bg-terracotta text-custom-white text-center py-4 px-6 rounded-xl font-bold hover:bg-terracotta-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg min-h-touch flex items-center justify-center text-sm md:text-base">🚀 Start B1 Level</a>
                         </div>
                     </div>
                     
                     <!-- B2 Level -->
-                    <div class="bg-white dark:bg-custom-gray-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-custom-gray-light dark:border-custom-gray overflow-hidden">
-                        <div class="p-8">
-                            <div class="text-6xl mb-4 text-center">🏔️</div>
-                            <h3 class="text-2xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 text-center transition-colors duration-300">B2 - Upper Intermediate</h3>
-                            <p class="text-custom-black-light dark:text-custom-gray-light mb-6 text-center transition-colors duration-300">Master advanced structures and improve your natural fluency.</p>
+                    <div class="bg-white dark:bg-custom-gray-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border border-custom-gray-light dark:border-custom-gray overflow-hidden">
+                        <div class="p-6 md:p-8">
+                            <div class="text-4xl md:text-6xl mb-4 text-center">🏔️</div>
+                            <h3 class="text-xl md:text-2xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 text-center transition-colors duration-300">B2 - Upper Intermediate</h3>
+                            <p class="text-sm md:text-base text-custom-black-light dark:text-custom-gray-light mb-6 text-center transition-colors duration-300 leading-relaxed">Master advanced structures and improve your natural fluency.</p>
                             
-                            <div class="flex justify-center space-x-8 mb-6">
+                            <div class="flex justify-center space-x-6 md:space-x-8 mb-6">
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">5</div>
-                                    <div class="text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Lessons</div>
+                                    <div class="text-xl md:text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">5</div>
+                                    <div class="text-xs md:text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Lessons</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">35h</div>
-                                    <div class="text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Duration</div>
+                                    <div class="text-xl md:text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">35h</div>
+                                    <div class="text-xs md:text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Duration</div>
                                 </div>
                             </div>
                             
@@ -391,25 +408,25 @@
                                 <li class="flex items-center"><span class="w-2 h-2 bg-custom-black rounded-full mr-3"></span>Debates and opinions</li>
                             </ul>
                             
-                            <a href="b2/index.html" class="block w-full bg-custom-black text-custom-yellow text-center py-4 px-6 rounded-xl font-bold hover:bg-custom-black-light transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg min-h-[56px] flex items-center justify-center">🚀 Start B2 Level</a>
+                            <a href="b2/index.html" class="block w-full bg-custom-black text-custom-yellow text-center py-4 px-6 rounded-xl font-bold hover:bg-custom-black-light transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg min-h-touch flex items-center justify-center text-sm md:text-base">🚀 Start B2 Level</a>
                         </div>
                     </div>
                     
                     <!-- C1 Level -->
-                    <div class="bg-white dark:bg-custom-gray-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-custom-gray-light dark:border-custom-gray overflow-hidden">
-                        <div class="p-8">
-                            <div class="text-6xl mb-4 text-center">🎓</div>
-                            <h3 class="text-2xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 text-center transition-colors duration-300">C1 - Advanced</h3>
-                            <p class="text-custom-black-light dark:text-custom-gray-light mb-6 text-center transition-colors duration-300">Reach near-native level with idiomatic expressions.</p>
+                    <div class="bg-white dark:bg-custom-gray-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border border-custom-gray-light dark:border-custom-gray overflow-hidden">
+                        <div class="p-6 md:p-8">
+                            <div class="text-4xl md:text-6xl mb-4 text-center">🎓</div>
+                            <h3 class="text-xl md:text-2xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 text-center transition-colors duration-300">C1 - Advanced</h3>
+                            <p class="text-sm md:text-base text-custom-black-light dark:text-custom-gray-light mb-6 text-center transition-colors duration-300 leading-relaxed">Reach near-native level with idiomatic expressions.</p>
                             
-                            <div class="flex justify-center space-x-8 mb-6">
+                            <div class="flex justify-center space-x-6 md:space-x-8 mb-6">
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">5</div>
-                                    <div class="text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Lessons</div>
+                                    <div class="text-xl md:text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">5</div>
+                                    <div class="text-xs md:text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Lessons</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">40h</div>
-                                    <div class="text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Duration</div>
+                                    <div class="text-xl md:text-2xl font-bold text-custom-black dark:text-custom-white transition-colors duration-300">40h</div>
+                                    <div class="text-xs md:text-sm text-custom-black-light dark:text-custom-gray-light transition-colors duration-300">Duration</div>
                                 </div>
                             </div>
                             
@@ -421,74 +438,77 @@
                                 <li class="flex items-center"><span class="w-2 h-2 bg-gradient-to-r from-custom-yellow to-sage-green rounded-full mr-3"></span>Advanced presentations</li>
                             </ul>
                             
-                            <a href="c1/index.html" class="block w-full bg-gradient-to-r from-custom-yellow to-sage-green text-custom-black text-center py-4 px-6 rounded-xl font-bold hover:from-custom-yellow-dark hover:to-sage-green-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg min-h-[56px] flex items-center justify-center">🚀 Start C1 Level</a>
+                            <a href="c1/index.html" class="block w-full bg-gradient-to-r from-custom-yellow to-sage-green text-custom-black text-center py-4 px-6 rounded-xl font-bold hover:from-custom-yellow-dark hover:to-sage-green-dark transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg min-h-touch flex items-center justify-center text-sm md:text-base">🚀 Start C1 Level</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-20 bg-custom-white dark:bg-custom-gray-dark transition-colors duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-custom-black dark:text-custom-white mb-4 transition-colors duration-300">🎯 About This Course</h2>
+        <section id="about" class="py-12 md:py-16 lg:py-20 bg-custom-white dark:bg-custom-gray-dark transition-colors duration-300">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-custom-black dark:text-custom-white mb-4 transition-colors duration-300">🎯 About This Course</h2>
+                    <p class="text-base md:text-lg text-custom-black-light dark:text-custom-gray-light max-w-3xl mx-auto transition-colors duration-300 leading-relaxed">Discover what makes our English learning platform unique and effective</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-gradient-to-br from-custom-yellow/10 to-custom-yellow/5 rounded-2xl p-8 text-center border border-custom-yellow/20 hover:border-custom-yellow/40 transition-all duration-300 hover:shadow-lg">
-                        <div class="text-4xl mb-4">🎓</div>
-                        <h3 class="text-xl font-bold font-heading text-custom-black dark:text-custom-white mb-4 transition-colors duration-300">Comprehensive Learning</h3>
-                        <p class="text-custom-black-light dark:text-custom-gray-light leading-relaxed transition-colors duration-300">From A1 to C1 levels following the Common European Framework of Reference (CEFR)</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <div class="bg-gradient-to-br from-custom-yellow/10 to-custom-yellow/5 rounded-2xl p-6 md:p-8 text-center border border-custom-yellow/20 hover:border-custom-yellow/40 transition-all duration-300 hover:shadow-lg transform hover:scale-105 min-h-touch">
+                        <div class="text-3xl md:text-4xl mb-4">🎓</div>
+                        <h3 class="text-lg md:text-xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 md:mb-4 transition-colors duration-300">Comprehensive Learning</h3>
+                        <p class="text-sm md:text-base text-custom-black-light dark:text-custom-gray-light leading-relaxed transition-colors duration-300">From A1 to C1 levels following the Common European Framework of Reference (CEFR)</p>
                     </div>
                     
-                    <div class="bg-gradient-to-br from-sage-green/10 to-sage-green/5 rounded-2xl p-8 text-center border border-sage-green/20 hover:border-sage-green/40 transition-all duration-300 hover:shadow-lg">
-                        <div class="text-4xl mb-4">🎮</div>
-                        <h3 class="text-xl font-bold font-heading text-custom-black dark:text-custom-white mb-4 transition-colors duration-300">Interactive Exercises</h3>
-                        <p class="text-custom-black-light dark:text-custom-gray-light leading-relaxed transition-colors duration-300">Engaging activities with immediate feedback to reinforce your learning</p>
+                    <div class="bg-gradient-to-br from-sage-green/10 to-sage-green/5 rounded-2xl p-6 md:p-8 text-center border border-sage-green/20 hover:border-sage-green/40 transition-all duration-300 hover:shadow-lg transform hover:scale-105 min-h-touch">
+                        <div class="text-3xl md:text-4xl mb-4">🎮</div>
+                        <h3 class="text-lg md:text-xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 md:mb-4 transition-colors duration-300">Interactive Exercises</h3>
+                        <p class="text-sm md:text-base text-custom-black-light dark:text-custom-gray-light leading-relaxed transition-colors duration-300">Engaging activities with immediate feedback to reinforce your learning</p>
                     </div>
                     
-                    <div class="bg-gradient-to-br from-terracotta/10 to-terracotta/5 rounded-2xl p-8 text-center border border-terracotta/20 hover:border-terracotta/40 transition-all duration-300 hover:shadow-lg">
-                        <div class="text-4xl mb-4">📈</div>
-                        <h3 class="text-xl font-bold font-heading text-custom-black dark:text-custom-white mb-4 transition-colors duration-300">Progress Tracking</h3>
-                        <p class="text-custom-black-light dark:text-custom-gray-light leading-relaxed transition-colors duration-300">Monitor your advancement through each level and lesson completion</p>
+                    <div class="bg-gradient-to-br from-terracotta/10 to-terracotta/5 rounded-2xl p-6 md:p-8 text-center border border-terracotta/20 hover:border-terracotta/40 transition-all duration-300 hover:shadow-lg transform hover:scale-105 min-h-touch">
+                        <div class="text-3xl md:text-4xl mb-4">📈</div>
+                        <h3 class="text-lg md:text-xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 md:mb-4 transition-colors duration-300">Progress Tracking</h3>
+                        <p class="text-sm md:text-base text-custom-black-light dark:text-custom-gray-light leading-relaxed transition-colors duration-300">Monitor your advancement through each level and lesson completion</p>
                     </div>
                     
-                    <div class="bg-gradient-to-br from-custom-black/10 to-custom-black/5 rounded-2xl p-8 text-center border border-custom-black/20 hover:border-custom-black/40 transition-all duration-300 hover:shadow-lg">
-                        <div class="text-4xl mb-4">🌟</div>
-                        <h3 class="text-xl font-bold font-heading text-custom-black dark:text-custom-white mb-4 transition-colors duration-300">Fun Learning</h3>
-                        <p class="text-custom-black-light dark:text-custom-gray-light leading-relaxed transition-colors duration-300">Learning with Erika is designed to be enjoyable and effective</p>
+                    <div class="bg-gradient-to-br from-custom-black/10 to-custom-black/5 rounded-2xl p-6 md:p-8 text-center border border-custom-black/20 hover:border-custom-black/40 transition-all duration-300 hover:shadow-lg transform hover:scale-105 min-h-touch">
+                        <div class="text-3xl md:text-4xl mb-4">🌟</div>
+                        <h3 class="text-lg md:text-xl font-bold font-heading text-custom-black dark:text-custom-white mb-3 md:mb-4 transition-colors duration-300">Fun Learning</h3>
+                        <p class="text-sm md:text-base text-custom-black-light dark:text-custom-gray-light leading-relaxed transition-colors duration-300">Learning with Erika is designed to be enjoyable and effective</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-custom-black dark:bg-custom-gray-dark text-custom-white py-12 transition-colors duration-300" role="contentinfo">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold font-heading mb-4">🎓 English Reinforcement</h3>
-                    <p class="text-custom-gray-light dark:text-custom-gray leading-relaxed">Master English step by step with interactive lessons designed for every level.</p>
+    <footer class="bg-custom-black dark:bg-custom-gray-dark text-custom-white py-8 md:py-12 transition-colors duration-300" role="contentinfo">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <h3 class="text-lg md:text-xl font-bold font-heading mb-4">🎓 English Reinforcement</h3>
+                    <p class="text-custom-gray-light dark:text-custom-gray leading-relaxed text-sm md:text-base">Master English step by step with interactive lessons designed for every level.</p>
                 </div>
                 
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#levels" class="text-custom-gray-light dark:text-custom-gray hover:text-custom-yellow transition-colors duration-300">Levels</a></li>
-                        <li><a href="#about" class="text-custom-gray-light dark:text-custom-gray hover:text-custom-yellow transition-colors duration-300">About</a></li>
-                        <li><a href="a1/index.html" class="text-custom-gray-light dark:text-custom-gray hover:text-custom-yellow transition-colors duration-300">A1 Lessons</a></li>
+                        <li><a href="#levels" class="text-custom-gray-light dark:text-custom-gray hover:text-custom-yellow transition-colors duration-300 py-1 block min-h-touch flex items-center">Levels</a></li>
+                        <li><a href="#about" class="text-custom-gray-light dark:text-custom-gray hover:text-custom-yellow transition-colors duration-300 py-1 block min-h-touch flex items-center">About</a></li>
+                        <li><a href="a1/index.html" class="text-custom-gray-light dark:text-custom-gray hover:text-custom-yellow transition-colors duration-300 py-1 block min-h-touch flex items-center">A1 Lessons</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Contact</h4>
-                    <p class="text-custom-gray-light dark:text-custom-gray">📧 erika@englishreinforcement.com</p>
-                    <p class="text-custom-gray-light dark:text-custom-gray mt-2">🌐 www.englishreinforcement.com</p>
+                    <div class="space-y-2 text-sm md:text-base">
+                        <p class="text-custom-gray-light dark:text-custom-gray flex items-center py-1">📧 erika@englishreinforcement.com</p>
+                        <p class="text-custom-gray-light dark:text-custom-gray flex items-center py-1">🌐 www.englishreinforcement.com</p>
+                    </div>
                 </div>
             </div>
             
-            <div class="border-t border-custom-gray mt-8 pt-8 text-center">
-                <p class="text-custom-gray-light dark:text-custom-gray">&copy; 2024 English Reinforcement. All rights reserved.</p>
+            <div class="border-t border-custom-gray mt-6 md:mt-8 pt-6 md:pt-8 text-center">
+                <p class="text-custom-gray-light dark:text-custom-gray text-sm md:text-base">&copy; 2024 English Reinforcement. All rights reserved.</p>
             </div>
         </div>
     </footer>
