@@ -327,68 +327,57 @@ body {
     font-family: var(--font-family-heading);
 }
 
-/* Menú hamburguesa - Mobile First, optimizado para pulgar */
+/* Menú hamburguesa minimalista y eficiente */
 .hamburger-menu {
-    display: flex; /* Visible por defecto en móvil */
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 48px;
-    height: 48px;
-    background: var(--yellow);
-    border: 2px solid var(--yellow-dark);
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     z-index: 1002;
-    /* Área de touch optimizada - mínimo 44x44px */
-    padding: 4px;
+    padding: 6px;
     margin: 0;
-    /* Optimización para touch */
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
-    /* Posición accesible para pulgar */
     position: relative;
-    /* Mejor contraste visual */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    gap: 4px;
 }
 
-.hamburger-menu:hover {
-    background: var(--yellow-dark);
-    border-color: var(--yellow-dark);
-    transform: scale(1.05);
-}
-
-.hamburger-menu:focus {
-    outline: 3px solid var(--focus-color);
-    outline-offset: 2px;
+.hamburger-menu:active {
+    transform: scale(0.95);
 }
 
 .hamburger-line {
     width: 20px;
     height: 2px;
     background: var(--black);
-    margin: 3px 0;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     border-radius: 1px;
     display: block;
 }
 
-.hamburger-menu:hover .hamburger-line {
-    background: var(--black);
+.dark .hamburger-line {
+    background: var(--white);
 }
 
-/* Animación del menú hamburguesa cuando está abierto */
+/* Animación simplificada del menú hamburguesa */
 .hamburger-menu.active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(3px, 3px);
 }
 
 .hamburger-menu.active .hamburger-line:nth-child(2) {
     opacity: 0;
+    transform: scale(0);
 }
 
 .hamburger-menu.active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(3px, -3px);
 }
 
 /* Navegación desktop - Oculta por defecto (Mobile First) */
